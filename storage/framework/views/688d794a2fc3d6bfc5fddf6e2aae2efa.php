@@ -1,0 +1,99 @@
+<?php $__env->startSection('title', 'AI Services — FairIT Solutions | AI Advisory, Copilots, Voice AI & More'); ?>
+<?php $__env->startSection('description', 'Premium AI services: transformation advisory, custom copilots, voice AI automation, managed retainers, and founder growth advisory. Results-driven, globally delivered.'); ?>
+
+<?php $__env->startSection('schema'); ?>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": { "@type": "Organization", "name": "FairIT Solutions" },
+    "name": "AI Services",
+    "description": "Premium AI consulting, implementation, and managed services for growth-focused organisations."
+}
+</script>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+
+<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+    <div class="absolute inset-0 hero-grid opacity-20"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
+    <div class="relative container-tight text-center">
+        <div data-animate>
+            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">What We Do</span>
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">Premium AI Services</h1>
+            <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+                Consulting, implementation, and recurring AI systems for growth-focused organisations. Every engagement is built for measurable business outcomes.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-padding bg-white">
+    <div class="container-wide">
+        <div class="space-y-6">
+            <?php
+            $services = [
+                ['route' => 'services.advisory', 'icon' => 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', 'num' => '01', 'title' => 'AI Transformation Advisory', 'tagline' => 'Transform your business with strategic AI leadership', 'desc' => 'Full-spectrum AI readiness audits, strategic roadmaps, ROI prioritisation, and leadership workshops to guide your organisation through intelligent transformation.', 'bullets' => ['AI readiness audit & scoring', 'Strategic 90-day + 12-month roadmap', 'ROI models & business case', 'Leadership workshops & change management', 'Vendor-agnostic recommendations'], 'cta' => 'Book Strategy Session', 'color' => 'blue', 'delay' => '0'],
+                ['route' => 'services.copilot', 'icon' => 'M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18', 'num' => '02', 'title' => 'Custom AI Copilot Development', 'tagline' => 'Build the AI brain your business has been waiting for', 'desc' => 'Bespoke AI copilots for CEOs, sales, HR, operations, and support — trained on your data, tuned to your workflows, built for real adoption.', 'bullets' => ['Copilot trained on your company data', 'CRM, ERP, Slack & email integrations', 'Admin dashboard & analytics', 'Team onboarding & documentation', '30-day post-launch support'], 'cta' => 'Request Demo', 'color' => 'indigo', 'delay' => '100'],
+                ['route' => 'services.voiceai', 'icon' => 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z', 'num' => '03', 'title' => 'Voice AI & Conversational Automation', 'tagline' => 'Conversations that convert, at scale, around the clock', 'desc' => 'Multilingual AI voice agents, booking bots, WhatsApp automation, and intelligent support bots that handle real conversations at enterprise scale.', 'bullets' => ['AI voice agents (inbound/outbound)', '40+ language support', 'WhatsApp & SMS automation', 'Calendar & booking sync', 'Call analytics dashboard'], 'cta' => 'See Use Cases', 'color' => 'violet', 'delay' => '200'],
+                ['route' => 'services.retainers', 'icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', 'num' => '04', 'title' => 'Managed AI Retainers', 'tagline' => 'Your dedicated AI team, without the overhead', 'desc' => 'Monthly retainer engagements for ongoing AI optimisation, workflow automation, bot management, reporting, and continuous innovation support.', 'bullets' => ['Monthly AI performance reporting', 'New automation workflow each month', 'Bot & system maintenance', 'Bi-weekly strategy calls', 'Priority access to new AI capabilities'], 'cta' => 'Talk to Expert', 'color' => 'emerald', 'delay' => '300'],
+                ['route' => 'services.founder', 'icon' => 'M13 10V3L4 14h7v7l9-11h-7z', 'num' => '05', 'title' => 'Founder Growth Advisory', 'tagline' => 'The AI-powered operating system for ambitious leaders', 'desc' => 'High-level strategic AI systems, decision frameworks, and operating infrastructure for founders, CEOs, and business leaders who want to move faster with more clarity.', 'bullets' => ['Personal AI command centre', 'Growth decision frameworks', 'Time recovery through automation', 'Fundraising & investor readiness', 'Monthly 1:1 strategy sessions'], 'cta' => 'Apply Now', 'color' => 'orange', 'delay' => '400'],
+            ];
+            ?>
+
+            <?php $__currentLoopData = $services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div data-animate data-animate-delay="<?php echo e($service['delay']); ?>" class="group relative bg-white rounded-2xl border border-charcoal-100 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300 overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                    <div class="p-8 lg:border-r border-charcoal-100 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-100 transition-colors">
+                                    <svg class="w-6 h-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="<?php echo e($service['icon']); ?>"/>
+                                    </svg>
+                                </div>
+                                <span class="text-5xl font-black text-charcoal-100 group-hover:text-brand-100 transition-colors"><?php echo e($service['num']); ?></span>
+                            </div>
+                            <h2 class="text-xl font-bold text-charcoal-950 mb-2 group-hover:text-brand-700 transition-colors"><?php echo e($service['title']); ?></h2>
+                            <p class="text-brand-600 text-sm font-medium italic"><?php echo e($service['tagline']); ?></p>
+                        </div>
+                        <a href="<?php echo e(route($service['route'])); ?>" class="btn-primary mt-8 justify-center">
+                            <?php echo e($service['cta']); ?>
+
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="p-8 lg:col-span-2">
+                        <p class="text-charcoal-600 leading-relaxed mb-6"><?php echo e($service['desc']); ?></p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <?php $__currentLoopData = $service['bullets']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bullet): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="flex items-center gap-2 text-sm text-charcoal-700">
+                                <svg class="w-3.5 h-3.5 text-brand-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                <?php echo e($bullet); ?>
+
+                            </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+    </div>
+</section>
+
+
+<section class="section-padding-sm bg-charcoal-950">
+    <div class="container-tight text-center" data-animate>
+        <h2 class="text-3xl font-bold text-white mb-4">Not Sure Where to Start?</h2>
+        <p class="text-charcoal-400 mb-8">Book a free strategy call. We will assess your needs and recommend the best path forward.</p>
+        <a href="<?php echo e(route('consultation')); ?>" class="btn-primary-lg">Book Free Strategy Session</a>
+    </div>
+</section>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH /Users/mayuresh/Projects/Nishant-Dada/FairIT Solutions/FairITSolutions Website/resources/views/services/index.blade.php ENDPATH**/ ?>

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /_debugbar/
+
+Sitemap: https://fairitsolutions.ch/sitemap.xml

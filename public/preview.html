@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairIT Solutions — AI That Makes Every Day Better</title>
+    <meta name="description" content="We build AI systems that make your business smarter, your home easier, and your everyday life better.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --black:   #07060a;
+            --dark:    #0e0c10;
+            --mid:     #161318;
+            --gold:    #c9a84c;
+            --gold-lt: #e8cc80;
+            --gold-dk: #8a6a1e;
+            --copper:  #b5541e;
+            --copper-lt:#d4864a;
+            --amber:   #d97706;
+            --forest:  #1a5c35;
+            --forest-lt:#22a05a;
+            --cream:   #fdf8f0;
+            --cream2:  #f7f0e6;
+            --warm-white: #f5ede0;
+            --warm-text:  #1a1208;
+            --muted:   #8a7a65;
+        }
+
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; background: #fff; color: var(--warm-text); }
+        .serif  { font-family: 'Cormorant Garamond', Georgia, serif; }
+        .sans   { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        /* ── Hero ── */
+        .hero-bg { background: var(--black); position: relative; }
+        .hero-bg::before {
+            content:'';
+            position:absolute; inset:0;
+            background:
+                radial-gradient(ellipse 60% 50% at 20% 30%, rgba(201,168,76,.10) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 60% at 80% 70%, rgba(181,84,30,.08) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 50% 10%, rgba(201,168,76,.06) 0%, transparent 60%);
+            animation: glow-drift 12s ease-in-out infinite alternate;
+        }
+        @keyframes glow-drift {
+            0%   { opacity:.8; transform:scale(1)   translateX(0px); }
+            100% { opacity:1;  transform:scale(1.05) translateX(20px); }
+        }
+
+        /* Gold grid */
+        .hero-grid {
+            background-image:
+                linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
+            background-size: 64px 64px;
+        }
+
+        /* ── Blobs ── */
+        .blob   { border-radius:60% 40% 70% 30% / 60% 30% 70% 40%; animation:morph 10s ease-in-out infinite; }
+        .blob-2 { border-radius:40% 60% 30% 70% / 40% 70% 30% 60%; animation:morph  8s ease-in-out infinite reverse; }
+        @keyframes morph {
+            0%,100% { border-radius:60% 40% 70% 30% / 60% 30% 70% 40%; }
+            50%     { border-radius:30% 60% 40% 70% / 40% 70% 30% 60%; }
+        }
+
+        /* ── Float ── */
+        @keyframes float-a { 0%,100%{transform:translateY(0) rotate(-1deg)} 50%{transform:translateY(-14px) rotate(1deg)} }
+        @keyframes float-b { 0%,100%{transform:translateY(0) rotate(1deg)}  50%{transform:translateY(12px) rotate(-1deg)} }
+        @keyframes float-c { 0%,100%{transform:translateY(0) translateX(0)} 50%{transform:translateY(-8px) translateX(6px)} }
+        .float-a { animation:float-a 7s ease-in-out infinite; }
+        .float-b { animation:float-b 9s ease-in-out infinite; }
+        .float-c { animation:float-c 8s ease-in-out infinite; }
+
+        /* ── Scroll animations ── */
+        [data-animate] { opacity:0; transform:translateY(30px); transition:opacity .75s ease-out, transform .75s ease-out; }
+        [data-animate].on { opacity:1; transform:translateY(0); }
+        [data-animate-delay="100"] { transition-delay:.1s }
+        [data-animate-delay="200"] { transition-delay:.2s }
+        [data-animate-delay="300"] { transition-delay:.3s }
+        [data-animate-delay="400"] { transition-delay:.4s }
+        [data-animate-delay="500"] { transition-delay:.5s }
+
+        /* ── Gradient text ── */
+        .gt-gold   { background:linear-gradient(135deg,#e8cc80,#c9a84c,#8a6a1e); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        .gt-copper { background:linear-gradient(135deg,#d4864a,#b5541e); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        .gt-forest { background:linear-gradient(135deg,#22a05a,#1a5c35); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        .gt-hero   { background:linear-gradient(135deg,#f5e6b8,#e8cc80,#c9a84c); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+        .gt-warm   { background:linear-gradient(135deg,#e8cc80,#d4864a); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+
+        /* ── Gradient backgrounds ── */
+        .bg-gold    { background:linear-gradient(135deg,#c9a84c,#e8cc80); }
+        .bg-copper  { background:linear-gradient(135deg,#b5541e,#d4864a); }
+        .bg-forest  { background:linear-gradient(135deg,#1a5c35,#22a05a); }
+        .bg-amber   { background:linear-gradient(135deg,#d97706,#c9a84c); }
+        .bg-dark-gold { background:linear-gradient(135deg,#8a6a1e,#c9a84c); }
+
+        /* ── Glass ── */
+        .glass { background:rgba(255,255,255,.06); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(201,168,76,.18); }
+
+        /* ── Pill ── */
+        .pill { display:inline-flex; align-items:center; gap:6px; padding:5px 14px; border-radius:999px; font-size:.72rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+
+        /* ── Navbar ── */
+        .navbar-scrolled {
+            background:rgba(253,248,240,.97) !important;
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid rgba(201,168,76,.2);
+            box-shadow:0 2px 24px rgba(0,0,0,.07);
+        }
+        .navbar-scrolled .nav-txt { color:#1a1208 !important; }
+        .navbar-scrolled .nav-muted { color:#6b5a45 !important; }
+
+        /* ── Card hover ── */
+        .card-lift { transition:all .35s cubic-bezier(.4,0,.2,1); }
+        .card-lift:hover { transform:translateY(-6px); }
+
+        /* ── Gold glow button ── */
+        .btn-gold {
+            background:linear-gradient(135deg,#c9a84c,#e8cc80);
+            color:#1a1208;
+            box-shadow:0 4px 24px rgba(201,168,76,.35);
+            transition:all .3s;
+        }
+        .btn-gold:hover { box-shadow:0 8px 40px rgba(201,168,76,.55); transform:translateY(-2px); }
+
+        /* ── Gold border card ── */
+        .gold-border { border:1px solid rgba(201,168,76,.25); }
+        .gold-border:hover { border-color:rgba(201,168,76,.55); }
+
+        /* ── Marquee ── */
+        .marquee-wrap { overflow:hidden; }
+        .marquee-track { display:flex; width:max-content; animation:marquee 28s linear infinite; }
+        @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+        /* ── Stars ── */
+        .stars::before { content:"★★★★★"; color:#c9a84c; font-size:1rem; letter-spacing:2px; }
+
+        /* ── Wave dividers ── */
+        .wave-bottom { position:absolute; bottom:-1px; left:0; right:0; line-height:0; }
+        .wave-top    { position:absolute; top:-1px;    left:0; right:0; line-height:0; }
+
+        /* ── Product glow ── */
+        .glow-gold   { box-shadow:0 0 60px rgba(201,168,76,.2),  0 24px 60px rgba(0,0,0,.5); }
+        .glow-copper { box-shadow:0 0 60px rgba(181,84,30,.18),  0 24px 60px rgba(0,0,0,.5); }
+        .glow-forest { box-shadow:0 0 60px rgba(34,160,90,.15),  0 24px 60px rgba(0,0,0,.5); }
+
+        /* ── Section label ── */
+        .section-label { font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+
+        /* ── Wavy underline ── */
+        .wavy-gold { text-decoration:underline wavy #c9a84c; text-underline-offset:8px; text-decoration-thickness:2px; }
+
+        /* ── CTA bg ── */
+        .cta-bg {
+            background:linear-gradient(135deg, #07060a 0%, #110d06 40%, #1a1208 100%);
+        }
+
+        /* ── Divider line ── */
+        .gold-line { width:48px; height:2px; background:linear-gradient(90deg,#c9a84c,#e8cc80); border-radius:2px; }
+
+        /* ── Ind card ── */
+        .ind-card { transition:all .3s; cursor:pointer; }
+        .ind-card:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 16px 40px rgba(0,0,0,.1); }
+
+        /* ── Google Translate ── */
+        #google_translate_element { display:inline-flex; align-items:center; }
+        .goog-te-gadget { font-family:'Inter',sans-serif !important; font-size:0 !important; }
+        .goog-te-gadget-simple {
+            background: rgba(201,168,76,.1) !important;
+            border: 1px solid rgba(201,168,76,.25) !important;
+            border-radius: 8px !important;
+            padding: 5px 10px !important;
+            cursor: pointer !important;
+            white-space: nowrap !important;
+        }
+        .goog-te-gadget-simple .goog-te-menu-value {
+            color: #c9a84c !important;
+            font-size: 12px !important;
+            font-weight: 600 !important;
+            font-family: 'Inter', sans-serif !important;
+            letter-spacing: .02em !important;
+        }
+        .goog-te-gadget-simple .goog-te-menu-value span { color: #c9a84c !important; }
+        .goog-te-gadget-simple .goog-te-menu-value span:last-child { display:none !important; }
+        .goog-te-gadget-simple img { display:none !important; }
+        .goog-logo-link, .goog-te-gadget > span { display:none !important; }
+        .goog-te-banner-frame { display:none !important; }
+        body { top: 0 !important; }
+        /* Scrolled navbar state — keep gold color */
+        .navbar-scrolled .goog-te-gadget-simple {
+            background: rgba(201,168,76,.08) !important;
+            border-color: rgba(201,168,76,.3) !important;
+        }
+        .goog-te-menu-frame { box-shadow: 0 20px 60px rgba(0,0,0,.3) !important; border-radius:12px !important; }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ NAVBAR ══════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-[70px]">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-gold rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 4px 16px rgba(201,168,76,.4)">
+                    <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="nav-txt sans font-bold text-white text-[15px] block leading-tight transition-colors">FairIT Solutions</span>
+                    <span class="nav-muted text-[9px] font-semibold tracking-[.18em] uppercase block" style="color:rgba(201,168,76,.6)">AI FOR EVERYDAY LIFE</span>
+                </div>
+            </a>
+
+            <!-- Desktop links -->
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#mission"    class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Mission</a>
+                <a href="#services"   class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Services</a>
+                <a href="#products"   class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Products</a>
+                <a href="#industries" class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Industries</a>
+                <a href="#blog"       class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Blog</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="#contact" class="nav-txt text-white/65 hover:text-white text-sm font-medium transition-all">Contact</a>
+                <!-- Google Translate -->
+                <div class="flex items-center gap-1.5" title="Translate this page">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:rgba(201,168,76,.7)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                    <div id="google_translate_element"></div>
+                </div>
+                <a href="#cta" class="btn-gold inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm sans">
+                    Book Consultation
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <button class="lg:hidden p-2 rounded-lg text-white/70 hover:bg-white/10">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section class="hero-bg relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="hero-grid absolute inset-0 opacity-100"></div>
+
+    <!-- Blob glows -->
+    <div class="blob absolute top-1/4 left-[-8%] w-96 h-96 opacity-15" style="background:radial-gradient(circle,#c9a84c,transparent)"></div>
+    <div class="blob-2 absolute bottom-1/4 right-[-8%] w-80 h-80 opacity-10" style="background:radial-gradient(circle,#b5541e,transparent)"></div>
+    <div class="blob absolute top-3/4 left-1/2 w-72 h-72 opacity-8" style="background:radial-gradient(circle,#d97706,transparent)"></div>
+
+    <!-- Floating scenario cards -->
+    <div class="float-a absolute top-28 left-6 lg:left-20 hidden md:block" style="z-index:2">
+        <div class="glass rounded-2xl p-5 w-56" style="box-shadow:0 20px 60px rgba(0,0,0,.6)">
+            <div class="flex items-center gap-2.5 mb-4">
+                <div class="w-8 h-8 bg-forest rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#1a5c35,#22a05a)">
+                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </div>
+                <span class="sans text-white font-semibold text-xs">HSI OS</span>
+            </div>
+            <p class="text-white/50 text-[11px] mb-2 font-medium">Renovation progress</p>
+            <div class="w-full rounded-full h-1.5 mb-1.5" style="background:rgba(255,255,255,.08)">
+                <div class="h-1.5 rounded-full" style="width:73%;background:linear-gradient(90deg,#1a5c35,#22a05a)"></div>
+            </div>
+            <div class="flex justify-between" style="font-size:.65rem;color:rgba(255,255,255,.35)"><span>73% done</span><span>On schedule</span></div>
+        </div>
+    </div>
+
+    <div class="float-b absolute top-36 right-6 lg:right-20 hidden md:block" style="z-index:2">
+        <div class="glass rounded-2xl p-5 w-60" style="box-shadow:0 20px 60px rgba(0,0,0,.6)">
+            <div class="flex items-center gap-2.5 mb-4">
+                <div class="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)">
+                    <svg class="w-4 h-4" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                </div>
+                <span class="sans text-white font-semibold text-xs">SarathiOS</span>
+            </div>
+            <p class="text-white/50 text-[11px] mb-1.5 font-medium">Revenue forecast — Q2</p>
+            <p class="serif text-3xl font-bold text-white">+42<span class="text-lg gt-gold">%</span></p>
+            <p class="text-[11px] font-semibold mt-1" style="color:#22a05a">AI confidence: 91%</p>
+        </div>
+    </div>
+
+    <div class="float-c absolute bottom-36 left-10 lg:left-24 hidden lg:block" style="z-index:2">
+        <div class="glass rounded-2xl p-5 w-56" style="box-shadow:0 20px 60px rgba(0,0,0,.6)">
+            <div class="flex items-center gap-2.5 mb-4">
+                <div class="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#b5541e,#d4864a)">
+                    <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <span class="sans text-white font-semibold text-xs">HandleLife OS</span>
+            </div>
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-[11px] text-white/55"><div class="w-3.5 h-3.5 rounded-full flex-shrink-0" style="background:#22a05a"></div>Health check done</div>
+                <div class="flex items-center gap-2 text-[11px] text-white/55"><div class="w-3.5 h-3.5 rounded-full flex-shrink-0" style="background:#22a05a"></div>Bills scheduled</div>
+                <div class="flex items-center gap-2 text-[11px] text-white/55"><div class="w-3.5 h-3.5 rounded-full flex-shrink-0" style="background:#c9a84c"></div>NRI transfer pending</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="relative max-w-5xl mx-auto px-5 sm:px-8 pt-32 pb-28 text-center" style="z-index:1">
+
+        <div data-animate class="flex justify-center mb-8">
+            <div class="pill glass text-white/75" style="border:1px solid rgba(201,168,76,.25)">
+                <span class="w-2 h-2 rounded-full bg-green-400 inline-block" style="animation:pulse 2s ease-in-out infinite"></span>
+                Trusted by founders &amp; families across 12 countries
+            </div>
+        </div>
+
+        <h1 data-animate data-animate-delay="100" class="serif text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-[1.04] tracking-tight">
+            AI That Makes<br>
+            <em class="gt-hero not-italic">Every Day Better</em>
+        </h1>
+
+        <p data-animate data-animate-delay="200" class="mt-8 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light" style="color:rgba(245,237,224,.55)">
+            We build intelligent AI systems for your business, your home, and your life — so you can focus on what truly matters.
+        </p>
+
+        <div data-animate data-animate-delay="300" class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#cta" class="btn-gold inline-flex items-center gap-2.5 font-bold px-8 py-4 rounded-xl text-base sans">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                Book a Free Consultation
+            </a>
+            <a href="#products" class="inline-flex items-center gap-2.5 font-semibold px-8 py-4 rounded-xl text-base sans transition-all text-white/75 hover:text-white" style="border:1.5px solid rgba(201,168,76,.25);hover:border-color:rgba(201,168,76,.6)">
+                Explore Our Products
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <!-- Stats -->
+        <div data-animate data-animate-delay="400" class="mt-20 pt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto" style="border-top:1px solid rgba(201,168,76,.12)">
+            <div class="text-center">
+                <p class="serif text-5xl font-bold gt-gold">3<span class="text-3xl">×</span></p>
+                <p class="mt-2 text-[11px] font-medium tracking-widest uppercase" style="color:rgba(245,237,224,.35)">Avg productivity gain</p>
+            </div>
+            <div class="text-center">
+                <p class="serif text-5xl font-bold gt-gold">40<span class="text-3xl">+</span></p>
+                <p class="mt-2 text-[11px] font-medium tracking-widest uppercase" style="color:rgba(245,237,224,.35)">Languages supported</p>
+            </div>
+            <div class="text-center">
+                <p class="serif text-5xl font-bold gt-gold">95<span class="text-3xl">%</span></p>
+                <p class="mt-2 text-[11px] font-medium tracking-widest uppercase" style="color:rgba(245,237,224,.35)">Client satisfaction</p>
+            </div>
+            <div class="text-center">
+                <p class="serif text-5xl font-bold gt-gold">24<span class="text-3xl">/7</span></p>
+                <p class="mt-2 text-[11px] font-medium tracking-widest uppercase" style="color:rgba(245,237,224,.35)">AI always on</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,28 C480,56 960,0 1440,28 L1440,56 L0,56 Z" fill="#fdf8f0"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ MARQUEE ══════════════════════════════ -->
+<div style="background:#fdf8f0;border-bottom:1px solid rgba(201,168,76,.15)" class="py-5 marquee-wrap">
+    <div class="marquee-track">
+        <span class="flex items-center gap-10 px-10 text-xs font-bold tracking-widest uppercase whitespace-nowrap" style="color:rgba(138,106,30,.6)">
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#c9a84c"></span>AI Transformation Advisory</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#b5541e"></span>SarathiOS — Founder OS</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#1a5c35"></span>HSI OS — Interior AI</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#d97706"></span>HandleLife OS — Life OS</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#c9a84c"></span>Voice AI &amp; Automation</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#b5541e"></span>Custom AI Copilots</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#1a5c35"></span>Managed AI Retainers</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#d97706"></span>Founder Growth Advisory</span>
+            <!-- duplicate for seamless loop -->
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#c9a84c"></span>AI Transformation Advisory</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#b5541e"></span>SarathiOS — Founder OS</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#1a5c35"></span>HSI OS — Interior AI</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#d97706"></span>HandleLife OS — Life OS</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#c9a84c"></span>Voice AI &amp; Automation</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#b5541e"></span>Custom AI Copilots</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#1a5c35"></span>Managed AI Retainers</span>
+            <span class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full inline-block" style="background:#d97706"></span>Founder Growth Advisory</span>
+        </span>
+    </div>
+</div>
+
+<!-- ══════════════════════════════ MISSION ══════════════════════════════ -->
+<section id="mission" style="background:#fdf8f0" class="py-28 relative">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-5" data-animate>
+            <span class="section-label gt-gold">One Mission</span>
+        </div>
+        <div class="text-center mb-4" data-animate data-animate-delay="100">
+            <div class="gold-line mx-auto mb-6"></div>
+            <h2 class="serif text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight" style="color:#1a1208">
+                AI Should Work for<br><span class="wavy-gold">People</span>, Not Just Corporations.
+            </h2>
+        </div>
+        <p data-animate data-animate-delay="200" class="text-center text-lg max-w-2xl mx-auto leading-relaxed mb-20" style="color:#8a7a65">
+            We bring AI across three dimensions of life — so the benefits reach everyone, not just enterprise giants.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Pillar 1 — Business (Gold) -->
+            <div data-animate data-animate-delay="100" class="card-lift rounded-3xl overflow-hidden" style="box-shadow:0 24px 60px rgba(201,168,76,.12)">
+                <div class="p-8 pb-14" style="background:linear-gradient(160deg,#0e0c10,#1a1208)">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 24px rgba(201,168,76,.3)">
+                        <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="pill mb-4" style="background:rgba(201,168,76,.12);color:#e8cc80;border:1px solid rgba(201,168,76,.2)">For Business</span>
+                    <h3 class="serif text-2xl font-bold text-white mt-3">Build Better Companies</h3>
+                </div>
+                <div class="bg-white p-8 -mt-6 rounded-t-3xl">
+                    <p class="text-sm leading-relaxed mb-6" style="color:#8a7a65">AI transformation, custom copilots, voice automation, and managed retainers for organisations operating at a higher level.</p>
+                    <ul class="space-y-3 mb-7">
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>AI readiness audits &amp; roadmaps</li>
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Custom AI copilots for your team</li>
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Voice &amp; chat automation</li>
+                    </ul>
+                    <a href="#services" class="inline-flex items-center gap-1.5 font-bold text-sm sans gt-gold hover:opacity-75 transition-opacity">Explore Services <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
+            <!-- Pillar 2 — Homes (Forest) -->
+            <div data-animate data-animate-delay="200" class="card-lift rounded-3xl overflow-hidden" style="box-shadow:0 24px 60px rgba(26,92,53,.12)">
+                <div class="p-8 pb-14" style="background:linear-gradient(160deg,#0a100d,#0d1a12)">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 24px rgba(26,92,53,.35)">
+                        <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                    <span class="pill mb-4" style="background:rgba(34,160,90,.1);color:#22a05a;border:1px solid rgba(34,160,90,.2)">For Homes</span>
+                    <h3 class="serif text-2xl font-bold text-white mt-3">Build Better Homes</h3>
+                </div>
+                <div class="bg-white p-8 -mt-6 rounded-t-3xl">
+                    <p class="text-sm leading-relaxed mb-6" style="color:#8a7a65">HSI OS — the AI operating system for interior design, renovation, and home management. For homeowners, architects, and interior firms.</p>
+                    <ul class="space-y-3 mb-7">
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Project &amp; timeline management</li>
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Smart vendor coordination</li>
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Budget intelligence</li>
+                    </ul>
+                    <a href="#products" class="inline-flex items-center gap-1.5 font-bold text-sm sans gt-forest hover:opacity-75 transition-opacity">Explore HSI OS <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
+            <!-- Pillar 3 — Life (Copper) -->
+            <div data-animate data-animate-delay="300" class="card-lift rounded-3xl overflow-hidden" style="box-shadow:0 24px 60px rgba(181,84,30,.12)">
+                <div class="p-8 pb-14" style="background:linear-gradient(160deg,#110a06,#1a0f08)">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 24px rgba(181,84,30,.35)">
+                        <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                    <span class="pill mb-4" style="background:rgba(181,84,30,.1);color:#d4864a;border:1px solid rgba(181,84,30,.2)">For Life</span>
+                    <h3 class="serif text-2xl font-bold text-white mt-3">Build Better Lives</h3>
+                </div>
+                <div class="bg-white p-8 -mt-6 rounded-t-3xl">
+                    <p class="text-sm leading-relaxed mb-6" style="color:#8a7a65">HandleLife OS — intelligent life management for modern families, NRIs, busy professionals, and anyone who wants to live with more clarity.</p>
+                    <ul class="space-y-3 mb-7">
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Family command centre</li>
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Finance &amp; health intelligence</li>
+                        <li class="flex items-center gap-3 text-sm" style="color:#3d2e1a"><div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>NRI services &amp; remote care</li>
+                    </ul>
+                    <a href="#products" class="inline-flex items-center gap-1.5 font-bold text-sm sans gt-copper hover:opacity-75 transition-opacity">Explore HandleLife OS <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ SERVICES ══════════════════════════════ -->
+<section id="services" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16" data-animate>
+            <div>
+                <span class="section-label gt-gold">What We Do</span>
+                <div class="gold-line mt-4 mb-5"></div>
+                <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">AI Services That<br>Move the Needle</h2>
+            </div>
+            <p class="text-sm leading-relaxed lg:max-w-xs" style="color:#8a7a65">From strategy to deployment — we make sure AI delivers real, measurable results.</p>
+        </div>
+
+        <div class="space-y-4">
+
+            <!-- S1 -->
+            <div data-animate class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 gold-border transition-all" style="border:1.5px solid rgba(201,168,76,.15);box-shadow:0 2px 20px rgba(0,0,0,.04)">
+                <div class="flex items-center gap-5 flex-shrink-0">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 20px rgba(201,168,76,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0"/></svg>
+                    </div>
+                    <span class="serif text-5xl font-bold" style="color:#f0e6ce">01</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">AI Transformation Advisory</h3>
+                    <p class="text-sm leading-relaxed" style="color:#8a7a65">AI readiness audits, roadmap creation, ROI prioritisation, and leadership workshops to guide your organisation's intelligent transformation.</p>
+                </div>
+                <a href="#cta" class="sans font-bold text-sm gt-gold whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Book Strategy Session →</a>
+            </div>
+
+            <!-- S2 -->
+            <div data-animate data-animate-delay="100" class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 transition-all" style="border:1.5px solid rgba(181,84,30,.15);box-shadow:0 2px 20px rgba(0,0,0,.04)">
+                <div class="flex items-center gap-5 flex-shrink-0">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.25)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                    </div>
+                    <span class="serif text-5xl font-bold" style="color:#f5e8dc">02</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">Custom AI Copilot Development</h3>
+                    <p class="text-sm leading-relaxed" style="color:#8a7a65">Build internal AI copilots for CEOs, sales, HR, and operations — trained on your data, tuned to your workflows, deployed in your environment.</p>
+                </div>
+                <a href="#cta" class="sans font-bold text-sm gt-copper whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Request Demo →</a>
+            </div>
+
+            <!-- S3 -->
+            <div data-animate data-animate-delay="200" class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 transition-all" style="border:1.5px solid rgba(26,92,53,.15);box-shadow:0 2px 20px rgba(0,0,0,.04)">
+                <div class="flex items-center gap-5 flex-shrink-0">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                    </div>
+                    <span class="serif text-5xl font-bold" style="color:#ddf0e6">03</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">Voice AI &amp; Conversational Automation</h3>
+                    <p class="text-sm leading-relaxed" style="color:#8a7a65">AI voice callers, multilingual bots, booking automation, and WhatsApp workflows — enterprise scale, human warmth, 40+ languages.</p>
+                </div>
+                <a href="#cta" class="sans font-bold text-sm gt-forest whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">See Use Cases →</a>
+            </div>
+
+            <!-- S4 -->
+            <div data-animate data-animate-delay="300" class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 transition-all" style="border:1.5px solid rgba(217,119,6,.2);box-shadow:0 2px 20px rgba(0,0,0,.04)">
+                <div class="flex items-center gap-5 flex-shrink-0">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#d97706,#c9a84c);box-shadow:0 8px 20px rgba(217,119,6,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <span class="serif text-5xl font-bold" style="color:#fef3dc">04</span>
+                </div>
+                <div class="flex-1">
+                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">Managed AI Retainers</h3>
+                    <p class="text-sm leading-relaxed" style="color:#8a7a65">Monthly AI optimisation, bot management, workflow enhancement, and continuous innovation — your always-on AI team.</p>
+                </div>
+                <a href="#cta" class="sans font-bold text-sm gt-gold whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Talk to Expert →</a>
+            </div>
+
+            <!-- S5 — Featured -->
+            <div data-animate data-animate-delay="400" class="card-lift group flex flex-col sm:flex-row items-start gap-6 rounded-2xl p-7 transition-all" style="background:linear-gradient(135deg,#fdf4e6,#fdf8f0);border:1.5px solid rgba(201,168,76,.3);box-shadow:0 8px 40px rgba(201,168,76,.1)">
+                <div class="flex items-center gap-5 flex-shrink-0">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 8px 20px rgba(201,168,76,.35)">
+                        <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="serif text-5xl font-bold" style="color:#e8cc80">05</span>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h3 class="sans text-xl font-bold" style="color:#1a1208">Founder Growth Advisory</h3>
+                        <span class="pill" style="background:rgba(201,168,76,.15);color:#8a6a1e;font-size:.65rem">High-Touch</span>
+                    </div>
+                    <p class="text-sm leading-relaxed" style="color:#8a7a65">Strategic AI systems for founders, business owners, and leaders who want to operate at the frontier — with a dedicated AI advisor in their corner.</p>
+                </div>
+                <a href="#cta" class="sans font-bold text-sm gt-gold whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Apply Now →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ PRODUCTS ══════════════════════════════ -->
+<section id="products" class="py-28 relative overflow-hidden" style="background:linear-gradient(180deg,#07060a 0%,#0e0c10 100%)">
+
+    <!-- Ambient glow -->
+    <div class="absolute top-0 left-1/3 w-[500px] h-[500px] opacity-10" style="background:radial-gradient(circle,#c9a84c,transparent);filter:blur(80px);border-radius:50%"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 opacity-8" style="background:radial-gradient(circle,#b5541e,transparent);filter:blur(70px);border-radius:50%"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="text-center mb-16" data-animate>
+            <span class="section-label gt-gold">Our Products</span>
+            <div class="gold-line mx-auto mt-4 mb-6"></div>
+            <h2 class="serif text-5xl lg:text-6xl font-bold text-white">AI Operating Systems<br><span class="gt-hero italic">Built for Real Life</span></h2>
+            <p class="mt-5 max-w-xl mx-auto text-lg" style="color:rgba(245,237,224,.35)">Three products. Three dimensions of life. One goal: make every day better.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-7">
+
+            <!-- SarathiOS -->
+            <div data-animate data-animate-delay="100" class="card-lift rounded-3xl p-8 flex flex-col glow-gold" style="background:linear-gradient(160deg,rgba(201,168,76,.1),rgba(138,106,30,.05));border:1px solid rgba(201,168,76,.2)">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="pill" style="background:rgba(201,168,76,.12);color:#e8cc80;border:1px solid rgba(201,168,76,.2)">Founder OS</span>
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)">
+                        <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                    </div>
+                </div>
+                <h3 class="serif text-3xl font-bold text-white mb-2">SarathiOS</h3>
+                <p class="text-sm leading-relaxed mb-6 flex-1" style="color:rgba(245,237,224,.45)">AI Operating System for startup founders &amp; CEOs. Growth command centre, strategy copilot, decision support, and fundraising readiness.</p>
+
+                <!-- Mock chart -->
+                <div class="rounded-2xl p-4 mb-6" style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12)">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[11px] font-medium" style="color:rgba(245,237,224,.35)">Revenue Forecast</span>
+                        <span class="text-[11px] font-bold" style="color:#22a05a">+42% this Q</span>
+                    </div>
+                    <div class="flex items-end gap-1.5 h-10">
+                        <div class="flex-1 rounded-sm" style="background:rgba(201,168,76,.2);height:40%"></div>
+                        <div class="flex-1 rounded-sm" style="background:rgba(201,168,76,.35);height:60%"></div>
+                        <div class="flex-1 rounded-sm" style="background:rgba(201,168,76,.3);height:45%"></div>
+                        <div class="flex-1 rounded-sm" style="background:rgba(201,168,76,.5);height:80%"></div>
+                        <div class="flex-1 rounded-sm" style="background:rgba(201,168,76,.4);height:65%"></div>
+                        <div class="flex-1 rounded-sm" style="background:linear-gradient(180deg,#e8cc80,#c9a84c);height:100%"></div>
+                    </div>
+                </div>
+
+                <ul class="space-y-2.5 mb-7">
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Founder command dashboard</li>
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>AI strategy copilot</li>
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Fundraising readiness AI</li>
+                </ul>
+                <a href="#cta" class="flex items-center justify-between w-full rounded-xl px-5 py-3 font-semibold text-sm sans text-white transition-all hover:opacity-85" style="background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.3)">Explore SarathiOS <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            </div>
+
+            <!-- HSI OS -->
+            <div data-animate data-animate-delay="200" class="card-lift rounded-3xl p-8 flex flex-col glow-forest" style="background:linear-gradient(160deg,rgba(26,92,53,.12),rgba(22,101,52,.05));border:1px solid rgba(34,160,90,.2)">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="pill" style="background:rgba(34,160,90,.1);color:#22a05a;border:1px solid rgba(34,160,90,.2)">Interior OS</span>
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                    </div>
+                </div>
+                <h3 class="serif text-3xl font-bold text-white mb-2">HSI OS</h3>
+                <p class="text-sm leading-relaxed mb-6 flex-1" style="color:rgba(245,237,224,.45)">AI for interior design, renovation &amp; execution. For homeowners, architects, and interior firms ready to modernise how projects are run.</p>
+
+                <!-- Mock progress -->
+                <div class="rounded-2xl p-4 mb-6" style="background:rgba(255,255,255,.04);border:1px solid rgba(34,160,90,.12)">
+                    <div class="space-y-2.5">
+                        <div><div class="flex justify-between text-[11px] mb-1" style="color:rgba(245,237,224,.3)"><span>Living Room</span><span>Complete</span></div><div class="h-1.5 rounded-full" style="background:rgba(255,255,255,.06)"><div class="h-1.5 rounded-full" style="width:100%;background:linear-gradient(90deg,#1a5c35,#22a05a)"></div></div></div>
+                        <div><div class="flex justify-between text-[11px] mb-1" style="color:rgba(245,237,224,.3)"><span>Kitchen</span><span>73%</span></div><div class="h-1.5 rounded-full" style="background:rgba(255,255,255,.06)"><div class="h-1.5 rounded-full" style="width:73%;background:linear-gradient(90deg,#1a5c35,#22a05a)"></div></div></div>
+                        <div><div class="flex justify-between text-[11px] mb-1" style="color:rgba(245,237,224,.3)"><span>Master Bedroom</span><span>40%</span></div><div class="h-1.5 rounded-full" style="background:rgba(255,255,255,.06)"><div class="h-1.5 rounded-full" style="width:40%;background:linear-gradient(90deg,#1a5c35,#22a05a)"></div></div></div>
+                    </div>
+                </div>
+
+                <ul class="space-y-2.5 mb-7">
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Project timeline management</li>
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Budget &amp; vendor intelligence</li>
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Client &amp; homeowner portal</li>
+                </ul>
+                <a href="#cta" class="flex items-center justify-between w-full rounded-xl px-5 py-3 font-semibold text-sm sans text-white transition-all hover:opacity-85" style="background:rgba(34,160,90,.15);border:1px solid rgba(34,160,90,.25)">Explore HSI OS <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            </div>
+
+            <!-- HandleLife OS -->
+            <div data-animate data-animate-delay="300" class="card-lift rounded-3xl p-8 flex flex-col glow-copper" style="background:linear-gradient(160deg,rgba(181,84,30,.1),rgba(181,84,30,.04));border:1px solid rgba(212,134,74,.2)">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="pill" style="background:rgba(181,84,30,.12);color:#d4864a;border:1px solid rgba(181,84,30,.2)">Life OS</span>
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                </div>
+                <h3 class="serif text-3xl font-bold text-white mb-2">HandleLife OS</h3>
+                <p class="text-sm leading-relaxed mb-6 flex-1" style="color:rgba(245,237,224,.45)">AI operating system for modern family life. For busy families, NRIs, professionals, and senior citizens who deserve a simpler life.</p>
+
+                <!-- Mock checklist -->
+                <div class="rounded-2xl p-4 mb-6" style="background:rgba(255,255,255,.04);border:1px solid rgba(181,84,30,.15)">
+                    <p class="text-[11px] font-medium mb-3" style="color:rgba(245,237,224,.3)">Today's AI summary</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-[11px]" style="color:rgba(245,237,224,.5)"><div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background:#1a5c35"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Health check done</div>
+                        <div class="flex items-center gap-2 text-[11px]" style="color:rgba(245,237,224,.5)"><div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background:#1a5c35"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Monthly bills scheduled</div>
+                        <div class="flex items-center gap-2 text-[11px]" style="color:#d4864a"><div class="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style="background:#b5541e"><svg class="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01"/></svg></div>NRI transfer pending</div>
+                    </div>
+                </div>
+
+                <ul class="space-y-2.5 mb-7">
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Family command centre</li>
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Health &amp; finance intelligence</li>
+                    <li class="flex items-center gap-2.5 text-sm" style="color:rgba(245,237,224,.55)"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>NRI remote services</li>
+                </ul>
+                <a href="#cta" class="flex items-center justify-between w-full rounded-xl px-5 py-3 font-semibold text-sm sans text-white transition-all hover:opacity-85" style="background:rgba(181,84,30,.22);border:1px solid rgba(212,134,74,.25)">Explore HandleLife OS <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="wave-bottom">
+        <svg viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,20 C480,56 960,0 1440,28 L1440,56 L0,56 Z" fill="#fff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ INDUSTRIES ══════════════════════════════ -->
+<section id="industries" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-16" data-animate>
+            <span class="section-label gt-gold">Who We Serve</span>
+            <div class="gold-line mx-auto mt-4 mb-6"></div>
+            <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">AI for Every Industry.<br>Built for Real People.</h2>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+            <div data-animate class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(201,168,76,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 20px rgba(201,168,76,.25)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Startups</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Launch faster</p>
+            </div>
+            <div data-animate data-animate-delay="100" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(181,84,30,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.25)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">SMEs</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Scale smarter</p>
+            </div>
+            <div data-animate data-animate-delay="200" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(26,92,53,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.25)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Real Estate</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Sell smarter</p>
+            </div>
+            <div data-animate data-animate-delay="300" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(217,119,6,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#d97706,#c9a84c);box-shadow:0 8px 20px rgba(217,119,6,.25)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Hospitality</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Delight guests</p>
+            </div>
+            <div data-animate class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(201,168,76,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 8px 20px rgba(201,168,76,.2)">
+                    <svg class="w-6 h-6" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Interior Design</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Projects on time</p>
+            </div>
+            <div data-animate data-animate-delay="100" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(181,84,30,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.2)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Healthcare</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Better outcomes</p>
+            </div>
+            <div data-animate data-animate-delay="200" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(26,92,53,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.2)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Education</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Personalised learning</p>
+            </div>
+            <div data-animate data-animate-delay="300" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(217,119,6,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#d97706,#c9a84c);box-shadow:0 8px 20px rgba(217,119,6,.2)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Professional Services</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Work at your best</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ TESTIMONIALS ══════════════════════════════ -->
+<section style="background:#fdf8f0" class="py-28">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-16" data-animate>
+            <span class="section-label gt-gold">Real Stories</span>
+            <div class="gold-line mx-auto mt-4 mb-6"></div>
+            <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">People Whose Days<br>Got Genuinely Better</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+            <div data-animate data-animate-delay="100" class="card-lift bg-white rounded-3xl p-8" style="border:1px solid rgba(201,168,76,.15);box-shadow:0 20px 60px rgba(201,168,76,.08)">
+                <div class="stars mb-4"></div>
+                <p class="text-sm leading-relaxed mb-7 italic" style="color:#5a4a35">"SarathiOS gave me clarity I never had as a founder. My weekly AI strategy sessions are now the most valuable hour of my week."</p>
+                <div class="flex items-center gap-3 pt-5" style="border-top:1px solid rgba(201,168,76,.12)">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)">
+                        <span class="sans font-bold text-sm" style="color:#1a1208">RS</span>
+                    </div>
+                    <div>
+                        <p class="sans font-bold text-sm" style="color:#1a1208">Rahul S.</p>
+                        <p class="text-xs" style="color:#8a7a65">Founder, B2B SaaS startup</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-animate data-animate-delay="200" class="card-lift bg-white rounded-3xl p-8" style="border:1px solid rgba(26,92,53,.15);box-shadow:0 20px 60px rgba(26,92,53,.08)">
+                <div class="stars mb-4"></div>
+                <p class="text-sm leading-relaxed mb-7 italic" style="color:#5a4a35">"HSI OS transformed how we manage interior projects. Clients see live progress and we've cut project delays by over 60%."</p>
+                <div class="flex items-center gap-3 pt-5" style="border-top:1px solid rgba(26,92,53,.12)">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#1a5c35,#22a05a)">
+                        <span class="sans font-bold text-sm text-white">PA</span>
+                    </div>
+                    <div>
+                        <p class="sans font-bold text-sm" style="color:#1a1208">Priya A.</p>
+                        <p class="text-xs" style="color:#8a7a65">Principal, Interior Design Studio</p>
+                    </div>
+                </div>
+            </div>
+
+            <div data-animate data-animate-delay="300" class="card-lift bg-white rounded-3xl p-8" style="border:1px solid rgba(181,84,30,.15);box-shadow:0 20px 60px rgba(181,84,30,.08)">
+                <div class="stars mb-4"></div>
+                <p class="text-sm leading-relaxed mb-7 italic" style="color:#5a4a35">"As an NRI managing my parents remotely, HandleLife OS has been a genuine lifesaver. Everything is handled, tracked, and communicated automatically."</p>
+                <div class="flex items-center gap-3 pt-5" style="border-top:1px solid rgba(181,84,30,.12)">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#b5541e,#d4864a)">
+                        <span class="sans font-bold text-sm text-white">VK</span>
+                    </div>
+                    <div>
+                        <p class="sans font-bold text-sm" style="color:#1a1208">Vikram K.</p>
+                        <p class="text-xs" style="color:#8a7a65">Software Engineer, Zurich</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ BLOG ══════════════════════════════ -->
+<section id="blog" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16" data-animate>
+            <div>
+                <span class="section-label gt-gold">Insights &amp; Ideas</span>
+                <div class="gold-line mt-4 mb-5"></div>
+                <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">AI Knowledge<br>Worth Reading</h2>
+            </div>
+            <p class="text-sm leading-relaxed lg:max-w-xs" style="color:#8a7a65">Practical guides, founder stories, and AI insights to help you grow smarter every day.</p>
+        </div>
+
+        <!-- Featured post -->
+        <div data-animate class="card-lift rounded-3xl overflow-hidden mb-8 grid grid-cols-1 lg:grid-cols-2" style="border:1.5px solid rgba(201,168,76,.18);box-shadow:0 20px 60px rgba(201,168,76,.08)">
+            <!-- Visual panel -->
+            <div class="relative flex flex-col justify-between p-10 min-h-64" style="background:linear-gradient(135deg,#0e0c10,#1a1208)">
+                <div class="absolute inset-0 opacity-10" style="background:radial-gradient(ellipse 80% 60% at 30% 50%,#c9a84c,transparent)"></div>
+                <div class="relative">
+                    <span class="pill mb-4" style="background:rgba(201,168,76,.15);color:#e8cc80;border:1px solid rgba(201,168,76,.2)">Featured · AI Strategy</span>
+                    <h3 class="serif text-3xl lg:text-4xl font-bold text-white leading-snug mt-4">5 Signs Your Business Is Ready for AI Transformation</h3>
+                </div>
+                <div class="relative flex items-center gap-4 mt-8">
+                    <div class="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold sans flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);color:#1a1208">NM</div>
+                    <div>
+                        <p class="sans font-semibold text-sm text-white">Nishant Mhatre</p>
+                        <p class="text-xs" style="color:rgba(245,237,224,.4)">15 Apr 2025 · 7 min read</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Content panel -->
+            <div class="bg-white p-10 flex flex-col justify-between">
+                <div>
+                    <p class="leading-relaxed mb-6" style="color:#5a4a35;font-size:.95rem">Most businesses know AI is important — but very few know <em>when</em> they're truly ready. In this guide, we break down the five clearest indicators that your organisation has the foundation, the data, and the leadership alignment to make AI work — and what to do if you're not there yet.</p>
+                    <ul class="space-y-2.5 mb-8">
+                        <li class="flex items-start gap-2.5 text-sm" style="color:#8a7a65"><div class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style="background:#c9a84c"></div>How to assess your data readiness in 30 minutes</li>
+                        <li class="flex items-start gap-2.5 text-sm" style="color:#8a7a65"><div class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style="background:#c9a84c"></div>The leadership questions every AI rollout requires</li>
+                        <li class="flex items-start gap-2.5 text-sm" style="color:#8a7a65"><div class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style="background:#c9a84c"></div>Why most AI pilots fail — and how to avoid it</li>
+                    </ul>
+                </div>
+                <a href="#cta" class="inline-flex items-center gap-2 sans font-bold text-sm gt-gold hover:opacity-70 transition-opacity">Read Full Article <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a>
+            </div>
+        </div>
+
+        <!-- Grid posts -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Post 1 -->
+            <div data-animate data-animate-delay="100" class="card-lift bg-white rounded-2xl overflow-hidden flex flex-col" style="border:1.5px solid rgba(201,168,76,.15);box-shadow:0 8px 32px rgba(0,0,0,.05)">
+                <div class="p-2">
+                    <div class="rounded-xl flex items-end p-6 min-h-36" style="background:linear-gradient(135deg,#0e0c10,#1a1510)">
+                        <div>
+                            <span class="pill mb-3" style="background:rgba(181,84,30,.15);color:#d4864a;border:1px solid rgba(181,84,30,.2);font-size:.65rem">Founder OS</span>
+                            <h3 class="serif text-xl font-bold text-white leading-snug">Why Every Founder Needs an AI Operating System in 2025</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-sm leading-relaxed mb-5 flex-1" style="color:#8a7a65">Running a startup without an AI layer today is like navigating without GPS — possible, but needlessly hard. Discover how SarathiOS gives founders clarity, speed, and strategic leverage.</p>
+                    <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(201,168,76,.1)">
+                        <span class="text-xs" style="color:#8a7a65">10 Apr 2025 · 5 min read</span>
+                        <a href="#cta" class="sans font-bold text-xs gt-copper hover:opacity-70 transition-opacity">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div data-animate data-animate-delay="200" class="card-lift bg-white rounded-2xl overflow-hidden flex flex-col" style="border:1.5px solid rgba(26,92,53,.15);box-shadow:0 8px 32px rgba(0,0,0,.05)">
+                <div class="p-2">
+                    <div class="rounded-xl flex items-end p-6 min-h-36" style="background:linear-gradient(135deg,#0a100d,#0d1a12)">
+                        <div>
+                            <span class="pill mb-3" style="background:rgba(34,160,90,.12);color:#22a05a;border:1px solid rgba(34,160,90,.2);font-size:.65rem">Interior AI</span>
+                            <h3 class="serif text-xl font-bold text-white leading-snug">How AI Is Revolutionising Home Renovation &amp; Interior Design</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-sm leading-relaxed mb-5 flex-1" style="color:#8a7a65">From budget overruns to vendor chaos, home renovation has always been stressful. HSI OS uses AI to bring order, transparency, and predictability to every project stage.</p>
+                    <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(26,92,53,.1)">
+                        <span class="text-xs" style="color:#8a7a65">3 Apr 2025 · 6 min read</span>
+                        <a href="#cta" class="sans font-bold text-xs gt-forest hover:opacity-70 transition-opacity">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div data-animate data-animate-delay="300" class="card-lift bg-white rounded-2xl overflow-hidden flex flex-col" style="border:1.5px solid rgba(181,84,30,.15);box-shadow:0 8px 32px rgba(0,0,0,.05)">
+                <div class="p-2">
+                    <div class="rounded-xl flex items-end p-6 min-h-36" style="background:linear-gradient(135deg,#110a06,#1a0f08)">
+                        <div>
+                            <span class="pill mb-3" style="background:rgba(181,84,30,.15);color:#d4864a;border:1px solid rgba(181,84,30,.2);font-size:.65rem">Life OS</span>
+                            <h3 class="serif text-xl font-bold text-white leading-snug">AI for NRIs: Managing Family Life Across Borders Without the Stress</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-sm leading-relaxed mb-5 flex-1" style="color:#8a7a65">Millions of NRIs juggle careers abroad while caring for ageing parents back home. HandleLife OS bridges that gap — with AI that handles the logistics so you can focus on the relationship.</p>
+                    <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(181,84,30,.1)">
+                        <span class="text-xs" style="color:#8a7a65">28 Mar 2025 · 7 min read</span>
+                        <a href="#cta" class="sans font-bold text-xs gt-copper hover:opacity-70 transition-opacity">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div data-animate class="card-lift bg-white rounded-2xl overflow-hidden flex flex-col" style="border:1.5px solid rgba(217,119,6,.15);box-shadow:0 8px 32px rgba(0,0,0,.05)">
+                <div class="p-2">
+                    <div class="rounded-xl flex items-end p-6 min-h-36" style="background:linear-gradient(135deg,#100c02,#1a1400)">
+                        <div>
+                            <span class="pill mb-3" style="background:rgba(217,119,6,.12);color:#c9a84c;border:1px solid rgba(217,119,6,.2);font-size:.65rem">Voice AI</span>
+                            <h3 class="serif text-xl font-bold text-white leading-snug">Voice AI vs Chatbots: Which Is Right for Your Business?</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-sm leading-relaxed mb-5 flex-1" style="color:#8a7a65">Both promise to automate customer conversations — but they serve very different needs. We break down the use cases, costs, and conversion rates so you can pick the right tool.</p>
+                    <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(217,119,6,.1)">
+                        <span class="text-xs" style="color:#8a7a65">20 Mar 2025 · 5 min read</span>
+                        <a href="#cta" class="sans font-bold text-xs gt-gold hover:opacity-70 transition-opacity">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 5 -->
+            <div data-animate data-animate-delay="100" class="card-lift bg-white rounded-2xl overflow-hidden flex flex-col" style="border:1.5px solid rgba(201,168,76,.15);box-shadow:0 8px 32px rgba(0,0,0,.05)">
+                <div class="p-2">
+                    <div class="rounded-xl flex items-end p-6 min-h-36" style="background:linear-gradient(135deg,#0e0c10,#16120e)">
+                        <div>
+                            <span class="pill mb-3" style="background:rgba(201,168,76,.12);color:#e8cc80;border:1px solid rgba(201,168,76,.2);font-size:.65rem">SME Growth</span>
+                            <h3 class="serif text-xl font-bold text-white leading-snug">How Swiss SMEs Are Using AI to Compete With Global Giants</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-sm leading-relaxed mb-5 flex-1" style="color:#8a7a65">Switzerland's small and mid-sized businesses punch above their weight — and AI is the multiplier. Real case studies from retail, manufacturing, and professional services.</p>
+                    <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(201,168,76,.1)">
+                        <span class="text-xs" style="color:#8a7a65">12 Mar 2025 · 8 min read</span>
+                        <a href="#cta" class="sans font-bold text-xs gt-gold hover:opacity-70 transition-opacity">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 6 -->
+            <div data-animate data-animate-delay="200" class="card-lift bg-white rounded-2xl overflow-hidden flex flex-col" style="border:1.5px solid rgba(26,92,53,.15);box-shadow:0 8px 32px rgba(0,0,0,.05)">
+                <div class="p-2">
+                    <div class="rounded-xl flex items-end p-6 min-h-36" style="background:linear-gradient(135deg,#0a100d,#0e1a10)">
+                        <div>
+                            <span class="pill mb-3" style="background:rgba(34,160,90,.1);color:#22a05a;border:1px solid rgba(34,160,90,.2);font-size:.65rem">Managed AI</span>
+                            <h3 class="serif text-xl font-bold text-white leading-snug">Why a Managed AI Retainer Is Smarter Than a One-Off Project</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 flex flex-col flex-1">
+                    <p class="text-sm leading-relaxed mb-5 flex-1" style="color:#8a7a65">AI isn't a one-and-done implementation — it's a living system that needs tuning, monitoring, and evolution. Here's why ongoing retainers consistently outperform big-bang deployments.</p>
+                    <div class="flex items-center justify-between pt-4" style="border-top:1px solid rgba(26,92,53,.1)">
+                        <span class="text-xs" style="color:#8a7a65">5 Mar 2025 · 6 min read</span>
+                        <a href="#cta" class="sans font-bold text-xs gt-forest hover:opacity-70 transition-opacity">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- View all -->
+        <div class="text-center mt-12" data-animate>
+            <a href="#cta" class="inline-flex items-center gap-2.5 sans font-bold px-8 py-4 rounded-xl text-sm transition-all" style="border:1.5px solid rgba(201,168,76,.3);color:#c9a84c;hover:background:rgba(201,168,76,.06)">
+                View All Articles
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+<section id="contact" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="text-center mb-16" data-animate>
+            <span class="section-label gt-gold">Get in Touch</span>
+            <div class="gold-line mx-auto mt-4 mb-6"></div>
+            <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">We'd Love to Hear<br>From You</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            <!-- Left — contact details + founders -->
+            <div data-animate>
+
+                <!-- Contact Cards -->
+                <div class="space-y-4 mb-10">
+                    <!-- Phone -->
+                    <div class="flex items-center gap-5 rounded-2xl p-5" style="background:#fdf8f0;border:1px solid rgba(201,168,76,.18)">
+                        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)">
+                            <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color:#8a7a65">Phone &amp; WhatsApp</p>
+                            <a href="tel:+41789055040" class="sans font-bold text-base hover:opacity-70 transition-opacity gt-gold block">+41 (0)78 905 50 40</a>
+                            <a href="tel:+919881149629" class="sans font-bold text-base hover:opacity-70 transition-opacity gt-gold block mt-0.5">+91 98811 49629</a>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="flex items-center gap-5 rounded-2xl p-5" style="background:#fdf8f0;border:1px solid rgba(181,84,30,.18)">
+                        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#b5541e,#d4864a)">
+                            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color:#8a7a65">Email</p>
+                            <a href="mailto:Info@FairITSolutions.ch" class="sans font-bold text-base gt-copper hover:opacity-70 transition-opacity">Info@FairITSolutions.ch</a>
+                        </div>
+                    </div>
+                    <!-- Hours -->
+                    <div class="flex items-center gap-5 rounded-2xl p-5" style="background:#fdf8f0;border:1px solid rgba(26,92,53,.18)">
+                        <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#1a5c35,#22a05a)">
+                            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-widest mb-0.5" style="color:#8a7a65">Business Hours</p>
+                            <p class="sans font-bold text-base" style="color:#1a1208">Mon – Fri, 9:00 AM – 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Offices -->
+                <div class="mb-10">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color:#8a7a65">Our Offices</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl p-5" style="background:#fdf8f0;border:1px solid rgba(201,168,76,.15)">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-5 h-5 rounded-md flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)">
+                                    <svg class="w-3 h-3" style="color:#1a1208" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                                </div>
+                                <span class="sans font-bold text-xs" style="color:#1a1208">Switzerland</span>
+                            </div>
+                            <p class="text-xs leading-relaxed" style="color:#8a7a65">Torus Swiss GmbH<br>Glärnischstrasse 7<br>9524 Zuzwil</p>
+                        </div>
+                        <div class="rounded-2xl p-5" style="background:#fdf8f0;border:1px solid rgba(181,84,30,.15)">
+                            <div class="flex items-center gap-2 mb-2">
+                                <div class="w-5 h-5 rounded-md flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)">
+                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                                </div>
+                                <span class="sans font-bold text-xs" style="color:#1a1208">Germany</span>
+                            </div>
+                            <p class="text-xs leading-relaxed" style="color:#8a7a65">Torus Swiss GmbH<br>Steinstrasse 25<br>20095 Hamburg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color:#8a7a65">Connect With Us</p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://www.linkedin.com/company/fair-it-solutions" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:opacity-80" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)" title="LinkedIn">
+                            <svg class="w-4 h-4" style="color:#1a1208" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/FairITSolutions" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:opacity-80" style="background:linear-gradient(135deg,#b5541e,#d4864a)" title="Facebook">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://wa.me/41789055040" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl flex items-center justify-center transition-all hover:opacity-80" style="background:linear-gradient(135deg,#1a5c35,#22a05a)" title="WhatsApp">
+                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right — Founders + CTA card -->
+            <div data-animate data-animate-delay="200">
+
+                <!-- Co-Founders -->
+                <div class="rounded-3xl p-8 mb-6" style="background:#fdf8f0;border:1px solid rgba(201,168,76,.18)">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-6" style="color:#8a7a65">Meet the Co-Founders</p>
+                    <div class="space-y-5">
+                        <!-- Nishant -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 text-lg font-bold sans" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);color:#1a1208">NM</div>
+                            <div class="flex-1">
+                                <p class="sans font-bold" style="color:#1a1208">Nishant Mhatre</p>
+                                <p class="text-xs mb-1.5" style="color:#8a7a65">Founder</p>
+                                <a href="mailto:Nishant@FairITSolutions.in" class="text-xs font-medium gt-gold hover:opacity-70 transition-opacity block">Nishant@FairITSolutions.in</a>
+                                <a href="tel:+919881149629" class="text-xs font-medium hover:opacity-70 transition-opacity block mt-0.5" style="color:#8a7a65">+91 98811 49629</a>
+                                <a href="https://www.linkedin.com/in/nishantmhatre" target="_blank" rel="noopener" class="text-xs font-medium hover:opacity-70 transition-opacity block mt-0.5 gt-gold">LinkedIn</a>
+                            </div>
+                        </div>
+                        <div class="h-px" style="background:rgba(201,168,76,.12)"></div>
+                        <!-- Annemarie -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 text-sm font-bold sans text-white" style="background:linear-gradient(135deg,#b5541e,#d4864a)">AMS</div>
+                            <div class="flex-1">
+                                <p class="sans font-bold" style="color:#1a1208">Annemarie M. Sickeler</p>
+                                <p class="text-xs mb-1.5" style="color:#8a7a65">Co-Founder</p>
+                                <a href="mailto:Info@FairITSolutions.ch" class="text-xs font-medium gt-copper hover:opacity-70 transition-opacity block">Info@FairITSolutions.ch</a>
+                                <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium hover:opacity-70 transition-opacity block mt-0.5 gt-copper">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick CTA card -->
+                <div class="rounded-3xl p-8 text-white" style="background:linear-gradient(135deg,#0e0c10,#1a1208);border:1px solid rgba(201,168,76,.18)">
+                    <p class="serif text-2xl font-bold mb-2">Ready to get started?</p>
+                    <p class="text-sm leading-relaxed mb-6" style="color:rgba(245,237,224,.5)">Drop us a message and we'll get back to you within 24 hours — no jargon, no pressure.</p>
+                    <a href="mailto:Info@FairITSolutions.ch" class="btn-gold inline-flex items-center gap-2 font-bold px-6 py-3 rounded-xl text-sm sans w-full justify-center">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        Email Info@FairITSolutions.ch
+                    </a>
+                    <a href="tel:+41789055040" class="mt-3 inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-xl text-sm sans w-full justify-center text-white/70 hover:text-white transition-all" style="border:1px solid rgba(201,168,76,.2)">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        Call +41 (0)78 905 50 40
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ CTA ══════════════════════════════ -->
+<section id="cta" class="cta-bg relative py-32 overflow-hidden">
+    <!-- Gold glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] opacity-12" style="background:radial-gradient(ellipse,#c9a84c,transparent);filter:blur(80px);border-radius:50%"></div>
+
+    <!-- Decorative top line -->
+    <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent)"></div>
+
+    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center" data-animate>
+        <span class="section-label gt-gold">Get Started</span>
+        <div class="gold-line mx-auto mt-5 mb-8"></div>
+        <h2 class="serif text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+            Your Better Every Day<br><span class="gt-hero italic">Starts Right Here.</span>
+        </h2>
+        <p class="mt-7 text-lg max-w-xl mx-auto leading-relaxed" style="color:rgba(245,237,224,.45)">
+            No jargon. No long contracts. Just AI that works for you — your business, your home, your life.
+        </p>
+
+        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="mailto:Info@FairITSolutions.ch" class="btn-gold inline-flex items-center gap-2.5 font-bold px-9 py-4 rounded-xl text-base sans">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                Book a Free Consultation
+            </a>
+            <a href="tel:+41789055040" class="inline-flex items-center gap-2.5 font-semibold px-9 py-4 rounded-xl text-base sans text-white/70 hover:text-white transition-all" style="border:1.5px solid rgba(201,168,76,.25)">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Call +41 (0)78 905 50 40
+            </a>
+        </div>
+
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm" style="color:rgba(245,237,224,.3)">
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(34,160,90,.3)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>No long-term contracts</div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(34,160,90,.3)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Reply within 24 hours</div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(34,160,90,.3)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Based in Switzerland</div>
+        </div>
+    </div>
+
+    <!-- Decorative bottom line -->
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)"></div>
+</section>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer style="background:#07060a;border-top:1px solid rgba(201,168,76,.1)" class="pt-16 pb-10">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <!-- Top row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12" style="border-bottom:1px solid rgba(201,168,76,.1)">
+
+            <!-- Brand -->
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-9 h-9 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 4px 12px rgba(201,168,76,.35)">
+                        <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0"/></svg>
+                    </div>
+                    <div>
+                        <span class="sans font-bold text-white text-sm block">FairIT Solutions</span>
+                        <span class="text-[9px] font-semibold tracking-widest uppercase" style="color:rgba(201,168,76,.45)">AI FOR EVERYDAY LIFE</span>
+                    </div>
+                </div>
+                <p class="text-xs leading-relaxed mb-5" style="color:rgba(245,237,224,.3)">Building AI Operating Systems for Founders, Homes &amp; Life. Based in Switzerland.</p>
+                <div class="flex items-center gap-3">
+                    <a href="https://www.linkedin.com/company/fair-it-solutions" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg flex items-center justify-center hover:opacity-70 transition-opacity" style="background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.2)">
+                        <svg class="w-3.5 h-3.5" style="color:#c9a84c" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/FairITSolutions" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg flex items-center justify-center hover:opacity-70 transition-opacity" style="background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.2)">
+                        <svg class="w-3.5 h-3.5" style="color:#c9a84c" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://wa.me/41789055040" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg flex items-center justify-center hover:opacity-70 transition-opacity" style="background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.2)">
+                        <svg class="w-3.5 h-3.5" style="color:#c9a84c" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:rgba(201,168,76,.6)">Contact</p>
+                <ul class="space-y-3 text-xs" style="color:rgba(245,237,224,.4)">
+                    <li><a href="mailto:Info@FairITSolutions.ch" class="hover:opacity-80 transition-opacity" style="color:rgba(245,237,224,.5)">Info@FairITSolutions.ch</a></li>
+                    <li><a href="tel:+41789055040" class="hover:opacity-80 transition-opacity" style="color:rgba(245,237,224,.5)">+41 (0)78 905 50 40</a></li>
+                    <li style="color:rgba(245,237,224,.3)">Mon – Fri · 9:00 AM – 6:00 PM</li>
+                </ul>
+            </div>
+
+            <!-- Offices -->
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:rgba(201,168,76,.6)">Offices</p>
+                <div class="space-y-4 text-xs" style="color:rgba(245,237,224,.4)">
+                    <div>
+                        <p class="font-semibold mb-1" style="color:rgba(245,237,224,.6)">Switzerland</p>
+                        <p class="leading-relaxed">Torus Swiss GmbH<br>Glärnischstrasse 7, 9524 Zuzwil</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold mb-1" style="color:rgba(245,237,224,.6)">Germany</p>
+                        <p class="leading-relaxed">Torus Swiss GmbH<br>Steinstrasse 25, 20095 Hamburg</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Founders -->
+            <div>
+                <p class="text-xs font-bold uppercase tracking-widest mb-5" style="color:rgba(201,168,76,.6)">Co-Founders</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-bold sans" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);color:#1a1208">NM</div>
+                        <div>
+                            <p class="text-xs font-semibold" style="color:rgba(245,237,224,.7)">Nishant Mhatre</p>
+                            <p class="text-[10px]" style="color:rgba(245,237,224,.3)">Founder</p>
+                            <a href="mailto:Nishant@FairITSolutions.in" class="text-[11px] hover:opacity-70 transition-opacity block" style="color:rgba(201,168,76,.6)">Nishant@FairITSolutions.in</a>
+                            <a href="tel:+919881149629" class="text-[11px] hover:opacity-70 transition-opacity block" style="color:rgba(245,237,224,.3)">+91 98811 49629</a>
+                            <a href="https://www.linkedin.com/in/nishantmhatre" target="_blank" rel="noopener" class="text-[11px] hover:opacity-70 transition-opacity block" style="color:rgba(201,168,76,.5)">LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 text-[10px] font-bold sans text-white" style="background:linear-gradient(135deg,#b5541e,#d4864a)">AMS</div>
+                        <div>
+                            <p class="text-xs font-semibold" style="color:rgba(245,237,224,.7)">Annemarie M. Sickeler</p>
+                            <a href="mailto:Info@FairITSolutions.ch" class="text-[11px] hover:opacity-70 transition-opacity block" style="color:rgba(181,84,30,.7)">Info@FairITSolutions.ch</a>
+                            <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-[11px] hover:opacity-70 transition-opacity block" style="color:rgba(181,84,30,.7)">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom row -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8">
+            <p class="text-xs" style="color:rgba(245,237,224,.2)">&copy; 2025 FairIT Solutions · Torus Swiss GmbH · All rights reserved.</p>
+            <div class="flex items-center gap-2 text-xs" style="color:rgba(245,237,224,.2)">
+                <div class="w-2 h-2 rounded-full" style="background:#22a05a;animation:pulse 2s ease-in-out infinite"></div>
+                All systems operational
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('[data-animate]').forEach(el => obs.observe(el));
+
+// Navbar on scroll
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('navbar-scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+});
+</script>
+
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'af,sq,am,ar,hy,az,eu,be,bn,bs,bg,ca,zh-CN,zh-TW,hr,cs,da,nl,en,et,tl,fi,fr,fy,gl,ka,de,el,gu,ht,ha,hi,hu,is,ig,id,ga,it,ja,kn,kk,km,ko,ku,lo,lv,lt,mk,ms,ml,mt,mr,mn,my,ne,no,fa,pl,pt,pa,ro,ru,sr,si,sk,sl,so,es,sw,sv,ta,te,th,tr,uk,ur,vi,cy,xh,yo,zu',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE LAYER
+============================================================ */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        @apply font-sans text-charcoal-800 bg-white;
+    }
+
+    ::selection {
+        @apply bg-brand-600 text-white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-display tracking-tight;
+    }
+}
+
+/* ============================================================
+   COMPONENT LAYER
+============================================================ */
+@layer components {
+
+    /* ---- Navigation ---- */
+    .nav-link {
+        @apply text-charcoal-600 hover:text-charcoal-950 transition-colors duration-200 text-sm font-medium;
+    }
+
+    .nav-link-active {
+        @apply text-charcoal-950 font-semibold;
+    }
+
+    /* ---- Buttons ---- */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-glow text-sm;
+    }
+
+    .btn-primary-lg {
+        @apply inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-sm hover:shadow-glow text-base;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 bg-white hover:bg-charcoal-50 text-charcoal-800 font-semibold px-6 py-3 rounded-xl transition-all duration-200 border border-charcoal-200 hover:border-charcoal-300 text-sm;
+    }
+
+    .btn-secondary-lg {
+        @apply inline-flex items-center gap-2 bg-white hover:bg-charcoal-50 text-charcoal-800 font-semibold px-8 py-4 rounded-xl transition-all duration-200 border border-charcoal-200 hover:border-charcoal-300 text-base;
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center gap-2 text-charcoal-700 hover:text-charcoal-950 font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm;
+    }
+
+    .btn-outline-white {
+        @apply inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 backdrop-blur-sm text-sm hover:bg-white/10;
+    }
+
+    /* ---- Cards ---- */
+    .card {
+        @apply bg-white rounded-2xl border border-charcoal-100 shadow-card hover:shadow-card-hover transition-all duration-300;
+    }
+
+    .card-glass {
+        @apply bg-white/60 backdrop-blur-xl rounded-2xl border border-white/40 shadow-card;
+    }
+
+    .service-card {
+        @apply bg-white rounded-2xl p-8 border border-charcoal-100 hover:border-brand-200 shadow-card hover:shadow-card-hover transition-all duration-300;
+    }
+
+    .product-card {
+        @apply bg-gradient-to-br from-charcoal-950 to-charcoal-800 rounded-2xl p-8 text-white hover:shadow-glow-lg transition-all duration-300;
+    }
+
+    /* ---- Section Styles ---- */
+    .section-padding {
+        @apply py-20 lg:py-28;
+    }
+
+    .section-padding-sm {
+        @apply py-12 lg:py-16;
+    }
+
+    .container-tight {
+        @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .container-wide {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    /* ---- Typography ---- */
+    .section-label {
+        @apply text-brand-600 font-semibold text-sm uppercase tracking-widest;
+    }
+
+    .section-title {
+        @apply text-4xl lg:text-5xl font-bold text-charcoal-950 leading-tight;
+    }
+
+    .section-title-white {
+        @apply text-4xl lg:text-5xl font-bold text-white leading-tight;
+    }
+
+    .section-subtitle {
+        @apply text-lg text-charcoal-500 max-w-2xl leading-relaxed;
+    }
+
+    /* ---- Hero ---- */
+    .hero-gradient {
+        background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.12) 0%, transparent 70%);
+    }
+
+    /* ---- Badge ---- */
+    .badge {
+        @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+    }
+
+    .badge-blue {
+        @apply bg-brand-50 text-brand-700 border border-brand-100;
+    }
+
+    .badge-green {
+        @apply bg-emerald-50 text-emerald-700 border border-emerald-100;
+    }
+
+    /* ---- Forms ---- */
+    .form-input {
+        @apply w-full px-4 py-3 rounded-xl border border-charcoal-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition-all duration-200 text-charcoal-800 placeholder-charcoal-400 text-sm;
+    }
+
+    .form-label {
+        @apply block text-sm font-semibold text-charcoal-700 mb-1.5;
+    }
+
+    .form-error {
+        @apply text-red-600 text-xs mt-1;
+    }
+
+    /* ---- Icons ---- */
+    .icon-box {
+        @apply w-12 h-12 rounded-xl flex items-center justify-center;
+    }
+
+    .icon-box-blue {
+        @apply bg-brand-100 text-brand-600;
+    }
+
+    .icon-box-dark {
+        @apply bg-charcoal-100 text-charcoal-700;
+    }
+
+    /* ---- Dividers ---- */
+    .divider {
+        @apply border-t border-charcoal-100;
+    }
+
+    /* ---- Stat Cards ---- */
+    .stat-card {
+        @apply text-center;
+    }
+
+    .stat-number {
+        @apply text-4xl lg:text-5xl font-bold text-charcoal-950;
+    }
+
+    .stat-label {
+        @apply text-sm text-charcoal-500 mt-1;
+    }
+}
+
+/* ============================================================
+   UTILITY LAYER
+============================================================ */
+@layer utilities {
+    .text-gradient {
+        @apply bg-gradient-to-r from-brand-600 to-blue-400 bg-clip-text text-transparent;
+    }
+
+    .text-gradient-dark {
+        @apply bg-gradient-to-r from-charcoal-950 to-charcoal-600 bg-clip-text text-transparent;
+    }
+
+    .bg-grid {
+        background-image:
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+    }
+
+    .bg-dot {
+        background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* ============================================================
+   SCROLL ANIMATIONS
+============================================================ */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease-out, transform 0.65s ease-out;
+}
+
+[data-animate].animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-animate-delay="100"] { transition-delay: 0.1s; }
+[data-animate-delay="200"] { transition-delay: 0.2s; }
+[data-animate-delay="300"] { transition-delay: 0.3s; }
+[data-animate-delay="400"] { transition-delay: 0.4s; }
+[data-animate-delay="500"] { transition-delay: 0.5s; }
+[data-animate-delay="600"] { transition-delay: 0.6s; }
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+    @apply bg-white/95 backdrop-blur-xl border-b border-charcoal-100 shadow-sm;
+}
+
+/* ============================================================
+   MEGA MENU
+============================================================ */
+.mega-menu {
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* ============================================================
+   HERO GRID PATTERN
+============================================================ */
+.hero-grid {
+    background-image:
+        linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+/* ============================================================
+   TRUST STRIP
+============================================================ */
+.trust-strip {
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+/* ============================================================
+   GRADIENT BORDER CARD
+============================================================ */
+.gradient-border {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(37, 99, 235, 0.05));
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+============================================================ */
+.product-glow {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.05), 0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* ============================================================
+   BLOG
+============================================================ */
+.prose-fairit {
+    @apply prose prose-gray max-w-none;
+}
+
+.prose-fairit h2 { @apply text-2xl font-bold text-charcoal-950 mt-10 mb-4; }
+.prose-fairit h3 { @apply text-xl font-bold text-charcoal-900 mt-8 mb-3; }
+.prose-fairit p  { @apply text-charcoal-600 leading-relaxed mb-5; }
+.prose-fairit a  { @apply text-brand-600 hover:text-brand-800 underline; }
+.prose-fairit ul { @apply space-y-2; }
+.prose-fairit li { @apply text-charcoal-600; }
+
+/* ============================================================
+   ADMIN
+============================================================ */
+.admin-sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-charcoal-600 hover:bg-charcoal-100 hover:text-charcoal-950 transition-all;
+}
+
+.admin-sidebar-link.active {
+    @apply bg-brand-50 text-brand-700 font-semibold;
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes shimmer {
+    from { background-position: -200% 0; }
+    to   { background-position: 200% 0; }
+}
+
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Mobile menu transitions */
+#mobile-menu {
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#mobile-menu.open {
+    max-height: 600px;
+    opacity: 1;
+}

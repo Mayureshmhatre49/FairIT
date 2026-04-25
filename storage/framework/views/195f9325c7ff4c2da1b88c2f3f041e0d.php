@@ -1,0 +1,2 @@
+<?php echo $__env->make('services._detail', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+<?php /**PATH /Users/mayuresh/Projects/Nishant-Dada/FairIT Solutions/FairITSolutions Website/resources/views/services/advisory.blade.php ENDPATH**/ ?>
