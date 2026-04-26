@@ -10,15 +10,23 @@ class HomeController extends Controller
 {
     public function index(): View
     {
-        $testimonials = Testimonial::where('is_active', true)
-            ->orderBy('order')
-            ->take(6)
-            ->get();
+        try {
+            $testimonials = Testimonial::where('is_active', true)
+                ->orderBy('order')
+                ->take(6)
+                ->get();
+        } catch (\Exception $e) {
+            $testimonials = collect();
+        }
 
-        $latestPosts = Post::published()
-            ->orderByDesc('published_at')
-            ->take(3)
-            ->get();
+        try {
+            $latestPosts = Post::published()
+                ->orderByDesc('published_at')
+                ->take(3)
+                ->get();
+        } catch (\Exception $e) {
+            $latestPosts = collect();
+        }
 
         return view('home', compact('testimonials', 'latestPosts'));
     }

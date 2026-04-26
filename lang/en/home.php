@@ -1,0 +1,140 @@
+<?php
+
+return [
+    'hero' => [
+        'badge'       => 'Now serving founders & enterprises globally',
+        'headline_1'  => 'AI Systems for',
+        'headline_2'  => 'Growth, Leadership',
+        'headline_3'  => '& Modern Life',
+        'subheadline' => 'We help founders and businesses unlock growth through AI advisory, custom AI systems, and intelligent operating systems built for the real world.',
+        'cta_primary' => 'Book Consultation',
+        'cta_secondary' => 'Explore Products',
+        'trust_label' => 'Trusted by ambitious founders, modern businesses & future-ready teams',
+        'trust_items' => ['Startups', 'SMEs', 'Interior Firms', 'Hospitality', 'Real Estate', 'Professional Services'],
+        'scroll'      => 'Scroll',
+    ],
+    'stats' => [
+        ['value' => '95%',  'label' => 'AI adoption rate',          'num' => '95'],
+        ['value' => '40+',  'label' => 'Languages supported',       'num' => '40'],
+        ['value' => '3×',   'label' => 'Average productivity gain', 'num' => '3'],
+        ['value' => '24/7', 'label' => 'AI systems uptime',         'num' => '24'],
+    ],
+    'pillars' => [
+        'label'    => 'What We Build',
+        'title'    => 'One Mission. Three Domains.',
+        'items'    => [
+            [
+                'title'    => 'Build Better Companies',
+                'desc'     => 'AI transformation advisory, custom copilots, voice automation, and managed retainers for organisations that want to operate at a higher level.',
+                'features' => ['AI readiness audits', 'Custom AI copilots', 'Voice & chat automation', 'Managed AI teams'],
+                'cta'      => 'Explore Services',
+            ],
+            [
+                'title'    => 'Build Better Homes',
+                'desc'     => 'HSI OS — the AI operating system for interior design, renovation, and home management. For homeowners, architects, and interior firms.',
+                'features' => ['Project management AI', 'Vendor coordination', 'Budget intelligence', 'Client portals'],
+                'cta'      => 'Explore HSI OS',
+            ],
+            [
+                'title'    => 'Build Better Lives',
+                'desc'     => 'HandleLife OS — intelligent life management for modern families, NRIs, busy professionals, and anyone who wants to live with more clarity.',
+                'features' => ['Family command centre', 'Health & wellness AI', 'Finance intelligence', 'Life OS dashboard'],
+                'cta'      => 'Explore HandleLife OS',
+            ],
+        ],
+    ],
+    'services' => [
+        'label'       => 'What We Do',
+        'title'       => 'Premium AI Services',
+        'subtitle'    => 'Consulting, implementation, and recurring AI systems for growth-focused organisations.',
+        'view_all'    => 'View All Services',
+        'items'       => [
+            ['title' => 'AI Transformation Advisory',         'desc' => 'AI readiness audits, roadmap creation, ROI prioritisation, and leadership workshops to guide your AI transformation.',         'cta' => 'Book Strategy Session'],
+            ['title' => 'Custom AI Copilot Development',      'desc' => 'Build internal AI copilots for CEOs, sales, HR, operations and support teams — trained on your data.',                       'cta' => 'Request Demo'],
+            ['title' => 'Voice AI & Conversational Automation','desc' => 'AI voice callers, multilingual bots, booking bots, support bots and WhatsApp automation at enterprise scale.',              'cta' => 'See Use Cases'],
+            ['title' => 'Managed AI Retainers',               'desc' => 'Monthly AI optimisation, bot management, workflow enhancement, reporting automation, and innovation support.',               'cta' => 'Talk to Expert'],
+            ['title' => 'Founder Growth Advisory',            'desc' => 'High-level strategic AI systems for founders, business owners, and leaders who demand more from their operations.',           'cta' => 'Apply Now'],
+        ],
+    ],
+    'products' => [
+        'label'    => 'Our Products',
+        'title'    => 'AI Operating Systems',
+        'subtitle' => 'Scalable products designed to solve real-world complexity — for founders, homes, and life.',
+        'explore'  => 'Explore',
+        'items'    => [
+            [
+                'tag'      => 'Founder OS',
+                'name'     => 'SarathiOS',
+                'tagline'  => 'The AI brain for ambitious founders and CEOs.',
+                'desc'     => 'A complete AI operating system for startup founders and decision-makers. Command centre, strategy copilot, team alignment, and fundraising readiness in one intelligent system.',
+                'features' => ['Founder dashboard', 'Growth command centre', 'AI strategy copilot', 'Decision support engine', 'Team alignment tools', 'Fundraising readiness'],
+            ],
+            [
+                'tag'      => 'Interior OS',
+                'name'     => 'HSI OS',
+                'tagline'  => 'The AI brain for interior design and renovation.',
+                'desc'     => 'AI-powered project management, client portals, vendor coordination, and budget intelligence for interior designers, architects, and homeowners.',
+                'features' => ['Project timeline AI', 'Client portal', 'Vendor coordination', 'Budget intelligence', 'Design brief AI', 'Progress tracking'],
+            ],
+            [
+                'tag'      => 'Life OS',
+                'name'     => 'HandleLife OS',
+                'tagline'  => 'The AI brain for modern family life.',
+                'desc'     => 'Intelligent life management for families, NRIs, busy professionals, and anyone who wants to live with less chaos and more clarity.',
+                'features' => ['Family command centre', 'Health & wellness AI', 'Finance intelligence', 'School & schedule AI', 'NRI services', 'Emergency response'],
+            ],
+        ],
+    ],
+    'why' => [
+        'label'    => 'Our Difference',
+        'title_1'  => 'Most Companies Buy Tools.',
+        'title_2'  => 'We Build Systems.',
+        'body'     => 'The difference between an AI tool and an AI system is the difference between a hammer and a house. We build the house.',
+        'cta_primary'   => 'Start Your Transformation',
+        'cta_secondary' => 'Learn About Us',
+        'points'   => [
+            ['title' => 'Faster Execution',        'desc' => 'AI systems reduce decision lag, automate repetitive tasks, and free your team to focus on what moves the needle.'],
+            ['title' => 'Better Decisions',        'desc' => 'Real-time intelligence, trend detection, and scenario modelling that turns data into confident action.'],
+            ['title' => 'Lower Operational Chaos', 'desc' => 'Automated workflows, intelligent routing, and proactive alerts eliminate the noise that drains organisations.'],
+            ['title' => 'AI That Actually Gets Used', 'desc' => 'We design for adoption, not just capability. Our systems achieve 90%+ usage rates because they fit how people actually work.'],
+            ['title' => 'Measurable ROI',          'desc' => 'Every engagement includes clear success metrics, regular performance reporting, and proven ROI frameworks.'],
+        ],
+    ],
+    'industries' => [
+        'label'    => 'Who We Serve',
+        'title'    => 'Industries We Transform',
+        'subtitle' => 'AI solutions tailored to the unique challenges and opportunities of every sector.',
+        'items'    => [
+            'Startups', 'SMEs', 'Real Estate', 'Hospitality',
+            'Interior Design', 'Healthcare', 'Education', 'Professional Services',
+        ],
+    ],
+    'testimonials' => [
+        'label' => 'Social Proof',
+        'title' => 'What Our Clients Say',
+        'items' => [
+            ['name' => 'Rajiv Sharma',  'role' => 'CEO, TechScale Ventures',        'content' => 'FairIT transformed how we operate. Our AI copilot handles 80% of internal queries — saving us 20+ hours per week. The ROI in month one paid for the entire engagement.'],
+            ['name' => 'Priya Mehta',   'role' => 'Operations Director, Horizon Group', 'content' => 'The voice AI they built for our booking line is incredible. Bookings are up 34% and our team handles zero inbound calls. Exceptional execution.'],
+            ['name' => 'Marcus Klein',  'role' => 'Founder, NextGen Properties',    'content' => 'The Founder Growth Advisory programme completely changed how I make decisions. I now have a system, not just a vision. Worth every franc.'],
+        ],
+    ],
+    'insights' => [
+        'label'    => 'Latest Thinking',
+        'title'    => 'Insights & Perspectives',
+        'view_all' => 'View All Insights',
+    ],
+    'cta' => [
+        'label'      => 'Get Started',
+        'title_1'    => 'Ready to Build Your',
+        'title_2'    => 'AI Advantage?',
+        'body'       => 'Join the growing number of founders and businesses operating with AI intelligence at their core.',
+        'cta_primary'   => 'Book Consultation',
+        'cta_secondary' => 'Contact Us',
+        'trust_items'   => [
+            'No long-term contracts required',
+            '24h response guaranteed',
+            'Confidentiality assured',
+            'Based in Switzerland',
+        ],
+    ],
+];

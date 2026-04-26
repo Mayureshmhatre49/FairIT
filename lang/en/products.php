@@ -1,0 +1,67 @@
+<?php
+
+return [
+    'hero' => [
+        'label'    => 'Our Products',
+        'title'    => 'AI Operating Systems',
+        'subtitle' => 'Three purpose-built AI products solving real-world complexity — for founders who need leverage, homes that need intelligence, and lives that need order.',
+    ],
+    'sarathios' => [
+        'tag'      => 'Founder OS',
+        'name'     => 'SarathiOS',
+        'tagline'  => 'The AI brain for startup founders, CEOs, and decision-makers. From growth strategy to team alignment — command your business from one intelligent system.',
+        'desc'     => 'Built for founders who are done juggling spreadsheets, Notion docs, and WhatsApp chains. SarathiOS centralises your entire operating system into one AI-powered command centre — so you can move faster, decide better, and build smarter.',
+        'features' => ['Founder dashboard', 'Growth command centre', 'AI strategy copilot', 'Decision support engine', 'Team alignment tools', 'Fundraising readiness'],
+        'cta'      => 'Explore SarathiOS →',
+        'dashboard_title' => 'Growth Command Centre',
+        'live_badge'      => 'Live',
+        'metrics'         => [
+            ['label' => 'Revenue',       'value' => '+34%'],
+            ['label' => 'Pipeline',      'value' => '₹2.4Cr'],
+            ['label' => 'Team Velocity', 'value' => '8.2/10'],
+            ['label' => 'Burn Rate',     'value' => 'On Track'],
+        ],
+        'insight_label' => 'AI Copilot Insight',
+        'insight_text'  => '"Based on Q3 data, prioritising enterprise channel could increase MRR by 28% in 90 days."',
+    ],
+    'hsios' => [
+        'tag'      => 'Interior OS',
+        'name'     => 'HSI OS',
+        'tagline'  => 'The AI brain for interior design, renovation, and home execution. For homeowners, architects, contractors, and interior firms.',
+        'desc'     => 'HSI OS ends the chaos of renovation. Intelligent project management, vendor coordination, budget tracking, and client communication — all automated and intelligent.',
+        'features' => ['Project timeline AI', 'Client portal', 'Vendor coordination', 'Budget intelligence', 'Progress tracking', 'Design brief AI'],
+        'cta'      => 'Explore HSI OS →',
+        'dashboard_title' => 'Project Overview',
+        'progress_badge'  => 'In Progress',
+        'bars'            => [
+            ['label' => 'Timeline',   'value' => 'Week 8/14', 'pct' => '57%'],
+            ['label' => 'Budget',     'value' => '₹84L / 1.2Cr', 'pct' => '70%'],
+            ['label' => 'Tasks Done', 'value' => '142/198',   'pct' => '72%'],
+        ],
+        'alert_label' => 'AI Alert',
+        'alert_text'  => '"Tile delivery delayed 4 days. Timeline auto-adjusted. Contractor notified."',
+    ],
+    'handlelife' => [
+        'tag'      => 'Life OS',
+        'name'     => 'HandleLife OS',
+        'tagline'  => 'The AI brain for modern family life. For families, NRIs, busy professionals, and anyone who wants to live with less chaos and more clarity.',
+        'desc'     => 'HandleLife OS is your family\'s command centre. Health, finances, school, emergencies, and daily life — intelligently orchestrated so you can focus on what actually matters.',
+        'features' => ['Family command centre', 'Health & wellness AI', 'Finance intelligence', 'School & schedule AI', 'NRI services', 'Emergency response'],
+        'cta'      => 'Explore HandleLife OS →',
+        'dashboard_title' => 'Family Dashboard',
+        'active_badge'    => 'Active',
+        'metrics'         => [
+            ['label' => 'Health Check',  'value' => '3 members due'],
+            ['label' => 'Finances',      'value' => 'CHF 4,200 saved'],
+            ['label' => 'School Events', 'value' => '2 upcoming'],
+            ['label' => 'Services',      'value' => '1 renewal due'],
+        ],
+        'reminder_label' => 'Life OS Reminder',
+        'reminder_text'  => '"Car insurance renewal in 14 days. Renewal quote ready — save 18%."',
+    ],
+    'cta' => [
+        'title'    => 'Which AI OS Is Right for You?',
+        'subtitle' => 'Book a discovery call and we\'ll help you find the perfect fit.',
+        'button'   => 'Book Discovery Call',
+    ],
+];

@@ -10,13 +10,13 @@
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.2) 0%, transparent 70%);"></div>
     <div class="relative container-tight text-center">
         <div data-animate>
-            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">Start Here</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">Book Your AI Consultation</h1>
+            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('consultation.hero.label') }}</span>
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{{ __('consultation.hero.title') }}</h1>
             <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-                A focused 45-minute strategy session to understand your goals and map out your AI opportunity. No fluff, no sales pitch — just clarity.
+                {{ __('consultation.hero.subtitle') }}
             </p>
             <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-charcoal-400">
-                @foreach(['45-minute focused session', 'No commitment required', 'Expert AI strategist', 'Actionable next steps'] as $t)
+                @foreach(__('consultation.hero.badges') as $t)
                 <div class="flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5 text-brand-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                     {{ $t }}
@@ -33,14 +33,9 @@
 
             {{-- What to Expect --}}
             <div data-animate class="space-y-6">
-                <h2 class="text-xl font-bold text-charcoal-950">What to Expect</h2>
+                <h2 class="text-xl font-bold text-charcoal-950">{{ __('consultation.expect.title') }}</h2>
                 <div class="space-y-4">
-                    @foreach([
-                        ['num' => '1', 'title' => 'Discovery (15 min)', 'desc' => 'We learn about your business, goals, and current challenges.'],
-                        ['num' => '2', 'title' => 'AI Assessment (15 min)', 'desc' => 'We identify your highest-impact AI opportunities and quick wins.'],
-                        ['num' => '3', 'title' => 'Roadmap Preview (10 min)', 'desc' => 'We outline a practical path forward with clear next steps.'],
-                        ['num' => '4', 'title' => 'Q&A (5 min)', 'desc' => 'Open floor for any questions, concerns, or ideas.'],
-                    ] as $step)
+                    @foreach(__('consultation.expect.steps') as $step)
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-full bg-brand-600 text-white font-bold text-sm flex items-center justify-center flex-shrink-0">{{ $step['num'] }}</div>
                         <div>
@@ -52,15 +47,15 @@
                 </div>
 
                 <div class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 mt-8">
-                    <div class="text-sm font-bold text-charcoal-950 mb-2">Completely Free</div>
-                    <p class="text-charcoal-500 text-xs leading-relaxed">This consultation is complimentary. We believe you should understand your opportunity before making any financial commitment.</p>
+                    <div class="text-sm font-bold text-charcoal-950 mb-2">{{ __('consultation.expect.free_title') }}</div>
+                    <p class="text-charcoal-500 text-xs leading-relaxed">{{ __('consultation.expect.free_subtitle') }}</p>
                 </div>
             </div>
 
             {{-- Consultation Form --}}
             <div data-animate data-animate-delay="200" class="lg:col-span-2">
                 <div class="bg-charcoal-50 rounded-2xl p-8 border border-charcoal-100">
-                    <h2 class="text-2xl font-bold text-charcoal-950 mb-8">Tell Us About Your Needs</h2>
+                    <h2 class="text-2xl font-bold text-charcoal-950 mb-8">{{ __('consultation.form.title') }}</h2>
 
                     @if($errors->any())
                     <div class="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
@@ -76,53 +71,45 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label for="name" class="form-label">Full Name <span class="text-red-500">*</span></label>
-                                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="Your name" class="form-input @error('name') border-red-400 @enderror" required>
+                                <label for="name" class="form-label">{{ __('consultation.form.name_label') }} <span class="text-red-500">*</span></label>
+                                <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder="{{ __('consultation.form.name_placeholder') }}" class="form-input @error('name') border-red-400 @enderror" required>
                                 @error('name')<p class="form-error">{{ $message }}</p>@enderror
                             </div>
                             <div>
-                                <label for="email" class="form-label">Work Email <span class="text-red-500">*</span></label>
-                                <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="you@company.com" class="form-input @error('email') border-red-400 @enderror" required>
+                                <label for="email" class="form-label">{{ __('consultation.form.email_label') }} <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder="{{ __('consultation.form.email_placeholder') }}" class="form-input @error('email') border-red-400 @enderror" required>
                                 @error('email')<p class="form-error">{{ $message }}</p>@enderror
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label for="phone" class="form-label">Phone / WhatsApp</label>
-                                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="+41 00 000 00 00" class="form-input">
+                                <label for="phone" class="form-label">{{ __('consultation.form.phone_label') }}</label>
+                                <input type="tel" id="phone" name="phone" value="{{ old('phone') }}" placeholder="{{ __('consultation.form.phone_placeholder') }}" class="form-input">
                             </div>
                             <div>
-                                <label for="company" class="form-label">Company Name</label>
-                                <input type="text" id="company" name="company" value="{{ old('company') }}" placeholder="Your company" class="form-input">
+                                <label for="company" class="form-label">{{ __('consultation.form.company_label') }}</label>
+                                <input type="text" id="company" name="company" value="{{ old('company') }}" placeholder="{{ __('consultation.form.company_placeholder') }}" class="form-input">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label for="company_size" class="form-label">Company Size</label>
+                                <label for="company_size" class="form-label">{{ __('consultation.form.size_label') }}</label>
                                 <select id="company_size" name="company_size" class="form-input">
-                                    <option value="">Select...</option>
-                                    <option value="Solo / 1 person">Solo / 1 person</option>
-                                    <option value="2-10 employees">2–10 employees</option>
-                                    <option value="11-50 employees">11–50 employees</option>
-                                    <option value="51-200 employees">51–200 employees</option>
-                                    <option value="200+ employees">200+ employees</option>
+                                    <option value="">{{ __('consultation.form.size_placeholder') }}</option>
+                                    @foreach(__('consultation.form.size_options') as $opt)
+                                    <option value="{{ $opt }}">{{ $opt }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div>
-                                <label for="service" class="form-label">Primary Interest <span class="text-red-500">*</span></label>
+                                <label for="service" class="form-label">{{ __('consultation.form.service_label') }} <span class="text-red-500">*</span></label>
                                 <select id="service" name="service" class="form-input @error('service') border-red-400 @enderror" required>
-                                    <option value="">Select a service...</option>
-                                    <option value="AI Transformation Advisory">AI Transformation Advisory</option>
-                                    <option value="Custom AI Copilot Development">Custom AI Copilot Development</option>
-                                    <option value="Voice AI & Conversational Automation">Voice AI & Conversational Automation</option>
-                                    <option value="Managed AI Retainers">Managed AI Retainers</option>
-                                    <option value="Founder Growth Advisory">Founder Growth Advisory</option>
-                                    <option value="SarathiOS">SarathiOS — Founder OS</option>
-                                    <option value="HSI OS">HSI OS — Interior OS</option>
-                                    <option value="HandleLife OS">HandleLife OS — Life OS</option>
-                                    <option value="Not sure — need guidance">Not sure — need guidance</option>
+                                    <option value="">{{ __('consultation.form.service_placeholder') }}</option>
+                                    @foreach(__('consultation.form.service_options') as $opt)
+                                    <option value="{{ $opt }}">{{ $opt }}</option>
+                                    @endforeach
                                 </select>
                                 @error('service')<p class="form-error">{{ $message }}</p>@enderror
                             </div>
@@ -130,46 +117,42 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
-                                <label for="budget" class="form-label">Approximate Budget</label>
+                                <label for="budget" class="form-label">{{ __('consultation.form.budget_label') }}</label>
                                 <select id="budget" name="budget" class="form-input">
-                                    <option value="">Prefer not to say</option>
-                                    <option value="Under CHF 5,000">Under CHF 5,000</option>
-                                    <option value="CHF 5,000 - 20,000">CHF 5,000 – 20,000</option>
-                                    <option value="CHF 20,000 - 50,000">CHF 20,000 – 50,000</option>
-                                    <option value="CHF 50,000 - 100,000">CHF 50,000 – 100,000</option>
-                                    <option value="CHF 100,000+">CHF 100,000+</option>
+                                    <option value="">{{ __('consultation.form.budget_placeholder') }}</option>
+                                    @foreach(__('consultation.form.budget_options') as $opt)
+                                    <option value="{{ $opt }}">{{ $opt }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div>
-                                <label for="timeline" class="form-label">Desired Timeline</label>
+                                <label for="timeline" class="form-label">{{ __('consultation.form.timeline_label') }}</label>
                                 <select id="timeline" name="timeline" class="form-input">
-                                    <option value="">Select...</option>
-                                    <option value="ASAP">ASAP</option>
-                                    <option value="1-3 months">1–3 months</option>
-                                    <option value="3-6 months">3–6 months</option>
-                                    <option value="6-12 months">6–12 months</option>
-                                    <option value="Exploring / no rush">Exploring / no rush</option>
+                                    <option value="">{{ __('consultation.form.timeline_placeholder') }}</option>
+                                    @foreach(__('consultation.form.timeline_options') as $opt)
+                                    <option value="{{ $opt }}">{{ $opt }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
 
                         <div>
-                            <label for="goals" class="form-label">What are you trying to achieve? <span class="text-red-500">*</span></label>
-                            <textarea id="goals" name="goals" rows="4" placeholder="Describe your main business goals, current challenges, or what you'd like AI to help you solve..." class="form-input resize-none @error('goals') border-red-400 @enderror" required>{{ old('goals') }}</textarea>
+                            <label for="goals" class="form-label">{{ __('consultation.form.goals_label') }} <span class="text-red-500">*</span></label>
+                            <textarea id="goals" name="goals" rows="4" placeholder="{{ __('consultation.form.goals_placeholder') }}" class="form-input resize-none @error('goals') border-red-400 @enderror" required>{{ old('goals') }}</textarea>
                             @error('goals')<p class="form-error">{{ $message }}</p>@enderror
                         </div>
 
                         <div>
-                            <label for="how_heard" class="form-label">How did you hear about us?</label>
-                            <input type="text" id="how_heard" name="how_heard" value="{{ old('how_heard') }}" placeholder="Google, LinkedIn, referral, etc." class="form-input">
+                            <label for="how_heard" class="form-label">{{ __('consultation.form.heard_label') }}</label>
+                            <input type="text" id="how_heard" name="how_heard" value="{{ old('how_heard') }}" placeholder="{{ __('consultation.form.heard_placeholder') }}" class="form-input">
                         </div>
 
                         <button type="submit" class="btn-primary w-full justify-center py-4 text-base">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                            Request Consultation
+                            {{ __('consultation.form.submit') }}
                         </button>
 
-                        <p class="text-xs text-charcoal-400 text-center">We will confirm your session within 24 hours. 100% confidential.</p>
+                        <p class="text-xs text-charcoal-400 text-center">{{ __('consultation.form.footer_note') }}</p>
                     </form>
                 </div>
             </div>

@@ -1,0 +1,67 @@
+<?php
+
+return [
+    'hero' => [
+        'label'    => 'Unsere Produkte',
+        'title'    => 'KI-Betriebssysteme',
+        'subtitle' => 'Drei zweckorientierte KI-Produkte, die reale Komplexität lösen — für Gründer, die Hebel brauchen, Zuhause, das Intelligenz braucht, und Leben, das Ordnung braucht.',
+    ],
+    'sarathios' => [
+        'tag'      => 'Gründer OS',
+        'name'     => 'SarathiOS',
+        'tagline'  => 'Das KI-Gehirn für Startup-Gründer, CEOs und Entscheidungsträger. Von der Wachstumsstrategie bis zur Teamausrichtung — führen Sie Ihr Unternehmen aus einem intelligenten System.',
+        'desc'     => 'Gebaut für Gründer, die das Jonglieren mit Tabellen, Notion-Docs und WhatsApp-Ketten hinter sich lassen möchten. SarathiOS zentralisiert Ihr gesamtes Betriebssystem in einer KI-gestützten Kommandozentrale — damit Sie schneller handeln, besser entscheiden und klüger aufbauen können.',
+        'features' => ['Gründer-Dashboard', 'Wachstums-Kommandozentrale', 'KI-Strategie-Copilot', 'Entscheidungsunterstützung', 'Team-Ausrichtungstools', 'Fundraising-Bereitschaft'],
+        'cta'      => 'SarathiOS entdecken →',
+        'dashboard_title' => 'Wachstums-Kommandozentrale',
+        'live_badge'      => 'Live',
+        'metrics'         => [
+            ['label' => 'Umsatz',          'value' => '+34%'],
+            ['label' => 'Pipeline',        'value' => '₹2.4Cr'],
+            ['label' => 'Team-Velocity',   'value' => '8.2/10'],
+            ['label' => 'Burn-Rate',       'value' => 'Im Plan'],
+        ],
+        'insight_label' => 'KI-Copilot-Einblick',
+        'insight_text'  => '"Basierend auf Q3-Daten könnte die Priorisierung des Enterprise-Kanals den MRR in 90 Tagen um 28% steigern."',
+    ],
+    'hsios' => [
+        'tag'      => 'Innenarchitektur OS',
+        'name'     => 'HSI OS',
+        'tagline'  => 'Das KI-Gehirn für Innenarchitektur, Renovierung und Hausausführung. Für Hausbesitzer, Architekten, Auftragnehmer und Innenarchitekturfirmen.',
+        'desc'     => 'HSI OS beendet das Chaos der Renovierung. Intelligentes Projektmanagement, Lieferantenkoordination, Budgetverfolgung und Kundenkommunikation — alles automatisiert und intelligent.',
+        'features' => ['Projekt-Timeline-KI', 'Kundenportal', 'Lieferantenkoordination', 'Budgetintelligenz', 'Fortschrittsverfolgung', 'Design-Briefing-KI'],
+        'cta'      => 'HSI OS entdecken →',
+        'dashboard_title' => 'Projektübersicht',
+        'progress_badge'  => 'In Bearbeitung',
+        'bars'            => [
+            ['label' => 'Zeitplan',       'value' => 'Woche 8/14', 'pct' => '57%'],
+            ['label' => 'Budget',         'value' => '₹84L / 1.2Cr', 'pct' => '70%'],
+            ['label' => 'Erledigte Aufgaben', 'value' => '142/198', 'pct' => '72%'],
+        ],
+        'alert_label' => 'KI-Alarm',
+        'alert_text'  => '"Fliesenlieferung um 4 Tage verzögert. Zeitplan automatisch angepasst. Auftragnehmer benachrichtigt."',
+    ],
+    'handlelife' => [
+        'tag'      => 'Lebens OS',
+        'name'     => 'HandleLife OS',
+        'tagline'  => 'Das KI-Gehirn für modernes Familienleben. Für Familien, Auslandsinder, vielbeschäftigte Fachleute und alle, die mit weniger Chaos und mehr Klarheit leben möchten.',
+        'desc'     => 'HandleLife OS ist die Kommandozentrale Ihrer Familie. Gesundheit, Finanzen, Schule, Notfälle und tägliches Leben — intelligent orchestriert, damit Sie sich auf das konzentrieren können, was wirklich zählt.',
+        'features' => ['Familien-Kommandozentrale', 'Gesundheits-KI', 'Finanzintelligenz', 'Schul- & Terminplan-KI', 'NRI-Dienste', 'Notfallreaktion'],
+        'cta'      => 'HandleLife OS entdecken →',
+        'dashboard_title' => 'Familien-Dashboard',
+        'active_badge'    => 'Aktiv',
+        'metrics'         => [
+            ['label' => 'Gesundheitscheck', 'value' => '3 Mitglieder fällig'],
+            ['label' => 'Finanzen',         'value' => 'CHF 4.200 gespart'],
+            ['label' => 'Schulereignisse',  'value' => '2 bevorstehend'],
+            ['label' => 'Dienste',          'value' => '1 Verlängerung fällig'],
+        ],
+        'reminder_label' => 'Lebens OS Erinnerung',
+        'reminder_text'  => '"KFZ-Versicherungsverlängerung in 14 Tagen. Verlängerungsangebot bereit — sparen Sie 18%."',
+    ],
+    'cta' => [
+        'title'    => 'Welches KI OS ist das Richtige für Sie?',
+        'subtitle' => 'Buchen Sie ein Entdeckungsgespräch und wir helfen Ihnen, die perfekte Lösung zu finden.',
+        'button'   => 'Entdeckungsgespräch buchen',
+    ],
+];

@@ -1,0 +1,46 @@
+<?php
+
+return [
+    'hero' => [
+        'label'    => 'Nous contacter',
+        'title'    => 'Parlons IA',
+        'subtitle' => 'Vous avez une question, un projet ou une idée ? Nous serions ravis de vous entendre. Nous répondons dans les 24 heures.',
+    ],
+    'info' => [
+        'title'           => 'Informations de contact',
+        'email_label'     => 'Email',
+        'location_label'  => 'Localisation',
+        'location_value'  => 'Suisse & monde entier',
+        'response_label'  => 'Délai de réponse',
+        'response_value'  => 'Dans les 24 heures',
+        'book_title'      => 'Préférez réserver directement ?',
+        'book_subtitle'   => 'Réservez une consultation et évitez les allers-retours.',
+        'book_cta'        => 'Réserver une consultation',
+    ],
+    'form' => [
+        'title'              => 'Envoyez-nous un message',
+        'name_label'         => 'Nom complet',
+        'name_placeholder'   => 'Votre nom complet',
+        'email_label'        => 'Adresse email',
+        'email_placeholder'  => 'vous@entreprise.com',
+        'company_label'      => 'Entreprise',
+        'company_placeholder'=> 'Nom de votre entreprise',
+        'phone_label'        => 'Numéro de téléphone',
+        'phone_placeholder'  => '+41 00 000 00 00',
+        'subject_label'      => 'Sujet',
+        'subject_placeholder'=> 'Sélectionner un sujet',
+        'subject_options'    => [
+            'Conseil en transformation IA',
+            'Développement de copilote IA personnalisé',
+            'IA vocale & automatisation',
+            'Contrats IA gérés',
+            'Conseil en croissance fondateur',
+            'Demande produit (SarathiOS / HSI OS / HandleLife OS)',
+            'Demande générale',
+        ],
+        'message_label'      => 'Message',
+        'message_placeholder'=> 'Parlez-nous de votre projet, défi ou question...',
+        'submit'             => 'Envoyer le message',
+        'footer_note'        => 'Nous répondons dans les 24 heures. Vos informations sont gardées confidentielles.',
+    ],
+];

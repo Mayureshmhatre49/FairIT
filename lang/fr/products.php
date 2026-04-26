@@ -1,0 +1,67 @@
+<?php
+
+return [
+    'hero' => [
+        'label'    => 'Nos produits',
+        'title'    => 'Systèmes d\'exploitation IA',
+        'subtitle' => 'Trois produits IA construits sur mesure résolvant la complexité du monde réel — pour les fondateurs qui ont besoin d\'effet de levier, les maisons qui ont besoin d\'intelligence et les vies qui ont besoin d\'ordre.',
+    ],
+    'sarathios' => [
+        'tag'      => 'OS Fondateur',
+        'name'     => 'SarathiOS',
+        'tagline'  => 'Le cerveau IA pour les fondateurs de startups, PDG et décideurs. De la stratégie de croissance à l\'alignement d\'équipe — commandez votre entreprise depuis un système intelligent.',
+        'desc'     => 'Conçu pour les fondateurs qui en ont fini de jongler avec des tableurs, des docs Notion et des chaînes WhatsApp. SarathiOS centralise tout votre système d\'exploitation dans un centre de commandement alimenté par l\'IA — pour que vous puissiez agir plus vite, décider mieux et construire plus intelligemment.',
+        'features' => ['Tableau de bord fondateur', 'Centre de commandement croissance', 'Copilote stratégie IA', 'Moteur d\'aide à la décision', 'Outils d\'alignement d\'équipe', 'Préparation au fundraising'],
+        'cta'      => 'Explorer SarathiOS →',
+        'dashboard_title' => 'Centre de commandement croissance',
+        'live_badge'      => 'En direct',
+        'metrics'         => [
+            ['label' => 'Revenus',        'value' => '+34%'],
+            ['label' => 'Pipeline',       'value' => '₹2.4Cr'],
+            ['label' => 'Vélocité équipe','value' => '8.2/10'],
+            ['label' => 'Taux de burn',   'value' => 'Dans les objectifs'],
+        ],
+        'insight_label' => 'Insight copilote IA',
+        'insight_text'  => '"D\'après les données Q3, prioriser le canal enterprise pourrait augmenter le MRR de 28% en 90 jours."',
+    ],
+    'hsios' => [
+        'tag'      => 'OS Intérieur',
+        'name'     => 'HSI OS',
+        'tagline'  => 'Le cerveau IA pour la décoration intérieure, la rénovation et l\'exécution domicile. Pour les propriétaires, architectes, entrepreneurs et cabinets de design.',
+        'desc'     => 'HSI OS met fin au chaos de la rénovation. Gestion de projet intelligente, coordination des fournisseurs, suivi du budget et communication client — tout automatisé et intelligent.',
+        'features' => ['IA chronologie projet', 'Portail client', 'Coordination fournisseurs', 'Intelligence budgétaire', 'Suivi d\'avancement', 'IA brief de design'],
+        'cta'      => 'Explorer HSI OS →',
+        'dashboard_title' => 'Vue d\'ensemble projet',
+        'progress_badge'  => 'En cours',
+        'bars'            => [
+            ['label' => 'Chronologie',    'value' => 'Semaine 8/14', 'pct' => '57%'],
+            ['label' => 'Budget',         'value' => '₹84L / 1.2Cr', 'pct' => '70%'],
+            ['label' => 'Tâches réalisées', 'value' => '142/198',    'pct' => '72%'],
+        ],
+        'alert_label' => 'Alerte IA',
+        'alert_text'  => '"Livraison carreaux retardée de 4 jours. Chronologie auto-ajustée. Entrepreneur notifié."',
+    ],
+    'handlelife' => [
+        'tag'      => 'OS Vie',
+        'name'     => 'HandleLife OS',
+        'tagline'  => 'Le cerveau IA pour la vie familiale moderne. Pour les familles, NRI, professionnels occupés et tous ceux qui souhaitent vivre avec moins de chaos et plus de clarté.',
+        'desc'     => 'HandleLife OS est le centre de commandement de votre famille. Santé, finances, école, urgences et vie quotidienne — intelligemment orchestrés pour que vous puissiez vous concentrer sur ce qui compte vraiment.',
+        'features' => ['Centre de commandement familial', 'IA santé & bien-être', 'Intelligence financière', 'IA école & agenda', 'Services NRI', 'Réponse d\'urgence'],
+        'cta'      => 'Explorer HandleLife OS →',
+        'dashboard_title' => 'Tableau de bord famille',
+        'active_badge'    => 'Actif',
+        'metrics'         => [
+            ['label' => 'Bilan de santé',    'value' => '3 membres à faire'],
+            ['label' => 'Finances',          'value' => 'CHF 4 200 économisés'],
+            ['label' => 'Événements scolaires', 'value' => '2 à venir'],
+            ['label' => 'Services',          'value' => '1 renouvellement dû'],
+        ],
+        'reminder_label' => 'Rappel Life OS',
+        'reminder_text'  => '"Renouvellement assurance auto dans 14 jours. Devis de renouvellement prêt — économisez 18%."',
+    ],
+    'cta' => [
+        'title'    => 'Quel OS IA vous convient ?',
+        'subtitle' => 'Réservez un appel de découverte et nous vous aiderons à trouver la solution parfaite.',
+        'button'   => 'Réserver un appel de découverte',
+    ],
+];

@@ -1,0 +1,140 @@
+<?php
+
+return [
+    'hero' => [
+        'badge'       => 'Jetzt für Gründer & Unternehmen weltweit tätig',
+        'headline_1'  => 'KI-Systeme für',
+        'headline_2'  => 'Wachstum, Führung',
+        'headline_3'  => '& modernes Leben',
+        'subheadline' => 'Wir helfen Gründern und Unternehmen, Wachstum durch KI-Beratung, massgeschneiderte KI-Systeme und intelligente Betriebssysteme für die Praxis zu erschliessen.',
+        'cta_primary' => 'Beratung buchen',
+        'cta_secondary' => 'Produkte entdecken',
+        'trust_label' => 'Vertraut von ambitionierten Gründern, modernen Unternehmen & zukunftsorientierten Teams',
+        'trust_items' => ['Startups', 'KMU', 'Innenarchitekturfirmen', 'Gastgewerbe', 'Immobilien', 'Beratungsunternehmen'],
+        'scroll'      => 'Scrollen',
+    ],
+    'stats' => [
+        ['value' => '95%',  'label' => 'KI-Adoptionsrate',              'num' => '95'],
+        ['value' => '40+',  'label' => 'Unterstützte Sprachen',         'num' => '40'],
+        ['value' => '3×',   'label' => 'Durchschnittlicher Produktivitätsgewinn', 'num' => '3'],
+        ['value' => '24/7', 'label' => 'KI-Systemverfügbarkeit',        'num' => '24'],
+    ],
+    'pillars' => [
+        'label'    => 'Was wir entwickeln',
+        'title'    => 'Eine Mission. Drei Bereiche.',
+        'items'    => [
+            [
+                'title'    => 'Bessere Unternehmen aufbauen',
+                'desc'     => 'KI-Transformationsberatung, massgeschneiderte Copiloten, Sprachautomatisierung und verwaltete Retainer für Organisationen, die auf einem höheren Niveau operieren möchten.',
+                'features' => ['KI-Bereitschaftsprüfungen', 'Massgeschneiderte KI-Copiloten', 'Sprach- & Chat-Automatisierung', 'Verwaltete KI-Teams'],
+                'cta'      => 'Leistungen erkunden',
+            ],
+            [
+                'title'    => 'Bessere Zuhause gestalten',
+                'desc'     => 'HSI OS — das KI-Betriebssystem für Innenarchitektur, Renovierung und Hausverwaltung. Für Hausbesitzer, Architekten und Innenarchitekturfirmen.',
+                'features' => ['Projektmanagement-KI', 'Lieferantenkoordination', 'Budgetintelligenz', 'Kundenportale'],
+                'cta'      => 'HSI OS entdecken',
+            ],
+            [
+                'title'    => 'Bessere Leben führen',
+                'desc'     => 'HandleLife OS — intelligentes Lebensmanagement für moderne Familien, Auslandsinder, vielbeschäftigte Fachleute und alle, die mit mehr Klarheit leben möchten.',
+                'features' => ['Familienkommandozentrale', 'Gesundheits-KI', 'Finanzintelligenz', 'Life OS Dashboard'],
+                'cta'      => 'HandleLife OS entdecken',
+            ],
+        ],
+    ],
+    'services' => [
+        'label'       => 'Was wir tun',
+        'title'       => 'Premium KI-Leistungen',
+        'subtitle'    => 'Beratung, Implementierung und wiederkehrende KI-Systeme für wachstumsorientierte Organisationen.',
+        'view_all'    => 'Alle Leistungen anzeigen',
+        'items'       => [
+            ['title' => 'KI-Transformationsberatung',         'desc' => 'KI-Bereitschaftsprüfungen, Roadmap-Erstellung, ROI-Priorisierung und Führungsworkshops zur Begleitung Ihrer KI-Transformation.',  'cta' => 'Strategiegespräch buchen'],
+            ['title' => 'Massgeschneiderte KI-Copilot-Entwicklung', 'desc' => 'Interne KI-Copiloten für Geschäftsführung, Vertrieb, HR, Betrieb und Support-Teams entwickeln — auf Ihren Daten trainiert.', 'cta' => 'Demo anfordern'],
+            ['title' => 'Sprach-KI & Konversationsautomatisierung', 'desc' => 'KI-Sprachanrufer, mehrsprachige Bots, Buchungsbots, Support-Bots und WhatsApp-Automatisierung auf Enterprise-Niveau.',    'cta' => 'Anwendungsfälle ansehen'],
+            ['title' => 'Verwaltete KI-Retainer',             'desc' => 'Monatliche KI-Optimierung, Bot-Management, Workflow-Verbesserung, Berichtsautomatisierung und Innovationsunterstützung.',           'cta' => 'Experten kontaktieren'],
+            ['title' => 'Gründer-Wachstumsberatung',          'desc' => 'Hochrangige strategische KI-Systeme für Gründer, Unternehmer und Führungskräfte, die mehr aus ihrem Betrieb herausholen möchten.',   'cta' => 'Jetzt bewerben'],
+        ],
+    ],
+    'products' => [
+        'label'    => 'Unsere Produkte',
+        'title'    => 'KI-Betriebssysteme',
+        'subtitle' => 'Skalierbare Produkte zur Lösung realer Komplexität — für Gründer, Zuhause und das Leben.',
+        'explore'  => 'Entdecken',
+        'items'    => [
+            [
+                'tag'      => 'Gründer OS',
+                'name'     => 'SarathiOS',
+                'tagline'  => 'Das KI-Gehirn für ambitionierte Gründer und CEOs.',
+                'desc'     => 'Ein vollständiges KI-Betriebssystem für Startup-Gründer und Entscheidungsträger. Kommandozentrale, Strategie-Copilot, Teamausrichtung und Fundraising-Bereitschaft in einem intelligenten System.',
+                'features' => ['Gründer-Dashboard', 'Wachstums-Kommandozentrale', 'KI-Strategie-Copilot', 'Entscheidungsunterstützung', 'Team-Ausrichtungstools', 'Fundraising-Bereitschaft'],
+            ],
+            [
+                'tag'      => 'Innenarchitektur OS',
+                'name'     => 'HSI OS',
+                'tagline'  => 'Das KI-Gehirn für Innenarchitektur und Renovierung.',
+                'desc'     => 'KI-gestütztes Projektmanagement, Kundenportale, Lieferantenkoordination und Budgetintelligenz für Innenarchitekten, Architekten und Hausbesitzer.',
+                'features' => ['Projekt-Timeline-KI', 'Kundenportal', 'Lieferantenkoordination', 'Budgetintelligenz', 'Design-Briefing-KI', 'Fortschrittsverfolgung'],
+            ],
+            [
+                'tag'      => 'Lebens OS',
+                'name'     => 'HandleLife OS',
+                'tagline'  => 'Das KI-Gehirn für modernes Familienleben.',
+                'desc'     => 'Intelligentes Lebensmanagement für Familien, Auslandsinder, vielbeschäftigte Fachleute und alle, die mit weniger Chaos und mehr Klarheit leben möchten.',
+                'features' => ['Familien-Kommandozentrale', 'Gesundheits-KI', 'Finanzintelligenz', 'Schul- & Terminplan-KI', 'NRI-Dienste', 'Notfallreaktion'],
+            ],
+        ],
+    ],
+    'why' => [
+        'label'    => 'Unser Unterschied',
+        'title_1'  => 'Die meisten Unternehmen kaufen Werkzeuge.',
+        'title_2'  => 'Wir bauen Systeme.',
+        'body'     => 'Der Unterschied zwischen einem KI-Werkzeug und einem KI-System ist wie der Unterschied zwischen einem Hammer und einem Haus. Wir bauen das Haus.',
+        'cta_primary'   => 'Ihre Transformation starten',
+        'cta_secondary' => 'Über uns erfahren',
+        'points'   => [
+            ['title' => 'Schnellere Ausführung',   'desc' => 'KI-Systeme reduzieren Entscheidungsverzögerungen, automatisieren repetitive Aufgaben und befreien Ihr Team, um sich auf das Wesentliche zu konzentrieren.'],
+            ['title' => 'Bessere Entscheidungen',  'desc' => 'Echtzeit-Intelligenz, Trenderkennung und Szenariomodellierung, die Daten in zuversichtliches Handeln verwandeln.'],
+            ['title' => 'Weniger Betriebschaos',   'desc' => 'Automatisierte Workflows, intelligentes Routing und proaktive Warnungen eliminieren den Lärm, der Organisationen belastet.'],
+            ['title' => 'KI, die wirklich genutzt wird', 'desc' => 'Wir gestalten für Akzeptanz, nicht nur für Fähigkeiten. Unsere Systeme erreichen 90%+ Nutzungsraten, weil sie der tatsächlichen Arbeitsweise der Menschen entsprechen.'],
+            ['title' => 'Messbarer ROI',           'desc' => 'Jedes Engagement umfasst klare Erfolgskennzahlen, regelmässige Leistungsberichte und bewährte ROI-Rahmenwerke.'],
+        ],
+    ],
+    'industries' => [
+        'label'    => 'Wen wir bedienen',
+        'title'    => 'Branchen, die wir transformieren',
+        'subtitle' => 'KI-Lösungen, massgeschneidert für die einzigartigen Herausforderungen und Chancen jedes Sektors.',
+        'items'    => [
+            'Startups', 'KMU', 'Immobilien', 'Gastgewerbe',
+            'Innenarchitektur', 'Gesundheitswesen', 'Bildung', 'Beratungsunternehmen',
+        ],
+    ],
+    'testimonials' => [
+        'label' => 'Kundenstimmen',
+        'title' => 'Was unsere Kunden sagen',
+        'items' => [
+            ['name' => 'Rajiv Sharma',  'role' => 'CEO, TechScale Ventures',            'content' => 'FairIT hat unsere Betriebsweise grundlegend verändert. Unser KI-Copilot bearbeitet 80% der internen Anfragen — das spart uns wöchentlich über 20 Stunden. Der ROI im ersten Monat hat das gesamte Engagement finanziert.'],
+            ['name' => 'Priya Mehta',   'role' => 'Operations Direktorin, Horizon Group', 'content' => 'Die Sprach-KI, die sie für unsere Buchungsleitung entwickelt haben, ist unglaublich. Die Buchungen sind um 34% gestiegen und unser Team bearbeitet keine eingehenden Anrufe mehr. Aussergewöhnliche Ausführung.'],
+            ['name' => 'Marcus Klein',  'role' => 'Gründer, NextGen Properties',        'content' => 'Das Gründer-Wachstumsberatungsprogramm hat meine Entscheidungsfindung vollständig verändert. Ich habe jetzt ein System, nicht nur eine Vision. Jeden Franken wert.'],
+        ],
+    ],
+    'insights' => [
+        'label'    => 'Neueste Perspektiven',
+        'title'    => 'Einblicke & Perspektiven',
+        'view_all' => 'Alle Einblicke anzeigen',
+    ],
+    'cta' => [
+        'label'      => 'Jetzt starten',
+        'title_1'    => 'Bereit, Ihren',
+        'title_2'    => 'KI-Vorteil aufzubauen?',
+        'body'       => 'Schliessen Sie sich der wachsenden Zahl von Gründern und Unternehmen an, die KI-Intelligenz in ihr Kerngeschäft integriert haben.',
+        'cta_primary'   => 'Beratung buchen',
+        'cta_secondary' => 'Kontakt aufnehmen',
+        'trust_items'   => [
+            'Keine Langzeitverträge',
+            '24h Antwort garantiert',
+            'Vertraulichkeit garantiert',
+            'Ansässig in der Schweiz',
+        ],
+    ],
+];
