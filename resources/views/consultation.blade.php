@@ -3,6 +3,31 @@
 @section('title', 'Book AI Consultation — FairIT Solutions')
 @section('description', 'Book a free AI strategy consultation with FairIT Solutions. Discuss your AI goals, challenges, and get expert guidance. Response within 24 hours.')
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebPage",
+            "@id": "{{ route('consultation') }}#webpage",
+            "url": "{{ route('consultation') }}",
+            "name": "Book AI Consultation — FairIT Solutions",
+            "description": "Book a free AI strategy consultation with FairIT Solutions.",
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Book Consultation", "item": "{{ route('consultation') }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-16 overflow-hidden">

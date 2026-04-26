@@ -3,6 +3,31 @@
 @section('title', 'Contact FairIT Solutions — Get in Touch')
 @section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Based in Switzerland & India, serving globally.')
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "ContactPage",
+            "@id": "{{ route('contact') }}#webpage",
+            "url": "{{ route('contact') }}",
+            "name": "Contact FairIT Solutions",
+            "description": "Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours.",
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Contact", "item": "{{ route('contact') }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">

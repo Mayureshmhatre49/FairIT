@@ -11,23 +11,60 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "{{ $post->title }}",
-    "description": "{{ $post->excerpt }}",
-    "datePublished": "{{ $post->published_at->toIso8601String() }}",
-    "dateModified": "{{ $post->updated_at->toIso8601String() }}",
-    "author": {
-        "@type": "Organization",
-        "name": "FairIT Solutions"
-    },
-    "publisher": {
-        "@type": "Organization",
-        "name": "FairIT Solutions",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "{{ asset('images/logo.png') }}"
+    "@graph": [
+        {
+            "@type": "Article",
+            "@id": "{{ url()->current() }}#article",
+            "headline": "{{ addslashes($post->title) }}",
+            "description": "{{ addslashes($post->excerpt) }}",
+            "url": "{{ url()->current() }}",
+            "datePublished": "{{ $post->published_at->toIso8601String() }}",
+            "dateModified": "{{ $post->updated_at->toIso8601String() }}",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ url()->current() }}"
+            },
+            "author": {
+                "@type": "Organization",
+                "@id": "https://fairitsolutions.ch/#organization",
+                "name": "FairIT Solutions",
+                "url": "https://fairitsolutions.ch"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "@id": "https://fairitsolutions.ch/#organization",
+                "name": "FairIT Solutions",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "{{ asset('images/og-image.png') }}",
+                    "width": 1200,
+                    "height": 630
+                }
+            },
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
+            @if($post->featured_image)
+            ,"image": {
+                "@type": "ImageObject",
+                "url": "{{ $post->featured_image }}",
+                "representativeOfPage": true
+            }
+            @endif
+            @if($post->category)
+            ,"articleSection": "{{ $post->category }}"
+            @endif
+            @if($post->tags)
+            ,"keywords": "{{ $post->tags }}"
+            @endif
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Insights", "item": "{{ route('blog.index') }}" },
+                { "@type": "ListItem", "position": 3, "name": "{{ addslashes($post->title) }}", "item": "{{ url()->current() }}" }
+            ]
         }
-    }
+    ]
 }
 </script>
 @endsection

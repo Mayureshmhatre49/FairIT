@@ -4,6 +4,36 @@
 @section('description', 'SarathiOS is the AI operating system for startup founders and CEOs. Growth command centre, AI copilot, decision support, team alignment, and fundraising readiness in one intelligent system.')
 @section('keywords', 'founder AI, startup AI tools, CEO operating system, AI for founders, startup productivity')
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "SoftwareApplication",
+            "@id": "{{ route('products.sarathios') }}#app",
+            "name": "SarathiOS",
+            "url": "{{ route('products.sarathios') }}",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "The AI operating system for startup founders and CEOs. Growth command centre, AI copilot, decision support, team alignment, and fundraising readiness.",
+            "offers": { "@type": "Offer", "url": "{{ route('consultation') }}", "availability": "https://schema.org/PreOrder" },
+            "creator": { "@id": "https://fairitsolutions.ch/#organization" },
+            "featureList": "Growth command centre, AI strategy copilot, Decision support engine, Team alignment tools, Fundraising readiness"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Products", "item": "{{ route('products.index') }}" },
+                { "@type": "ListItem", "position": 3, "name": "SarathiOS", "item": "{{ route('products.sarathios') }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">

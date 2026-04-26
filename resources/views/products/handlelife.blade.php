@@ -3,6 +3,36 @@
 @section('title', 'HandleLife OS — AI Operating System for Modern Families | FairIT Solutions')
 @section('description', 'HandleLife OS is the AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated for busy families.')
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "SoftwareApplication",
+            "@id": "{{ route('products.handlelife') }}#app",
+            "name": "HandleLife OS",
+            "url": "{{ route('products.handlelife') }}",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Web",
+            "description": "The AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated.",
+            "offers": { "@type": "Offer", "url": "{{ route('consultation') }}", "availability": "https://schema.org/PreOrder" },
+            "creator": { "@id": "https://fairitsolutions.ch/#organization" },
+            "featureList": "Family command centre, Health & wellness AI, Finance intelligence, School & schedule AI, NRI services, Emergency response"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Products", "item": "{{ route('products.index') }}" },
+                { "@type": "ListItem", "position": 3, "name": "HandleLife OS", "item": "{{ route('products.handlelife') }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">

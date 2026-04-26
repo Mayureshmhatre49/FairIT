@@ -7,21 +7,121 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "FairIT Solutions",
-    "url": "https://fairitsolutions.ch",
-    "logo": "https://fairitsolutions.ch/images/logo.png",
-    "description": "AI Operating Systems for Founders, Homes & Life",
-    "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CH"
-    },
-    "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "hello@fairitsolutions.ch"
-    },
-    "sameAs": []
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://fairitsolutions.ch/#organization",
+            "name": "FairIT Solutions",
+            "url": "https://fairitsolutions.ch",
+            "logo": {
+                "@type": "ImageObject",
+                "@id": "https://fairitsolutions.ch/#logo",
+                "url": "{{ asset('images/og-image.png') }}",
+                "width": 1200,
+                "height": 630,
+                "caption": "FairIT Solutions"
+            },
+            "image": { "@id": "https://fairitsolutions.ch/#logo" },
+            "description": "AI Operating Systems for Founders, Homes & Life. We build AI advisory, custom copilots, voice AI, and managed AI retainers for growth-focused organisations.",
+            "foundingDate": "2024",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CH",
+                "addressLocality": "Switzerland"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "customer service",
+                    "email": "hello@fairitsolutions.ch",
+                    "availableLanguage": ["English", "German", "French"]
+                }
+            ],
+            "areaServed": [
+                { "@type": "Country", "name": "Switzerland" },
+                { "@type": "Country", "name": "Germany" },
+                { "@type": "Country", "name": "United Kingdom" },
+                { "@type": "Country", "name": "India" }
+            ],
+            "knowsAbout": [
+                "Artificial Intelligence",
+                "Machine Learning",
+                "AI Consulting",
+                "Voice AI",
+                "AI Copilots",
+                "Business Automation",
+                "AI Operating Systems",
+                "Founder Strategy"
+            ],
+            "sameAs": [
+                "https://linkedin.com/company/fairitsolutions"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://fairitsolutions.ch/#website",
+            "url": "https://fairitsolutions.ch",
+            "name": "FairIT Solutions",
+            "description": "AI Operating Systems for Founders, Homes & Life",
+            "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
+            "inLanguage": ["en", "de", "fr"],
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://fairitsolutions.ch/insights?search={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "ProfessionalService",
+            "@id": "https://fairitsolutions.ch/#business",
+            "name": "FairIT Solutions",
+            "url": "https://fairitsolutions.ch",
+            "image": "{{ asset('images/og-image.png') }}",
+            "description": "Premium AI consulting, implementation, and managed services for growth-focused organisations.",
+            "priceRange": "$$$$",
+            "email": "hello@fairitsolutions.ch",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CH"
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "AI Services",
+                "itemListElement": [
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Transformation Advisory" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom AI Copilot Development" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Voice AI & Conversational Automation" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed AI Retainers" } },
+                    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Founder Growth Advisory" } }
+                ]
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://fairitsolutions.ch/#webpage",
+            "url": "https://fairitsolutions.ch",
+            "name": "FairIT Solutions — AI Operating Systems for Founders, Homes & Life",
+            "description": "We build AI Operating Systems for ambitious founders, modern businesses, and future-ready teams.",
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
+            "about": { "@id": "https://fairitsolutions.ch/#organization" },
+            "primaryImageOfPage": { "@id": "https://fairitsolutions.ch/#logo" },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://fairitsolutions.ch" }
+                ]
+            }
+        }
+    ]
 }
 </script>
 @endsection

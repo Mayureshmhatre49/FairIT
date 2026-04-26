@@ -3,6 +3,32 @@
 @section('title', 'About FairIT Solutions — AI Operating Systems for Growth, Homes & Life')
 @section('description', 'FairIT Solutions builds AI systems that solve real-world complexity. We combine business understanding, engineering excellence, and product thinking to create AI that actually works.')
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "AboutPage",
+            "@id": "{{ route('about') }}#webpage",
+            "url": "{{ route('about') }}",
+            "name": "About FairIT Solutions",
+            "description": "FairIT Solutions builds AI systems that solve real-world complexity.",
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
+            "about": { "@id": "https://fairitsolutions.ch/#organization" },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                    { "@type": "ListItem", "position": 2, "name": "About", "item": "{{ route('about') }}" }
+                ]
+            }
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">

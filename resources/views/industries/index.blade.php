@@ -3,6 +3,31 @@
 @section('title', 'Industries We Serve — AI Solutions for Every Sector | FairIT Solutions')
 @section('description', 'AI transformation solutions for startups, SMEs, real estate, hospitality, interior design, healthcare, education, and professional services.')
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "@id": "{{ route('industries.index') }}#webpage",
+            "url": "{{ route('industries.index') }}",
+            "name": "Industries We Serve — FairIT Solutions",
+            "description": "AI transformation solutions for startups, SMEs, real estate, hospitality, interior design, healthcare, education, and professional services.",
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Industries", "item": "{{ route('industries.index') }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">

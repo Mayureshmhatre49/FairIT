@@ -1,8 +1,13 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
+Disallow: /x-admin-secure-2024/
+Disallow: /lang/
 Disallow: /api/
 Disallow: /storage/
 Disallow: /_debugbar/
+Disallow: /telescope/
+
+# Crawl-delay for well-behaved bots
+Crawl-delay: 1
 
 Sitemap: https://fairitsolutions.ch/sitemap.xml

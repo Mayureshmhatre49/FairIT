@@ -11,19 +11,42 @@
     <meta name="description" content="@yield('description', 'FairIT Solutions builds AI operating systems for founders, enterprises and modern families. AI advisory, custom copilots, voice AI and managed AI retainers.')">
     <meta name="keywords" content="@yield('keywords', 'AI consulting, AI transformation, AI copilots, voice AI, founder AI, AI operating systems, Switzerland AI company')">
     <meta name="author" content="FairIT Solutions">
+    <meta name="robots" content="@yield('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1')">
     <link rel="canonical" href="@yield('canonical', url()->current())">
+    <meta name="theme-color" content="#1e293b">
+
+    {{-- Hreflang — multilingual signals --}}
+    <link rel="alternate" hreflang="en" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="de" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="fr" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
 
     {{-- Open Graph --}}
+    @php
+        $ogLocaleMap = ['en' => 'en_US', 'de' => 'de_DE', 'fr' => 'fr_FR'];
+        $currentLocale = app()->getLocale();
+        $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_US';
+    @endphp
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="@yield('og_url', url()->current())">
     <meta property="og:title" content="@yield('og_title', 'FairIT Solutions — AI Operating Systems')">
     <meta property="og:description" content="@yield('og_description', 'We help founders, enterprises, and modern families unlock growth through AI advisory, custom AI systems, and intelligent operating systems.')">
     <meta property="og:image" content="@yield('og_image', asset('images/og-image.png'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="@yield('og_image_alt', 'FairIT Solutions — AI Operating Systems')">
     <meta property="og:site_name" content="FairIT Solutions">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="{{ $ogLocale }}">
+    @foreach($ogLocaleMap as $code => $locale)
+        @if($code !== $currentLocale)
+    <meta property="og:locale:alternate" content="{{ $locale }}">
+        @endif
+    @endforeach
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@fairitsolutions">
+    <meta name="twitter:creator" content="@fairitsolutions">
     <meta name="twitter:title" content="@yield('og_title', 'FairIT Solutions — AI Operating Systems')">
     <meta name="twitter:description" content="@yield('og_description', 'We help founders and enterprises unlock growth through AI.')">
     <meta name="twitter:image" content="@yield('og_image', asset('images/og-image.png'))">
@@ -31,10 +54,12 @@
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     {{-- Preconnect for performance --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
     {{-- Vite Assets --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])

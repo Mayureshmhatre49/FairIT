@@ -3,6 +3,38 @@
 @section('title', $industry['title'] . ' AI Solutions — FairIT Solutions')
 @section('description', $industry['description'])
 
+@section('schema')
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "{{ url()->current() }}#service",
+            "name": "AI Solutions for {{ $industry['title'] }}",
+            "description": "{{ addslashes($industry['description']) }}",
+            "url": "{{ url()->current() }}",
+            "provider": {
+                "@type": "Organization",
+                "@id": "https://fairitsolutions.ch/#organization",
+                "name": "FairIT Solutions"
+            },
+            "areaServed": "Worldwide",
+            "serviceType": "AI Consulting"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Industries", "item": "{{ route('industries.index') }}" },
+                { "@type": "ListItem", "position": 3, "name": "{{ $industry['title'] }}", "item": "{{ url()->current() }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 
 <section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">

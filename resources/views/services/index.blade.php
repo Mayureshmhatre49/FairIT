@@ -7,10 +7,37 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": { "@type": "Organization", "name": "FairIT Solutions" },
-    "name": "AI Services",
-    "description": "Premium AI consulting, implementation, and managed services for growth-focused organisations."
+    "@graph": [
+        {
+            "@type": "CollectionPage",
+            "@id": "{{ route('services.index') }}#webpage",
+            "url": "{{ route('services.index') }}",
+            "name": "AI Services — FairIT Solutions",
+            "description": "Premium AI consulting, implementation, and managed services for growth-focused organisations.",
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
+            "breadcrumb": { "@id": "{{ route('services.index') }}#breadcrumb" }
+        },
+        {
+            "@type": "ItemList",
+            "@id": "{{ route('services.index') }}#services-list",
+            "name": "AI Services by FairIT Solutions",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "AI Transformation Advisory", "url": "{{ route('services.advisory') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Custom AI Copilot Development", "url": "{{ route('services.copilot') }}" },
+                { "@type": "ListItem", "position": 3, "name": "Voice AI & Conversational Automation", "url": "{{ route('services.voiceai') }}" },
+                { "@type": "ListItem", "position": 4, "name": "Managed AI Retainers", "url": "{{ route('services.retainers') }}" },
+                { "@type": "ListItem", "position": 5, "name": "Founder Growth Advisory", "url": "{{ route('services.founder') }}" }
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "{{ route('services.index') }}#breadcrumb",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "{{ route('services.index') }}" }
+            ]
+        }
+    ]
 }
 </script>
 @endsection

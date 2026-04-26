@@ -2,15 +2,59 @@
 
 @section('title', $service['title'] . ' — FairIT Solutions')
 @section('description', $service['description'])
+@section('og_title', $service['title'] . ' — FairIT Solutions')
+@section('og_description', $service['description'])
+@section('og_image_alt', $service['title'] . ' — FairIT Solutions AI Service')
 
 @section('schema')
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": { "@type": "Organization", "name": "FairIT Solutions", "url": "https://fairitsolutions.ch" },
-    "name": "{{ $service['title'] }}",
-    "description": "{{ $service['description'] }}"
+    "@graph": [
+        {
+            "@type": "Service",
+            "@id": "{{ url()->current() }}#service",
+            "name": "{{ $service['title'] }}",
+            "description": "{{ $service['description'] }}",
+            "url": "{{ url()->current() }}",
+            "provider": {
+                "@type": "Organization",
+                "@id": "https://fairitsolutions.ch/#organization",
+                "name": "FairIT Solutions",
+                "url": "https://fairitsolutions.ch"
+            },
+            "areaServed": "Worldwide",
+            "serviceType": "AI Consulting",
+            "offers": {
+                "@type": "Offer",
+                "url": "{{ route('consultation') }}",
+                "availability": "https://schema.org/InStock"
+            }
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": [
+                @foreach($service['faqs'] as $faq)
+                {
+                    "@type": "Question",
+                    "name": "{{ addslashes($faq['q']) }}",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "{{ addslashes($faq['a']) }}"
+                    }
+                }{{ !$loop->last ? ',' : '' }}
+                @endforeach
+            ]
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Services", "item": "{{ route('services.index') }}" },
+                { "@type": "ListItem", "position": 3, "name": "{{ $service['title'] }}", "item": "{{ url()->current() }}" }
+            ]
+        }
+    ]
 }
 </script>
 @endsection
