@@ -76,7 +76,7 @@
                                 <p class="font-bold text-charcoal-950 text-base">Annemarie M. Sickeler</p>
                                 <p class="text-xs text-charcoal-500 mb-2">{{ __('contact.founders.annemarie.role') }}</p>
                                 <div class="space-y-1">
-                                    <a href="mailto:Info@FairITSolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Info@FairITSolutions.ch</a>
+                                    <a href="mailto:Hello@FairITSolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Hello@FairITSolutions.ch</a>
                                     <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
                                 </div>
                             </div>
