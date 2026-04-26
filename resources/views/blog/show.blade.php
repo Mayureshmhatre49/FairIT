@@ -108,7 +108,7 @@
                 <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="w-full rounded-2xl mb-10 aspect-video object-cover" loading="lazy">
                 @endif
                 <div class="prose-fairit">
-                    {!! nl2br(e($post->content)) !!}
+                    {!! $post->content !!}
                 </div>
             </article>
 
