@@ -23,6 +23,7 @@ return array(
     'App\\Http\\Controllers\\SitemapController' => $baseDir . '/app/Http/Controllers/SitemapController.php',
     'App\\Http\\Middleware\\AdminMiddleware' => $baseDir . '/app/Http/Middleware/AdminMiddleware.php',
     'App\\Http\\Middleware\\SecurityHeaders' => $baseDir . '/app/Http/Middleware/SecurityHeaders.php',
+    'App\\Http\\Middleware\\SetLocale' => $baseDir . '/app/Http/Middleware/SetLocale.php',
     'App\\Mail\\LeadNotification' => $baseDir . '/app/Mail/LeadNotification.php',
     'App\\Models\\Lead' => $baseDir . '/app/Models/Lead.php',
     'App\\Models\\Post' => $baseDir . '/app/Models/Post.php',
