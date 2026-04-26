@@ -16,6 +16,14 @@ use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\AuthController;
 use Illuminate\Support\Facades\Route;
 
+// Language switcher
+Route::get('/lang/{locale}', function (string $locale) {
+    if (in_array($locale, ['en', 'de', 'fr'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back()->withInput();
+})->name('lang.switch');
+
 // Public routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
