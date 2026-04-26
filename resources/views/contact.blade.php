@@ -4,7 +4,7 @@
 @section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Based in Switzerland & India, serving globally.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

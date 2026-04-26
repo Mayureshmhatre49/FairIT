@@ -4,7 +4,7 @@
 @section('description', 'HandleLife OS is the AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated for busy families.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

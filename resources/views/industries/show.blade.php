@@ -4,7 +4,7 @@
 @section('description', $industry['description'])
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

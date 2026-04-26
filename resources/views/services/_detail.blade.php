@@ -7,7 +7,7 @@
 @section('og_image_alt', $service['title'] . ' — FairIT Solutions AI Service')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

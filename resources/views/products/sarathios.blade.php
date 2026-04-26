@@ -5,7 +5,7 @@
 @section('keywords', 'founder AI, startup AI tools, CEO operating system, AI for founders, startup productivity')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

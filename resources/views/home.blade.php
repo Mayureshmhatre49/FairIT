@@ -4,7 +4,7 @@
 @section('description', 'We build AI Operating Systems for ambitious founders, modern businesses, and future-ready teams. AI advisory, custom copilots, voice AI, and managed retainers.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

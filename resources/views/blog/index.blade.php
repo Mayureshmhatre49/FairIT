@@ -4,7 +4,7 @@
 @section('description', 'Expert insights on AI transformation, voice AI, founder productivity, AI operating systems, and business automation from the FairIT Solutions team.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

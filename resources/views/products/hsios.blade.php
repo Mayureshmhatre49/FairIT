@@ -4,7 +4,7 @@
 @section('description', 'HSI OS is the AI operating system for interior design, renovation, and home execution. Project management AI, vendor coordination, budget intelligence for homeowners and interior firms.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

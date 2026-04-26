@@ -4,7 +4,7 @@
 @section('description', 'Explore our AI Operating Systems: SarathiOS for founders, HSI OS for interior design, and HandleLife OS for modern family life. Purpose-built AI products for real-world complexity.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

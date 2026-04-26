@@ -4,7 +4,7 @@
 @section('description', 'AI transformation solutions for startups, SMEs, real estate, hospitality, interior design, healthcare, education, and professional services.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

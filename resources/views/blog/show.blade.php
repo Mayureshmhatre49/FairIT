@@ -8,7 +8,7 @@
 @if($post->featured_image) @section('og_image', $post->featured_image) @endif
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [

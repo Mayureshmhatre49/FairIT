@@ -4,7 +4,7 @@
 @section('description', 'Premium AI services: transformation advisory, custom copilots, voice AI automation, managed retainers, and founder growth advisory. Results-driven, globally delivered.')
 
 @section('schema')
-<script type="application/ld+json">
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
     "@context": "https://schema.org",
     "@graph": [
