@@ -23,8 +23,43 @@
     <div class="container-wide">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-            {{-- Contact Info --}}
+            {{-- Founders & Contact Info --}}
             <div data-animate class="lg:col-span-1 space-y-8">
+                {{-- Meet the Founders --}}
+                <div class="bg-charcoal-50 rounded-2xl p-8 border border-charcoal-100">
+                    <h2 class="text-xl font-bold text-charcoal-950 mb-6">{{ __('contact.founders.title') }}</h2>
+                    <div class="space-y-6">
+                        {{-- Nishant --}}
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-brand-600 text-white shadow-glow-sm">NM</div>
+                            <div class="flex-1">
+                                <p class="font-bold text-charcoal-950 text-base">Nishant Mhatre</p>
+                                <p class="text-xs text-charcoal-500 mb-2">{{ __('contact.founders.nishant.role') }}</p>
+                                <div class="space-y-1">
+                                    <a href="mailto:Nishant@FairITSolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Nishant@FairITSolutions.in</a>
+                                    <a href="https://www.linkedin.com/in/nishantmhatre" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-charcoal-100"></div>
+
+                        {{-- Annemarie --}}
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-amber-600 text-white shadow-glow-sm">AMS</div>
+                            <div class="flex-1">
+                                <p class="font-bold text-charcoal-950 text-base">Annemarie M. Sickeler</p>
+                                <p class="text-xs text-charcoal-500 mb-2">{{ __('contact.founders.annemarie.role') }}</p>
+                                <div class="space-y-1">
+                                    <a href="mailto:Info@FairITSolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Info@FairITSolutions.ch</a>
+                                    <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Contact Information --}}
                 <div>
                     <h2 class="text-2xl font-bold text-charcoal-950 mb-6">{{ __('contact.info.title') }}</h2>
                     <div class="space-y-4">

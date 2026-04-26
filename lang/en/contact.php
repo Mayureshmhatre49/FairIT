@@ -43,4 +43,13 @@ return [
         'submit'             => 'Send Message',
         'footer_note'        => 'We respond within 24 hours. Your information is kept confidential.',
     ],
+    'founders' => [
+        'title' => 'Meet the Founders',
+        'nishant' => [
+            'role' => 'Founder',
+        ],
+        'annemarie' => [
+            'role' => 'Co-Founder',
+        ],
+    ],
 ];

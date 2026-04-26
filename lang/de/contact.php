@@ -43,4 +43,13 @@ return [
         'submit'             => 'Nachricht senden',
         'footer_note'        => 'Wir antworten innerhalb von 24 Stunden. Ihre Informationen werden vertraulich behandelt.',
     ],
+    'founders' => [
+        'title' => 'Lernen Sie die Gründer kennen',
+        'nishant' => [
+            'role' => 'Gründer',
+        ],
+        'annemarie' => [
+            'role' => 'Mitgründerin',
+        ],
+    ],
 ];
