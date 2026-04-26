@@ -10,9 +10,9 @@
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight text-center">
         <div data-animate>
-            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">Industries</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">AI for Every Industry</h1>
-            <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">We build tailored AI systems for the unique challenges and opportunities across every major sector.</p>
+            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('industries.hero.label') }}</span>
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{{ __('industries.hero.title') }}</h1>
+            <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">{{ __('industries.hero.subtitle') }}</p>
         </div>
     </div>
 </section>
@@ -30,7 +30,7 @@
                 <h2 class="text-lg font-bold text-charcoal-950 mb-2 group-hover:text-brand-700 transition-colors">{{ $industry['title'] }}</h2>
                 <p class="text-charcoal-500 text-sm leading-relaxed mb-4">{{ $industry['headline'] }}</p>
                 <div class="flex items-center gap-1.5 text-brand-600 text-sm font-semibold group-hover:gap-2.5 transition-all">
-                    Explore
+                    {{ __('industries.explore') }}
                     <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
@@ -41,9 +41,9 @@
 
 <section class="section-padding-sm bg-charcoal-950">
     <div class="container-tight text-center" data-animate>
-        <h2 class="text-3xl font-bold text-white mb-4">Don't See Your Industry?</h2>
-        <p class="text-charcoal-400 mb-8">We work across all sectors. Book a call to discuss your specific needs.</p>
-        <a href="{{ route('consultation') }}" class="btn-primary-lg">Book a Discovery Call</a>
+        <h2 class="text-3xl font-bold text-white mb-4">{{ __('industries.cta.title') }}</h2>
+        <p class="text-charcoal-400 mb-8">{{ __('industries.cta.subtitle') }}</p>
+        <a href="{{ route('consultation') }}" class="btn-primary-lg">{{ __('industries.cta.button') }}</a>
     </div>
 </section>
 

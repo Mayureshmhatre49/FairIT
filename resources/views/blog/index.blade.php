@@ -10,9 +10,9 @@
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight text-center">
         <div data-animate>
-            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">Insights</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">AI Intelligence for<br>Modern Leaders</h1>
-            <p class="text-charcoal-300 text-lg mt-6 max-w-xl mx-auto leading-relaxed">Practical thinking on AI transformation, founder productivity, voice AI, and building intelligent organisations.</p>
+            <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('blog.hero.label') }}</span>
+            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{!! __('blog.hero.title') !!}</h1>
+            <p class="text-charcoal-300 text-lg mt-6 max-w-xl mx-auto leading-relaxed">{{ __('blog.hero.subtitle') }}</p>
         </div>
     </div>
 </section>
@@ -23,7 +23,7 @@
         {{-- Category Filter --}}
         @if($categories->count() > 0)
         <div class="flex flex-wrap gap-2 mb-10" data-animate>
-            <a href="{{ route('blog.index') }}" class="badge {{ !request('category') ? 'badge-blue' : 'bg-charcoal-100 text-charcoal-600 border-charcoal-200' }}">All Posts</a>
+            <a href="{{ route('blog.index') }}" class="badge {{ !request('category') ? 'badge-blue' : 'bg-charcoal-100 text-charcoal-600 border-charcoal-200' }}">{{ __('blog.filter.all_posts') }}</a>
             @foreach($categories as $cat)
             <a href="{{ route('blog.index', ['category' => $cat]) }}" class="badge {{ request('category') == $cat ? 'badge-blue' : 'bg-charcoal-100 text-charcoal-600 border-charcoal-200 hover:bg-charcoal-200' }} transition-colors">{{ $cat }}</a>
             @endforeach
@@ -73,9 +73,9 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
             </div>
-            <h3 class="text-xl font-bold text-charcoal-950 mb-2">No posts yet</h3>
-            <p class="text-charcoal-500 mb-8">Insights and articles coming soon. Check back shortly.</p>
-            <a href="{{ route('home') }}" class="btn-secondary">Back to Home</a>
+            <h3 class="text-xl font-bold text-charcoal-950 mb-2">{{ __('blog.empty.title') }}</h3>
+            <p class="text-charcoal-500 mb-8">{{ __('blog.empty.subtitle') }}</p>
+            <a href="{{ route('home') }}" class="btn-secondary">{{ __('blog.empty.back') }}</a>
         </div>
         @endif
     </div>
