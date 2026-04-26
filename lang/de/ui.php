@@ -27,7 +27,7 @@ return [
     ],
     'footer' => [
         'tagline'            => 'Wir entwickeln KI-Betriebssysteme für Gründer, Zuhause & Leben. Wir helfen Unternehmen, durch intelligente Systeme zu wachsen.',
-        'location'           => 'Schweiz & Global',
+        'location'           => 'Schweiz, Indien & Global',
         'services'           => 'Leistungen',
         'products'           => 'Produkte',
         'company'            => 'Unternehmen',

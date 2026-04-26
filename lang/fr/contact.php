@@ -10,7 +10,7 @@ return [
         'title'           => 'Informations de contact',
         'email_label'     => 'Email',
         'location_label'  => 'Localisation',
-        'location_value'  => 'Suisse & monde entier',
+        'location_value'  => 'Suisse, Inde & monde entier',
         'response_label'  => 'Délai de réponse',
         'response_value'  => 'Dans les 24 heures',
         'book_title'      => 'Préférez réserver directement ?',

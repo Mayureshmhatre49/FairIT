@@ -27,7 +27,7 @@ return [
     ],
     'footer' => [
         'tagline'            => 'Building AI Operating Systems for Founders, Homes & Life. We help organisations unlock growth through intelligent systems.',
-        'location'           => 'Switzerland & Global',
+        'location'           => 'Switzerland, India & Global',
         'services'           => 'Services',
         'products'           => 'Products',
         'company'            => 'Company',

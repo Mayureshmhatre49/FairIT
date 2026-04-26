@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact FairIT Solutions — Get in Touch')
-@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Based in Switzerland, serving globally.')
+@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Based in Switzerland & India, serving globally.')
 
 @section('content')
 

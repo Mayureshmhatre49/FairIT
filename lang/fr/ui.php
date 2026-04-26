@@ -27,7 +27,7 @@ return [
     ],
     'footer' => [
         'tagline'            => 'Nous développons des systèmes d\'exploitation IA pour fondateurs, maisons & vie. Nous aidons les organisations à croître grâce à des systèmes intelligents.',
-        'location'           => 'Suisse & Monde',
+        'location'           => 'Suisse, Inde & Monde',
         'services'           => 'Services',
         'products'           => 'Produits',
         'company'            => 'Entreprise',
