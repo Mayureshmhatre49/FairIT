@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FairIT Solutions — AI That Makes Every Day Better</title>
-    <meta name="description" content="We build AI systems that make your business smarter, your home easier, and your everyday life better.">
+    <title>FairIT Solutions — AI Operating Systems for Life, Business &amp; Industry</title>
+    <meta name="description" content="FairIT Solutions builds AI Operating Systems for founders, homes, and everyday life. AI products, enterprise services, and automation — India and Europe.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -166,36 +166,50 @@
         .ind-card { transition:all .3s; cursor:pointer; }
         .ind-card:hover { transform:translateY(-4px) scale(1.02); box-shadow:0 16px 40px rgba(0,0,0,.1); }
 
-        /* ── Google Translate ── */
-        #google_translate_element { display:inline-flex; align-items:center; }
-        .goog-te-gadget { font-family:'Inter',sans-serif !important; font-size:0 !important; }
-        .goog-te-gadget-simple {
-            background: rgba(201,168,76,.1) !important;
-            border: 1px solid rgba(201,168,76,.25) !important;
-            border-radius: 8px !important;
-            padding: 5px 10px !important;
-            cursor: pointer !important;
-            white-space: nowrap !important;
-        }
-        .goog-te-gadget-simple .goog-te-menu-value {
-            color: #c9a84c !important;
-            font-size: 12px !important;
-            font-weight: 600 !important;
-            font-family: 'Inter', sans-serif !important;
-            letter-spacing: .02em !important;
-        }
-        .goog-te-gadget-simple .goog-te-menu-value span { color: #c9a84c !important; }
-        .goog-te-gadget-simple .goog-te-menu-value span:last-child { display:none !important; }
-        .goog-te-gadget-simple img { display:none !important; }
-        .goog-logo-link, .goog-te-gadget > span { display:none !important; }
+        /* ── Google Translate suppression ── */
+        #google_translate_element { position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; }
+        .goog-te-gadget { font-size:0 !important; }
+        .goog-te-gadget select { position:absolute; left:-9999px; }
         .goog-te-banner-frame { display:none !important; }
-        body { top: 0 !important; }
-        /* Scrolled navbar state — keep gold color */
-        .navbar-scrolled .goog-te-gadget-simple {
-            background: rgba(201,168,76,.08) !important;
-            border-color: rgba(201,168,76,.3) !important;
+        .goog-logo-link, .goog-te-gadget > span { display:none !important; }
+        body { top:0 !important; }
+
+        /* ── Picker shared ── */
+        .fairit-picker { position:relative; z-index:200; }
+        .fairit-picker-btn {
+            display:flex; align-items:center; gap:5px;
+            padding:5px 10px; border-radius:8px; cursor:pointer;
+            background:rgba(201,168,76,.08); border:1px solid rgba(201,168,76,.2);
+            color:#c9a84c; font-size:11px; font-weight:600;
+            font-family:'Inter',sans-serif; transition:all .2s;
+            white-space:nowrap; user-select:none; letter-spacing:.02em;
         }
-        .goog-te-menu-frame { box-shadow: 0 20px 60px rgba(0,0,0,.3) !important; border-radius:12px !important; }
+        .fairit-picker-btn:hover { background:rgba(201,168,76,.16); border-color:rgba(201,168,76,.4); }
+        .navbar-scrolled .fairit-picker-btn { background:rgba(201,168,76,.08); border-color:rgba(201,168,76,.25); color:#8a6a1e; }
+        .fairit-picker-panel {
+            display:none; position:absolute; top:calc(100% + 8px); right:0;
+            background:#13100c; border:1px solid rgba(201,168,76,.2); border-radius:14px;
+            padding:6px; box-shadow:0 24px 60px rgba(0,0,0,.6);
+            min-width:190px; max-height:320px; overflow-y:auto;
+        }
+        .fairit-picker-panel.open { display:block; animation:picker-in .15s ease-out; }
+        @keyframes picker-in { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+        .fairit-picker-item {
+            display:flex; align-items:center; gap:9px;
+            padding:7px 11px; border-radius:8px; cursor:pointer;
+            font-size:12px; font-weight:500; color:rgba(245,237,224,.6);
+            transition:all .12s; white-space:nowrap;
+        }
+        .fairit-picker-item:hover { background:rgba(201,168,76,.1); color:#e8cc80; }
+        .fairit-picker-item.active { background:rgba(201,168,76,.15); color:#e8cc80; font-weight:700; }
+        .fairit-picker-item .pi-flag { font-size:15px; line-height:1; flex-shrink:0; }
+        .fairit-picker-item .pi-label { font-weight:700; letter-spacing:.02em; }
+        .fairit-picker-item .pi-name { font-size:10.5px; color:rgba(245,237,224,.35); margin-left:auto; }
+        .fairit-picker-sep { height:1px; background:rgba(201,168,76,.1); margin:4px 0; }
+        /* Picker scrollbar */
+        .fairit-picker-panel::-webkit-scrollbar { width:4px; }
+        .fairit-picker-panel::-webkit-scrollbar-track { background:transparent; }
+        .fairit-picker-panel::-webkit-scrollbar-thumb { background:rgba(201,168,76,.25); border-radius:4px; }
     </style>
 </head>
 <body>
@@ -214,7 +228,7 @@
                 </div>
                 <div>
                     <span class="nav-txt sans font-bold text-white text-[15px] block leading-tight transition-colors">FairIT Solutions</span>
-                    <span class="nav-muted text-[9px] font-semibold tracking-[.18em] uppercase block" style="color:rgba(201,168,76,.6)">AI FOR EVERYDAY LIFE</span>
+                    <span class="nav-muted text-[9px] font-semibold tracking-[.18em] uppercase block" style="color:rgba(201,168,76,.6)">AI OS Ecosystem</span>
                 </div>
             </a>
 
@@ -225,21 +239,77 @@
                 <a href="#products"   class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Products</a>
                 <a href="#industries" class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Industries</a>
                 <a href="#blog"       class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Blog</a>
+                <a href="#contact"    class="nav-txt text-white/65 hover:text-white text-sm font-medium px-3.5 py-2 rounded-lg hover:bg-white/8 transition-all">Contact</a>
             </div>
 
-            <!-- CTA -->
-            <div class="hidden lg:flex items-center gap-4">
-                <a href="#contact" class="nav-txt text-white/65 hover:text-white text-sm font-medium transition-all">Contact</a>
-                <!-- Google Translate -->
-                <div class="flex items-center gap-1.5" title="Translate this page">
-                    <svg class="w-3.5 h-3.5 flex-shrink-0" style="color:rgba(201,168,76,.7)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
-                    <div id="google_translate_element"></div>
+            <!-- CTA + Pickers -->
+            <div class="hidden lg:flex items-center gap-2.5">
+
+                <!-- Language Picker -->
+                <div class="fairit-picker" id="lp-wrap">
+                    <button class="fairit-picker-btn" id="lp-btn" aria-label="Select language">
+                        <svg class="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                        <span id="lp-label">🇬🇧 EN</span>
+                        <svg class="w-2.5 h-2.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="fairit-picker-panel" id="lp-panel">
+                        <div class="fairit-picker-item active" data-lp="en" data-flag="🇬🇧" data-short="EN"><span class="pi-flag">🇬🇧</span><span class="pi-label">English</span></div>
+                        <div class="fairit-picker-item" data-lp="de" data-flag="🇩🇪" data-short="DE"><span class="pi-flag">🇩🇪</span><span class="pi-label">Deutsch</span><span class="pi-name">German</span></div>
+                        <div class="fairit-picker-item" data-lp="fr" data-flag="🇫🇷" data-short="FR"><span class="pi-flag">🇫🇷</span><span class="pi-label">Français</span><span class="pi-name">French</span></div>
+                        <div class="fairit-picker-item" data-lp="it" data-flag="🇮🇹" data-short="IT"><span class="pi-flag">🇮🇹</span><span class="pi-label">Italiano</span><span class="pi-name">Italian</span></div>
+                        <div class="fairit-picker-item" data-lp="es" data-flag="🇪🇸" data-short="ES"><span class="pi-flag">🇪🇸</span><span class="pi-label">Español</span><span class="pi-name">Spanish</span></div>
+                        <div class="fairit-picker-item" data-lp="pt" data-flag="🇵🇹" data-short="PT"><span class="pi-flag">🇵🇹</span><span class="pi-label">Português</span><span class="pi-name">Portuguese</span></div>
+                        <div class="fairit-picker-sep"></div>
+                        <div class="fairit-picker-item" data-lp="hi" data-flag="🇮🇳" data-short="HI"><span class="pi-flag">🇮🇳</span><span class="pi-label">हिन्दी</span><span class="pi-name">Hindi</span></div>
+                        <div class="fairit-picker-item" data-lp="mr" data-flag="🇮🇳" data-short="MR"><span class="pi-flag">🇮🇳</span><span class="pi-label">मराठी</span><span class="pi-name">Marathi</span></div>
+                        <div class="fairit-picker-item" data-lp="ur" data-flag="🇵🇰" data-short="UR"><span class="pi-flag">🇵🇰</span><span class="pi-label">اردو</span><span class="pi-name">Urdu</span></div>
+                        <div class="fairit-picker-item" data-lp="ar" data-flag="🇸🇦" data-short="AR"><span class="pi-flag">🇸🇦</span><span class="pi-label">العربية</span><span class="pi-name">Arabic</span></div>
+                        <div class="fairit-picker-sep"></div>
+                        <div class="fairit-picker-item" data-lp="zh-CN" data-flag="🇨🇳" data-short="ZH"><span class="pi-flag">🇨🇳</span><span class="pi-label">中文 (简体)</span><span class="pi-name">Chinese</span></div>
+                        <div class="fairit-picker-item" data-lp="ja" data-flag="🇯🇵" data-short="JA"><span class="pi-flag">🇯🇵</span><span class="pi-label">日本語</span><span class="pi-name">Japanese</span></div>
+                        <div class="fairit-picker-item" data-lp="ko" data-flag="🇰🇷" data-short="KO"><span class="pi-flag">🇰🇷</span><span class="pi-label">한국어</span><span class="pi-name">Korean</span></div>
+                        <div class="fairit-picker-sep"></div>
+                        <div class="fairit-picker-item" data-lp="nl" data-flag="🇳🇱" data-short="NL"><span class="pi-flag">🇳🇱</span><span class="pi-label">Nederlands</span><span class="pi-name">Dutch</span></div>
+                        <div class="fairit-picker-item" data-lp="ru" data-flag="🇷🇺" data-short="RU"><span class="pi-flag">🇷🇺</span><span class="pi-label">Русский</span><span class="pi-name">Russian</span></div>
+                        <div class="fairit-picker-item" data-lp="pl" data-flag="🇵🇱" data-short="PL"><span class="pi-flag">🇵🇱</span><span class="pi-label">Polski</span><span class="pi-name">Polish</span></div>
+                        <div class="fairit-picker-item" data-lp="tr" data-flag="🇹🇷" data-short="TR"><span class="pi-flag">🇹🇷</span><span class="pi-label">Türkçe</span><span class="pi-name">Turkish</span></div>
+                        <div class="fairit-picker-item" data-lp="sv" data-flag="🇸🇪" data-short="SV"><span class="pi-flag">🇸🇪</span><span class="pi-label">Svenska</span><span class="pi-name">Swedish</span></div>
+                    </div>
                 </div>
+
+                <!-- Currency Picker -->
+                <div class="fairit-picker" id="cp-wrap">
+                    <button class="fairit-picker-btn" id="cp-btn" aria-label="Select currency">
+                        <svg class="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span id="cp-label">🇨🇭 CHF</span>
+                        <svg class="w-2.5 h-2.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="fairit-picker-panel" id="cp-panel">
+                        <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-widest" style="color:rgba(201,168,76,.4)">Preferred Currency</div>
+                        <div class="fairit-picker-item active" data-cp="CHF" data-flag="🇨🇭"><span class="pi-flag">🇨🇭</span><span class="pi-label">CHF</span><span class="pi-name">Swiss Franc</span></div>
+                        <div class="fairit-picker-item" data-cp="EUR" data-flag="🇪🇺"><span class="pi-flag">🇪🇺</span><span class="pi-label">EUR</span><span class="pi-name">Euro</span></div>
+                        <div class="fairit-picker-item" data-cp="USD" data-flag="🇺🇸"><span class="pi-flag">🇺🇸</span><span class="pi-label">USD</span><span class="pi-name">US Dollar</span></div>
+                        <div class="fairit-picker-item" data-cp="GBP" data-flag="🇬🇧"><span class="pi-flag">🇬🇧</span><span class="pi-label">GBP</span><span class="pi-name">British Pound</span></div>
+                        <div class="fairit-picker-sep"></div>
+                        <div class="fairit-picker-item" data-cp="INR" data-flag="🇮🇳"><span class="pi-flag">🇮🇳</span><span class="pi-label">INR</span><span class="pi-name">Indian Rupee</span></div>
+                        <div class="fairit-picker-item" data-cp="AED" data-flag="🇦🇪"><span class="pi-flag">🇦🇪</span><span class="pi-label">AED</span><span class="pi-name">UAE Dirham</span></div>
+                        <div class="fairit-picker-item" data-cp="SGD" data-flag="🇸🇬"><span class="pi-flag">🇸🇬</span><span class="pi-label">SGD</span><span class="pi-name">Singapore Dollar</span></div>
+                        <div class="fairit-picker-item" data-cp="AUD" data-flag="🇦🇺"><span class="pi-flag">🇦🇺</span><span class="pi-label">AUD</span><span class="pi-name">Australian Dollar</span></div>
+                        <div class="fairit-picker-item" data-cp="CAD" data-flag="🇨🇦"><span class="pi-flag">🇨🇦</span><span class="pi-label">CAD</span><span class="pi-name">Canadian Dollar</span></div>
+                        <div class="fairit-picker-item" data-cp="JPY" data-flag="🇯🇵"><span class="pi-flag">🇯🇵</span><span class="pi-label">JPY</span><span class="pi-name">Japanese Yen</span></div>
+                        <div class="fairit-picker-item" data-cp="SAR" data-flag="🇸🇦"><span class="pi-flag">🇸🇦</span><span class="pi-label">SAR</span><span class="pi-name">Saudi Riyal</span></div>
+                    </div>
+                </div>
+
+                <!-- Book CTA -->
                 <a href="#cta" class="btn-gold inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm sans">
                     Book Consultation
                     <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                 </a>
             </div>
+
+            <!-- Hidden Google Translate element (provides translation functionality) -->
+            <div id="google_translate_element" aria-hidden="true"></div>
 
             <button class="lg:hidden p-2 rounded-lg text-white/70 hover:bg-white/10">
                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -314,25 +384,29 @@
             </div>
         </div>
 
-        <h1 data-animate data-animate-delay="100" class="serif text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white leading-[1.04] tracking-tight">
-            AI That Makes<br>
-            <em class="gt-hero not-italic">Every Day Better</em>
+        <h1 data-animate data-animate-delay="100" class="serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.06] tracking-tight">
+            Building AI Operating Systems<br>
+            <em class="gt-hero not-italic">for Life, Business &amp; Industry.</em>
         </h1>
 
         <p data-animate data-animate-delay="200" class="mt-8 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-light" style="color:rgba(245,237,224,.55)">
-            We build intelligent AI systems for your business, your home, and your life — so you can focus on what truly matters.
+            We design and deploy AI systems that run real businesses, manage real homes, and simplify real lives — across India and Europe.
         </p>
 
         <div data-animate data-animate-delay="300" class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#cta" class="btn-gold inline-flex items-center gap-2.5 font-bold px-8 py-4 rounded-xl text-base sans">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Book a Free Consultation
+                Book a Strategy Call
             </a>
-            <a href="#products" class="inline-flex items-center gap-2.5 font-semibold px-8 py-4 rounded-xl text-base sans transition-all text-white/75 hover:text-white" style="border:1.5px solid rgba(201,168,76,.25);hover:border-color:rgba(201,168,76,.6)">
+            <a href="#products" class="inline-flex items-center gap-2.5 font-semibold px-8 py-4 rounded-xl text-base sans transition-all text-white/75 hover:text-white" style="border:1.5px solid rgba(201,168,76,.25)">
                 Explore Our Products
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
         </div>
+
+        <p data-animate data-animate-delay="350" class="mt-6 text-xs font-semibold tracking-[.12em] uppercase" style="color:rgba(201,168,76,.4)">
+            AI Products &nbsp;•&nbsp; Enterprise Services &nbsp;•&nbsp; Automation &nbsp;•&nbsp; Global Delivery &nbsp;•&nbsp; India + Europe Presence
+        </p>
 
         <!-- Stats -->
         <div data-animate data-animate-delay="400" class="mt-20 pt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto" style="border-top:1px solid rgba(201,168,76,.12)">
@@ -396,12 +470,39 @@
         <div class="text-center mb-4" data-animate data-animate-delay="100">
             <div class="gold-line mx-auto mb-6"></div>
             <h2 class="serif text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight" style="color:#1a1208">
-                AI Should Work for<br><span class="wavy-gold">People</span>, Not Just Corporations.
+                More Than an IT Company.<br>We Build <span class="wavy-gold">AI Systems</span> That Run Real Work.
             </h2>
         </div>
-        <p data-animate data-animate-delay="200" class="text-center text-lg max-w-2xl mx-auto leading-relaxed mb-20" style="color:#8a7a65">
-            We bring AI across three dimensions of life — so the benefits reach everyone, not just enterprise giants.
+        <p data-animate data-animate-delay="200" class="text-center text-lg max-w-2xl mx-auto leading-relaxed mb-10" style="color:#8a7a65">
+            We combine deep product thinking, AI engineering, and real business experience to deliver systems that don't just automate — they transform the way you work, live, and grow.
         </p>
+
+        <div data-animate data-animate-delay="300" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl mx-auto mb-20">
+            <div class="flex items-center gap-3 rounded-xl px-4 py-3" style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.14)">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <span class="text-sm font-medium" style="color:#3d2e1a">AI copilots for every team</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-3" style="background:rgba(181,84,30,.05);border:1px solid rgba(181,84,30,.12)">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <span class="text-sm font-medium" style="color:#3d2e1a">End-to-end automation systems</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-3" style="background:rgba(26,92,53,.05);border:1px solid rgba(26,92,53,.12)">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <span class="text-sm font-medium" style="color:#3d2e1a">Workflow intelligence layers</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-3" style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.14)">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <span class="text-sm font-medium" style="color:#3d2e1a">Human-centred product design</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-3" style="background:rgba(181,84,30,.05);border:1px solid rgba(181,84,30,.12)">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <span class="text-sm font-medium" style="color:#3d2e1a">Scalable software engineering</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl px-4 py-3" style="background:rgba(26,92,53,.05);border:1px solid rgba(26,92,53,.12)">
+                <div class="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                <span class="text-sm font-medium" style="color:#3d2e1a">Business transformation expertise</span>
+            </div>
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -479,87 +580,174 @@
                 <div class="gold-line mt-4 mb-5"></div>
                 <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">AI Services That<br>Move the Needle</h2>
             </div>
-            <p class="text-sm leading-relaxed lg:max-w-xs" style="color:#8a7a65">From strategy to deployment — we make sure AI delivers real, measurable results.</p>
+            <p class="text-sm leading-relaxed lg:max-w-xs" style="color:#8a7a65">From strategy to deployment — AI solutions that deliver real, measurable results for your business.</p>
         </div>
 
-        <div class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <!-- S1 -->
-            <div data-animate class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 gold-border transition-all" style="border:1.5px solid rgba(201,168,76,.15);box-shadow:0 2px 20px rgba(0,0,0,.04)">
-                <div class="flex items-center gap-5 flex-shrink-0">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 20px rgba(201,168,76,.28)">
-                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0"/></svg>
+            <!-- S1: AI Chatbots & Voice Bots -->
+            <div data-animate class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(201,168,76,.18);box-shadow:0 4px 24px rgba(201,168,76,.06)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 20px rgba(201,168,76,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
                     </div>
-                    <span class="serif text-5xl font-bold" style="color:#f0e6ce">01</span>
+                    <span class="serif text-3xl font-bold" style="color:#e8cc80">01</span>
                 </div>
-                <div class="flex-1">
-                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">AI Transformation Advisory</h3>
-                    <p class="text-sm leading-relaxed" style="color:#8a7a65">AI readiness audits, roadmap creation, ROI prioritisation, and leadership workshops to guide your organisation's intelligent transformation.</p>
-                </div>
-                <a href="#cta" class="sans font-bold text-sm gt-gold whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Book Strategy Session →</a>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">AI Chatbots &amp; Voice Bots</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">Intelligent conversational agents for WhatsApp, web, and voice — qualifying leads, booking appointments, and serving customers 24/7.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-gold hover:opacity-70 transition-opacity">Get Started →</a>
             </div>
 
-            <!-- S2 -->
-            <div data-animate data-animate-delay="100" class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 transition-all" style="border:1.5px solid rgba(181,84,30,.15);box-shadow:0 2px 20px rgba(0,0,0,.04)">
-                <div class="flex items-center gap-5 flex-shrink-0">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.25)">
+            <!-- S2: AI Automation -->
+            <div data-animate data-animate-delay="100" class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(181,84,30,.15);box-shadow:0 4px 24px rgba(181,84,30,.05)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.25)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <span class="serif text-3xl font-bold" style="color:#d4864a">02</span>
+                </div>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">AI Automation</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">Automate repetitive workflows across sales, ops, and customer service — save hours every week and eliminate costly human error at scale.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-copper hover:opacity-70 transition-opacity">See Use Cases →</a>
+            </div>
+
+            <!-- S3: AI Copilots for Teams -->
+            <div data-animate data-animate-delay="200" class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(26,92,53,.15);box-shadow:0 4px 24px rgba(26,92,53,.05)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <span class="serif text-3xl font-bold" style="color:#22a05a">03</span>
+                </div>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">AI Copilots for Teams</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">Role-specific AI assistants for sales, HR, support, and finance — trained on your data, tuned to your processes, deployed in your environment.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-forest hover:opacity-70 transition-opacity">Request Demo →</a>
+            </div>
+
+            <!-- S4: AI Digital Transformation -->
+            <div data-animate data-animate-delay="300" class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(217,119,6,.18);box-shadow:0 4px 24px rgba(217,119,6,.05)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#d97706,#c9a84c);box-shadow:0 8px 20px rgba(217,119,6,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <span class="serif text-3xl font-bold" style="color:#c9a84c">04</span>
+                </div>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">AI Digital Transformation</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">End-to-end AI-first redesign of your operations — process mapping to full implementation with change management and leadership alignment.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-gold hover:opacity-70 transition-opacity">Book Advisory →</a>
+            </div>
+
+            <!-- S5: SaaS Product Development -->
+            <div data-animate class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(201,168,76,.18);box-shadow:0 4px 24px rgba(201,168,76,.06)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 8px 20px rgba(201,168,76,.3)">
+                        <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <span class="serif text-3xl font-bold" style="color:#e8cc80">05</span>
+                </div>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">SaaS Product Development</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">Build AI-powered B2B or B2C SaaS products from concept to launch — product strategy, UX/UI design, engineering, and go-to-market support.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-gold hover:opacity-70 transition-opacity">Start Building →</a>
+            </div>
+
+            <!-- S6: CRM/ERP Intelligence Layer -->
+            <div data-animate data-animate-delay="100" class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(181,84,30,.15);box-shadow:0 4px 24px rgba(181,84,30,.05)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.25)">
                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
                     </div>
-                    <span class="serif text-5xl font-bold" style="color:#f5e8dc">02</span>
+                    <span class="serif text-3xl font-bold" style="color:#d4864a">06</span>
                 </div>
-                <div class="flex-1">
-                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">Custom AI Copilot Development</h3>
-                    <p class="text-sm leading-relaxed" style="color:#8a7a65">Build internal AI copilots for CEOs, sales, HR, and operations — trained on your data, tuned to your workflows, deployed in your environment.</p>
-                </div>
-                <a href="#cta" class="sans font-bold text-sm gt-copper whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Request Demo →</a>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">CRM/ERP Intelligence Layer</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">Add AI on top of your existing CRM or ERP to surface insights, predict outcomes, and automate follow-ups — no rip-and-replace required.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-copper hover:opacity-70 transition-opacity">Learn More →</a>
             </div>
 
-            <!-- S3 -->
-            <div data-animate data-animate-delay="200" class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 transition-all" style="border:1.5px solid rgba(26,92,53,.15);box-shadow:0 2px 20px rgba(0,0,0,.04)">
-                <div class="flex items-center gap-5 flex-shrink-0">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.28)">
-                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+            <!-- S7: AI for Real Estate & Hospitality -->
+            <div data-animate data-animate-delay="200" class="card-lift rounded-2xl p-6 flex flex-col" style="background:#fdf8f0;border:1.5px solid rgba(26,92,53,.15);box-shadow:0 4px 24px rgba(26,92,53,.05)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.28)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     </div>
-                    <span class="serif text-5xl font-bold" style="color:#ddf0e6">03</span>
+                    <span class="serif text-3xl font-bold" style="color:#22a05a">07</span>
                 </div>
-                <div class="flex-1">
-                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">Voice AI &amp; Conversational Automation</h3>
-                    <p class="text-sm leading-relaxed" style="color:#8a7a65">AI voice callers, multilingual bots, booking automation, and WhatsApp workflows — enterprise scale, human warmth, 40+ languages.</p>
-                </div>
-                <a href="#cta" class="sans font-bold text-sm gt-forest whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">See Use Cases →</a>
+                <h3 class="sans font-bold text-base mb-2" style="color:#1a1208">AI for Real Estate &amp; Hospitality</h3>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">Specialised AI for property management, guest experience, booking automation, and intelligent portfolio reporting.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-forest hover:opacity-70 transition-opacity">Explore Solutions →</a>
             </div>
 
-            <!-- S4 -->
-            <div data-animate data-animate-delay="300" class="card-lift group flex flex-col sm:flex-row items-start gap-6 bg-white rounded-2xl p-7 transition-all" style="border:1.5px solid rgba(217,119,6,.2);box-shadow:0 2px 20px rgba(0,0,0,.04)">
-                <div class="flex items-center gap-5 flex-shrink-0">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#d97706,#c9a84c);box-shadow:0 8px 20px rgba(217,119,6,.28)">
-                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <!-- S8: AI Consulting & Strategy -->
+            <div data-animate data-animate-delay="300" class="card-lift rounded-2xl p-6 flex flex-col" style="background:linear-gradient(135deg,#fdf4e6,#fdf8f0);border:1.5px solid rgba(201,168,76,.3);box-shadow:0 8px 32px rgba(201,168,76,.1)">
+                <div class="flex items-start justify-between mb-5">
+                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 20px rgba(201,168,76,.35)">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0"/></svg>
                     </div>
-                    <span class="serif text-5xl font-bold" style="color:#fef3dc">04</span>
+                    <span class="serif text-3xl font-bold" style="color:#c9a84c">08</span>
                 </div>
-                <div class="flex-1">
-                    <h3 class="sans text-xl font-bold mb-2" style="color:#1a1208">Managed AI Retainers</h3>
-                    <p class="text-sm leading-relaxed" style="color:#8a7a65">Monthly AI optimisation, bot management, workflow enhancement, and continuous innovation — your always-on AI team.</p>
+                <div class="flex items-center gap-2 mb-2">
+                    <h3 class="sans font-bold text-base" style="color:#1a1208">AI Consulting &amp; Strategy</h3>
+                    <span class="pill" style="background:rgba(201,168,76,.15);color:#8a6a1e;font-size:.6rem">High-Touch</span>
                 </div>
-                <a href="#cta" class="sans font-bold text-sm gt-gold whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Talk to Expert →</a>
+                <p class="text-xs leading-relaxed flex-1 mb-4" style="color:#8a7a65">High-touch advisory for leaders — AI investment clarity, build-vs-buy decisions, and long-term AI roadmaps with founder-level execution support.</p>
+                <a href="#cta" class="sans font-bold text-xs gt-gold hover:opacity-70 transition-opacity">Apply Now →</a>
             </div>
 
-            <!-- S5 — Featured -->
-            <div data-animate data-animate-delay="400" class="card-lift group flex flex-col sm:flex-row items-start gap-6 rounded-2xl p-7 transition-all" style="background:linear-gradient(135deg,#fdf4e6,#fdf8f0);border:1.5px solid rgba(201,168,76,.3);box-shadow:0 8px 40px rgba(201,168,76,.1)">
-                <div class="flex items-center gap-5 flex-shrink-0">
-                    <div class="w-12 h-12 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 8px 20px rgba(201,168,76,.35)">
-                        <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    </div>
-                    <span class="serif text-5xl font-bold" style="color:#e8cc80">05</span>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════ WHY FAIRIT ══════════════════════════════ -->
+<section style="background:linear-gradient(135deg,#07060a 0%,#100d08 100%)" class="py-24 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 opacity-8" style="background:radial-gradient(circle,#c9a84c,transparent);filter:blur(80px);border-radius:50%"></div>
+    <div class="absolute bottom-0 left-1/4 w-80 h-80 opacity-6" style="background:radial-gradient(circle,#b5541e,transparent);filter:blur(70px);border-radius:50%"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+            <div data-animate>
+                <span class="section-label gt-gold">Why FairIT</span>
+                <div class="gold-line mt-4 mb-6"></div>
+                <h2 class="serif text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Built Different.<br><span class="gt-hero italic">Built to Deliver.</span>
+                </h2>
+                <p class="mt-6 text-base leading-relaxed" style="color:rgba(245,237,224,.45)">
+                    We're not a generic IT vendor. We're an AI product studio with services muscle — and we bring both to every engagement.
+                </p>
+                <a href="#cta" class="mt-8 inline-flex items-center gap-2.5 btn-gold font-bold px-7 py-3.5 rounded-xl text-sm sans">
+                    Work With Us
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <div data-animate data-animate-delay="200" class="grid grid-cols-1 gap-3">
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-4 h-4" style="color:#1a1208" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">Real business understanding</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">We've built and run businesses — we know what actually moves the needle.</p></div>
                 </div>
-                <div class="flex-1">
-                    <div class="flex items-center gap-3 mb-2">
-                        <h3 class="sans text-xl font-bold" style="color:#1a1208">Founder Growth Advisory</h3>
-                        <span class="pill" style="background:rgba(201,168,76,.15);color:#8a6a1e;font-size:.65rem">High-Touch</span>
-                    </div>
-                    <p class="text-sm leading-relaxed" style="color:#8a7a65">Strategic AI systems for founders, business owners, and leaders who want to operate at the frontier — with a dedicated AI advisor in their corner.</p>
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">AI-first product thinking</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">Every solution is designed with AI at the core, not bolted on as an afterthought.</p></div>
                 </div>
-                <a href="#cta" class="sans font-bold text-sm gt-gold whitespace-nowrap flex-shrink-0 hover:opacity-70 transition-opacity">Apply Now →</a>
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">Startup speed + enterprise reliability</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">We ship fast without cutting corners on quality, security, or scalability.</p></div>
+                </div>
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#d97706,#c9a84c)"><svg class="w-4 h-4" style="color:#1a1208" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">India cost advantage</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">World-class AI delivery from India, with European standards and oversight.</p></div>
+                </div>
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#c9a84c,#e8cc80)"><svg class="w-4 h-4" style="color:#1a1208" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">Product + services model</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">Own products (SarathiOS, HSI OS, HandleLife OS) + custom services under one roof.</p></div>
+                </div>
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#b5541e,#d4864a)"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">Founder-led execution</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">You work directly with the founders — no account managers, no hand-offs.</p></div>
+                </div>
+                <div class="flex items-start gap-4 rounded-2xl px-5 py-4 glass">
+                    <div class="w-8 h-8 rounded-xl flex-shrink-0 flex items-center justify-center" style="background:linear-gradient(135deg,#1a5c35,#22a05a)"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div><p class="sans font-bold text-sm text-white">Cross-industry experience</p><p class="text-xs mt-0.5" style="color:rgba(245,237,224,.4)">Real estate, hospitality, healthcare, retail, startups — we bring proven cross-sector patterns.</p></div>
+                </div>
             </div>
 
         </div>
@@ -592,8 +780,14 @@
                         <svg class="w-5 h-5" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
                     </div>
                 </div>
-                <h3 class="serif text-3xl font-bold text-white mb-2">SarathiOS</h3>
-                <p class="text-sm leading-relaxed mb-6 flex-1" style="color:rgba(245,237,224,.45)">AI Operating System for startup founders &amp; CEOs. Growth command centre, strategy copilot, decision support, and fundraising readiness.</p>
+                <h3 class="serif text-3xl font-bold text-white mb-1">SarathiOS</h3>
+                <p class="text-xs font-semibold mb-3 gt-gold italic">The AI Command Center for Founders.</p>
+                <p class="text-sm leading-relaxed mb-4" style="color:rgba(245,237,224,.45)">AI Operating System for startup founders &amp; CEOs. Growth command centre, strategy copilot, decision support, and fundraising readiness.</p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                    <span class="pill" style="background:rgba(201,168,76,.1);color:rgba(232,204,128,.7);border:1px solid rgba(201,168,76,.15);font-size:.6rem">Startup Founders</span>
+                    <span class="pill" style="background:rgba(201,168,76,.1);color:rgba(232,204,128,.7);border:1px solid rgba(201,168,76,.15);font-size:.6rem">CEOs &amp; Executives</span>
+                    <span class="pill" style="background:rgba(201,168,76,.1);color:rgba(232,204,128,.7);border:1px solid rgba(201,168,76,.15);font-size:.6rem">Scale-up Teams</span>
+                </div>
 
                 <!-- Mock chart -->
                 <div class="rounded-2xl p-4 mb-6" style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.12)">
@@ -627,8 +821,14 @@
                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                     </div>
                 </div>
-                <h3 class="serif text-3xl font-bold text-white mb-2">HSI OS</h3>
-                <p class="text-sm leading-relaxed mb-6 flex-1" style="color:rgba(245,237,224,.45)">AI for interior design, renovation &amp; execution. For homeowners, architects, and interior firms ready to modernise how projects are run.</p>
+                <h3 class="serif text-3xl font-bold text-white mb-1">HSI OS</h3>
+                <p class="text-xs font-semibold mb-3 gt-forest italic">The AI Operating System for Interior &amp; Build Projects.</p>
+                <p class="text-sm leading-relaxed mb-4" style="color:rgba(245,237,224,.45)">AI for interior design, renovation &amp; execution. For homeowners, architects, and interior firms ready to modernise how projects are run.</p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                    <span class="pill" style="background:rgba(34,160,90,.08);color:rgba(34,160,90,.7);border:1px solid rgba(34,160,90,.15);font-size:.6rem">Architects</span>
+                    <span class="pill" style="background:rgba(34,160,90,.08);color:rgba(34,160,90,.7);border:1px solid rgba(34,160,90,.15);font-size:.6rem">Interior Firms</span>
+                    <span class="pill" style="background:rgba(34,160,90,.08);color:rgba(34,160,90,.7);border:1px solid rgba(34,160,90,.15);font-size:.6rem">Homeowners</span>
+                </div>
 
                 <!-- Mock progress -->
                 <div class="rounded-2xl p-4 mb-6" style="background:rgba(255,255,255,.04);border:1px solid rgba(34,160,90,.12)">
@@ -655,8 +855,14 @@
                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                     </div>
                 </div>
-                <h3 class="serif text-3xl font-bold text-white mb-2">HandleLife OS</h3>
-                <p class="text-sm leading-relaxed mb-6 flex-1" style="color:rgba(245,237,224,.45)">AI operating system for modern family life. For busy families, NRIs, professionals, and senior citizens who deserve a simpler life.</p>
+                <h3 class="serif text-3xl font-bold text-white mb-1">HandleLife OS</h3>
+                <p class="text-xs font-semibold mb-3 gt-copper italic">The Operating System for Real Life.</p>
+                <p class="text-sm leading-relaxed mb-4" style="color:rgba(245,237,224,.45)">AI operating system for modern family life. For busy families, NRIs, professionals, and senior citizens who deserve a simpler life.</p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                    <span class="pill" style="background:rgba(181,84,30,.1);color:rgba(212,134,74,.7);border:1px solid rgba(181,84,30,.15);font-size:.6rem">NRIs</span>
+                    <span class="pill" style="background:rgba(181,84,30,.1);color:rgba(212,134,74,.7);border:1px solid rgba(181,84,30,.15);font-size:.6rem">Busy Professionals</span>
+                    <span class="pill" style="background:rgba(181,84,30,.1);color:rgba(212,134,74,.7);border:1px solid rgba(181,84,30,.15);font-size:.6rem">Modern Families</span>
+                </div>
 
                 <!-- Mock checklist -->
                 <div class="rounded-2xl p-4 mb-6" style="background:rgba(255,255,255,.04);border:1px solid rgba(181,84,30,.15)">
@@ -695,7 +901,7 @@
             <h2 class="serif text-5xl lg:text-6xl font-bold leading-tight" style="color:#1a1208">AI for Every Industry.<br>Built for Real People.</h2>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
             <div data-animate class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(201,168,76,.2)">
                 <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#8a6a1e,#c9a84c);box-shadow:0 8px 20px rgba(201,168,76,.25)">
                     <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
@@ -751,6 +957,33 @@
                 </div>
                 <p class="sans font-bold text-sm" style="color:#1a1208">Professional Services</p>
                 <p class="text-xs mt-1" style="color:#8a7a65">Work at your best</p>
+            </div>
+
+            <!-- Retail -->
+            <div data-animate class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(201,168,76,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#c9a84c,#e8cc80);box-shadow:0 8px 20px rgba(201,168,76,.2)">
+                    <svg class="w-6 h-6" style="color:#1a1208" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Retail</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Sell intelligently</p>
+            </div>
+
+            <!-- Family Offices -->
+            <div data-animate data-animate-delay="100" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(181,84,30,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#b5541e,#d4864a);box-shadow:0 8px 20px rgba(181,84,30,.2)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Family Offices</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Wealth intelligence</p>
+            </div>
+
+            <!-- Construction -->
+            <div data-animate data-animate-delay="200" class="ind-card rounded-2xl p-6 text-center" style="background:#fdf8f0;border:1.5px solid rgba(26,92,53,.2)">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 mx-auto" style="background:linear-gradient(135deg,#1a5c35,#22a05a);box-shadow:0 8px 20px rgba(26,92,53,.2)">
+                    <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </div>
+                <p class="sans font-bold text-sm" style="color:#1a1208">Construction</p>
+                <p class="text-xs mt-1" style="color:#8a7a65">Build on time</p>
             </div>
         </div>
     </div>
@@ -1129,6 +1362,29 @@
     </div>
 </section>
 
+<!-- ══════════════════════════════ VISION ══════════════════════════════ -->
+<section style="background:#fdf8f0" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-30" style="background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(201,168,76,.08),transparent)"></div>
+    <div class="relative max-w-4xl mx-auto px-5 sm:px-8 text-center" data-animate>
+        <span class="section-label gt-gold">Our Vision</span>
+        <div class="gold-line mx-auto mt-5 mb-10"></div>
+        <blockquote class="serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug" style="color:#1a1208">
+            "To become a global leader in AI Operating Systems that<br class="hidden lg:block">
+            <span class="gt-warm">simplify life, accelerate business,</span><br class="hidden lg:block">
+            and unlock human potential."
+        </blockquote>
+        <p class="mt-8 text-base leading-relaxed max-w-2xl mx-auto" style="color:#8a7a65">
+            We believe AI should be accessible, purposeful, and human — not just powerful. Every product we ship and every service we deliver is a step toward that world.
+        </p>
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm font-semibold" style="color:#8a7a65">
+            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full inline-block" style="background:#c9a84c"></span>India + Europe</span>
+            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full inline-block" style="background:#b5541e"></span>AI Products + Services</span>
+            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full inline-block" style="background:#1a5c35"></span>Founder-Led</span>
+            <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full inline-block" style="background:#d97706"></span>Human-First AI</span>
+        </div>
+    </div>
+</section>
+
 <!-- ══════════════════════════════ CTA ══════════════════════════════ -->
 <section id="cta" class="cta-bg relative py-32 overflow-hidden">
     <!-- Gold glow -->
@@ -1141,20 +1397,20 @@
         <span class="section-label gt-gold">Get Started</span>
         <div class="gold-line mx-auto mt-5 mb-8"></div>
         <h2 class="serif text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-            Your Better Every Day<br><span class="gt-hero italic">Starts Right Here.</span>
+            Ready to Build Your<br><span class="gt-hero italic">AI Future?</span>
         </h2>
         <p class="mt-7 text-lg max-w-xl mx-auto leading-relaxed" style="color:rgba(245,237,224,.45)">
-            No jargon. No long contracts. Just AI that works for you — your business, your home, your life.
+            Whether you're starting from scratch or scaling an existing AI initiative — we'll help you move fast, build right, and deliver measurable results.
         </p>
 
         <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
             <a href="mailto:Info@FairITSolutions.ch" class="btn-gold inline-flex items-center gap-2.5 font-bold px-9 py-4 rounded-xl text-base sans">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Book a Free Consultation
+                Schedule Consultation
             </a>
-            <a href="tel:+41789055040" class="inline-flex items-center gap-2.5 font-semibold px-9 py-4 rounded-xl text-base sans text-white/70 hover:text-white transition-all" style="border:1.5px solid rgba(201,168,76,.25)">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                Call +41 (0)78 905 50 40
+            <a href="#products" class="inline-flex items-center gap-2.5 font-semibold px-9 py-4 rounded-xl text-base sans text-white/70 hover:text-white transition-all" style="border:1.5px solid rgba(201,168,76,.25)">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                Explore Products
             </a>
         </div>
 
@@ -1163,6 +1419,11 @@
             <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(34,160,90,.3)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Reply within 24 hours</div>
             <div class="flex items-center gap-2"><div class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center" style="background:rgba(34,160,90,.3)"><svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>Based in Switzerland</div>
         </div>
+
+        <p class="mt-8 text-xs font-semibold" style="color:rgba(201,168,76,.35)">
+            Quotes &amp; proposals available in your preferred currency:
+            <span id="cta-currency-badge" class="inline-flex items-center gap-1.5 ml-1 px-2.5 py-1 rounded-full" style="background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);color:#c9a84c">🇨🇭 CHF</span>
+        </p>
     </div>
 
     <!-- Decorative bottom line -->
@@ -1184,10 +1445,10 @@
                     </div>
                     <div>
                         <span class="sans font-bold text-white text-sm block">FairIT Solutions</span>
-                        <span class="text-[9px] font-semibold tracking-widest uppercase" style="color:rgba(201,168,76,.45)">AI FOR EVERYDAY LIFE</span>
+                        <span class="text-[9px] font-semibold tracking-widest uppercase" style="color:rgba(201,168,76,.45)">AI Products · AI Services · India | Europe</span>
                     </div>
                 </div>
-                <p class="text-xs leading-relaxed mb-5" style="color:rgba(245,237,224,.3)">Building AI Operating Systems for Founders, Homes &amp; Life. Based in Switzerland.</p>
+                <p class="text-xs leading-relaxed mb-5" style="color:rgba(245,237,224,.3)">AI Products • AI Services • AI Transformation. Based in Switzerland &amp; India.</p>
                 <div class="flex items-center gap-3">
                     <a href="https://www.linkedin.com/company/fair-it-solutions" target="_blank" rel="noopener" class="w-8 h-8 rounded-lg flex items-center justify-center hover:opacity-70 transition-opacity" style="background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.2)">
                         <svg class="w-3.5 h-3.5" style="color:#c9a84c" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -1266,34 +1527,126 @@
 </footer>
 
 <script>
-// Scroll reveal
+// ── Scroll reveal ──
 const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
 }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('[data-animate]').forEach(el => obs.observe(el));
 
-// Navbar on scroll
+// ── Navbar scroll ──
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('navbar-scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// Smooth scroll
+// ── Smooth scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
         const t = document.querySelector(a.getAttribute('href'));
         if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
 });
+
+// ── Picker helpers ──
+function togglePanel(panel) { if (panel) panel.classList.toggle('open'); }
+function closePanel(panel) { if (panel) panel.classList.remove('open'); }
+document.addEventListener('click', () => {
+    closePanel(document.getElementById('lp-panel'));
+    closePanel(document.getElementById('cp-panel'));
+});
+
+// ── Language Picker ──
+(function() {
+    const btn   = document.getElementById('lp-btn');
+    const panel = document.getElementById('lp-panel');
+    const label = document.getElementById('lp-label');
+    if (!btn) return;
+
+    btn.addEventListener('click', e => { e.stopPropagation(); togglePanel(panel); closePanel(document.getElementById('cp-panel')); });
+
+    panel.querySelectorAll('.fairit-picker-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const lang  = item.dataset.lp;
+            const flag  = item.dataset.flag;
+            const short = item.dataset.short;
+            label.textContent = flag + ' ' + short;
+            panel.querySelectorAll('.fairit-picker-item').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            localStorage.setItem('fairit_lang', lang);
+            closePanel(panel);
+            // Trigger Google Translate via its select element
+            const gtSelect = document.querySelector('#google_translate_element select');
+            if (gtSelect) {
+                gtSelect.value = lang;
+                gtSelect.dispatchEvent(new Event('change'));
+            } else {
+                // GT not ready — use cookie + reload
+                document.cookie = 'googtrans=/en/' + lang + ';path=/';
+                location.reload();
+            }
+        });
+    });
+
+    // Restore saved language label
+    const saved = localStorage.getItem('fairit_lang');
+    if (saved && saved !== 'en') {
+        const match = panel.querySelector('[data-lp="' + saved + '"]');
+        if (match) {
+            label.textContent = match.dataset.flag + ' ' + match.dataset.short;
+            panel.querySelectorAll('.fairit-picker-item').forEach(i => i.classList.remove('active'));
+            match.classList.add('active');
+        }
+    }
+})();
+
+// ── Currency Picker ──
+(function() {
+    const btn      = document.getElementById('cp-btn');
+    const panel    = document.getElementById('cp-panel');
+    const label    = document.getElementById('cp-label');
+    const ctaBadge = document.getElementById('cta-currency-badge');
+    if (!btn) return;
+
+    btn.addEventListener('click', e => { e.stopPropagation(); togglePanel(panel); closePanel(document.getElementById('lp-panel')); });
+
+    panel.querySelectorAll('.fairit-picker-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const code = item.dataset.cp;
+            const flag = item.dataset.flag;
+            if (!code) return;
+            const display = flag + ' ' + code;
+            label.textContent = display;
+            if (ctaBadge) ctaBadge.textContent = display;
+            panel.querySelectorAll('.fairit-picker-item').forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            localStorage.setItem('fairit_currency', code);
+            localStorage.setItem('fairit_currency_flag', flag);
+            closePanel(panel);
+        });
+    });
+
+    // Restore saved currency
+    const saved = localStorage.getItem('fairit_currency');
+    const savedFlag = localStorage.getItem('fairit_currency_flag');
+    if (saved && savedFlag) {
+        const match = panel.querySelector('[data-cp="' + saved + '"]');
+        if (match) {
+            const display = savedFlag + ' ' + saved;
+            label.textContent = display;
+            if (ctaBadge) ctaBadge.textContent = display;
+            panel.querySelectorAll('.fairit-picker-item').forEach(i => i.classList.remove('active'));
+            match.classList.add('active');
+        }
+    }
+})();
 </script>
 
-<!-- Google Translate -->
+<!-- Google Translate (hidden — triggered programmatically by language picker) -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
         pageLanguage: 'en',
         includedLanguages: 'af,sq,am,ar,hy,az,eu,be,bn,bs,bg,ca,zh-CN,zh-TW,hr,cs,da,nl,en,et,tl,fi,fr,fy,gl,ka,de,el,gu,ht,ha,hi,hu,is,ig,id,ga,it,ja,kn,kk,km,ko,ku,lo,lv,lt,mk,ms,ml,mt,mr,mn,my,ne,no,fa,pl,pt,pa,ro,ru,sr,si,sk,sl,so,es,sw,sv,ta,te,th,tr,uk,ur,vi,cy,xh,yo,zu',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false
     }, 'google_translate_element');
 }

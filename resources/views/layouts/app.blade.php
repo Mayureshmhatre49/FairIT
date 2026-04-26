@@ -67,8 +67,8 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="navbar-brand-title font-bold text-charcoal-950 text-base leading-tight block group-hover:text-brand-600 transition-colors">FairIT Solutions</span>
-                        <span class="navbar-brand-subtitle text-[10px] text-charcoal-400 leading-tight block font-medium tracking-wide">AI OPERATING SYSTEMS</span>
+                        <span class="font-bold text-charcoal-950 text-base leading-tight block group-hover:text-brand-600 transition-colors">FairIT Solutions</span>
+                        <span class="text-[10px] text-charcoal-400 leading-tight block font-medium tracking-wide">AI OPERATING SYSTEMS</span>
                     </div>
                 </a>
 

@@ -76,7 +76,7 @@
     }
 
     .service-card {
-        @apply bg-white rounded-2xl p-8 border border-charcoal-100 hover:border-brand-200 shadow-card hover:shadow-card-hover transition-all duration-300;
+        @apply bg-white rounded-2xl p-8 border border-charcoal-100 hover:border-brand-200 shadow-card hover:shadow-card-hover transition-all duration-300 group;
     }
 
     .product-card {
@@ -244,35 +244,6 @@
 
 .navbar.scrolled {
     @apply bg-white/95 backdrop-blur-xl border-b border-charcoal-100 shadow-sm;
-}
-
-/* Light text on dark background when not scrolled */
-.navbar:not(.scrolled) .nav-link {
-    @apply text-white/80 hover:text-white;
-}
-
-.navbar:not(.scrolled) .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-.navbar:not(.scrolled) .nav-link-active {
-    @apply text-white;
-}
-
-.navbar:not(.scrolled) .navbar-brand-title {
-    @apply text-white;
-}
-
-.navbar:not(.scrolled) .navbar-brand-subtitle {
-    @apply text-charcoal-300;
-}
-
-.navbar:not(.scrolled) #mobile-menu-btn {
-    @apply text-white;
-}
-
-.navbar:not(.scrolled) #mobile-menu-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* ============================================================
