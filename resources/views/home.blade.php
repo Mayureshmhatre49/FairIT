@@ -150,7 +150,7 @@
         </div>
 
         {{-- Headline --}}
-        <h1 data-animate data-animate-delay="100" class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.08] tracking-tight max-w-5xl mx-auto">
+        <h1 data-animate data-animate-delay="100" class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[1.08] tracking-tight max-w-5xl mx-auto">
             {{ __('home.hero.headline_1') }}
             <span class="block bg-gradient-to-r from-brand-400 via-blue-300 to-brand-500 bg-clip-text text-transparent">
                 {{ __('home.hero.headline_2') }}
@@ -317,11 +317,11 @@
     <div class="container-wide">
         <div class="text-center mb-16" data-animate>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('home.products.label') }}</span>
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mt-3 leading-tight">{{ __('home.products.title') }}</h2>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 leading-tight">{{ __('home.products.title') }}</h2>
             <p class="text-charcoal-400 text-lg mt-4 max-w-2xl mx-auto">{{ __('home.products.subtitle') }}</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @php
             $products = [
                 [
@@ -388,7 +388,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-animate>
                 <span class="section-label">{{ __('home.why.label') }}</span>
-                <h2 class="text-4xl lg:text-5xl font-bold text-charcoal-950 mt-3 leading-tight">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal-950 mt-3 leading-tight">
                     {{ __('home.why.title_1') }}<br>
                     <span class="text-gradient">{{ __('home.why.title_2') }}</span>
                 </h2>
@@ -595,7 +595,7 @@
     <div class="relative container-tight text-center">
         <div data-animate>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('home.cta.label') }}</span>
-            <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mt-4 leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mt-4 leading-tight">
                 {{ __('home.cta.title_1') }}<br>
                 <span class="bg-gradient-to-r from-brand-400 to-blue-300 bg-clip-text text-transparent">{{ __('home.cta.title_2') }}</span>
             </h2>

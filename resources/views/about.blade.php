@@ -31,13 +31,13 @@
 
 @section('content')
 
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight text-center">
         <div data-animate>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('about.hero.label') }}</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{!! __('about.hero.title') !!}</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{!! __('about.hero.title') !!}</h1>
             <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
                 {{ __('about.hero.subtitle') }}
             </p>

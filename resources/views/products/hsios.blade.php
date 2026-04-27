@@ -35,7 +35,7 @@
 
 @section('content')
 
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(16,185,129,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight">
@@ -45,7 +45,7 @@
                 All Products
             </a>
             <span class="badge bg-emerald-600/20 text-emerald-300 border-emerald-500/20 mb-4">Interior OS</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">HSI OS</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">HSI OS</h1>
             <p class="text-emerald-300 text-xl font-medium italic mb-6">Design smarter. Execute flawlessly. Deliver on time.</p>
             <p class="text-charcoal-300 text-lg leading-relaxed max-w-2xl mb-10">
                 The AI operating system built for interior designers, renovation firms, architects, and homeowners who are tired of projects going over budget and over time.

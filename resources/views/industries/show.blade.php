@@ -37,7 +37,7 @@
 
 @section('content')
 
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight">
@@ -47,7 +47,7 @@
                 All Industries
             </a>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest block mb-3">Industry Solutions</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">{{ $industry['title'] }}</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">{{ $industry['title'] }}</h1>
             <p class="text-brand-300 text-xl font-medium italic mb-6">{{ $industry['headline'] }}</p>
             <p class="text-charcoal-300 text-lg leading-relaxed max-w-2xl mb-10">{{ $industry['description'] }}</p>
             <a href="{{ route('consultation') }}" class="btn-primary-lg">Book a Discovery Call</a>

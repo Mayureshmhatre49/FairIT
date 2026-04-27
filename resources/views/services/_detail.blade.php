@@ -62,7 +62,7 @@
 @section('content')
 
 {{-- Hero --}}
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 50% 60% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight">
@@ -72,7 +72,7 @@
                 {{ __('services.detail.all_services') }}
             </a>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest block mb-3">{{ __('services.detail.service_label') }}</span>
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">{{ $service['title'] }}</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">{{ $service['title'] }}</h1>
             <p class="text-charcoal-300 text-xl font-medium italic mb-6">{{ $service['tagline'] }}</p>
             <p class="text-charcoal-400 text-lg leading-relaxed max-w-2xl">{{ $service['description'] }}</p>
             <div class="mt-10 flex flex-col sm:flex-row gap-4">

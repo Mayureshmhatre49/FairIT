@@ -36,7 +36,7 @@
 
 @section('content')
 
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.2) 0%, transparent 70%);"></div>
     <div class="relative container-tight">
@@ -47,7 +47,7 @@
                     All Products
                 </a>
                 <span class="badge bg-brand-600/20 text-brand-300 border-brand-500/20 mb-4">Founder OS</span>
-                <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">SarathiOS</h1>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">SarathiOS</h1>
                 <p class="text-brand-300 text-xl font-medium italic mb-6">The AI Operating System for founders who refuse to move slowly.</p>
                 <p class="text-charcoal-300 text-lg leading-relaxed max-w-xl mb-10">
                     From your morning priorities to your quarterly strategy, SarathiOS gives founders the intelligence, clarity, and leverage to build at velocity.

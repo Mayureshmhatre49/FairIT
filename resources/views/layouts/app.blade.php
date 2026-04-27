@@ -222,14 +222,17 @@
 
                 {{-- Mobile Menu Button --}}
                 <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-charcoal-600 hover:bg-charcoal-100 transition-colors" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
                 </button>
             </div>
 
             {{-- Mobile Menu --}}
-            <div id="mobile-menu" role="menu" class="lg:hidden border-t border-charcoal-100">
+            <div id="mobile-menu" role="menu" class="lg:hidden border-t border-charcoal-100 bg-white">
                 <div class="py-4 space-y-1">
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest">{{ __('ui.nav.services') }}</div>
                     <a href="{{ route('services.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.all_services') }}</a>
@@ -296,10 +299,10 @@
     ============================================================ --}}
     <footer class="bg-charcoal-950 text-white" aria-label="Site footer">
         <div class="container-wide py-16 lg:py-20">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
 
                 {{-- Brand Column --}}
-                <div class="lg:col-span-2">
+                <div class="sm:col-span-2 lg:col-span-2">
                     <a href="{{ route('home') }}" class="flex items-center gap-2.5 mb-6">
                         <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
                             <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">

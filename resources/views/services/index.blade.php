@@ -45,13 +45,13 @@
 @section('content')
 
 {{-- Hero --}}
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(37,99,235,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight text-center">
         <div data-animate>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">{{ __('services.index.label') }}</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{{ __('services.index.title') }}</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">{{ __('services.index.title') }}</h1>
             <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
                 {{ __('services.index.subtitle') }}
             </p>
@@ -76,7 +76,7 @@
             @foreach($services as $service)
             <div data-animate data-animate-delay="{{ $service['delay'] }}" class="group relative bg-white rounded-2xl border border-charcoal-100 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300 overflow-hidden">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
-                    <div class="p-8 lg:border-r border-charcoal-100 flex flex-col justify-between">
+                    <div class="p-6 lg:p-8 border-b lg:border-b-0 lg:border-r border-charcoal-100 flex flex-col justify-between">
                         <div>
                             <div class="flex items-start gap-4 mb-6">
                                 <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-100 transition-colors">
@@ -84,7 +84,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="{{ $service['icon'] }}"/>
                                     </svg>
                                 </div>
-                                <span class="text-5xl font-black text-charcoal-100 group-hover:text-brand-100 transition-colors">{{ $service['num'] }}</span>
+                                <span class="text-3xl lg:text-5xl font-black text-charcoal-100 group-hover:text-brand-100 transition-colors">{{ $service['num'] }}</span>
                             </div>
                             <h2 class="text-xl font-bold text-charcoal-950 mb-2 group-hover:text-brand-700 transition-colors">{{ __('services.'.$service['key'].'.title') }}</h2>
                             <p class="text-brand-600 text-sm font-medium italic">{{ __('services.'.$service['key'].'.tagline') }}</p>
@@ -94,7 +94,7 @@
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                         </a>
                     </div>
-                    <div class="p-8 lg:col-span-2">
+                    <div class="p-6 lg:p-8 lg:col-span-2">
                         <p class="text-charcoal-600 leading-relaxed mb-6">{{ __('services.'.$service['key'].'.desc_index') }}</p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             @foreach(__('services.'.$service['key'].'.bullets') as $bullet)

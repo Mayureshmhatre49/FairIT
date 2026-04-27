@@ -71,7 +71,7 @@
 
 @section('content')
 
-<section class="relative bg-charcoal-950 pt-32 pb-16 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-12 md:pb-16 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="relative container-tight">
         <div data-animate>
@@ -82,7 +82,7 @@
             @if($post->category)
             <span class="badge badge-blue mb-4">{{ $post->category }}</span>
             @endif
-            <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight max-w-3xl mb-6">{{ $post->title }}</h1>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight max-w-3xl mb-6">{{ $post->title }}</h1>
             <div class="flex flex-wrap items-center gap-4 text-sm text-charcoal-400">
                 <span>{{ $post->published_at->format('d M Y') }}</span>
                 <span>·</span>

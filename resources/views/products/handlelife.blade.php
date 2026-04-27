@@ -35,7 +35,7 @@
 
 @section('content')
 
-<section class="relative bg-charcoal-950 pt-32 pb-20 overflow-hidden">
+<section class="relative bg-charcoal-950 pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden">
     <div class="absolute inset-0 hero-grid opacity-20"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(139,92,246,0.15) 0%, transparent 70%);"></div>
     <div class="relative container-tight">
@@ -45,7 +45,7 @@
                 All Products
             </a>
             <span class="badge bg-violet-600/20 text-violet-300 border-violet-500/20 mb-4">Life OS</span>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">HandleLife OS</h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">HandleLife OS</h1>
             <p class="text-violet-300 text-xl font-medium italic mb-6">Life is complex. Your AI shouldn't make it more so.</p>
             <p class="text-charcoal-300 text-lg leading-relaxed max-w-2xl mb-10">
                 HandleLife OS is the AI operating system for modern families — from health and school to finances and emergencies. Everything you need to manage life intelligently, in one place.
