@@ -63,7 +63,7 @@
             <a href="{{ route('blog.show', $post->slug) }}" data-animate data-animate-delay="{{ ($loop->index % 3) * 100 }}" class="group bg-white rounded-2xl overflow-hidden border border-charcoal-100 hover:shadow-card-hover transition-all duration-300 flex flex-col">
                 @if($post->featured_image)
                 <div class="aspect-video bg-charcoal-100 overflow-hidden">
-                    <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
                 </div>
                 @else
                 <div class="aspect-video bg-gradient-to-br from-brand-900 to-charcoal-950 flex items-center justify-center">

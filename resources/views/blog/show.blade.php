@@ -5,7 +5,7 @@
 @section('og_type', 'article')
 @section('og_title', $post->seo_title ?: $post->title)
 @section('og_description', $post->seo_desc ?: $post->excerpt)
-@if($post->featured_image) @section('og_image', $post->featured_image) @endif
+@if($post->featured_image) @section('og_image', asset($post->featured_image)) @endif
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -45,7 +45,7 @@
             @if($post->featured_image)
             ,"image": {
                 "@type": "ImageObject",
-                "url": "{{ $post->featured_image }}",
+                "url": "{{ asset($post->featured_image) }}",
                 "representativeOfPage": true
             }
             @endif
@@ -105,7 +105,7 @@
             {{-- Article Content --}}
             <article class="lg:col-span-2">
                 @if($post->featured_image)
-                <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="w-full rounded-2xl mb-10 aspect-video object-cover" loading="lazy">
+                <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}" class="w-full rounded-2xl mb-10 aspect-video object-cover" loading="lazy">
                 @endif
                 <div class="prose-fairit">
                     {!! $post->content !!}
@@ -130,7 +130,7 @@
                         <a href="{{ route('blog.show', $rp->slug) }}" class="group flex gap-4 hover:bg-charcoal-50 p-3 rounded-xl transition-colors">
                             <div class="w-16 h-16 rounded-lg bg-charcoal-100 overflow-hidden flex-shrink-0">
                                 @if($rp->featured_image)
-                                <img src="{{ $rp->featured_image }}" alt="{{ $rp->title }}" class="w-full h-full object-cover">
+                                <img src="{{ asset($rp->featured_image) }}" alt="{{ $rp->title }}" class="w-full h-full object-cover">
                                 @else
                                 <div class="w-full h-full bg-brand-900/50"></div>
                                 @endif
