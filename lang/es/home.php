@@ -1,0 +1,140 @@
+<?php
+
+return [
+    'hero' => [
+        'badge'       => 'Ahora sirviendo a fundadores y empresas globalmente',
+        'headline_1'  => 'Sistemas de IA para',
+        'headline_2'  => 'Crecimiento, Liderazgo',
+        'headline_3'  => 'y Vida Moderna',
+        'subheadline' => 'Ayudamos a fundadores y empresas a desbloquear el crecimiento a través de asesoramiento en IA, sistemas de IA personalizados y sistemas operativos inteligentes construidos para el mundo real.',
+        'cta_primary' => 'Reservar Consulta',
+        'cta_secondary' => 'Explorar Productos',
+        'trust_label' => 'Con la confianza de fundadores ambiciosos, empresas modernas y equipos preparados para el futuro',
+        'trust_items' => ['Startups', 'PYMEs', 'Empresas de Interiorismo', 'Hostelería', 'Bienes Raíces', 'Servicios Profesionales'],
+        'scroll'      => 'Desplazarse',
+    ],
+    'stats' => [
+        ['value' => '95%',  'label' => 'Tasa de adopción de IA',          'num' => '95'],
+        ['value' => '40+',  'label' => 'Idiomas soportados',              'num' => '40'],
+        ['value' => '3×',   'label' => 'Ganancia media de productividad', 'num' => '3'],
+        ['value' => '24/7', 'label' => 'Disponibilidad de sistemas IA',   'num' => '24'],
+    ],
+    'pillars' => [
+        'label'    => 'Lo que construimos',
+        'title'    => 'Una Misión. Tres Dominios.',
+        'items'    => [
+            [
+                'title'    => 'Construir Mejores Empresas',
+                'desc'     => 'Asesoría en transformación de IA, copilotos personalizados, automatización de voz y retenedores gestionados para organizaciones que desean operar a un nivel superior.',
+                'features' => ['Auditorías de preparación de IA', 'Copilotos de IA personalizados', 'Automatización de voz y chat', 'Equipos de IA gestionados'],
+                'cta'      => 'Explorar Servicios',
+            ],
+            [
+                'title'    => 'Construir Mejores Hogares',
+                'desc'     => 'HSI OS — el sistema operativo de IA para diseño de interiores, renovación y gestión del hogar. Para propietarios de viviendas, arquitectos y empresas de interiorismo.',
+                'features' => ['IA de gestión de proyectos', 'Coordinación de proveedores', 'Inteligencia de presupuesto', 'Portales de clientes'],
+                'cta'      => 'Explorar HSI OS',
+            ],
+            [
+                'title'    => 'Construir Mejores Vidas',
+                'desc'     => 'HandleLife OS — gestión de vida inteligente para familias modernas, profesionales ocupados y cualquier persona que desee vivir con más claridad.',
+                'features' => ['Centro de mando familiar', 'IA de salud y bienestar', 'Inteligencia financiera', 'Panel de OS de vida'],
+                'cta'      => 'Explorar HandleLife OS',
+            ],
+        ],
+    ],
+    'services' => [
+        'label'       => 'Lo que hacemos',
+        'title'       => 'Servicios de IA Premium',
+        'subtitle'    => 'Consultoría, implementación y sistemas de IA recurrentes para organizaciones enfocadas en el crecimiento.',
+        'view_all'    => 'Ver todos los servicios',
+        'items'       => [
+            ['title' => 'Asesoría en Transformación IA',         'desc' => 'Auditorías de preparación, creación de hojas de ruta, priorización de ROI y talleres de liderazgo para guiar su transformación de IA.',         'cta' => 'Reservar Sesión Estratégica'],
+            ['title' => 'Desarrollo de Copilotos IA a Medida',   'desc' => 'Construya copilotos de IA internos para directores ejecutivos, ventas, recursos humanos, operaciones y soporte, entrenados con sus datos.',                       'cta' => 'Solicitar Demo'],
+            ['title' => 'IA de Voz y Automatización',            'desc' => 'Llamadores de voz con IA, bots multilingües, bots de reservas, soporte y automatización de WhatsApp a escala empresarial.',              'cta' => 'Ver Casos de Uso'],
+            ['title' => 'Retenedores de IA Gestionados',         'desc' => 'Optimización mensual de IA, gestión de bots, mejora del flujo de trabajo, automatización de informes y soporte a la innovación.',               'cta' => 'Hablar con un Experto'],
+            ['title' => 'Asesoría de Crecimiento para Fundadores','desc' => 'Sistemas estratégicos de IA de alto nivel para fundadores, empresarios y líderes que exigen más de sus operaciones.',           'cta' => 'Aplicar Ahora'],
+        ],
+    ],
+    'products' => [
+        'label'    => 'Nuestros Productos',
+        'title'    => 'Sistemas Operativos de IA',
+        'subtitle' => 'Productos escalables diseñados para resolver la complejidad del mundo real, para fundadores, hogares y la vida.',
+        'explore'  => 'Explorar',
+        'items'    => [
+            [
+                'tag'      => 'OS Fundador',
+                'name'     => 'SarathiOS',
+                'tagline'  => 'El cerebro de IA para fundadores y directores ejecutivos ambiciosos.',
+                'desc'     => 'Un sistema operativo de IA completo para fundadores de startups y tomadores de decisiones. Centro de mando, copiloto de estrategia y alineación de equipos.',
+                'features' => ['Panel de fundador', 'Centro de mando de crecimiento', 'Copiloto de estrategia de IA', 'Motor de apoyo a decisiones', 'Herramientas de alineación de equipos', 'Preparación para recaudación de fondos'],
+            ],
+            [
+                'tag'      => 'OS Interior',
+                'name'     => 'HSI OS',
+                'tagline'  => 'El cerebro de IA para el diseño de interiores y renovación.',
+                'desc'     => 'Gestión de proyectos con tecnología de inteligencia artificial, portales para clientes, coordinación de proveedores e inteligencia presupuestaria.',
+                'features' => ['Cronograma de proyecto con IA', 'Portal de clientes', 'Coordinación de proveedores', 'Inteligencia de presupuesto', 'Resumen de diseño con IA', 'Seguimiento del progreso'],
+            ],
+            [
+                'tag'      => 'OS Vida',
+                'name'     => 'HandleLife OS',
+                'tagline'  => 'El cerebro de IA para la vida familiar moderna.',
+                'desc'     => 'Gestión de vida inteligente para familias, profesionales ocupados y cualquier persona que quiera vivir con menos caos y más claridad.',
+                'features' => ['Centro de mando familiar', 'IA de salud y bienestar', 'Inteligencia financiera', 'IA de escuela y horarios', 'Servicios NRI', 'Respuesta de emergencia'],
+            ],
+        ],
+    ],
+    'why' => [
+        'label'    => 'Nuestra Diferencia',
+        'title_1'  => 'La mayoría de empresas compran herramientas.',
+        'title_2'  => 'Nosotros Construimos Sistemas.',
+        'body'     => 'La diferencia entre una herramienta de IA y un sistema de IA es la diferencia entre un martillo y una casa. Nosotros construimos la casa.',
+        'cta_primary'   => 'Inicie su Transformación',
+        'cta_secondary' => 'Aprenda Sobre Nosotros',
+        'points'   => [
+            ['title' => 'Ejecución más rápida',        'desc' => 'Los sistemas de IA reducen el retraso en la decisión, automatizan tareas repetitivas y liberan a su equipo para que se concentre en lo importante.'],
+            ['title' => 'Mejores decisiones',          'desc' => 'Inteligencia en tiempo real, detección de tendencias y modelado de escenarios que convierte los datos en acción segura.'],
+            ['title' => 'Menor caos operativo',        'desc' => 'Flujos de trabajo automatizados, enrutamiento inteligente y alertas proactivas eliminan el ruido.'],
+            ['title' => 'IA que realmente se usa',     'desc' => 'Diseñamos para la adopción, no solo capacidad. Nuestros sistemas logran tasas de uso del 90%+ porque se ajustan a cómo trabaja la gente.'],
+            ['title' => 'ROI Medible',                 'desc' => 'Cada compromiso incluye métricas claras de éxito e informes regulares de desempeño.'],
+        ],
+    ],
+    'industries' => [
+        'label'    => 'A quién servimos',
+        'title'    => 'Industrias que transformamos',
+        'subtitle' => 'Soluciones de IA adaptadas a los desafíos y oportunidades únicos de cada sector.',
+        'items'    => [
+            'Startups', 'PYMEs', 'Bienes Raíces', 'Hostelería',
+            'Diseño de Interiores', 'Cuidado de la salud', 'Educación', 'Servicios Profesionales',
+        ],
+    ],
+    'testimonials' => [
+        'label' => 'Prueba Social',
+        'title' => 'Lo que dicen nuestros clientes',
+        'items' => [
+            ['name' => 'Rajiv Sharma',  'role' => 'CEO, TechScale Ventures',        'content' => 'FairIT transformó nuestra forma de operar. Nuestro copiloto maneja el 80% de las consultas internas. El ROI en el primer mes pagó por todo el proyecto.'],
+            ['name' => 'Priya Mehta',   'role' => 'Directora de Operaciones, Horizon Group', 'content' => 'La IA de voz que crearon para reservas es increíble. Las reservas aumentaron un 34% y nuestro equipo no atiende llamadas. Ejecución excepcional.'],
+            ['name' => 'Marcus Klein',  'role' => 'Fundador, NextGen Properties',    'content' => 'El programa Founder Growth Advisory cambió por completo cómo tomo decisiones. Ahora tengo un sistema, no solo una visión. Vale cada franco.'],
+        ],
+    ],
+    'insights' => [
+        'label'    => 'Últimas Ideas',
+        'title'    => 'Perspectivas',
+        'view_all' => 'Ver Todas las Perspectivas',
+    ],
+    'cta' => [
+        'label'      => 'Empezar',
+        'title_1'    => '¿Listo para construir su',
+        'title_2'    => 'Ventaja en IA?',
+        'body'       => 'Únase al creciente número de fundadores y empresas que operan con inteligencia artificial en su núcleo.',
+        'cta_primary'   => 'Reservar Consulta',
+        'cta_secondary' => 'Contáctenos',
+        'trust_items'   => [
+            'Sin contratos a largo plazo',
+            'Respuesta en 24h garantizada',
+            'Confidencialidad asegurada',
+            'Sede en Suiza',
+        ],
+    ],
+];

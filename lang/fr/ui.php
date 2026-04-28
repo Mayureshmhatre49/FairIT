@@ -60,5 +60,7 @@ return [
         'en' => 'English',
         'de' => 'Deutsch',
         'fr' => 'Français',
+        'es' => 'Español',
+        'ar' => 'العربية',
     ],
 ];

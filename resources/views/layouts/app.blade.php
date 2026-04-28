@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +19,8 @@
     <link rel="alternate" hreflang="en" href="{{ url()->current() }}">
     <link rel="alternate" hreflang="de" href="{{ url()->current() }}">
     <link rel="alternate" hreflang="fr" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="es" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="ar" href="{{ url()->current() }}">
     <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
 
     {{-- Open Graph --}}
@@ -201,7 +203,7 @@
                             </svg>
                         </button>
                         <div x-show="open" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 top-full mt-2 w-36 bg-white rounded-xl shadow-premium border border-charcoal-100 py-1 z-50">
-                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
+                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇦🇪'] as $code => $flag)
                             <a href="{{ route('lang.switch', $code) }}"
                                class="flex items-center gap-2.5 px-3 py-2.5 text-sm transition-colors {{ app()->getLocale() === $code ? 'text-brand-600 font-semibold bg-brand-50' : 'text-charcoal-700 hover:bg-charcoal-50' }}">
                                 <span class="text-base leading-none">{{ $flag }}</span>
