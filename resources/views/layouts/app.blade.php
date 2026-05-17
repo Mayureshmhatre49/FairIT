@@ -25,7 +25,7 @@
 
     {{-- Open Graph --}}
     @php
-        $ogLocaleMap = ['en' => 'en_US', 'de' => 'de_DE', 'fr' => 'fr_FR'];
+        $ogLocaleMap = ['en' => 'en_US', 'de' => 'de_DE', 'fr' => 'fr_FR', 'es' => 'es_ES', 'ar' => 'ar_AE'];
         $currentLocale = app()->getLocale();
         $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_US';
     @endphp
@@ -58,6 +58,19 @@
     <link rel="apple-touch-icon" href="{{ asset('images/apple-touch-icon.png') }}">
     <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
+    {{-- RSS / Atom auto-discovery --}}
+    <link rel="alternate" type="application/rss+xml" title="FairIT Solutions — AI Insights" href="{{ url('/feed.xml') }}">
+
+    {{-- Geo tags --}}
+    <meta name="geo.region" content="CH">
+    <meta name="geo.placename" content="Switzerland">
+    <meta name="ICBM" content="46.8182, 8.2275">
+    <meta name="geo.position" content="46.8182;8.2275">
+
+    {{-- AI/LLM crawler policy advertisement --}}
+    <meta name="ai-content-declaration" content="business-owned">
+    <link rel="llms" href="{{ url('/llms.txt') }}">
+
     {{-- Preconnect for performance --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +79,26 @@
     {{-- Vite Assets --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    {{-- Schema.org Structured Data --}}
+    {{-- Schema.org — global SiteNavigationElement (helps Google generate sitelinks) --}}
+    <script type="application/ld+json" nonce="{{ csp_nonce() }}">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "@id": "{{ url('/') }}#sitenav",
+        "name": "Primary site navigation",
+        "itemListElement": [
+            { "@type": "SiteNavigationElement", "position": 1, "name": "Services",    "url": "{{ route('services.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 2, "name": "Products",    "url": "{{ route('products.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 3, "name": "Industries",  "url": "{{ route('industries.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 4, "name": "About",       "url": "{{ route('about') }}" },
+            { "@type": "SiteNavigationElement", "position": 5, "name": "Insights",    "url": "{{ route('blog.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 6, "name": "Contact",     "url": "{{ route('contact') }}" },
+            { "@type": "SiteNavigationElement", "position": 7, "name": "Consultation","url": "{{ route('consultation') }}" }
+        ]
+    }
+    </script>
+
+    {{-- Schema.org Structured Data (page-specific) --}}
     @yield('schema')
 
     {{-- Page-specific head --}}

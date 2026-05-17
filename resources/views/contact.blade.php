@@ -14,7 +14,32 @@
             "url": "{{ route('contact') }}",
             "name": "Contact FairIT Solutions",
             "description": "Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours.",
-            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
+            "mainEntity": { "@id": "https://fairitsolutions.ch/#organization" }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://fairitsolutions.ch/about#nishant",
+            "name": "Nishant Mhatre",
+            "givenName": "Nishant",
+            "familyName": "Mhatre",
+            "jobTitle": "Co-Founder & CEO",
+            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
+            "email": "nishant@fairitsolutions.in",
+            "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
+            "knowsAbout": ["Artificial Intelligence", "AI Strategy", "AI Copilots", "Voice AI", "Founder Advisory"]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://fairitsolutions.ch/about#annemarie",
+            "name": "Annemarie M. Sickeler",
+            "givenName": "Annemarie",
+            "familyName": "Sickeler",
+            "jobTitle": "Co-Founder",
+            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
+            "email": "hello@fairitsolutions.ch",
+            "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
+            "knowsAbout": ["AI Transformation", "Business Operations", "Hospitality AI"]
         },
         {
             "@type": "BreadcrumbList",

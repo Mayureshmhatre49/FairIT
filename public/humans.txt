@@ -1,0 +1,11 @@
+/* TEAM */
+Co-Founder & CEO: Nishant Mhatre
+Co-Founder: Annemarie M. Sickeler
+Location: Switzerland · India · Global
+Contact: hello [at] fairitsolutions.ch
+
+/* SITE */
+Last update: 2026/04/28
+Standards: HTML5, CSS3, ES2023
+Components: Laravel 11, Tailwind CSS, Alpine.js, Vite
+Languages: English, Deutsch, Français, Español, العربية

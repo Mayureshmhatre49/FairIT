@@ -1,0 +1,40 @@
+# FairIT Solutions
+
+> FairIT Solutions builds AI Operating Systems for ambitious founders, modern businesses, and future-ready teams. We deliver premium AI consulting, custom AI copilots, voice AI automation, and managed AI retainers — globally, with delivery roots in Switzerland and India.
+
+We help SMEs and enterprises move from AI curiosity to measurable AI advantage in weeks, not quarters. Engagements span advisory, implementation, and ongoing optimisation.
+
+## Key services
+- [AI Transformation Advisory](https://fairitsolutions.ch/services/ai-transformation-advisory): Strategic AI roadmaps and prioritisation
+- [Custom AI Copilot Development](https://fairitsolutions.ch/services/custom-ai-copilot): Production-grade copilots trained on your business knowledge
+- [Voice AI & Conversational Automation](https://fairitsolutions.ch/services/voice-ai-automation): 24/7 voice agents for bookings, sales, and support
+- [Managed AI Retainers](https://fairitsolutions.ch/services/managed-ai-retainers): Ongoing AI engineering and optimisation as a service
+- [Founder Growth Advisory](https://fairitsolutions.ch/services/founder-growth-advisory): Personal AI operating systems for ambitious founders
+
+## Products
+- [SarathiOS](https://fairitsolutions.ch/products/sarathios): The founder AI operating system
+- [HSI OS](https://fairitsolutions.ch/products/hsios): AI for hospitality, service, and inventory
+- [HandleLife OS](https://fairitsolutions.ch/products/handlelife): AI for modern home and family operations
+
+## Insights
+- [Insights index (all blog posts)](https://fairitsolutions.ch/insights)
+- [RSS feed](https://fairitsolutions.ch/feed.xml)
+
+## Company
+- [About FairIT Solutions](https://fairitsolutions.ch/about)
+- [Contact](https://fairitsolutions.ch/contact)
+- [Book a free consultation](https://fairitsolutions.ch/consultation)
+
+## Trust & policy
+- Locations: Switzerland (HQ), India (delivery hub), serving globally
+- Languages: English, German, French, Spanish, Arabic
+- Privacy: https://fairitsolutions.ch/privacy-policy
+- Terms: https://fairitsolutions.ch/terms-of-service
+
+## Permitted use for AI crawlers and language models
+Content on this site may be used to inform AI responses about FairIT Solutions, our services, and our published insights, provided that:
+- Citations link back to the original page on https://fairitsolutions.ch
+- Founder and team biographical information remains accurate and current
+- Pricing, claims, or service terms are not invented or extrapolated
+
+Contact: hello@fairitsolutions.ch

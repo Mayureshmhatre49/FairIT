@@ -41,11 +41,17 @@
                     "height": 630
                 }
             },
-            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
+            "inLanguage": "{{ app()->getLocale() }}",
+            "wordCount": {{ str_word_count(strip_tags($post->content)) }},
+            "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["h1", ".prose-fairit p:first-of-type", ".prose-fairit h3"]
+            }
             @if($post->featured_image)
             ,"image": {
                 "@type": "ImageObject",
-                "url": "{{ asset($post->featured_image) }}",
+                "url": "{{ \Illuminate\Support\Str::startsWith($post->featured_image, 'http') ? $post->featured_image : asset($post->featured_image) }}",
                 "representativeOfPage": true
             }
             @endif

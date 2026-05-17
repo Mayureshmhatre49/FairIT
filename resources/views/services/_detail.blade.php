@@ -28,8 +28,44 @@
             "offers": {
                 "@type": "Offer",
                 "url": "{{ route('consultation') }}",
-                "availability": "https://schema.org/InStock"
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "CHF",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "priceCurrency": "CHF",
+                    "price": "0",
+                    "description": "Free initial consultation; engagement pricing on request"
+                }
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "{{ $service['title'] }} — Deliverables",
+                "itemListElement": [
+                    @foreach($service['deliverables'] as $i => $deliverable)
+                    { "@type": "Offer", "position": {{ $i + 1 }}, "itemOffered": { "@type": "Service", "name": "{{ addslashes($deliverable) }}" } }{{ !$loop->last ? ',' : '' }}
+                    @endforeach
+                ]
             }
+        },
+        {
+            "@type": "HowTo",
+            "@id": "{{ url()->current() }}#process",
+            "name": "How {{ $service['title'] }} works at FairIT Solutions",
+            "description": "{{ $service['description'] }}",
+            "totalTime": "P30D",
+            "supply": [],
+            "tool": [],
+            "step": [
+                @foreach($service['process'] as $i => $step)
+                {
+                    "@type": "HowToStep",
+                    "position": {{ $i + 1 }},
+                    "name": "{{ addslashes($step['title']) }}",
+                    "text": "{{ addslashes($step['desc']) }}",
+                    "url": "{{ url()->current() }}#step-{{ $i + 1 }}"
+                }{{ !$loop->last ? ',' : '' }}
+                @endforeach
+            ]
         },
         {
             "@type": "FAQPage",

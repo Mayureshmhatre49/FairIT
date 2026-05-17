@@ -64,15 +64,79 @@
             "name": "FairIT Solutions",
             "description": "AI Operating Systems for Founders, Homes & Life",
             "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
-            "inLanguage": ["en", "de", "fr"],
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": "https://fairitsolutions.ch/insights?search={search_term_string}"
+            "inLanguage": ["en", "de", "fr", "es", "ar"],
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://fairitsolutions.ch/insights?search={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
                 },
-                "query-input": "required name=search_term_string"
+                {
+                    "@type": "ReserveAction",
+                    "target": { "@type": "EntryPoint", "urlTemplate": "https://fairitsolutions.ch/consultation" },
+                    "result": { "@type": "Reservation", "name": "Free 30-minute AI strategy consultation" }
+                }
+            ]
+        },
+        {
+            "@type": "LocalBusiness",
+            "@id": "https://fairitsolutions.ch/#localbusiness-ch",
+            "name": "FairIT Solutions (Switzerland HQ)",
+            "image": "{{ asset('images/og-image.png') }}",
+            "url": "https://fairitsolutions.ch",
+            "telephone": "+41-00-000-0000",
+            "email": "hello@fairitsolutions.ch",
+            "priceRange": "$$$$",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CH",
+                "addressLocality": "Switzerland"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 46.8182, "longitude": 8.2275 },
+            "areaServed": "Worldwide",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
             }
+        },
+        {
+            "@type": "LocalBusiness",
+            "@id": "https://fairitsolutions.ch/#localbusiness-in",
+            "name": "FairIT Solutions (India Delivery Hub)",
+            "image": "{{ asset('images/og-image.png') }}",
+            "url": "https://fairitsolutions.ch",
+            "email": "nishant@fairitsolutions.in",
+            "priceRange": "$$$$",
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IN",
+                "addressLocality": "India"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 20.5937, "longitude": 78.9629 },
+            "areaServed": "Worldwide"
+        },
+        {
+            "@type": "Person",
+            "@id": "https://fairitsolutions.ch/about#nishant",
+            "name": "Nishant Mhatre",
+            "jobTitle": "Co-Founder & CEO",
+            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
+            "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
+            "email": "nishant@fairitsolutions.in"
+        },
+        {
+            "@type": "Person",
+            "@id": "https://fairitsolutions.ch/about#annemarie",
+            "name": "Annemarie M. Sickeler",
+            "jobTitle": "Co-Founder",
+            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
+            "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
+            "email": "hello@fairitsolutions.ch"
         },
         {
             "@type": "ProfessionalService",

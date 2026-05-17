@@ -71,8 +71,12 @@ Route::view('/privacy-policy', 'legal.privacy')->name('privacy');
 Route::view('/terms-of-service', 'legal.terms')->name('terms');
 Route::view('/cookie-policy', 'legal.cookies')->name('cookies');
 
-// Sitemap
-Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+// SEO discovery endpoints
+Route::get('/sitemap.xml',        [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/sitemap-index.xml',  [SitemapController::class, 'sitemapIndex'])->name('sitemap.index');
+Route::get('/sitemap-news.xml',   [SitemapController::class, 'news'])->name('sitemap.news');
+Route::get('/feed.xml',           [SitemapController::class, 'feed'])->name('feed');
+Route::get('/rss',                [SitemapController::class, 'feed']);
 
 // ============================================================
 // Admin routes — hidden prefix
