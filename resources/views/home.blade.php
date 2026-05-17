@@ -412,14 +412,16 @@
 
             @foreach($products as $i => $product)
             <div data-animate data-animate-delay="{{ $product['delay'] }}" class="relative bg-gradient-to-br {{ $product['color'] }} rounded-2xl p-8 border flex flex-col product-glow hover:scale-[1.02] transition-all duration-300 group">
+                {{-- Waitlist ribbon --}}
+                <span class="absolute top-4 right-4 inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-400/30 text-amber-200 text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-md">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                    Waitlist · 2026
+                </span>
                 <div class="flex items-start justify-between mb-8">
                     <div>
                         <span class="inline-block px-2.5 py-1 rounded-md text-xs font-semibold border {{ $product['badge'] }} mb-3">{{ $productItems[$i]['tag'] }}</span>
                         <h3 class="text-2xl font-bold text-white">{{ $productItems[$i]['name'] }}</h3>
                         <p class="text-charcoal-300 text-sm mt-1">{{ $productItems[$i]['tagline'] }}</p>
-                    </div>
-                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                     </div>
                 </div>
 
@@ -435,7 +437,7 @@
                 </ul>
 
                 <a href="{{ route($product['route']) }}" class="inline-flex items-center justify-between gap-2 w-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-all group-hover:bg-white/15">
-                    <span>{{ __('home.products.explore') }} {{ $productItems[$i]['name'] }}</span>
+                    <span>Join {{ $productItems[$i]['name'] }} Waitlist</span>
                     <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                 </a>
             </div>

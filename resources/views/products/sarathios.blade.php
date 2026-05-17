@@ -121,28 +121,48 @@
                 </div>
             </div>
             <div data-animate data-animate-delay="200" class="bg-charcoal-50 rounded-2xl p-8 border border-charcoal-100">
-                <h3 class="text-xl font-bold text-charcoal-950 mb-6">Get Early Access</h3>
-                <form action="{{ route('consultation') }}" method="GET">
+                <h3 class="text-xl font-bold text-charcoal-950 mb-2">Join the SarathiOS Waitlist</h3>
+                <p class="text-charcoal-500 text-sm mb-6">Early access opens in 2026. Founders on the list get priority onboarding and beta pricing.</p>
+
+                @if(session('success') && session('success') && str_contains(session('success'), 'SarathiOS'))
+                <div class="mb-4 p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm">
+                    {{ session('success') }}
+                </div>
+                @endif
+                @if($errors->any())
+                <div class="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
+                    <ul class="space-y-1">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+                </div>
+                @endif
+
+                <form action="{{ route('waitlist.submit') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product" value="SarathiOS">
+                    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
                     <div class="space-y-4">
                         <div>
-                            <label class="form-label">Your Name</label>
-                            <input type="text" placeholder="e.g. Rajiv Sharma" class="form-input">
+                            <label for="wl-name" class="form-label">Your Name</label>
+                            <input id="wl-name" name="name" type="text" required maxlength="100" placeholder="e.g. Rajiv Sharma" class="form-input" value="{{ old('name') }}">
                         </div>
                         <div>
-                            <label class="form-label">Work Email</label>
-                            <input type="email" placeholder="rajiv@company.com" class="form-input">
+                            <label for="wl-email" class="form-label">Work Email</label>
+                            <input id="wl-email" name="email" type="email" required maxlength="150" placeholder="rajiv@company.com" class="form-input" value="{{ old('email') }}">
                         </div>
                         <div>
-                            <label class="form-label">Company Stage</label>
-                            <select class="form-input">
-                                <option>Pre-seed / Idea stage</option>
-                                <option>Seed</option>
-                                <option>Series A/B</option>
-                                <option>Bootstrapped SME</option>
-                                <option>Enterprise</option>
+                            <label for="wl-stage" class="form-label">Company Stage</label>
+                            <select id="wl-stage" name="stage" class="form-input">
+                                <option value="Pre-seed / Idea stage">Pre-seed / Idea stage</option>
+                                <option value="Seed">Seed</option>
+                                <option value="Series A/B">Series A/B</option>
+                                <option value="Bootstrapped SME">Bootstrapped SME</option>
+                                <option value="Enterprise">Enterprise</option>
                             </select>
                         </div>
-                        <a href="{{ route('consultation') }}" class="btn-primary w-full justify-center mt-2">Request Early Access</a>
+                        <button type="submit" class="btn-primary w-full justify-center mt-2">
+                            Request Early Access
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                        <p class="text-xs text-charcoal-400 text-center mt-2">We will never share your email. Unsubscribe anytime.</p>
                     </div>
                 </form>
             </div>

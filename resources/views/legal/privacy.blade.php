@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Privacy Policy — FairIT Solutions')
-@section('description', 'Privacy Policy for FairIT Solutions. Learn how we collect, use, and protect your personal data.')
+@section('description', 'Privacy Policy for FairIT Solutions. Learn how we collect, use, and protect your personal data under GDPR, Swiss FADP, and India DPDP Act.')
 @section('content')
 <section class="bg-charcoal-50 pt-32 pb-20">
     <div class="container-tight">
@@ -10,47 +10,106 @@
             <p class="text-charcoal-500 mt-2 text-sm">Last updated: {{ date('d F Y') }}</p>
         </div>
         <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose prose-gray max-w-none" data-animate data-animate-delay="100">
+
             <h2>1. Introduction</h2>
-            <p>FairIT Solutions ("we", "us", "our") is committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong>.</p>
+            <p>FairIT Solutions ("we", "us", "our") is committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong> and <strong>fairitsolutions.in</strong>, our consultation services, and any communications you have with us.</p>
+            <p>This policy is designed to meet the requirements of the EU General Data Protection Regulation (GDPR), the revised Swiss Federal Act on Data Protection (revFADP), and India's Digital Personal Data Protection Act, 2023 (DPDP Act).</p>
 
-            <h2>2. Data We Collect</h2>
-            <p>We may collect the following categories of personal data:</p>
+            <h2>2. Who we are</h2>
+            <p>FairIT Solutions operates as a single business across Switzerland (headquarters) and India (delivery hub). When you interact with us, the applicable data controller depends on where you are based and the service involved. Both legal entities apply the same protection standards described in this policy.</p>
+
+            <h2>3. Data we collect</h2>
             <ul>
-                <li><strong>Contact information:</strong> Name, email address, phone number, company name</li>
-                <li><strong>Communication data:</strong> Messages you send us via contact forms or email</li>
-                <li><strong>Technical data:</strong> IP address, browser type, device type, pages visited (via analytics)</li>
-                <li><strong>Business data:</strong> Information you provide during consultation or service enquiries</li>
+                <li><strong>Contact information:</strong> name, email address, phone number, company name, job title</li>
+                <li><strong>Communication data:</strong> messages you send us via contact forms, email, calls, or chat</li>
+                <li><strong>Engagement data:</strong> budget bands, timelines, service interests, company size (provided during consultation requests)</li>
+                <li><strong>Technical data:</strong> IP address, browser type, device, pages visited, referrer, session duration (via privacy-respecting analytics)</li>
+                <li><strong>Marketing data:</strong> newsletter subscription status, click and open data on emails you receive from us</li>
+            </ul>
+            <p>We do not knowingly collect data from individuals under 16.</p>
+
+            <h2>4. How we use your data</h2>
+            <ul>
+                <li>To respond to enquiries and deliver our services</li>
+                <li>To prepare proposals, scopes, and engagement documents</li>
+                <li>To send transactional and service-related communications</li>
+                <li>To send marketing communications where you have opted in (or where permitted as a soft opt-in to existing clients)</li>
+                <li>To improve our website, services, and user experience</li>
+                <li>To detect, prevent, and respond to fraud or abuse</li>
+                <li>To comply with legal, tax, and accounting obligations</li>
             </ul>
 
-            <h2>3. How We Use Your Data</h2>
-            <p>We use your personal data to:</p>
+            <h2>5. Legal basis for processing (GDPR Art. 6)</h2>
             <ul>
-                <li>Respond to your enquiries and provide our services</li>
-                <li>Send service-related communications</li>
-                <li>Improve our website and services</li>
-                <li>Comply with legal obligations</li>
+                <li><strong>Consent:</strong> for marketing emails and non-essential cookies</li>
+                <li><strong>Contract:</strong> to provide the services you have requested</li>
+                <li><strong>Legitimate interests:</strong> service improvement, security, business development with B2B contacts where reasonably expected</li>
+                <li><strong>Legal obligation:</strong> tax, accounting, regulatory compliance</li>
+            </ul>
+            <p>Under the India DPDP Act, our lawful grounds are typically your consent and certain "legitimate uses" defined in the Act (such as responding to your enquiry or fulfilling a contract).</p>
+
+            <h2>6. Data retention</h2>
+            <p>We retain personal data only as long as necessary for the purposes set out in this policy or as required by applicable law.</p>
+            <ul>
+                <li><strong>Lead and enquiry data:</strong> 3 years from last meaningful interaction, after which it is anonymised or deleted. The 3-year period reflects the typical B2B sales cycle and post-engagement follow-up window in our industry.</li>
+                <li><strong>Client engagement records:</strong> 10 years (statutory accounting and contractual requirement)</li>
+                <li><strong>Newsletter subscribers:</strong> until unsubscribe request</li>
+                <li><strong>Website analytics:</strong> 14 months</li>
             </ul>
 
-            <h2>4. Legal Basis</h2>
-            <p>We process your data based on: (a) your consent; (b) the performance of a contract; (c) our legitimate interests; or (d) compliance with a legal obligation.</p>
+            <h2>7. Cross-border data transfers (Switzerland ↔ India ↔ EU)</h2>
+            <p>Because we operate across Switzerland and India and serve clients globally, personal data may be transferred between these jurisdictions and to sub-processors in the EU, UK, and US. We rely on the following mechanisms:</p>
+            <ul>
+                <li><strong>EU/EEA → Switzerland:</strong> covered by the European Commission's adequacy decision for Switzerland</li>
+                <li><strong>EU/EEA → India:</strong> Standard Contractual Clauses (SCCs) plus supplementary technical and organisational measures</li>
+                <li><strong>EU/EEA → US sub-processors:</strong> SCCs or EU-US Data Privacy Framework certification where applicable</li>
+                <li><strong>India → outside India:</strong> made only in compliance with the DPDP Act and applicable notifications</li>
+            </ul>
 
-            <h2>5. Data Retention</h2>
-            <p>We retain personal data for as long as necessary to fulfil the purposes for which it was collected, or as required by applicable law. Lead and enquiry data is typically retained for 3 years.</p>
+            <h2>8. Your rights</h2>
+            <p>Subject to applicable law, you have the right to:</p>
+            <ul>
+                <li>Access the personal data we hold about you</li>
+                <li>Correct inaccurate or incomplete data</li>
+                <li>Erase your data ("right to be forgotten")</li>
+                <li>Restrict or object to processing</li>
+                <li>Port your data to another controller in a structured, machine-readable format</li>
+                <li>Withdraw consent at any time (without affecting the lawfulness of prior processing)</li>
+                <li>Lodge a complaint with a supervisory authority (Swiss FDPIC, your local EU DPA, or India's Data Protection Board)</li>
+                <li>Nominate another individual to exercise rights on your behalf in the event of incapacity (DPDP Act)</li>
+            </ul>
+            <p>To exercise these rights, email <a href="mailto:privacy@fairitsolutions.ch">privacy@fairitsolutions.ch</a>. We will respond within 30 days (or 1 month under GDPR; sooner where reasonably possible).</p>
 
-            <h2>6. Your Rights</h2>
-            <p>Under GDPR and Swiss Data Protection Act, you have the right to: access, correct, erase, restrict, or port your data; object to processing; and withdraw consent. To exercise these rights, contact us at <a href="mailto:privacy@fairitsolutions.ch">privacy@fairitsolutions.ch</a>.</p>
+            <h2>9. Data Protection point of contact</h2>
+            <p>FairIT Solutions has not formally appointed a Data Protection Officer (DPO) because our processing does not currently meet the mandatory DPO thresholds under GDPR Art. 37 (large-scale systematic monitoring or large-scale special-category processing). Privacy matters are nonetheless escalated through a single point of contact:</p>
+            <p><strong>Privacy contact:</strong> <a href="mailto:privacy@fairitsolutions.ch">privacy@fairitsolutions.ch</a></p>
+            <p>For DPDP Act matters, the same contact functions as the designated Data Protection Officer / Grievance Officer in India.</p>
 
-            <h2>7. Data Security</h2>
-            <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction.</p>
+            <h2>10. Data security</h2>
+            <p>We implement appropriate technical and organisational measures including TLS encryption in transit, encryption at rest, role-based access control, least-privilege for sub-processors, regular security reviews, and a documented incident-response plan.</p>
 
-            <h2>8. Third-Party Services</h2>
-            <p>We may share data with trusted service providers (hosting, email, analytics) who process data on our behalf. We ensure these providers maintain appropriate data protection standards.</p>
+            <h2>11. Breach notification</h2>
+            <p>In the event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will:</p>
+            <ul>
+                <li>Notify the competent supervisory authority within <strong>72 hours</strong> of becoming aware of the breach (GDPR Art. 33; revFADP).</li>
+                <li>Notify affected individuals without undue delay where the breach is likely to result in a high risk.</li>
+                <li>Notify the Data Protection Board of India in accordance with the DPDP Act and applicable rules.</li>
+            </ul>
 
-            <h2>9. Cookies</h2>
-            <p>We use cookies and similar tracking technologies. Please see our <a href="{{ route('cookies') }}">Cookie Policy</a> for details.</p>
+            <h2>12. Sub-processors and third-party services</h2>
+            <p>We use trusted sub-processors to operate our services. Categories include cloud hosting and infrastructure, transactional email, customer support tooling, privacy-respecting analytics, and payment processing. All sub-processors are bound by written data-processing agreements equivalent in protection to this policy. A current list is available on request.</p>
 
-            <h2>10. Contact</h2>
-            <p>For privacy-related enquiries, contact us at: <a href="mailto:privacy@fairitsolutions.ch">privacy@fairitsolutions.ch</a> or visit our <a href="{{ route('contact') }}">Contact page</a>.</p>
+            <h2>13. Cookies and analytics</h2>
+            <p>We use a minimal set of cookies and similar technologies. Non-essential cookies (analytics, marketing) require your consent. See our <a href="{{ route('cookies') }}">Cookie Policy</a> for details, including the specific analytics provider in use.</p>
+
+            <h2>14. Automated decision-making</h2>
+            <p>We do not engage in any automated decision-making — including profiling — that produces legal or similarly significant effects on you.</p>
+
+            <h2>15. Changes to this policy</h2>
+            <p>We may update this policy from time to time. Material changes will be highlighted on this page with a revised "last updated" date. Where required, we will obtain your consent again.</p>
+
+            <h2>16. Contact</h2>
+            <p>For privacy-related enquiries, please email <a href="mailto:privacy@fairitsolutions.ch">privacy@fairitsolutions.ch</a> or visit our <a href="{{ route('contact') }}">Contact page</a>.</p>
         </div>
     </div>
 </section>

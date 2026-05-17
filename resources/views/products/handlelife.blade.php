@@ -105,10 +105,37 @@
 </section>
 
 <section class="section-padding-sm bg-charcoal-950">
-    <div class="container-tight text-center" data-animate>
-        <h2 class="text-3xl font-bold text-white mb-4">Take Back Control of Your Family Life</h2>
-        <p class="text-charcoal-400 mb-8">Join the waitlist for HandleLife OS early access.</p>
-        <a href="{{ route('consultation') }}" class="btn-primary-lg">Get Early Access</a>
+    <div class="container-tight" data-animate>
+        <div class="max-w-xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-white mb-4">Take Back Control of Your Family Life</h2>
+                <p class="text-charcoal-400">Join the waitlist for HandleLife OS early access. Beta opens 2026.</p>
+            </div>
+
+            @if(session('success') && str_contains(session('success'), 'HandleLife OS'))
+            <div class="mb-4 p-3 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-100 text-sm">{{ session('success') }}</div>
+            @endif
+            @if($errors->any())
+            <div class="mb-4 p-3 rounded-xl bg-red-500/20 border border-red-400/30 text-red-100 text-sm">
+                <ul class="space-y-1">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+            </div>
+            @endif
+
+            <form action="{{ route('waitlist.submit') }}" method="POST" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 space-y-4">
+                @csrf
+                <input type="hidden" name="product" value="HandleLife OS">
+                <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <input name="name" type="text" required maxlength="100" placeholder="Your name" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('name') }}">
+                    <input name="email" type="email" required maxlength="150" placeholder="Email" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('email') }}">
+                </div>
+                <input name="stage" type="text" maxlength="100" placeholder="Household type (e.g. NRI family, Multi-home, Single-home)" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('stage') }}">
+                <button type="submit" class="btn-primary-lg w-full justify-center">
+                    Get Early Access
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+            </form>
+        </div>
     </div>
 </section>
 

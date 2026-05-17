@@ -25,9 +25,9 @@
 
     {{-- Open Graph --}}
     @php
-        $ogLocaleMap = ['en' => 'en_US', 'de' => 'de_DE', 'fr' => 'fr_FR', 'es' => 'es_ES', 'ar' => 'ar_AE'];
+        $ogLocaleMap = ['en' => 'en_GB', 'de' => 'de_DE', 'fr' => 'fr_FR', 'es' => 'es_ES', 'ar' => 'ar_AE'];
         $currentLocale = app()->getLocale();
-        $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_US';
+        $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_GB';
     @endphp
     <meta property="og:type" content="@yield('og_type', 'website')">
     <meta property="og:url" content="@yield('og_url', url()->current())">

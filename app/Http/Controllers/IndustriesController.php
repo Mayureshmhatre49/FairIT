@@ -9,6 +9,9 @@ class IndustriesController extends Controller
     private array $industries = [
         'startups' => [
             'title'       => 'Startups',
+            'cta_noun'    => 'Startup',
+            'related_product' => null,
+            'related_product_route' => null,
             'headline'    => 'Move Faster. Decide Better. Scale Smarter.',
             'description' => 'AI systems that give early-stage and growth-stage startups the operational leverage of a team 10x their size.',
             'icon'        => 'rocket',
@@ -17,6 +20,9 @@ class IndustriesController extends Controller
         ],
         'smes' => [
             'title'       => 'SMEs',
+            'cta_noun'    => 'SME',
+            'related_product' => null,
+            'related_product_route' => null,
             'headline'    => 'Enterprise AI. SME Budget.',
             'description' => 'Practical, affordable AI transformation for small and medium enterprises ready to compete on intelligence.',
             'icon'        => 'building',
@@ -25,6 +31,9 @@ class IndustriesController extends Controller
         ],
         'real-estate' => [
             'title'       => 'Real Estate',
+            'cta_noun'    => 'Real Estate',
+            'related_product' => null,
+            'related_product_route' => null,
             'headline'    => 'Close More. Manage Better. Grow Faster.',
             'description' => 'AI tools for property management, lead qualification, client communication, and market intelligence.',
             'icon'        => 'home',
@@ -33,6 +42,9 @@ class IndustriesController extends Controller
         ],
         'hospitality' => [
             'title'       => 'Hospitality',
+            'cta_noun'    => 'Hospitality',
+            'related_product' => 'HSI OS',
+            'related_product_route' => 'products.hsios',
             'headline'    => 'Deliver 5-Star Experiences at Scale.',
             'description' => 'AI-driven guest experiences, booking automation, and operational intelligence for hotels and restaurants.',
             'icon'        => 'star',
@@ -41,6 +53,9 @@ class IndustriesController extends Controller
         ],
         'interior-design' => [
             'title'       => 'Interior Design',
+            'cta_noun'    => 'Interior Design',
+            'related_product' => 'HSI OS',
+            'related_product_route' => 'products.hsios',
             'headline'    => 'Design Smarter. Execute Flawlessly.',
             'description' => 'The AI operating system for interior designers, renovation firms, and architecture studios.',
             'icon'        => 'paint-brush',
@@ -49,14 +64,20 @@ class IndustriesController extends Controller
         ],
         'healthcare' => [
             'title'       => 'Healthcare',
+            'cta_noun'    => 'Healthcare',
+            'related_product' => null,
+            'related_product_route' => null,
             'headline'    => 'Better Patient Outcomes. Less Admin.',
-            'description' => 'HIPAA-aware AI solutions for clinics, hospitals, and health-tech companies.',
+            'description' => 'GDPR, Swiss FADP, and India DPDP-aligned AI solutions for clinics, hospitals, and health-tech companies.',
             'icon'        => 'heart',
             'color'       => 'red',
             'solutions'   => ['Patient communication AI', 'Appointment automation', 'Clinical documentation assistance', 'Analytics dashboards'],
         ],
         'education' => [
             'title'       => 'Education',
+            'cta_noun'    => 'Education',
+            'related_product' => null,
+            'related_product_route' => null,
             'headline'    => 'Personalised Learning. Scalable Impact.',
             'description' => 'AI tools for EdTech companies, schools, and professional training organisations.',
             'icon'        => 'academic-cap',
@@ -65,6 +86,9 @@ class IndustriesController extends Controller
         ],
         'professional-services' => [
             'title'       => 'Professional Services',
+            'cta_noun'    => 'Professional Services',
+            'related_product' => null,
+            'related_product_route' => null,
             'headline'    => 'Deliver More Value. Bill Fewer Hours.',
             'description' => 'AI systems for law firms, accounting firms, consultancies, and agencies.',
             'icon'        => 'briefcase',

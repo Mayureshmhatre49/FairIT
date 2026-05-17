@@ -101,8 +101,62 @@
     </div>
 </section>
 
-{{-- Approach --}}
+{{-- Meet the Founders --}}
 <section class="section-padding bg-white">
+    <div class="container-wide">
+        <div class="text-center mb-12" data-animate>
+            <span class="section-label">Meet the founders</span>
+            <h2 class="section-title mt-3">The humans behind the systems</h2>
+            <p class="section-subtitle mt-4 mx-auto">Two operators. One conviction: AI should serve humans, not the other way round.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto" data-animate data-animate-delay="100">
+
+            {{-- Nishant --}}
+            <div class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors">
+                <div class="flex items-start gap-4 mb-5">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">NM</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-charcoal-950">Nishant Mhatre</h3>
+                        <p class="text-brand-600 text-sm font-medium">Co-Founder &amp; CEO</p>
+                        <p class="text-xs text-charcoal-400 mt-0.5">India · Global delivery</p>
+                    </div>
+                </div>
+                <p class="text-charcoal-600 text-sm leading-relaxed mb-5">Product builder and AI systems architect. Nishant leads engineering, voice AI deployments, and the technical execution of every FairIT engagement. Background in software architecture, real-estate operations, and family enterprise.</p>
+                <div class="flex items-center gap-4 pt-4 border-t border-charcoal-100">
+                    <a href="mailto:nishant@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">nishant@fairitsolutions.in</a>
+                    <a href="https://www.linkedin.com/in/nishantmhatre" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+                        LinkedIn
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Annemarie --}}
+            <div class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors">
+                <div class="flex items-start gap-4 mb-5">
+                    <div class="w-16 h-16 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">AMS</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold text-charcoal-950">Annemarie M. Sickeler</h3>
+                        <p class="text-brand-600 text-sm font-medium">Co-Founder</p>
+                        <p class="text-xs text-charcoal-400 mt-0.5">Switzerland · Strategy &amp; operations</p>
+                    </div>
+                </div>
+                <p class="text-charcoal-600 text-sm leading-relaxed mb-5">Strategist, operator, and trusted advisor to founders across hospitality, services, and family enterprise. Annemarie leads client engagement, transformation advisory, and the European delivery practice.</p>
+                <div class="flex items-center gap-4 pt-4 border-t border-charcoal-100">
+                    <a href="mailto:hello@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">hello@fairitsolutions.ch</a>
+                    <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+                        LinkedIn
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- Approach --}}
+<section class="section-padding bg-charcoal-50">
     <div class="container-tight">
         <div class="text-center mb-12" data-animate>
             <span class="section-label">{{ __('about.approach.label') }}</span>
@@ -110,7 +164,7 @@
         </div>
         <div class="space-y-6">
             @foreach(__('about.approach.steps') as $item)
-            <div data-animate class="flex items-start gap-6 p-6 rounded-2xl hover:bg-charcoal-50 transition-colors">
+            <div data-animate class="flex items-start gap-6 p-6 rounded-2xl bg-white border border-charcoal-100 hover:border-brand-200 hover:shadow-card transition-all">
                 <div class="w-14 h-14 rounded-2xl bg-charcoal-950 text-white flex items-center justify-center font-black text-lg flex-shrink-0">{{ $item['step'] }}</div>
                 <div>
                     <h3 class="text-lg font-bold text-charcoal-950 mb-2">{{ $item['title'] }}</h3>

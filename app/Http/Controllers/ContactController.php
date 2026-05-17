@@ -80,6 +80,35 @@ class ContactController extends Controller
         return response()->json(['success' => true, 'message' => 'Demo request received! We will reach out within 24 hours.']);
     }
 
+    public function waitlist(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'name'    => ['required', 'string', 'max:100'],
+            'email'   => ['required', 'email', 'max:150'],
+            'stage'   => ['nullable', 'string', 'max:100'],
+            'product' => ['required', 'string', 'max:100'],
+            'honeypot'=> ['nullable', 'size:0'],
+        ]);
+
+        if ($request->filled('honeypot')) {
+            return back()->with('success', 'You are on the waitlist. We will be in touch.');
+        }
+
+        $lead = Lead::create([
+            'type'    => 'waitlist',
+            'name'    => $validated['name'],
+            'email'   => $validated['email'],
+            'subject' => 'Waitlist: ' . $validated['product'],
+            'message' => 'Company stage: ' . ($validated['stage'] ?? 'Not provided'),
+            'source'  => strtolower(str_replace(' ', '_', $validated['product'])) . '_waitlist',
+            'status'  => 'new',
+        ]);
+
+        $this->sendNotification($lead);
+
+        return back()->with('success', 'You are on the ' . $validated['product'] . ' waitlist. We will email you the moment access opens.');
+    }
+
     public function audit(Request $request): JsonResponse
     {
         $validated = $request->validate([

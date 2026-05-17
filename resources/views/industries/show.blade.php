@@ -73,9 +73,30 @@
     </div>
 </section>
 
+@if(!empty($industry['related_product']) && !empty($industry['related_product_route']))
+<section class="section-padding bg-charcoal-50">
+    <div class="container-tight" data-animate>
+        <div class="bg-white rounded-2xl border border-charcoal-100 p-6 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10">
+            <div class="w-14 h-14 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
+                <svg class="w-7 h-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div class="flex-1">
+                <span class="badge badge-blue mb-2">Built for this industry</span>
+                <h3 class="text-xl font-bold text-charcoal-950 mb-2 mt-2">Meet {{ $industry['related_product'] }}</h3>
+                <p class="text-charcoal-600 text-sm leading-relaxed">The AI operating system we have purpose-built for {{ $industry['title'] }} teams. See the modules, integrations, and waitlist details.</p>
+            </div>
+            <a href="{{ route($industry['related_product_route']) }}" class="btn-primary flex-shrink-0">
+                Explore {{ $industry['related_product'] }}
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+@endif
+
 <section class="section-padding-sm bg-charcoal-950">
     <div class="container-tight text-center" data-animate>
-        <h2 class="text-3xl font-bold text-white mb-4">Ready to Transform Your {{ $industry['title'] }} Business?</h2>
+        <h2 class="text-3xl font-bold text-white mb-4">Ready to Transform Your {{ $industry['cta_noun'] ?? $industry['title'] }} Business?</h2>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <a href="{{ route('consultation') }}" class="btn-primary-lg">Book Strategy Session</a>
             <a href="{{ route('services.index') }}" class="btn-outline-white">View All Services</a>

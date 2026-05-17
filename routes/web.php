@@ -62,6 +62,7 @@ Route::post('/book-consultation', [ConsultationController::class, 'submit'])->na
 
 // Demo request (AJAX)
 Route::post('/request-demo', [ContactController::class, 'demo'])->name('demo.submit')->middleware('throttle:3,1');
+Route::post('/join-waitlist', [ContactController::class, 'waitlist'])->name('waitlist.submit')->middleware('throttle:5,1');
 
 // AI Audit request
 Route::post('/ai-audit', [ContactController::class, 'audit'])->name('audit.submit')->middleware('throttle:3,1');
