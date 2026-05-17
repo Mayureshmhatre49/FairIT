@@ -12,11 +12,11 @@
         <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose prose-gray max-w-none" data-animate data-animate-delay="100">
 
             <h2>1. Introduction</h2>
-            <p>FairIT Solutions ("we", "us", "our") is committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong> and <strong>fairitsolutions.in</strong>, our consultation services, and any communications you have with us.</p>
+            <p>FairIT Solutions ("we", "us", "our") is committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong>, our consultation services, and any communications you have with us.</p>
             <p>This policy is designed to meet the requirements of the EU General Data Protection Regulation (GDPR), the revised Swiss Federal Act on Data Protection (revFADP), and India's Digital Personal Data Protection Act, 2023 (DPDP Act).</p>
 
             <h2>2. Who we are</h2>
-            <p>FairIT Solutions operates as a single business across Switzerland (headquarters) and India (delivery hub). When you interact with us, the applicable data controller depends on where you are based and the service involved. Both legal entities apply the same protection standards described in this policy.</p>
+            <p>FairIT Solutions is headquartered in Switzerland (the data controller for the purposes of GDPR and the revised Swiss FADP) and operates a delivery hub in India that processes data on behalf of the Swiss entity. The same protection standards apply across both jurisdictions.</p>
 
             <h2>3. Data we collect</h2>
             <ul>

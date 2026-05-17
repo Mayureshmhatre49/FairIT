@@ -110,7 +110,7 @@
             "name": "FairIT Solutions (India Delivery Hub)",
             "image": "{{ asset('images/og-image.png') }}",
             "url": "https://fairitsolutions.ch",
-            "email": "nishant@fairitsolutions.in",
+            "email": "nishant@fairitsolutions.ch",
             "priceRange": "$$$$",
             "address": {
                 "@type": "PostalAddress",
@@ -127,7 +127,7 @@
             "jobTitle": "Co-Founder & CEO",
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
-            "email": "nishant@fairitsolutions.in"
+            "email": "nishant@fairitsolutions.ch"
         },
         {
             "@type": "Person",

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact FairIT Solutions — Get in Touch')
-@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Based in Switzerland & India, serving globally.')
+@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Headquartered in Switzerland, serving clients globally.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -25,7 +25,7 @@
             "familyName": "Mhatre",
             "jobTitle": "Co-Founder & CEO",
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "email": "nishant@fairitsolutions.in",
+            "email": "nishant@fairitsolutions.ch",
             "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
             "knowsAbout": ["Artificial Intelligence", "AI Strategy", "AI Copilots", "Voice AI", "Founder Advisory"]
         },
@@ -86,7 +86,7 @@
                                 <p class="font-bold text-charcoal-950 text-base">Nishant Mhatre</p>
                                 <p class="text-xs text-charcoal-500 mb-2">{{ __('contact.founders.nishant.role') }}</p>
                                 <div class="space-y-1">
-                                    <a href="mailto:nishant@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">nishant@fairitsolutions.in</a>
+                                    <a href="mailto:nishant@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">nishant@fairitsolutions.ch</a>
                                     <a href="https://www.linkedin.com/in/nishantmhatre" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
                                 </div>
                             </div>

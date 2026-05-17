@@ -26,7 +26,8 @@ We help SMEs and enterprises move from AI curiosity to measurable AI advantage i
 - [Book a free consultation](https://fairitsolutions.ch/consultation)
 
 ## Trust & policy
-- Locations: Switzerland (HQ), India (delivery hub), serving globally
+- Headquarters: Switzerland (single legal entity, sole canonical domain fairitsolutions.ch)
+- Operations: India delivery hub (sub-processor of the Swiss entity)
 - Languages: English, German, French, Spanish, Arabic
 - Privacy: https://fairitsolutions.ch/privacy-policy
 - Terms: https://fairitsolutions.ch/terms-of-service
