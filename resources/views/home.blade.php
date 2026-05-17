@@ -128,7 +128,7 @@
             "description": "Bridges real estate, technology, and AI to build future-ready ecosystems. 20+ years of international experience across telecom, digital transformation, and real-estate entrepreneurship in the USA, UK, Europe, Australia, New Zealand, and India.",
             "knowsAbout": ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"],
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
+            "sameAs": ["https://www.linkedin.com/in/nishantmhatre/"],
             "email": "nishant@fairitsolutions.ch"
         },
         {
