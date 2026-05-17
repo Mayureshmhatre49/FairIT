@@ -420,10 +420,6 @@
                 </p>
                 <div class="flex items-center gap-4">
                     <span class="text-xs text-charcoal-600">{{ __('ui.footer.built_in') }}</span>
-                    <div class="flex items-center gap-1">
-                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-                        <span class="text-xs text-charcoal-500">{{ __('ui.footer.systems_ok') }}</span>
-                    </div>
                 </div>
             </div>
         </div>

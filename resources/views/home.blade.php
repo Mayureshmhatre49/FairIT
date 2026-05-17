@@ -34,7 +34,17 @@
                     "@type": "ContactPoint",
                     "contactType": "customer service",
                     "email": "hello@fairitsolutions.ch",
+                    "telephone": "+41 78 905 50 40",
+                    "areaServed": ["CH", "EU"],
                     "availableLanguage": ["English", "German", "French"]
+                },
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "sales",
+                    "email": "nishant@fairitsolutions.ch",
+                    "telephone": "+91 98811 49629",
+                    "areaServed": ["IN", "Worldwide"],
+                    "availableLanguage": ["English", "Hindi"]
                 }
             ],
             "areaServed": [
@@ -87,7 +97,7 @@
             "name": "FairIT Solutions (Switzerland HQ)",
             "image": "{{ asset('images/og-image.png') }}",
             "url": "https://fairitsolutions.ch",
-            "telephone": "+41-00-000-0000",
+            "telephone": "+41 78 905 50 40",
             "email": "hello@fairitsolutions.ch",
             "priceRange": "$$$$",
             "address": {
@@ -110,6 +120,7 @@
             "name": "FairIT Solutions (India Delivery Hub)",
             "image": "{{ asset('images/og-image.png') }}",
             "url": "https://fairitsolutions.ch",
+            "telephone": "+91 98811 49629",
             "email": "nishant@fairitsolutions.ch",
             "priceRange": "$$$$",
             "address": {

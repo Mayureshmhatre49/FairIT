@@ -125,6 +125,24 @@
                                 <div class="text-charcoal-800 font-medium">hello@fairitsolutions.ch</div>
                             </div>
                         </a>
+                        <a href="tel:+41789055040" class="flex items-center gap-3 p-4 rounded-xl hover:bg-charcoal-50 transition-colors group">
+                            <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center group-hover:bg-brand-100 transition-colors flex-shrink-0">
+                                <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-charcoal-400 font-medium">Switzerland 🇨🇭</div>
+                                <div class="text-charcoal-800 font-medium">+41 78 905 50 40</div>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/919881149629" target="_blank" rel="noopener" class="flex items-center gap-3 p-4 rounded-xl hover:bg-charcoal-50 transition-colors group">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-100 transition-colors flex-shrink-0">
+                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.554-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.595 5.391l-.999 3.648 3.893-1.738z"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="text-xs text-charcoal-400 font-medium">India 🇮🇳 · WhatsApp</div>
+                                <div class="text-charcoal-800 font-medium">+91 98811 49629</div>
+                            </div>
+                        </a>
                         <div class="flex items-center gap-3 p-4 rounded-xl">
                             <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
