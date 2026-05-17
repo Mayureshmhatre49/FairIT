@@ -13,10 +13,10 @@ return [
         'body_2' => 'FairIT Solutions wurde auf einer einfachen Überzeugung gegründet: dass die Intelligenz der bestgeführten Unternehmen der Welt für jeden ambitionierten Gründer, jedes ernsthafte Unternehmen und jede moderne Familie zugänglich sein sollte — unabhängig von Grösse, Budget oder technischem Sachverstand.',
         'body_3' => 'Wir bauen KI-Betriebssysteme, die unseren Kunden den Hebel, die Klarheit und die Ausführungsgeschwindigkeit geben, die sie brauchen, um auf höchstem Niveau zu konkurrieren. Nicht nur KI-Werkzeuge. Echte Systeme, die ihre tägliche Betriebsweise verändern.',
         'stats'  => [
-            ['num' => '3',   'label' => 'KI-Betriebssysteme entwickelt'],
-            ['num' => '5',   'label' => 'Premium KI-Leistungen'],
-            ['num' => '8',   'label' => 'Bediente Branchen'],
-            ['num' => '40+', 'label' => 'Unterstützte Sprachen'],
+            ['num' => '3', 'label' => 'KI-Betriebssysteme in Entwicklung'],
+            ['num' => '5', 'label' => 'Premium-KI-Leistungslinien'],
+            ['num' => '8', 'label' => 'Bediente Branchen'],
+            ['num' => '5', 'label' => 'Arbeitssprachen'],
         ],
     ],
     'values' => [

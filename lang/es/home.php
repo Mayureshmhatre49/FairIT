@@ -14,10 +14,10 @@ return [
         'scroll'      => 'Desplazarse',
     ],
     'stats' => [
-        ['value' => '95%',  'label' => 'Tasa de adopción de IA',          'num' => '95'],
-        ['value' => '40+',  'label' => 'Idiomas soportados',              'num' => '40'],
-        ['value' => '3×',   'label' => 'Ganancia media de productividad', 'num' => '3'],
-        ['value' => '24/7', 'label' => 'Disponibilidad de sistemas IA',   'num' => '24'],
+        ['value' => '20+', 'label' => 'Años de experiencia fundadora', 'num' => '20'],
+        ['value' => '6',   'label' => 'Países con entregas',           'num' => '6'],
+        ['value' => '5',   'label' => 'Idiomas de trabajo',            'num' => '5'],
+        ['value' => '8',   'label' => 'Sectores atendidos',            'num' => '8'],
     ],
     'pillars' => [
         'label'    => 'Lo que construimos',

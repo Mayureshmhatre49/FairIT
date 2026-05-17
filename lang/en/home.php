@@ -14,10 +14,10 @@ return [
         'scroll'      => 'Scroll',
     ],
     'stats' => [
-        ['value' => '95%',  'label' => 'AI adoption rate',          'num' => '95'],
-        ['value' => '40+',  'label' => 'Languages supported',       'num' => '40'],
-        ['value' => '3×',   'label' => 'Average productivity gain', 'num' => '3'],
-        ['value' => '24/7', 'label' => 'AI systems uptime',         'num' => '24'],
+        ['value' => '20+', 'label' => 'Years of founder experience', 'num' => '20'],
+        ['value' => '6',   'label' => 'Countries delivered across',  'num' => '6'],
+        ['value' => '5',   'label' => 'Languages we operate in',     'num' => '5'],
+        ['value' => '8',   'label' => 'Industries served',           'num' => '8'],
     ],
     'pillars' => [
         'label'    => 'What We Build',

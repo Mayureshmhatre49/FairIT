@@ -13,10 +13,10 @@ return [
         'body_2' => 'FairIT Solutions was founded on a simple belief: that the intelligence of the best-run companies in the world should be accessible to every ambitious founder, every serious business, and every modern family — regardless of size, budget, or technical sophistication.',
         'body_3' => 'We build AI operating systems that give our clients the leverage, clarity, and execution velocity they need to compete at the highest level. Not just AI tools. Real systems that change how they operate every day.',
         'stats'  => [
-            ['num' => '3',   'label' => 'AI Operating Systems built'],
-            ['num' => '5',   'label' => 'Premium AI services'],
-            ['num' => '8',   'label' => 'Industries served'],
-            ['num' => '40+', 'label' => 'Languages supported'],
+            ['num' => '3', 'label' => 'أنظمة تشغيل ذكاء اصطناعي قيد التطوير'],
+            ['num' => '5', 'label' => 'خطوط خدمات ذكاء اصطناعي متميزة'],
+            ['num' => '8', 'label' => 'قطاعات نخدمها'],
+            ['num' => '5', 'label' => 'لغات نعمل بها'],
         ],
     ],
     'values' => [

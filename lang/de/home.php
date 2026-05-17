@@ -14,10 +14,10 @@ return [
         'scroll'      => 'Scrollen',
     ],
     'stats' => [
-        ['value' => '95%',  'label' => 'KI-Adoptionsrate',              'num' => '95'],
-        ['value' => '40+',  'label' => 'Unterstützte Sprachen',         'num' => '40'],
-        ['value' => '3×',   'label' => 'Durchschnittlicher Produktivitätsgewinn', 'num' => '3'],
-        ['value' => '24/7', 'label' => 'KI-Systemverfügbarkeit',        'num' => '24'],
+        ['value' => '20+', 'label' => 'Jahre Gründererfahrung',     'num' => '20'],
+        ['value' => '6',   'label' => 'Länder Liefererfahrung',     'num' => '6'],
+        ['value' => '5',   'label' => 'Arbeitssprachen',            'num' => '5'],
+        ['value' => '8',   'label' => 'Branchen bedient',           'num' => '8'],
     ],
     'pillars' => [
         'label'    => 'Was wir entwickeln',
