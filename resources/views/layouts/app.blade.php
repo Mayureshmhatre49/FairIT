@@ -76,6 +76,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
+    {{-- Inter — only the weights actually used (400, 500, 600, 700, 900); was 7 weights --}}
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"></noscript>
+
+    {{-- Search engine verification --}}
+    <meta name="google-site-verification" content="@yield('google_site_verification', '')">
+    <meta name="msvalidate.01" content="@yield('bing_site_verification', '')">
+
+    {{-- Pagination signals (Google deprecated rel=prev/next as a signal in 2019 but still honoured by some) --}}
+    @hasSection('prev_page') <link rel="prev" href="@yield('prev_page')"> @endif
+    @hasSection('next_page') <link rel="next" href="@yield('next_page')"> @endif
+
     {{-- Vite Assets --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 

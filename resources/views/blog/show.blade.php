@@ -13,7 +13,7 @@
     "@context": "https://schema.org",
     "@graph": [
         {
-            "@type": "Article",
+            "@type": "BlogPosting",
             "@id": "{{ url()->current() }}#article",
             "headline": "{{ addslashes($post->title) }}",
             "description": "{{ addslashes($post->excerpt) }}",

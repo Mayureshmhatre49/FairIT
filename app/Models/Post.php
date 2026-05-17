@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\IndexNowService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -9,6 +10,21 @@ use Illuminate\Database\Eloquent\Builder;
 class Post extends Model
 {
     use HasFactory;
+
+    protected static function booted(): void
+    {
+        // Ping IndexNow when a post is published or its content materially changes
+        static::saved(function (Post $post) {
+            if (! $post->is_published) {
+                return;
+            }
+            $relevantChange = $post->wasRecentlyCreated
+                || $post->wasChanged(['title', 'content', 'excerpt', 'is_published', 'published_at']);
+            if ($relevantChange) {
+                app(IndexNowService::class)->notify(route('blog.show', $post->slug));
+            }
+        });
+    }
 
     protected $fillable = [
         'title',

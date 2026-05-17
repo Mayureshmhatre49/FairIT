@@ -15,7 +15,30 @@
             "name": "AI Insights — FairIT Solutions",
             "description": "Expert insights on AI transformation, voice AI, founder productivity, and business automation.",
             "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
-            "publisher": { "@id": "https://fairitsolutions.ch/#organization" }
+            "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
+            "mainEntity": { "@id": "{{ route('blog.index') }}#blog" }
+        },
+        {
+            "@type": "Blog",
+            "@id": "{{ route('blog.index') }}#blog",
+            "name": "FairIT Solutions Insights",
+            "description": "Expert insights on AI transformation, voice AI, founder productivity, AI copilots, and business automation.",
+            "url": "{{ route('blog.index') }}",
+            "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
+            "inLanguage": "{{ app()->getLocale() }}",
+            "blogPost": [
+                @foreach($posts as $post)
+                {
+                    "@type": "BlogPosting",
+                    "@id": "{{ route('blog.show', $post->slug) }}#article",
+                    "headline": "{{ addslashes($post->title) }}",
+                    "url": "{{ route('blog.show', $post->slug) }}",
+                    "datePublished": "{{ $post->published_at->toIso8601String() }}",
+                    @if($post->category)"articleSection": "{{ $post->category }}",@endif
+                    "author": { "@id": "https://fairitsolutions.ch/#organization" }
+                }{{ !$loop->last ? ',' : '' }}
+                @endforeach
+            ]
         },
         {
             "@type": "BreadcrumbList",
