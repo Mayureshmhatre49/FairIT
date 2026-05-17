@@ -12,11 +12,12 @@
             "@type": "SoftwareApplication",
             "@id": "{{ route('products.handlelife') }}#app",
             "name": "HandleLife OS",
-            "url": "{{ route('products.handlelife') }}",
+            "url": "https://www.handlelifeos.com",
+            "sameAs": ["https://www.handlelifeos.com"],
             "applicationCategory": "LifestyleApplication",
             "operatingSystem": "Web",
             "description": "The AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated.",
-            "offers": { "@type": "Offer", "url": "{{ route('consultation') }}", "availability": "https://schema.org/PreOrder" },
+            "offers": { "@type": "Offer", "url": "https://www.handlelifeos.com", "availability": "https://schema.org/PreOrder" },
             "creator": { "@id": "https://fairitsolutions.ch/#organization" },
             "featureList": "Family command centre, Health & wellness AI, Finance intelligence, School & schedule AI, NRI services, Emergency response"
         },
@@ -51,9 +52,13 @@
                 HandleLife OS is the AI operating system for modern families — from health and school to finances and emergencies. Everything you need to manage life intelligently, in one place.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="{{ route('consultation') }}" class="btn-primary-lg">Get Early Access</a>
+                <a href="https://www.handlelifeos.com" target="_blank" rel="noopener" class="btn-primary-lg">
+                    Visit HandleLifeOS.com
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
                 <a href="{{ route('contact') }}" class="btn-outline-white">Learn More</a>
             </div>
+            <p class="text-charcoal-400 text-xs mt-4">HandleLife OS lives at <a href="https://www.handlelifeos.com" target="_blank" rel="noopener" class="text-violet-300 hover:text-violet-100 underline underline-offset-2">handlelifeos.com</a> — the official product site.</p>
         </div>
     </div>
 </section>

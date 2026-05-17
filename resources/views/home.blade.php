@@ -409,22 +409,28 @@
             @php
             $products = [
                 [
-                    'route'  => 'products.sarathios',
-                    'color'  => 'from-brand-900/40 to-brand-800/20 border-brand-700/30',
-                    'badge'  => 'bg-brand-600/20 text-brand-300 border-brand-500/20',
-                    'delay'  => '100',
+                    'route'         => 'products.sarathios',
+                    'external_url'  => 'https://www.sarathios.com',
+                    'external_host' => 'sarathios.com',
+                    'color'         => 'from-brand-900/40 to-brand-800/20 border-brand-700/30',
+                    'badge'         => 'bg-brand-600/20 text-brand-300 border-brand-500/20',
+                    'delay'         => '100',
                 ],
                 [
-                    'route'  => 'products.hsios',
-                    'color'  => 'from-emerald-900/40 to-emerald-800/20 border-emerald-700/30',
-                    'badge'  => 'bg-emerald-600/20 text-emerald-300 border-emerald-500/20',
-                    'delay'  => '200',
+                    'route'         => 'products.hsios',
+                    'external_url'  => 'https://www.hsios.in',
+                    'external_host' => 'hsios.in',
+                    'color'         => 'from-emerald-900/40 to-emerald-800/20 border-emerald-700/30',
+                    'badge'         => 'bg-emerald-600/20 text-emerald-300 border-emerald-500/20',
+                    'delay'         => '200',
                 ],
                 [
-                    'route'  => 'products.handlelife',
-                    'color'  => 'from-violet-900/40 to-violet-800/20 border-violet-700/30',
-                    'badge'  => 'bg-violet-600/20 text-violet-300 border-violet-500/20',
-                    'delay'  => '300',
+                    'route'         => 'products.handlelife',
+                    'external_url'  => 'https://www.handlelifeos.com',
+                    'external_host' => 'handlelifeos.com',
+                    'color'         => 'from-violet-900/40 to-violet-800/20 border-violet-700/30',
+                    'badge'         => 'bg-violet-600/20 text-violet-300 border-violet-500/20',
+                    'delay'         => '300',
                 ],
             ];
             $productItems = __('home.products.items');
@@ -456,10 +462,15 @@
                     @endforeach
                 </ul>
 
-                <a href="{{ route($product['route']) }}" class="inline-flex items-center justify-between gap-2 w-full bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-5 py-3 rounded-xl transition-all group-hover:bg-white/15">
-                    <span>Join {{ $productItems[$i]['name'] }} Waitlist</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                </a>
+                <div class="space-y-2">
+                    <a href="{{ $product['external_url'] }}" target="_blank" rel="noopener" class="inline-flex items-center justify-between gap-2 w-full bg-white text-charcoal-950 font-semibold text-sm px-5 py-3 rounded-xl transition-all hover:bg-charcoal-100">
+                        <span>Visit {{ $product['external_host'] }}</span>
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                    <a href="{{ route($product['route']) }}" class="inline-flex items-center justify-center gap-2 w-full text-charcoal-400 hover:text-white text-xs font-medium px-5 py-2 transition-colors">
+                        Join waitlist on FairIT →
+                    </a>
+                </div>
             </div>
             @endforeach
         </div>

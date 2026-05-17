@@ -12,11 +12,12 @@
             "@type": "SoftwareApplication",
             "@id": "{{ route('products.hsios') }}#app",
             "name": "HSI OS",
-            "url": "{{ route('products.hsios') }}",
+            "url": "https://www.hsios.in",
+            "sameAs": ["https://www.hsios.in"],
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web",
             "description": "The AI operating system for interior design, renovation, and home execution. Project management AI, vendor coordination, budget intelligence.",
-            "offers": { "@type": "Offer", "url": "{{ route('consultation') }}", "availability": "https://schema.org/PreOrder" },
+            "offers": { "@type": "Offer", "url": "https://www.hsios.in", "availability": "https://schema.org/PreOrder" },
             "creator": { "@id": "https://fairitsolutions.ch/#organization" },
             "featureList": "Project timeline AI, Client portal, Vendor coordination, Budget intelligence, Progress tracking, Design brief AI"
         },
@@ -51,9 +52,13 @@
                 The AI operating system built for interior designers, renovation firms, architects, and homeowners who are tired of projects going over budget and over time.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="{{ route('consultation') }}" class="btn-primary-lg">Get Early Access</a>
+                <a href="https://www.hsios.in" target="_blank" rel="noopener" class="btn-primary-lg">
+                    Visit HSIos.in
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
                 <a href="{{ route('contact') }}" class="btn-outline-white">Schedule Demo</a>
             </div>
+            <p class="text-charcoal-400 text-xs mt-4">HSI OS lives at <a href="https://www.hsios.in" target="_blank" rel="noopener" class="text-emerald-300 hover:text-emerald-100 underline underline-offset-2">hsios.in</a> — the official product site.</p>
         </div>
     </div>
 </section>
