@@ -7,7 +7,7 @@ return [
         'subtitle' => 'Beratung, Implementierung und wiederkehrende KI-Systeme für wachstumsorientierte Organisationen. Jedes Engagement wird auf messbare Geschäftsergebnisse ausgerichtet.',
         'cta_title'    => 'Nicht sicher, wo Sie anfangen sollen?',
         'cta_subtitle' => 'Buchen Sie ein kostenloses Strategiegespräch. Wir bewerten Ihre Bedürfnisse und empfehlen den besten Weg nach vorne.',
-        'cta_button'   => 'Kostlose Strategiesitzung buchen',
+        'cta_button'   => 'Kostenlose Strategiesitzung anfragen',
     ],
     'detail' => [
         'all_services'     => 'Alle Leistungen',
@@ -33,7 +33,7 @@ return [
             'Führungsworkshops & Change-Management',
             'Herstellerunabhängige Empfehlungen',
         ],
-        'cta'      => 'Strategiegespräch buchen',
+        'cta'      => 'Strategiegespräch anfragen',
         'benefit_1' => 'Klarer KI-Bereitschafts-Score über alle Geschäftsbereiche',
         'benefit_2' => 'Priorisierte 90-Tage- und 12-Monats-KI-Roadmap',
         'benefit_3' => 'ROI-Modelle und Business-Case-Dokumentation',

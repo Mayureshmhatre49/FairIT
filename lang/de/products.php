@@ -62,6 +62,6 @@ return [
     'cta' => [
         'title'    => 'Welches KI OS ist das Richtige für Sie?',
         'subtitle' => 'Buchen Sie ein Entdeckungsgespräch und wir helfen Ihnen, die perfekte Lösung zu finden.',
-        'button'   => 'Entdeckungsgespräch buchen',
+        'button'   => 'Entdeckungsgespräch anfragen',
     ],
 ];

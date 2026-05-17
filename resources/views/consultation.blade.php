@@ -20,7 +20,7 @@
             "@type": "BreadcrumbList",
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Book Consultation", "item": "{{ route('consultation') }}" }
+                { "@type": "ListItem", "position": 2, "name": "Request a Consultation", "item": "{{ route('consultation') }}" }
             ]
         }
     ]

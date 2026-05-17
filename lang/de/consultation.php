@@ -3,7 +3,7 @@
 return [
     'hero' => [
         'label'    => 'Hier starten',
-        'title'    => 'Ihre KI-Beratung buchen',
+        'title'    => 'Ihre KI-Beratung anfragen',
         'subtitle' => 'Eine fokussierte 45-minütige Strategiesitzung, um Ihre Ziele zu verstehen und Ihre KI-Möglichkeit zu kartieren. Kein Blabla, keine Verkaufspräsentation — nur Klarheit.',
         'badges'   => [
             '45-minütige fokussierte Sitzung',

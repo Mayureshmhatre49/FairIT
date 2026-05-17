@@ -7,7 +7,7 @@ return [
         'headline_2'  => 'Growth, Leadership',
         'headline_3'  => '& Modern Life',
         'subheadline' => 'We help founders and businesses unlock growth through AI advisory, custom AI systems, and intelligent operating systems built for the real world.',
-        'cta_primary' => 'Book Consultation',
+        'cta_primary' => 'Request a Consultation',
         'cta_secondary' => 'Explore Products',
         'trust_label' => 'Trusted by ambitious founders, modern businesses & future-ready teams',
         'trust_items' => ['Startups', 'SMEs', 'Interior Firms', 'Hospitality', 'Real Estate', 'Professional Services'],
@@ -49,7 +49,7 @@ return [
         'subtitle'    => 'Consulting, implementation, and recurring AI systems for growth-focused organisations.',
         'view_all'    => 'View All Services',
         'items'       => [
-            ['title' => 'AI Transformation Advisory',         'desc' => 'AI readiness audits, roadmap creation, ROI prioritisation, and leadership workshops to guide your AI transformation.',         'cta' => 'Book Strategy Session'],
+            ['title' => 'AI Transformation Advisory',         'desc' => 'AI readiness audits, roadmap creation, ROI prioritisation, and leadership workshops to guide your AI transformation.',         'cta' => 'Request a Strategy Session'],
             ['title' => 'Custom AI Copilot Development',      'desc' => 'Build internal AI copilots for CEOs, sales, HR, operations and support teams — trained on your data.',                       'cta' => 'Request Demo'],
             ['title' => 'Voice AI & Conversational Automation','desc' => 'AI voice callers, multilingual bots, booking bots, support bots and WhatsApp automation at enterprise scale.',              'cta' => 'See Use Cases'],
             ['title' => 'Managed AI Retainers',               'desc' => 'Monthly AI optimisation, bot management, workflow enhancement, reporting automation, and innovation support.',               'cta' => 'Talk to Expert'],
@@ -128,7 +128,7 @@ return [
         'title_1'    => 'Ready to Build Your',
         'title_2'    => 'AI Advantage?',
         'body'       => 'Join the growing number of founders and businesses operating with AI intelligence at their core.',
-        'cta_primary'   => 'Book Consultation',
+        'cta_primary'   => 'Request a Consultation',
         'cta_secondary' => 'Contact Us',
         'trust_items'   => [
             'No long-term contracts required',

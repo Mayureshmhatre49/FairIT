@@ -42,7 +42,7 @@ return [
     'cta' => [
         'title'         => 'Ready to Work Together?',
         'subtitle'      => 'Let\'s start with a conversation about your biggest AI opportunity.',
-        'cta_primary'   => 'Book a Consultation',
+        'cta_primary'   => 'Request a Consultation',
         'cta_secondary' => 'Contact Us',
     ],
 ];

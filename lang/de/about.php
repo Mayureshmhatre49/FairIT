@@ -42,7 +42,7 @@ return [
     'cta' => [
         'title'         => 'Bereit, zusammenzuarbeiten?',
         'subtitle'      => 'Beginnen wir mit einem Gespräch über Ihre grösste KI-Möglichkeit.',
-        'cta_primary'   => 'Beratung buchen',
+        'cta_primary'   => 'Beratung anfragen',
         'cta_secondary' => 'Kontakt aufnehmen',
     ],
 ];

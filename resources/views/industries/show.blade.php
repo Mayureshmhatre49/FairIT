@@ -98,7 +98,7 @@
     <div class="container-tight text-center" data-animate>
         <h2 class="text-3xl font-bold text-white mb-4">Ready to Transform Your {{ $industry['cta_noun'] ?? $industry['title'] }} Business?</h2>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <a href="{{ route('consultation') }}" class="btn-primary-lg">Book Strategy Session</a>
+            <a href="{{ route('consultation') }}" class="btn-primary-lg">Request a Strategy Session</a>
             <a href="{{ route('services.index') }}" class="btn-outline-white">View All Services</a>
         </div>
     </div>

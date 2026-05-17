@@ -7,7 +7,7 @@ return [
         'headline_2'  => 'Wachstum, Führung',
         'headline_3'  => '& modernes Leben',
         'subheadline' => 'Wir helfen Gründern und Unternehmen, Wachstum durch KI-Beratung, massgeschneiderte KI-Systeme und intelligente Betriebssysteme für die Praxis zu erschliessen.',
-        'cta_primary' => 'Beratung buchen',
+        'cta_primary' => 'Beratung anfragen',
         'cta_secondary' => 'Produkte entdecken',
         'trust_label' => 'Vertraut von ambitionierten Gründern, modernen Unternehmen & zukunftsorientierten Teams',
         'trust_items' => ['Startups', 'KMU', 'Innenarchitekturfirmen', 'Gastgewerbe', 'Immobilien', 'Beratungsunternehmen'],
@@ -49,7 +49,7 @@ return [
         'subtitle'    => 'Beratung, Implementierung und wiederkehrende KI-Systeme für wachstumsorientierte Organisationen.',
         'view_all'    => 'Alle Leistungen anzeigen',
         'items'       => [
-            ['title' => 'KI-Transformationsberatung',         'desc' => 'KI-Bereitschaftsprüfungen, Roadmap-Erstellung, ROI-Priorisierung und Führungsworkshops zur Begleitung Ihrer KI-Transformation.',  'cta' => 'Strategiegespräch buchen'],
+            ['title' => 'KI-Transformationsberatung',         'desc' => 'KI-Bereitschaftsprüfungen, Roadmap-Erstellung, ROI-Priorisierung und Führungsworkshops zur Begleitung Ihrer KI-Transformation.',  'cta' => 'Strategiegespräch anfragen'],
             ['title' => 'Massgeschneiderte KI-Copilot-Entwicklung', 'desc' => 'Interne KI-Copiloten für Geschäftsführung, Vertrieb, HR, Betrieb und Support-Teams entwickeln — auf Ihren Daten trainiert.', 'cta' => 'Demo anfordern'],
             ['title' => 'Sprach-KI & Konversationsautomatisierung', 'desc' => 'KI-Sprachanrufer, mehrsprachige Bots, Buchungsbots, Support-Bots und WhatsApp-Automatisierung auf Enterprise-Niveau.',    'cta' => 'Anwendungsfälle ansehen'],
             ['title' => 'Verwaltete KI-Retainer',             'desc' => 'Monatliche KI-Optimierung, Bot-Management, Workflow-Verbesserung, Berichtsautomatisierung und Innovationsunterstützung.',           'cta' => 'Experten kontaktieren'],
@@ -128,7 +128,7 @@ return [
         'title_1'    => 'Bereit, Ihren',
         'title_2'    => 'KI-Vorteil aufzubauen?',
         'body'       => 'Schliessen Sie sich der wachsenden Zahl von Gründern und Unternehmen an, die KI-Intelligenz in ihr Kerngeschäft integriert haben.',
-        'cta_primary'   => 'Beratung buchen',
+        'cta_primary'   => 'Beratung anfragen',
         'cta_secondary' => 'Kontakt aufnehmen',
         'trust_items'   => [
             'Keine Langzeitverträge',

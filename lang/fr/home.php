@@ -7,7 +7,7 @@ return [
         'headline_2'  => 'la croissance, le leadership',
         'headline_3'  => '& la vie moderne',
         'subheadline' => 'Nous aidons les fondateurs et les entreprises à débloquer la croissance grâce à des conseils en IA, des systèmes IA personnalisés et des systèmes d\'exploitation intelligents construits pour le monde réel.',
-        'cta_primary' => 'Réserver une consultation',
+        'cta_primary' => 'Demander une consultation',
         'cta_secondary' => 'Explorer les produits',
         'trust_label' => 'Faisant confiance aux fondateurs ambitieux, aux entreprises modernes & aux équipes tournées vers l\'avenir',
         'trust_items' => ['Startups', 'PME', 'Cabinets de design d\'intérieur', 'Hôtellerie', 'Immobilier', 'Services professionnels'],
@@ -49,7 +49,7 @@ return [
         'subtitle'    => 'Conseil, mise en œuvre et systèmes IA récurrents pour les organisations axées sur la croissance.',
         'view_all'    => 'Voir tous les services',
         'items'       => [
-            ['title' => 'Conseil en transformation IA',          'desc' => 'Audits de maturité IA, création de feuille de route, priorisation du ROI et ateliers de leadership pour guider votre transformation IA.',    'cta' => 'Réserver une session stratégie'],
+            ['title' => 'Conseil en transformation IA',          'desc' => 'Audits de maturité IA, création de feuille de route, priorisation du ROI et ateliers de leadership pour guider votre transformation IA.',    'cta' => 'Demander une session stratégie'],
             ['title' => 'Développement de copilote IA personnalisé', 'desc' => 'Développer des copilotes IA internes pour les PDG, ventes, RH, opérations et équipes de support — entraînés sur vos données.',           'cta' => 'Demander une démo'],
             ['title' => 'IA vocale & automatisation conversationnelle', 'desc' => 'Agents vocaux IA, bots multilingues, bots de réservation, bots de support et automatisation WhatsApp à l\'échelle enterprise.',    'cta' => 'Voir les cas d\'usage'],
             ['title' => 'Contrats IA gérés',                    'desc' => 'Optimisation IA mensuelle, gestion de bots, amélioration des flux de travail, automatisation des rapports et support à l\'innovation.',         'cta' => 'Parler à un expert'],
@@ -128,7 +128,7 @@ return [
         'title_1'    => 'Prêt à construire votre',
         'title_2'    => 'avantage IA ?',
         'body'       => 'Rejoignez le nombre croissant de fondateurs et d\'entreprises qui opèrent avec l\'intelligence IA au cœur de leur activité.',
-        'cta_primary'   => 'Réserver une consultation',
+        'cta_primary'   => 'Demander une consultation',
         'cta_secondary' => 'Nous contacter',
         'trust_items'   => [
             'Sans engagement à long terme',

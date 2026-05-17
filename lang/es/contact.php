@@ -15,7 +15,7 @@ return [
         'response_value'  => 'Within 24 hours',
         'book_title'      => 'Prefer to book directly?',
         'book_subtitle'   => 'Book a consultation and skip the back-and-forth.',
-        'book_cta'        => 'Book Consultation',
+        'book_cta'        => 'Request a Consultation',
     ],
     'form' => [
         'title'              => 'Send Us a Message',

@@ -62,6 +62,6 @@ return [
     'cta' => [
         'title'    => 'Quel OS IA vous convient ?',
         'subtitle' => 'Réservez un appel de découverte et nous vous aiderons à trouver la solution parfaite.',
-        'button'   => 'Réserver un appel de découverte',
+        'button'   => 'Demander un appel de découverte',
     ],
 ];

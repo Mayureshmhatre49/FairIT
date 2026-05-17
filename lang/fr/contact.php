@@ -15,7 +15,7 @@ return [
         'response_value'  => 'Dans les 24 heures',
         'book_title'      => 'Préférez réserver directement ?',
         'book_subtitle'   => 'Réservez une consultation et évitez les allers-retours.',
-        'book_cta'        => 'Réserver une consultation',
+        'book_cta'        => 'Demander une consultation',
     ],
     'form' => [
         'title'              => 'Envoyez-nous un message',

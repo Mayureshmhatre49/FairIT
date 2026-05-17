@@ -33,7 +33,7 @@ return [
             'Leadership workshops & change management',
             'Vendor-agnostic recommendations',
         ],
-        'cta'      => 'Book Strategy Session',
+        'cta'      => 'Request a Strategy Session',
         'benefit_1' => 'Clear AI readiness score across all business functions',
         'benefit_2' => 'Prioritised 90-day and 12-month AI roadmap',
         'benefit_3' => 'ROI models and business case documentation',

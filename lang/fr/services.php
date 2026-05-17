@@ -7,7 +7,7 @@ return [
         'subtitle' => 'Conseil, mise en œuvre et systèmes IA récurrents pour les organisations axées sur la croissance. Chaque engagement est conçu pour des résultats commerciaux mesurables.',
         'cta_title'    => 'Pas sûr par où commencer ?',
         'cta_subtitle' => 'Réservez un appel stratégique gratuit. Nous évaluerons vos besoins et recommanderons la meilleure voie à suivre.',
-        'cta_button'   => 'Réserver une session stratégie gratuite',
+        'cta_button'   => 'Demander une session stratégie gratuite',
     ],
     'detail' => [
         'all_services'     => 'Tous les services',
@@ -33,7 +33,7 @@ return [
             'Ateliers de leadership & gestion du changement',
             'Recommandations indépendantes des fournisseurs',
         ],
-        'cta'      => 'Réserver une session stratégie',
+        'cta'      => 'Demander une session stratégie',
         'benefit_1' => 'Score de maturité IA clair sur toutes les fonctions commerciales',
         'benefit_2' => 'Feuille de route IA priorisée sur 90 jours et 12 mois',
         'benefit_3' => 'Modèles ROI et documentation du cas d\'affaires',

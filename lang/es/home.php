@@ -7,7 +7,7 @@ return [
         'headline_2'  => 'Crecimiento, Liderazgo',
         'headline_3'  => 'y Vida Moderna',
         'subheadline' => 'Ayudamos a fundadores y empresas a desbloquear el crecimiento a través de asesoramiento en IA, sistemas de IA personalizados y sistemas operativos inteligentes construidos para el mundo real.',
-        'cta_primary' => 'Reservar Consulta',
+        'cta_primary' => 'Solicitar Consulta',
         'cta_secondary' => 'Explorar Productos',
         'trust_label' => 'Con la confianza de fundadores ambiciosos, empresas modernas y equipos preparados para el futuro',
         'trust_items' => ['Startups', 'PYMEs', 'Empresas de Interiorismo', 'Hostelería', 'Bienes Raíces', 'Servicios Profesionales'],
@@ -128,7 +128,7 @@ return [
         'title_1'    => '¿Listo para construir su',
         'title_2'    => 'Ventaja en IA?',
         'body'       => 'Únase al creciente número de fundadores y empresas que operan con inteligencia artificial en su núcleo.',
-        'cta_primary'   => 'Reservar Consulta',
+        'cta_primary'   => 'Solicitar Consulta',
         'cta_secondary' => 'Contáctenos',
         'trust_items'   => [
             'Sin contratos a largo plazo',

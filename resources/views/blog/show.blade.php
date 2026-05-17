@@ -124,7 +124,7 @@
                 <div data-animate class="bg-charcoal-950 rounded-2xl p-6 text-white sticky top-24">
                     <h3 class="font-bold mb-2">Ready to Apply This?</h3>
                     <p class="text-charcoal-400 text-sm mb-5 leading-relaxed">Book a free consultation and let us show you how AI can transform your specific business.</p>
-                    <a href="{{ route('consultation') }}" class="btn-primary w-full justify-center text-sm">Book Free Consultation</a>
+                    <a href="{{ route('consultation') }}" class="btn-primary w-full justify-center text-sm">Request a Free Consultation</a>
                 </div>
 
                 {{-- Related Posts --}}

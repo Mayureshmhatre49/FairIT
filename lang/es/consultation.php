@@ -3,7 +3,7 @@
 return [
     'hero' => [
         'label'    => 'Start Here',
-        'title'    => 'Book Your AI Consultation',
+        'title'    => 'Request Your AI Consultation',
         'subtitle' => 'A focused 45-minute strategy session to understand your goals and map out your AI opportunity. No fluff, no sales pitch — just clarity.',
         'badges'   => [
             '45-minute focused session',

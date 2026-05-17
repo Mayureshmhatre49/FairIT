@@ -13,9 +13,9 @@ return [
         'location_value'  => 'Schweiz, Indien & weltweit',
         'response_label'  => 'Antwortzeit',
         'response_value'  => 'Innerhalb von 24 Stunden',
-        'book_title'      => 'Direkt buchen?',
-        'book_subtitle'   => 'Buchen Sie eine Beratung und überspringen Sie das Hin-und-her.',
-        'book_cta'        => 'Beratung buchen',
+        'book_title'      => 'Direkt anfragen?',
+        'book_subtitle'   => 'Fordern Sie eine Beratung an und überspringen Sie das Hin-und-her.',
+        'book_cta'        => 'Beratung anfragen',
     ],
     'form' => [
         'title'              => 'Senden Sie uns eine Nachricht',

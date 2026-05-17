@@ -3,7 +3,7 @@
 return [
     'hero' => [
         'label'    => 'Commencer ici',
-        'title'    => 'Réserver votre consultation IA',
+        'title'    => 'Demander votre consultation IA',
         'subtitle' => 'Une session stratégique de 45 minutes pour comprendre vos objectifs et cartographier votre opportunité IA. Pas de fioritures, pas de discours de vente — juste de la clarté.',
         'badges'   => [
             'Session de 45 minutes',

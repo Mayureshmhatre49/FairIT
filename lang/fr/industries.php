@@ -10,6 +10,6 @@ return [
     'cta' => [
         'title'    => 'Votre secteur n\'est pas listé ?',
         'subtitle' => 'Nous travaillons dans tous les secteurs. Réservez un appel pour discuter de vos besoins spécifiques.',
-        'button'   => 'Réserver un appel de découverte',
+        'button'   => 'Demander un appel de découverte',
     ],
 ];
