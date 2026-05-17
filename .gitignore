@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /storage/framework/cache/data/*
+/composer.phar
 /storage/framework/sessions/*
 /storage/framework/testing/*
 /storage/framework/views/*.php
