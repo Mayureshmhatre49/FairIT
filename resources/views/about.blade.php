@@ -110,47 +110,87 @@
             <p class="section-subtitle mt-4 mx-auto">Two operators. One conviction: AI should serve humans, not the other way round.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto" data-animate data-animate-delay="100">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto" data-animate data-animate-delay="100">
 
             {{-- Nishant --}}
-            <div class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors">
-                <div class="flex items-start gap-4 mb-5">
-                    <div class="w-16 h-16 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">NM</div>
-                    <div class="flex-1">
+            <article class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors flex flex-col" x-data="{ open: false }">
+                <header class="flex items-start gap-4 mb-5">
+                    @if(file_exists(public_path('images/founders/nishant.jpg')))
+                    <img src="{{ asset('images/founders/nishant.jpg') }}" alt="Nishant Mhatre — Co-Founder &amp; CEO of FairIT Solutions" class="w-20 h-20 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="80" height="80">
+                    @else
+                    <div class="w-20 h-20 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">NM</div>
+                    @endif
+                    <div class="flex-1 min-w-0">
                         <h3 class="text-lg font-bold text-charcoal-950">Nishant Mhatre</h3>
                         <p class="text-brand-600 text-sm font-medium">Co-Founder &amp; CEO</p>
-                        <p class="text-xs text-charcoal-400 mt-0.5">India · Global delivery</p>
+                        <p class="text-xs text-charcoal-500 mt-1 leading-relaxed">20+ years across telecom, real estate &amp; AI · USA, UK, EU, AU, NZ, India</p>
                     </div>
+                </header>
+
+                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">I bridge real estate, technology, and AI to build future-ready ecosystems — leveraging 20+ years of international experience to create value for investors, businesses, and communities.</p>
+
+                <div x-show="open" x-collapse class="text-charcoal-600 text-sm leading-relaxed space-y-3 mb-3">
+                    <p>After a decade of driving large-scale telecom and digital transformation programmes across the USA, UK, Europe, Australia, New Zealand, and India, I transitioned into real estate entrepreneurship, founding a premium villa brand that reimagines luxury living through design, sustainability, and hospitality partnerships.</p>
+                    <p class="font-medium text-charcoal-800">My entrepreneurial journey is fuelled by a passion for innovation and impact:</p>
+                    <ul class="space-y-2 list-none pl-0">
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Designing and developing investment-ready luxury villa communities powered by clean energy and managed for long-term returns.</span></li>
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Advising businesses on AI-driven digital transformation, from intelligent customer engagement to scalable automation.</span></li>
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Mentoring early-stage startups, helping founders sharpen business models, craft investor pitches, and accelerate growth.</span></li>
+                    </ul>
+                    <p>I thrive at the intersection of vision and execution — taking bold ideas, shaping them into market-ready ventures, and building collaborative ecosystems that create lasting value.</p>
+                    <p>Today, my focus is on bridging real estate, technology, and AI to unlock new opportunities for investors, businesses, and communities. I believe the next decade belongs to entrepreneurs who can merge sustainability with intelligence — and I am committed to leading that change.</p>
                 </div>
-                <p class="text-charcoal-600 text-sm leading-relaxed mb-5">Product builder and AI systems architect. Nishant leads engineering, voice AI deployments, and the technical execution of every FairIT engagement. Background in software architecture, real-estate operations, and family enterprise.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-charcoal-100">
+
+                <button type="button" @click="open = !open" class="text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors inline-flex items-center gap-1 mb-5 self-start">
+                    <span x-text="open ? 'Show less' : 'Read full bio'"></span>
+                    <svg class="w-3 h-3 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+
+                <footer class="flex items-center gap-4 pt-4 border-t border-charcoal-100 mt-auto">
                     <a href="mailto:nishant@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">nishant@fairitsolutions.ch</a>
                     <a href="https://www.linkedin.com/in/nishantmhatre" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
                         LinkedIn
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                     </a>
-                </div>
-            </div>
+                </footer>
+            </article>
 
             {{-- Annemarie --}}
-            <div class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors">
-                <div class="flex items-start gap-4 mb-5">
-                    <div class="w-16 h-16 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">AMS</div>
-                    <div class="flex-1">
+            <article class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors flex flex-col" x-data="{ open: false }">
+                <header class="flex items-start gap-4 mb-5">
+                    @if(file_exists(public_path('images/founders/annemarie.jpg')))
+                    <img src="{{ asset('images/founders/annemarie.jpg') }}" alt="Annemarie M. Sickeler — Co-Founder of FairIT Solutions" class="w-20 h-20 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="80" height="80">
+                    @else
+                    <div class="w-20 h-20 rounded-2xl bg-amber-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">AMS</div>
+                    @endif
+                    <div class="flex-1 min-w-0">
                         <h3 class="text-lg font-bold text-charcoal-950">Annemarie M. Sickeler</h3>
                         <p class="text-brand-600 text-sm font-medium">Co-Founder</p>
-                        <p class="text-xs text-charcoal-400 mt-0.5">Switzerland · Strategy &amp; operations</p>
+                        <p class="text-xs text-charcoal-500 mt-1 leading-relaxed">Partner at Hestia Villas · University of St. Gallen (HSG) alumna</p>
                     </div>
+                </header>
+
+                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">An entrepreneur with a strong background in organisational management, brand leadership, and luxury-focused businesses, shaped by international expatriate experience across diverse business cultures.</p>
+
+                <div x-show="open" x-collapse class="text-charcoal-600 text-sm leading-relaxed space-y-3 mb-3">
+                    <p>Annemarie is a Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG). She has lived and worked internationally as an expatriate, gaining extensive exposure to diverse business cultures and global markets.</p>
+                    <p>Her long-standing involvement in the international fashion industry — as a founder and owner of a global fashion brand — has shaped her deep understanding of luxury, aesthetics, material sensibility, and attention to detail. This experience informs her perspective on residential design, where quality, proportion, and timeless elegance are central to creating refined living environments.</p>
+                    <p>At Hestia Villas, Annemarie plays a key role in overseeing day-to-day operations, organisational structure, and business expansion, while safeguarding the brand's design integrity and luxury positioning. Her involvement ensures that every Hestia Villas project reflects coherence, sophistication, and a consistently elevated standard, aligned with the expectations of discerning UHNI clients.</p>
                 </div>
-                <p class="text-charcoal-600 text-sm leading-relaxed mb-5">Strategist, operator, and trusted advisor to founders across hospitality, services, and family enterprise. Annemarie leads client engagement, transformation advisory, and the European delivery practice.</p>
-                <div class="flex items-center gap-4 pt-4 border-t border-charcoal-100">
+
+                <button type="button" @click="open = !open" class="text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors inline-flex items-center gap-1 mb-5 self-start">
+                    <span x-text="open ? 'Show less' : 'Read full bio'"></span>
+                    <svg class="w-3 h-3 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+
+                <footer class="flex items-center gap-4 pt-4 border-t border-charcoal-100 mt-auto">
                     <a href="mailto:hello@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">hello@fairitsolutions.ch</a>
                     <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
                         LinkedIn
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                     </a>
-                </div>
-            </div>
+                </footer>
+            </article>
         </div>
     </div>
 </section>

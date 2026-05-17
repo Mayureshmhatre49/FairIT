@@ -125,6 +125,8 @@
             "@id": "https://fairitsolutions.ch/about#nishant",
             "name": "Nishant Mhatre",
             "jobTitle": "Co-Founder & CEO",
+            "description": "Bridges real estate, technology, and AI to build future-ready ecosystems. 20+ years of international experience across telecom, digital transformation, and real-estate entrepreneurship in the USA, UK, Europe, Australia, New Zealand, and India.",
+            "knowsAbout": ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"],
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
             "email": "nishant@fairitsolutions.ch"
@@ -134,6 +136,13 @@
             "@id": "https://fairitsolutions.ch/about#annemarie",
             "name": "Annemarie M. Sickeler",
             "jobTitle": "Co-Founder",
+            "description": "Entrepreneur with deep experience in organisational management, brand leadership, and luxury businesses. Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG).",
+            "knowsAbout": ["Organisational Management", "Brand Leadership", "Luxury Business", "Hospitality", "Residential Design"],
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "University of St. Gallen (HSG)",
+                "url": "https://www.unisg.ch"
+            },
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
             "email": "hello@fairitsolutions.ch"

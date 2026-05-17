@@ -24,10 +24,11 @@
             "givenName": "Nishant",
             "familyName": "Mhatre",
             "jobTitle": "Co-Founder & CEO",
+            "description": "Bridges real estate, technology, and AI to build future-ready ecosystems. 20+ years across telecom, digital transformation, and real-estate entrepreneurship in the USA, UK, Europe, Australia, New Zealand, and India.",
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "email": "nishant@fairitsolutions.ch",
             "sameAs": ["https://www.linkedin.com/in/nishantmhatre"],
-            "knowsAbout": ["Artificial Intelligence", "AI Strategy", "AI Copilots", "Voice AI", "Founder Advisory"]
+            "knowsAbout": ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"]
         },
         {
             "@type": "Person",
@@ -36,10 +37,12 @@
             "givenName": "Annemarie",
             "familyName": "Sickeler",
             "jobTitle": "Co-Founder",
+            "description": "Entrepreneur with deep experience in organisational management, brand leadership, and luxury businesses. Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG).",
+            "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of St. Gallen (HSG)", "url": "https://www.unisg.ch" },
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "email": "hello@fairitsolutions.ch",
             "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
-            "knowsAbout": ["AI Transformation", "Business Operations", "Hospitality AI"]
+            "knowsAbout": ["Organisational Management", "Brand Leadership", "Luxury Business", "Hospitality", "Residential Design"]
         },
         {
             "@type": "BreadcrumbList",
