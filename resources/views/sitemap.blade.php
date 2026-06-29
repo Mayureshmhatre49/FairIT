@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
 @php
-    $locales = ['en', 'de', 'fr', 'es', 'ar'];
+    $locales = ['en', 'de', 'fr'];
 
     // List of static routes in format: [routeName, changeFreq, priority]
     $staticRoutes = [

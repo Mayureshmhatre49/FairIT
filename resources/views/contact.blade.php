@@ -94,7 +94,7 @@
             "name": "Sanjay Joshi",
             "givenName": "Sanjay",
             "familyName": "Joshi",
-            "jobTitle": "Co-Founder",
+            "jobTitle": "Co-Founder & CTO",
             "description": "Entrepreneur, management consultant, corporate trainer and teacher with two decades of experience translating complex technology into clear business outcomes.",
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "email": "Sanjay@fairitsolutions.in",
@@ -290,7 +290,7 @@
                             @endif
                             <div class="flex-1">
                                 <p class="font-bold text-charcoal-950 text-base">Sanjay Joshi</p>
-                                <p class="text-xs text-charcoal-500 mb-2">Co-Founder</p>
+                                <p class="text-xs text-charcoal-500 mb-2">Co-Founder &amp; CTO</p>
                                 <div class="space-y-1">
                                     <a href="mailto:Sanjay@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Sanjay@fairitsolutions.in</a>
                                     <a href="https://www.linkedin.com/in/joshisanjay/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>

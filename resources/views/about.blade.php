@@ -237,13 +237,13 @@
             <article class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors flex flex-col" x-data="{ open: false }">
                 <header class="flex items-start gap-4 mb-5">
                     @if(file_exists(public_path('images/founders/sanjay.jpg')))
-                    <img src="{{ asset('images/founders/sanjay.jpg') }}" alt="Sanjay Joshi — Co-Founder of FairIT Solutions" class="w-20 h-20 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="80" height="80">
+                    <img src="{{ asset('images/founders/sanjay.jpg') }}" alt="Sanjay Joshi — Co-Founder &amp; CTO of FairIT Solutions" class="w-20 h-20 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="80" height="80">
                     @else
                     <div class="w-20 h-20 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">SJ</div>
                     @endif
                     <div class="flex-1 min-w-0">
                         <h3 class="text-lg font-bold text-charcoal-950">Sanjay Joshi</h3>
-                        <p class="text-brand-600 text-sm font-medium">Co-Founder</p>
+                        <p class="text-brand-600 text-sm font-medium">Co-Founder &amp; CTO</p>
                         <p class="text-xs text-charcoal-500 mt-1 leading-relaxed">2 decades across IT, Manufacturing, Agriculture &amp; Direct Selling · Boston &amp; Pune</p>
                     </div>
                 </header>

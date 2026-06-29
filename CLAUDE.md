@@ -30,7 +30,7 @@ All four addresses are visibly listed on `/contact`, with the first line being "
 |---|---|---|---|
 | Nishant Mhatre | Co-Founder & CEO | `Nishant@fairitsolutions.in` | `linkedin.com/in/nishantmhatre/` |
 | Annemarie M. Sickeler | Co-Founder | `Annemarie@fairitsolutions.ch` | `linkedin.com/in/annemariesickeler/` |
-| Sanjay Joshi | Co-Founder | `Sanjay@fairitsolutions.in` | `linkedin.com/in/joshisanjay/` |
+| Sanjay Joshi | Co-Founder & CTO | `Sanjay@fairitsolutions.in` | `linkedin.com/in/joshisanjay/` |
 
 **Email casing convention is capitalised first letter** (Nishant@…, Annemarie@…, Sanjay@…). Email routing is case-insensitive per RFC 5321; the capitalisation is a branding/display choice. Preserve it on both `mailto:` href and visible text.
 

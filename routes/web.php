@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 // Language switcher
 Route::get('/lang/{locale}', function (string $locale) {
-    if (in_array($locale, ['en', 'de', 'fr', 'es', 'ar'])) {
+    if (in_array($locale, ['en', 'de', 'fr'])) {
         session(['locale' => $locale]);
     }
     return redirect()->back()->withInput();

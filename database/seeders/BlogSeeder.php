@@ -302,7 +302,7 @@ CONTENT
                 'category' => 'AI Strategy',
                 'tags'     => 'AI consulting Switzerland, AI advisory, AI consultant, Switzerland AI, Zurich AI',
                 'seo_title'=> 'AI Consulting in Switzerland: How to Choose the Right Partner',
-                'seo_desc' => 'Not all AI consultants deliver real results. Here is how to evaluate AI consulting firms in Switzerland — and the red flags that cost businesses time and money.',
+                'seo_desc' => 'Not all AI consultants deliver real results. Here is how to evaluate AI consulting firms in Switzerland — and the red flags that cost businesses money.',
                 'excerpt'  => 'Switzerland\'s AI consulting market is growing fast — and not all of it delivers real value. Here is how to evaluate an AI advisory firm, what to demand from an engagement, and the warning signs that a consultant is selling hype rather than results.',
                 'published_at' => now()->subDays(35),
                 'content'  => <<<'CONTENT'
@@ -505,7 +505,7 @@ CONTENT
                 'category' => 'AI Strategy',
                 'tags'     => 'managed AI, AI retainer, AI support, ongoing AI, fractional AI team',
                 'seo_title'=> 'Managed AI Retainers vs One-Off Projects: What Is Better for Business?',
-                'seo_desc' => 'Why one-off AI projects often underdeliver and how a managed AI retainer gives businesses the continuous support, optimisation, and strategic guidance they need.',
+                'seo_desc' => 'Why one-off AI projects underdeliver and how a managed AI retainer gives businesses the continuous support, optimisation, and strategic guidance they need.',
                 'excerpt'  => 'Most businesses approach AI like a construction project: hire someone to build it, pay them off, and hope it works. The businesses that extract the most value from AI treat it like a capability — one that requires ongoing investment, optimisation, and strategic direction.',
                 'published_at' => now()->subDays(65),
                 'content'  => <<<'CONTENT'

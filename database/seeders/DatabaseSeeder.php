@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(BlogSeeder::class);
+        $this->call(CaseStudySeeder::class);
 
         // Create admin user
         $admin = User::firstOrCreate(

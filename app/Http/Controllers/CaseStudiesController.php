@@ -56,6 +56,10 @@ class CaseStudiesController extends Controller
             abort(404);
         }
 
+        if ($slug === 'the-lift') {
+            return view('case-studies.the-lift', compact('study', 'related'));
+        }
+
         return view('case-studies.show', compact('study', 'related'));
     }
 }

@@ -31,13 +31,11 @@
     <link rel="alternate" hreflang="en" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
     <link rel="alternate" hreflang="de" href="{{ request()->fullUrlWithQuery(['lang' => 'de']) }}">
     <link rel="alternate" hreflang="fr" href="{{ request()->fullUrlWithQuery(['lang' => 'fr']) }}">
-    <link rel="alternate" hreflang="es" href="{{ request()->fullUrlWithQuery(['lang' => 'es']) }}">
-    <link rel="alternate" hreflang="ar" href="{{ request()->fullUrlWithQuery(['lang' => 'ar']) }}">
     <link rel="alternate" hreflang="x-default" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
 
     {{-- Open Graph --}}
     @php
-        $ogLocaleMap = ['en' => 'en_GB', 'de' => 'de_DE', 'fr' => 'fr_FR', 'es' => 'es_ES', 'ar' => 'ar_AE'];
+        $ogLocaleMap = ['en' => 'en_GB', 'de' => 'de_DE', 'fr' => 'fr_FR'];
         $currentLocale = app()->getLocale();
         $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_GB';
     @endphp
@@ -167,7 +165,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
-                        <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white rounded-2xl shadow-premium border border-charcoal-100 p-6"
+                        <div x-cloak class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[600px] bg-white rounded-2xl shadow-premium border border-charcoal-100 p-6"
                              :class="open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'"
                              style="transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;">
                             <div class="grid grid-cols-2 gap-2">
@@ -209,7 +207,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
-                        <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-2xl shadow-premium border border-charcoal-100 p-6"
+                        <div x-cloak class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[480px] bg-white rounded-2xl shadow-premium border border-charcoal-100 p-6"
                              :class="open ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'"
                              style="transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;">
                             <div class="space-y-2">
@@ -260,8 +258,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 top-full mt-2 w-36 bg-white rounded-xl shadow-premium border border-charcoal-100 py-1 z-50">
-                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇦🇪'] as $code => $flag)
+                        <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 top-full mt-2 w-36 bg-white rounded-xl shadow-premium border border-charcoal-100 py-1 z-50">
+                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
                             <a href="{{ route('lang.switch', $code) }}"
                                class="flex items-center gap-2.5 px-3 py-2.5 text-sm transition-colors {{ app()->getLocale() === $code ? 'text-brand-600 font-semibold bg-brand-50' : 'text-charcoal-700 hover:bg-charcoal-50' }}">
                                 <span class="text-base leading-none">{{ $flag }}</span>
@@ -317,7 +315,7 @@
                     {{-- Mobile Language Switcher --}}
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">Language</div>
                     <div class="flex gap-2 px-2">
-                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇦🇪'] as $code => $flag)
+                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
                         <a href="{{ route('lang.switch', $code) }}"
                            class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors {{ app()->getLocale() === $code ? 'bg-brand-600 text-white' : 'bg-charcoal-100 text-charcoal-700 hover:bg-charcoal-200' }}">
                             <span>{{ $flag }}</span>

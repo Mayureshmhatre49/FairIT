@@ -25,6 +25,11 @@ class SecurityAndLocalizationTest extends TestCase
 
         $response->assertRedirect();
         $this->assertEquals('de', session('locale'));
+
+        // Test that unsupported languages are not set in the session
+        $response2 = $this->get('/lang/es');
+        $response2->assertRedirect();
+        $this->assertNotEquals('es', session('locale'));
     }
 
     /** @test */

@@ -36,7 +36,7 @@
     }
 
     .nav-link-active {
-        @apply text-charcoal-950 font-semibold;
+        @apply text-charcoal-950 font-medium;
     }
 
     /* ---- Buttons ---- */
@@ -348,6 +348,11 @@
 }
 
 #mobile-menu.open {
-    max-height: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
     opacity: 1;
+}
+
+[x-cloak] {
+    display: none !important;
 }
