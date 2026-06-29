@@ -6,6 +6,7 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
+            'scheme'    => env('MAIL_SCHEME'),
             'url'       => env('MAIL_URL'),
             'host'      => env('MAIL_HOST', '127.0.0.1'),
             'port'      => env('MAIL_PORT', 2525),
@@ -28,5 +29,10 @@ return [
         'name'    => env('MAIL_FROM_NAME', 'FairIT Solutions'),
     ],
 
-    'admin_notification_email' => env('ADMIN_NOTIFICATION_EMAIL', 'nishant.mhatre@gmail.com'),
+    // Supports one address or a comma-separated list — each becomes a recipient
+    // of the lead-notification email. Parsed into an array so Mail::to() fans out.
+    'admin_notification_email' => array_values(array_filter(array_map(
+        'trim',
+        explode(',', (string) env('ADMIN_NOTIFICATION_EMAIL', 'nishant.mhatre@gmail.com'))
+    ))),
 ];
