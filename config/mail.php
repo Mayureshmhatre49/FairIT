@@ -28,5 +28,5 @@ return [
         'name'    => env('MAIL_FROM_NAME', 'FairIT Solutions'),
     ],
 
-    'admin_notification_email' => env('ADMIN_NOTIFICATION_EMAIL', 'admin@fairitsolutions.ch'),
+    'admin_notification_email' => env('ADMIN_NOTIFICATION_EMAIL', 'nishant.mhatre@gmail.com'),
 ];

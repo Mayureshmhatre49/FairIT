@@ -62,7 +62,7 @@ class ConsultationController extends Controller
         ]);
 
         try {
-            Mail::to(config('mail.admin_notification_email', 'admin@fairitsolutions.ch'))
+            Mail::to(config('mail.admin_notification_email', 'nishant.mhatre@gmail.com'))
                 ->send(new LeadNotification($lead));
         } catch (\Throwable $e) {
             logger()->error('Consultation email failed', ['error' => $e->getMessage()]);

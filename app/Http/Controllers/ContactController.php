@@ -142,7 +142,7 @@ class ContactController extends Controller
     private function sendNotification(Lead $lead): void
     {
         try {
-            Mail::to(config('mail.admin_notification_email', 'admin@fairitsolutions.ch'))
+            Mail::to(config('mail.admin_notification_email', 'nishant.mhatre@gmail.com'))
                 ->send(new LeadNotification($lead));
         } catch (\Throwable $e) {
             logger()->error('Lead notification email failed', ['error' => $e->getMessage()]);
