@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CaseStudy;
 use App\Models\Post;
 use Illuminate\Http\Response;
 
@@ -13,7 +14,15 @@ class SitemapController extends Controller
             ->orderByDesc('published_at')
             ->get(['slug', 'title', 'excerpt', 'featured_image', 'updated_at']);
 
-        $content = view('sitemap', compact('posts'))->render();
+        $caseStudies = CaseStudy::published()
+            ->orderByDesc('is_featured')
+            ->orderBy('order')
+            ->get(['slug', 'project_name', 'summary', 'updated_at']);
+
+        $industriesController = new \App\Http\Controllers\IndustriesController();
+        $industries = array_keys($industriesController->getIndustries());
+
+        $content = view('sitemap', compact('posts', 'caseStudies', 'industries'))->render();
 
         return response($content, 200, ['Content-Type' => 'application/xml; charset=UTF-8']);
     }

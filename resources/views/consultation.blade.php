@@ -177,6 +177,8 @@
                             {{ __('consultation.form.submit') }}
                         </button>
 
+                        @include('partials.trust-badges')
+
                         <p class="text-xs text-charcoal-400 text-center">{{ __('consultation.form.footer_note') }}</p>
                     </form>
                 </div>

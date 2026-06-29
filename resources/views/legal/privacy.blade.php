@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'Privacy Policy — FairIT Solutions')
-@section('description', 'Privacy Policy for FairIT Solutions. Learn how we collect, use, and protect your personal data under GDPR, Swiss FADP, and India DPDP Act.')
+@section('description', 'Privacy Policy for FairIT Solutions (a brand of TRNM Digital Consulting LLP, India). Learn how we collect, use, and protect your personal data under India DPDP Act, GDPR, and Swiss FADP.')
 @section('content')
 <section class="bg-charcoal-50 pt-32 pb-20">
     <div class="container-tight">
@@ -12,11 +12,11 @@
         <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose prose-gray max-w-none" data-animate data-animate-delay="100">
 
             <h2>1. Introduction</h2>
-            <p>FairIT Solutions ("we", "us", "our") is committed to protecting your personal data and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong>, our consultation services, and any communications you have with us.</p>
-            <p>This policy is designed to meet the requirements of the EU General Data Protection Regulation (GDPR), the revised Swiss Federal Act on Data Protection (revFADP), and India's Digital Personal Data Protection Act, 2023 (DPDP Act).</p>
+            <p><strong>FairIT Solutions</strong> is a brand operated by <strong>TRNM Digital Consulting LLP</strong> ("we", "us", "our"). This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong>, our consultation services, and any communications you have with us.</p>
+            <p>This policy is designed to meet the requirements of India's Digital Personal Data Protection Act, 2023 (DPDP Act), the EU General Data Protection Regulation (GDPR), and the revised Swiss Federal Act on Data Protection (revFADP).</p>
 
             <h2>2. Who we are</h2>
-            <p>FairIT Solutions is headquartered in Switzerland (the data controller for the purposes of GDPR and the revised Swiss FADP) and operates a delivery hub in India that processes data on behalf of the Swiss entity. The same protection standards apply across both jurisdictions.</p>
+            <p><strong>TRNM Digital Consulting LLP</strong> is the legal entity behind the FairIT Solutions brand and is the <strong>data controller</strong> for the purposes of the India DPDP Act, the GDPR, and the revised Swiss FADP. Our principal place of business is in Pune, India, with operating offices in Switzerland and Germany and a registered office in Alibag (Raigad), India. The same data-protection standards apply across all locations.</p>
 
             <h2>3. Data we collect</h2>
             <ul>
@@ -57,11 +57,11 @@
                 <li><strong>Website analytics:</strong> 14 months</li>
             </ul>
 
-            <h2>7. Cross-border data transfers (Switzerland ↔ India ↔ EU)</h2>
-            <p>Because we operate across Switzerland and India and serve clients globally, personal data may be transferred between these jurisdictions and to sub-processors in the EU, UK, and US. We rely on the following mechanisms:</p>
+            <h2>7. Cross-border data transfers (India ↔ EU ↔ Switzerland)</h2>
+            <p>Because the controlling entity is based in India and we serve clients globally with operating presence in Switzerland and Germany, personal data may be transferred between these jurisdictions and to sub-processors in the EU, UK, and US. We rely on the following mechanisms:</p>
             <ul>
-                <li><strong>EU/EEA → Switzerland:</strong> covered by the European Commission's adequacy decision for Switzerland</li>
                 <li><strong>EU/EEA → India:</strong> Standard Contractual Clauses (SCCs) plus supplementary technical and organisational measures</li>
+                <li><strong>Switzerland → India:</strong> the Swiss FADP transfer regime, including SCCs adapted to Swiss requirements and the FDPIC-recognised safeguards</li>
                 <li><strong>EU/EEA → US sub-processors:</strong> SCCs or EU-US Data Privacy Framework certification where applicable</li>
                 <li><strong>India → outside India:</strong> made only in compliance with the DPDP Act and applicable notifications</li>
             </ul>

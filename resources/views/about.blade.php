@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About FairIT Solutions — AI Operating Systems for Growth, Homes & Life')
-@section('description', 'FairIT Solutions builds AI systems that solve real-world complexity. We combine business understanding, engineering excellence, and product thinking to create AI that actually works.')
+@section('title', 'About FairIT Solutions — AI Consulting Anchored in Enterprise Delivery')
+@section('description', 'Two decades of enterprise software delivery across 16 industries — now powering strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -70,6 +70,47 @@
     </div>
 </section>
 
+{{-- Delivery credentials — the engineering pedigree behind the AI positioning --}}
+<section class="bg-white pb-20" aria-label="Delivery credentials">
+    <div class="container-wide">
+        <div class="bg-charcoal-950 rounded-2xl p-8 lg:p-12 relative overflow-hidden" data-animate>
+            <div class="absolute inset-0 hero-grid opacity-20"></div>
+            <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 80% at 100% 0%, rgba(37,99,235,0.18) 0%, transparent 70%);"></div>
+            <div class="relative">
+                <div class="max-w-3xl">
+                    <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">Engineering pedigree</span>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 leading-tight">Two decades of enterprise software delivery, now applied to the AI era.</h2>
+                    <p class="text-charcoal-300 text-base md:text-lg mt-6 leading-relaxed">Long before generative AI, our team was shipping the systems on which AI now sits — healthcare EMRs at hospital scale, multi-payer insurance verification platforms, peer-to-peer FinTech marketplaces, eGovernance survey platforms used by state governments, and global advertising data engines. The same engineering rigor now powers our AI consulting and custom AI Operating System work.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 pt-10 border-t border-white/10">
+                    <div>
+                        <div class="text-3xl lg:text-4xl font-black text-white">60+</div>
+                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Projects delivered</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl lg:text-4xl font-black text-white">16</div>
+                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Industries served</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl lg:text-4xl font-black text-white">47</div>
+                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Named clients</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl lg:text-4xl font-black text-white">20+</div>
+                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Years of founder experience</div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="{{ route('case-studies.index') }}" class="inline-flex items-center gap-1 text-brand-300 hover:text-white font-semibold text-sm transition-colors">
+                        Explore the full case study portfolio
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {{-- Values --}}
 <section class="section-padding bg-charcoal-50">
     <div class="container-wide">
@@ -110,7 +151,7 @@
             <p class="section-subtitle mt-4 mx-auto">Two operators. One conviction: AI should serve humans, not the other way round.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto" data-animate data-animate-delay="100">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto" data-animate data-animate-delay="100">
 
             {{-- Nishant --}}
             <article class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors flex flex-col" x-data="{ open: false }">
@@ -147,7 +188,7 @@
                 </button>
 
                 <footer class="flex items-center gap-4 pt-4 border-t border-charcoal-100 mt-auto">
-                    <a href="mailto:nishant@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">nishant@fairitsolutions.ch</a>
+                    <a href="mailto:Nishant@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">Nishant@fairitsolutions.in</a>
                     <a href="https://www.linkedin.com/in/nishantmhatre/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
                         LinkedIn
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -184,10 +225,55 @@
                 </button>
 
                 <footer class="flex items-center gap-4 pt-4 border-t border-charcoal-100 mt-auto">
-                    <a href="mailto:hello@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">hello@fairitsolutions.ch</a>
+                    <a href="mailto:Annemarie@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">Annemarie@fairitsolutions.ch</a>
                     <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
                         LinkedIn
                         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    </a>
+                </footer>
+            </article>
+
+            {{-- Sanjay --}}
+            <article class="bg-charcoal-50 rounded-2xl p-6 lg:p-8 border border-charcoal-100 hover:border-brand-200 transition-colors flex flex-col" x-data="{ open: false }">
+                <header class="flex items-start gap-4 mb-5">
+                    @if(file_exists(public_path('images/founders/sanjay.jpg')))
+                    <img src="{{ asset('images/founders/sanjay.jpg') }}" alt="Sanjay Joshi — Co-Founder of FairIT Solutions" class="w-20 h-20 rounded-2xl object-cover flex-shrink-0" loading="lazy" width="80" height="80">
+                    @else
+                    <div class="w-20 h-20 rounded-2xl bg-emerald-600 text-white flex items-center justify-center text-xl font-bold flex-shrink-0">SJ</div>
+                    @endif
+                    <div class="flex-1 min-w-0">
+                        <h3 class="text-lg font-bold text-charcoal-950">Sanjay Joshi</h3>
+                        <p class="text-brand-600 text-sm font-medium">Co-Founder</p>
+                        <p class="text-xs text-charcoal-500 mt-1 leading-relaxed">2 decades across IT, Manufacturing, Agriculture &amp; Direct Selling · Boston &amp; Pune</p>
+                    </div>
+                </header>
+
+                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">Entrepreneur, management consultant, corporate trainer and teacher with two decades of experience translating complex technology into clear business outcomes for clients in India and abroad.</p>
+
+                <div x-show="open" x-collapse class="text-charcoal-600 text-sm leading-relaxed space-y-3 mb-3">
+                    <p>Sanjay has been instrumental in providing technology and management consulting to numerous clients across India and overseas. He continuously studies emerging technologies and their applicability in today's world, and currently serves on the panel of four companies providing technology and management support.</p>
+                    <p>He has an uncanny ability to translate the complex technical world into layman terms, helping people understand how technology can be implemented simply to make life easier. As a corporate trainer, he has worked with organisations in manufacturing, warehouse management, and B2B/B2C segments.</p>
+                    <p>Sanjay runs the <strong>Sunjay Joshi Training Academy</strong>, where courses are conducted on the impact of social media in marketing — equipping businesses to use social platforms as a tool to boost sales and build product awareness.</p>
+                    <p class="font-medium text-charcoal-800">Current &amp; recent roles:</p>
+                    <ul class="space-y-2 list-none pl-0">
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Chief Technology Officer — Ellora Systems (2021–present)</span></li>
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Co-Founder — Boston Byte LLC, Greater Boston (2016–present)</span></li>
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Director — Dynamic Corporate Solutions Pvt. Ltd., Pune</span></li>
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Founder Director — xPointers Consulting Private Limited</span></li>
+                    </ul>
+                    <p>Before entrepreneurship, Sanjay worked with Tata Consultancy Services (Head — Composite Applications, SAP xMII), Infodat Inc., and Al-Hind Enterprises. He is a Master in Economics, Post Graduate in Business Management (MBA — Operations &amp; Marketing, Symbiosis), and a Mechanical Engineer from Savitribai Phule Pune University. He is also a member of ISPI.</p>
+                    <p class="text-charcoal-500 text-xs italic">Specialties: industry analysis, business process mapping, system analysis, and solution architecture.</p>
+                </div>
+
+                <button type="button" @click="open = !open" class="text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors inline-flex items-center gap-1 mb-5 self-start">
+                    <span x-text="open ? 'Show less' : 'Read full bio'"></span>
+                    <svg class="w-3 h-3 transition-transform" :class="{ 'rotate-180': open }" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+
+                <footer class="flex items-center gap-4 pt-4 border-t border-charcoal-100 mt-auto">
+                    <a href="mailto:Sanjay@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">Sanjay@fairitsolutions.in</a>
+                    <a href="https://www.linkedin.com/in/joshisanjay/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+                        LinkedIn
                     </a>
                 </footer>
             </article>

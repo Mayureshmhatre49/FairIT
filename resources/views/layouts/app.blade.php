@@ -7,21 +7,33 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- SEO Meta --}}
-    <title>@yield('title', 'FairIT Solutions — AI Operating Systems for Founders, Homes & Life')</title>
-    <meta name="description" content="@yield('description', 'FairIT Solutions builds AI operating systems for founders, enterprises and modern families. AI advisory, custom copilots, voice AI and managed AI retainers.')">
+    <title>@yield('title', 'FairIT Solutions — AI Consulting & Custom AI Operating Systems')</title>
+    <meta name="description" content="@yield('description', 'Strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises. Anchored in two decades of enterprise software delivery across 16 industries.')">
     <meta name="keywords" content="@yield('keywords', 'AI consulting, AI transformation, AI copilots, voice AI, founder AI, AI operating systems, Switzerland AI company')">
     <meta name="author" content="FairIT Solutions">
     <meta name="robots" content="@yield('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1')">
-    <link rel="canonical" href="@yield('canonical', url()->current())">
+    @php
+        $canonicalParams = [];
+        if (request()->has('page')) {
+            $canonicalParams['page'] = request()->query('page');
+        }
+        if (app()->getLocale() !== 'en') {
+            $canonicalParams['lang'] = app()->getLocale();
+        }
+        $canonicalUrl = count($canonicalParams) > 0 
+            ? url()->current() . '?' . http_build_query($canonicalParams)
+            : url()->current();
+    @endphp
+    <link rel="canonical" href="@yield('canonical', $canonicalUrl)">
     <meta name="theme-color" content="#1e293b">
 
     {{-- Hreflang — multilingual signals --}}
-    <link rel="alternate" hreflang="en" href="{{ url()->current() }}">
-    <link rel="alternate" hreflang="de" href="{{ url()->current() }}">
-    <link rel="alternate" hreflang="fr" href="{{ url()->current() }}">
-    <link rel="alternate" hreflang="es" href="{{ url()->current() }}">
-    <link rel="alternate" hreflang="ar" href="{{ url()->current() }}">
-    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="en" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
+    <link rel="alternate" hreflang="de" href="{{ request()->fullUrlWithQuery(['lang' => 'de']) }}">
+    <link rel="alternate" hreflang="fr" href="{{ request()->fullUrlWithQuery(['lang' => 'fr']) }}">
+    <link rel="alternate" hreflang="es" href="{{ request()->fullUrlWithQuery(['lang' => 'es']) }}">
+    <link rel="alternate" hreflang="ar" href="{{ request()->fullUrlWithQuery(['lang' => 'ar']) }}">
+    <link rel="alternate" hreflang="x-default" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
 
     {{-- Open Graph --}}
     @php
@@ -61,11 +73,11 @@
     {{-- RSS / Atom auto-discovery --}}
     <link rel="alternate" type="application/rss+xml" title="FairIT Solutions — AI Insights" href="{{ url('/feed.xml') }}">
 
-    {{-- Geo tags --}}
-    <meta name="geo.region" content="CH">
-    <meta name="geo.placename" content="Switzerland">
-    <meta name="ICBM" content="46.8182, 8.2275">
-    <meta name="geo.position" content="46.8182;8.2275">
+    {{-- Geo tags — headquartered in Pune, India --}}
+    <meta name="geo.region" content="IN-MH">
+    <meta name="geo.placename" content="Pune, Maharashtra">
+    <meta name="ICBM" content="18.5614, 73.7710">
+    <meta name="geo.position" content="18.5614;73.7710">
 
     {{-- AI/LLM crawler policy advertisement --}}
     <meta name="ai-content-declaration" content="business-owned">
@@ -103,10 +115,11 @@
             { "@type": "SiteNavigationElement", "position": 1, "name": "Services",    "url": "{{ route('services.index') }}" },
             { "@type": "SiteNavigationElement", "position": 2, "name": "Products",    "url": "{{ route('products.index') }}" },
             { "@type": "SiteNavigationElement", "position": 3, "name": "Industries",  "url": "{{ route('industries.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 4, "name": "About",       "url": "{{ route('about') }}" },
-            { "@type": "SiteNavigationElement", "position": 5, "name": "Insights",    "url": "{{ route('blog.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 6, "name": "Contact",     "url": "{{ route('contact') }}" },
-            { "@type": "SiteNavigationElement", "position": 7, "name": "Consultation","url": "{{ route('consultation') }}" }
+            { "@type": "SiteNavigationElement", "position": 4, "name": "Case Studies","url": "{{ route('case-studies.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 5, "name": "About",       "url": "{{ route('about') }}" },
+            { "@type": "SiteNavigationElement", "position": 6, "name": "Insights",    "url": "{{ route('blog.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 7, "name": "Contact",     "url": "{{ route('contact') }}" },
+            { "@type": "SiteNavigationElement", "position": 8, "name": "Consultation","url": "{{ route('consultation') }}" }
         ]
     }
     </script>
@@ -133,11 +146,10 @@
 
                 {{-- Logo --}}
                 <a href="{{ route('home') }}" class="flex items-center gap-2.5 group" aria-label="FairIT Solutions Home">
-                    <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                        </svg>
-                    </div>
+                    <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect width="32" height="32" rx="8" fill="#2563eb"/>
+                        <path d="M9 7H21L23 9V10H12V14H19V17H12V25H9Z" fill="#FFFFFF"/>
+                    </svg>
                     <div>
                         <span class="font-bold text-charcoal-950 text-base leading-tight block group-hover:text-brand-600 transition-colors">FairIT Solutions</span>
                         <span class="text-[10px] text-charcoal-400 leading-tight block font-medium tracking-wide">AI OPERATING SYSTEMS</span>
@@ -228,6 +240,7 @@
                     </div>
 
                     <a href="{{ route('industries.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('industries*') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.industries') }}</a>
+                    <a href="{{ route('case-studies.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('case-studies*') ? 'nav-link-active bg-charcoal-50' : '' }}">Case Studies</a>
                     <a href="{{ route('about') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('about') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.about') }}</a>
                     <a href="{{ route('blog.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('blog*') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.insights') }}</a>
                 </div>
@@ -296,6 +309,7 @@
 
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">{{ __('ui.nav.company') }}</div>
                     <a href="{{ route('industries.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.industries') }}</a>
+                    <a href="{{ route('case-studies.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">Case Studies</a>
                     <a href="{{ route('about') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.about') }}</a>
                     <a href="{{ route('blog.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.insights') }}</a>
                     <a href="{{ route('contact') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.contact') }}</a>
@@ -303,7 +317,7 @@
                     {{-- Mobile Language Switcher --}}
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">Language</div>
                     <div class="flex gap-2 px-2">
-                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
+                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇦🇪'] as $code => $flag)
                         <a href="{{ route('lang.switch', $code) }}"
                            class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors {{ app()->getLocale() === $code ? 'bg-brand-600 text-white' : 'bg-charcoal-100 text-charcoal-700 hover:bg-charcoal-200' }}">
                             <span>{{ $flag }}</span>
@@ -351,11 +365,10 @@
                 {{-- Brand Column --}}
                 <div class="sm:col-span-2 lg:col-span-2">
                     <a href="{{ route('home') }}" class="flex items-center gap-2.5 mb-6">
-                        <div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                            </svg>
-                        </div>
+                        <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect width="32" height="32" rx="8" fill="#2563eb"/>
+                            <path d="M9 7H21L23 9V10H12V14H19V17H12V25H9Z" fill="#FFFFFF"/>
+                        </svg>
                         <div>
                             <span class="font-bold text-white text-base block">FairIT Solutions</span>
                             <span class="text-[10px] text-charcoal-400 block font-medium tracking-wide">AI OPERATING SYSTEMS</span>
@@ -398,6 +411,7 @@
                     <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-widest mt-8">{{ __('ui.footer.company') }}</h4>
                     <ul class="space-y-2.5">
                         <li><a href="{{ route('about') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.about') }}</a></li>
+                        <li><a href="{{ route('case-studies.index') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">Case Studies</a></li>
                         <li><a href="{{ route('blog.index') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.insights') }}</a></li>
                         <li><a href="{{ route('contact') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.contact') }}</a></li>
                         <li><a href="{{ route('consultation') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.book_consultation') }}</a></li>
@@ -428,10 +442,23 @@
 
             {{-- Bottom Bar --}}
             <div class="mt-12 pt-8 border-t border-charcoal-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-charcoal-500">
-                    &copy; {{ date('Y') }} FairIT Solutions. {{ __('ui.footer.copyright') }}
-                </p>
-                <div class="flex items-center gap-4">
+                <div>
+                    <p class="text-sm text-charcoal-500">
+                        &copy; {{ date('Y') }} TRNM Digital Consulting LLP, operating as <span class="text-charcoal-300 font-semibold">FairIT Solutions</span>. {{ __('ui.footer.copyright') }}
+                    </p>
+                    <p class="text-xs text-charcoal-600 mt-1">Headquartered in Pune, India. Offices in Switzerland and Germany.</p>
+                </div>
+                <div class="flex items-center gap-4.5">
+                    <a href="https://www.linkedin.com/company/fair-it-solutions/" target="_blank" rel="noopener" class="text-charcoal-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/FairITSolutions/" target="_blank" rel="noopener" class="text-charcoal-400 hover:text-white transition-colors" aria-label="Facebook">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
                     <span class="text-xs text-charcoal-600">{{ __('ui.footer.built_in') }}</span>
                 </div>
             </div>

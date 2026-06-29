@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CaseStudy;
 use Illuminate\View\View;
 
 class IndustriesController extends Controller
 {
+    /**
+     * Industry slug -> Case study `domain` value. Only verticals with
+     * genuine delivery experience are mapped — we don't fabricate matches.
+     */
+    private array $caseStudyDomainMap = [
+        'healthcare'  => 'Healthcare',
+        'hospitality' => 'Hospitality',
+        'education'   => 'Education',
+    ];
+
     private array $industries = [
 
         // ── STARTUPS ─────────────────────────────────────────────────────────
@@ -474,6 +485,26 @@ class IndustriesController extends Controller
     public function show(string $slug): View
     {
         $industry = $this->industries[$slug] ?? abort(404);
-        return view('industries.show', compact('industry', 'slug'));
+
+        $relatedCaseStudies = collect();
+        if (isset($this->caseStudyDomainMap[$slug])) {
+            try {
+                $relatedCaseStudies = CaseStudy::published()
+                    ->where('domain', $this->caseStudyDomainMap[$slug])
+                    ->orderByDesc('is_featured')
+                    ->orderBy('order')
+                    ->take(6)
+                    ->get();
+            } catch (\Exception $e) {
+                $relatedCaseStudies = collect();
+            }
+        }
+
+        return view('industries.show', compact('industry', 'slug', 'relatedCaseStudies'));
+    }
+
+    public function getIndustries(): array
+    {
+        return $this->industries;
     }
 }

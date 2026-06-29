@@ -64,6 +64,33 @@
     </div>
 </section>
 
+{{-- Portfolio breadth — verticals beyond the focus list above --}}
+<section class="bg-white pb-20" aria-label="Wider delivery experience">
+    <div class="container-wide">
+        <div class="bg-charcoal-50 rounded-2xl border border-charcoal-100 p-8 lg:p-12" data-animate>
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                <div class="max-w-xl">
+                    <span class="section-label">Wider delivery experience</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mt-3 leading-tight">Beyond the focus verticals, our team has shipped systems across</h2>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        @foreach(['Healthcare', 'Retail', 'Media', 'FinTech', 'eGovernance', 'Logistics', 'Manufacturing', 'Oil & Gas', 'Productivity', 'Sales Enablement', 'Human Resources', 'Information Technology', 'Analytics'] as $domain)
+                        <a href="{{ route('case-studies.index', ['domain' => $domain]) }}" class="badge bg-white text-charcoal-700 border-charcoal-200 hover:border-brand-400 hover:text-brand-700 transition-colors">{{ $domain }}</a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="flex-shrink-0 text-center lg:text-right">
+                    <div class="text-5xl lg:text-6xl font-black text-charcoal-950 leading-none">60+</div>
+                    <div class="text-xs uppercase tracking-widest text-charcoal-500 font-semibold mt-2">projects delivered</div>
+                    <a href="{{ route('case-studies.index') }}" class="btn-primary mt-6 inline-flex">
+                        View all case studies
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section-padding-sm bg-charcoal-950">
     <div class="container-tight text-center" data-animate>
         <h2 class="text-3xl font-bold text-white mb-4">{{ __('industries.cta.title') }}</h2>

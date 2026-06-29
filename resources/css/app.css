@@ -235,13 +235,17 @@
 
 /* ============================================================
    NAVBAR
+   Always-solid header — brand visibility takes priority over
+   transparent-over-hero immersion. Matches the pattern used by
+   Stripe, Notion, Anthropic, Linear.
 ============================================================ */
 .navbar {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    @apply bg-white/95 backdrop-blur-xl border-b border-charcoal-100;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar.scrolled {
-    @apply bg-white/95 backdrop-blur-xl border-b border-charcoal-100 shadow-sm;
+    @apply shadow-sm border-charcoal-200;
 }
 
 /* ============================================================

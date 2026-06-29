@@ -26,8 +26,8 @@ return [
         'handlelife'  => ['title' => 'HandleLife OS',  'badge' => 'Life OS',     'desc' => 'AI operating system for modern family life'],
     ],
     'footer' => [
-        'tagline'            => 'Building AI Operating Systems for Founders, Homes & Life. We help organisations unlock growth through intelligent systems.',
-        'location'           => 'Switzerland, India & Global',
+        'tagline'            => 'Strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises. Anchored in two decades of enterprise software delivery.',
+        'location'           => 'Headquartered in Pune. Offices in Switzerland & Germany.',
         'services'           => 'Services',
         'products'           => 'Products',
         'company'            => 'Company',
@@ -62,5 +62,11 @@ return [
         'fr' => 'Français',
         'es' => 'Español',
         'ar' => 'العربية',
+    ],
+    'trust' => [
+        'gdpr'        => 'GDPR · DPDP · FADP Compliant',
+        'tls'         => 'TLS-encrypted submission',
+        'no_training' => 'Never used to train AI models',
+        'reply_24h'   => 'Reply within 24 hours',
     ],
 ];

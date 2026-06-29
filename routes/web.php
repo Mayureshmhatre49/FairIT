@@ -6,9 +6,11 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\IndustriesController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CaseStudiesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\LeadController;
@@ -51,6 +53,10 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 // Blog / Insights
 Route::get('/insights', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/insights/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
+// Case Studies
+Route::get('/case-studies', [CaseStudiesController::class, 'index'])->name('case-studies.index');
+Route::get('/case-studies/{slug}', [CaseStudiesController::class, 'show'])->name('case-studies.show');
 
 // Contact
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -104,6 +110,11 @@ Route::prefix('x-admin-secure-2024')->name('admin.')->group(function () {
 
         // Testimonials
         Route::resource('testimonials', TestimonialController::class);
+
+        // Case Studies
+        Route::resource('case-studies', CaseStudyController::class)
+            ->parameters(['case-studies' => 'caseStudy'])
+            ->except(['show']);
 
         // Consultations
         Route::get('/consultations', [LeadController::class, 'consultations'])->name('consultations.index');

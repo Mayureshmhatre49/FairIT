@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'FairIT Solutions — AI Operating Systems for Founders, Homes & Life')
-@section('description', 'We build AI Operating Systems for ambitious founders, modern businesses, and future-ready teams. AI advisory, custom copilots, voice AI, and managed retainers.')
+@section('title', 'FairIT Solutions — AI Consulting & Custom AI Operating Systems')
+@section('description', 'Strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises. Trained on your data, tuned to your workflows, delivered globally.')
+@section('og_title', 'FairIT Solutions — AI Consulting & Custom AI Operating Systems')
+@section('og_description', 'Strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises. Trained on your data, tuned to your workflows.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -12,7 +14,13 @@
             "@type": "Organization",
             "@id": "https://fairitsolutions.ch/#organization",
             "name": "FairIT Solutions",
+            "legalName": "TRNM Digital Consulting LLP",
+            "alternateName": "TRNM Digital Consulting LLP",
             "url": "https://fairitsolutions.ch",
+            "sameAs": [
+                "https://www.linkedin.com/company/fair-it-solutions/",
+                "https://www.facebook.com/FairITSolutions/"
+            ],
             "logo": {
                 "@type": "ImageObject",
                 "@id": "https://fairitsolutions.ch/#logo",
@@ -22,13 +30,40 @@
                 "caption": "FairIT Solutions"
             },
             "image": { "@id": "https://fairitsolutions.ch/#logo" },
-            "description": "AI Operating Systems for Founders, Homes & Life. We build AI advisory, custom copilots, voice AI, and managed AI retainers for growth-focused organisations.",
+            "description": "FairIT Solutions delivers strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises. Services include AI transformation advisory, custom copilots, voice AI, and managed AI retainers.",
             "foundingDate": "2024",
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "CH",
-                "addressLocality": "Switzerland"
-            },
+            "address": [
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "B 706, Teerth Technospace, Mumbai Bangalore Highway, Baner",
+                    "postalCode": "411045",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Glärnischstrasse 7",
+                    "postalCode": "9524",
+                    "addressLocality": "Zuzwil",
+                    "addressCountry": "CH"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Steinstrasse 25",
+                    "postalCode": "20095",
+                    "addressLocality": "Hamburg",
+                    "addressCountry": "DE"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "House No. 518, At Post Dhokawade (Bhag), Taluka Alibag",
+                    "postalCode": "402201",
+                    "addressLocality": "Raigad",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                }
+            ],
             "contactPoint": [
                 {
                     "@type": "ContactPoint",
@@ -41,7 +76,7 @@
                 {
                     "@type": "ContactPoint",
                     "contactType": "sales",
-                    "email": "nishant@fairitsolutions.ch",
+                    "email": "Nishant@fairitsolutions.in",
                     "telephone": "+91 98811 49629",
                     "areaServed": ["IN", "Worldwide"],
                     "availableLanguage": ["English", "Hindi"]
@@ -52,6 +87,11 @@
                 { "@type": "Country", "name": "Germany" },
                 { "@type": "Country", "name": "United Kingdom" },
                 { "@type": "Country", "name": "India" }
+            ],
+            "location": [
+                { "@id": "https://fairitsolutions.ch/#localbusiness-ch" },
+                { "@id": "https://fairitsolutions.ch/#localbusiness-de" },
+                { "@id": "https://fairitsolutions.ch/#localbusiness-in" }
             ],
             "knowsAbout": [
                 "Artificial Intelligence",
@@ -72,7 +112,7 @@
             "@id": "https://fairitsolutions.ch/#website",
             "url": "https://fairitsolutions.ch",
             "name": "FairIT Solutions",
-            "description": "AI Operating Systems for Founders, Homes & Life",
+            "description": "AI Consulting and Custom AI Operating Systems for founders and growth-focused enterprises",
             "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
             "inLanguage": ["en", "de", "fr", "es", "ar"],
             "potentialAction": [
@@ -94,7 +134,7 @@
         {
             "@type": "LocalBusiness",
             "@id": "https://fairitsolutions.ch/#localbusiness-ch",
-            "name": "FairIT Solutions (Switzerland HQ)",
+            "name": "FairIT Solutions (Switzerland Office)",
             "image": "{{ asset('images/og-image.png') }}",
             "url": "https://fairitsolutions.ch",
             "telephone": "+41 78 905 50 40",
@@ -102,10 +142,36 @@
             "priceRange": "$$$$",
             "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "CH",
-                "addressLocality": "Switzerland"
+                "streetAddress": "Glärnischstrasse 7",
+                "postalCode": "9524",
+                "addressLocality": "Zuzwil",
+                "addressCountry": "CH"
             },
-            "geo": { "@type": "GeoCoordinates", "latitude": 46.8182, "longitude": 8.2275 },
+            "geo": { "@type": "GeoCoordinates", "latitude": 47.4717, "longitude": 9.1486 },
+            "areaServed": "Worldwide",
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        },
+        {
+            "@type": "LocalBusiness",
+            "@id": "https://fairitsolutions.ch/#localbusiness-de",
+            "name": "FairIT Solutions (Germany Office)",
+            "image": "{{ asset('images/og-image.png') }}",
+            "url": "https://fairitsolutions.ch",
+            "email": "hello@fairitsolutions.ch",
+            "priceRange": "$$$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Steinstrasse 25",
+                "postalCode": "20095",
+                "addressLocality": "Hamburg",
+                "addressCountry": "DE"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 53.5511, "longitude": 9.9937 },
             "areaServed": "Worldwide",
             "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
@@ -117,18 +183,21 @@
         {
             "@type": "LocalBusiness",
             "@id": "https://fairitsolutions.ch/#localbusiness-in",
-            "name": "FairIT Solutions (India Delivery Hub)",
+            "name": "FairIT Solutions (India HQ — Pune)",
             "image": "{{ asset('images/og-image.png') }}",
             "url": "https://fairitsolutions.ch",
             "telephone": "+91 98811 49629",
-            "email": "nishant@fairitsolutions.ch",
+            "email": "Nishant@fairitsolutions.in",
             "priceRange": "$$$$",
             "address": {
                 "@type": "PostalAddress",
-                "addressCountry": "IN",
-                "addressLocality": "India"
+                "streetAddress": "B 706, Teerth Technospace, Mumbai Bangalore Highway, Baner",
+                "postalCode": "411045",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "addressCountry": "IN"
             },
-            "geo": { "@type": "GeoCoordinates", "latitude": 20.5937, "longitude": 78.9629 },
+            "geo": { "@type": "GeoCoordinates", "latitude": 18.5614, "longitude": 73.7710 },
             "areaServed": "Worldwide"
         },
         {
@@ -140,7 +209,7 @@
             "knowsAbout": ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"],
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "sameAs": ["https://www.linkedin.com/in/nishantmhatre/"],
-            "email": "nishant@fairitsolutions.ch"
+            "email": "Nishant@fairitsolutions.in"
         },
         {
             "@type": "Person",
@@ -156,7 +225,7 @@
             },
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
             "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
-            "email": "hello@fairitsolutions.ch"
+            "email": "Annemarie@fairitsolutions.ch"
         },
         {
             "@type": "ProfessionalService",
@@ -193,8 +262,8 @@
             "@type": "WebPage",
             "@id": "https://fairitsolutions.ch/#webpage",
             "url": "https://fairitsolutions.ch",
-            "name": "FairIT Solutions — AI Operating Systems for Founders, Homes & Life",
-            "description": "We build AI Operating Systems for ambitious founders, modern businesses, and future-ready teams.",
+            "name": "FairIT Solutions — AI Consulting & Custom AI Operating Systems",
+            "description": "Strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises, anchored in two decades of enterprise software delivery.",
             "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
             "about": { "@id": "https://fairitsolutions.ch/#organization" },
             "primaryImageOfPage": { "@id": "https://fairitsolutions.ch/#logo" },
@@ -571,6 +640,56 @@
 </section>
 
 {{-- ============================================================
+     SELECTED WORK — Featured case studies pulled live from DB
+============================================================ --}}
+@if($featuredCaseStudies->count() > 0)
+<section class="section-padding bg-white" aria-label="Selected work">
+    <div class="container-wide">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-animate>
+            <div>
+                <span class="section-label">Selected Work</span>
+                <h2 class="section-title mt-3">60+ projects. 16 industries. One engineering bar.</h2>
+                <p class="section-subtitle mt-4 max-w-2xl">From healthcare EMRs at hospital scale to FinTech marketplaces, eGovernance platforms, and global advertising data engines — the structured systems that today's AI workloads are built on top of.</p>
+            </div>
+            <a href="{{ route('case-studies.index') }}" class="hidden md:inline-flex items-center gap-1 text-brand-600 font-semibold text-sm hover:gap-2 transition-all flex-shrink-0">
+                View all case studies
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($featuredCaseStudies as $study)
+            <a href="{{ route('case-studies.show', $study->slug) }}" data-animate data-animate-delay="{{ ($loop->index % 3) * 100 }}" class="group bg-white rounded-2xl overflow-hidden border border-charcoal-100 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-gradient-to-br from-brand-900 to-charcoal-950 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 hero-grid opacity-20"></div>
+                    <div class="relative text-center px-6">
+                        <span class="badge bg-white/10 text-brand-200 border-brand-400/30 backdrop-blur-sm mb-3">{{ $study->domain }}</span>
+                        <div class="text-white font-bold text-base leading-tight line-clamp-2">{{ $study->project_name }}</div>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="text-xs uppercase tracking-widest text-charcoal-400 font-semibold mb-2">{{ $study->display_client_name }}</div>
+                    <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">{{ $study->summary }}</p>
+                    <span class="text-brand-600 font-semibold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+                        Read case study
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </a>
+            @endforeach
+        </div>
+
+        <div class="md:hidden mt-8 text-center" data-animate>
+            <a href="{{ route('case-studies.index') }}" class="btn-secondary inline-flex">
+                View all case studies
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+@endif
+
+{{-- ============================================================
      TESTIMONIALS SECTION
 ============================================================ --}}
 <section class="section-padding bg-white" aria-label="Testimonials">
@@ -596,16 +715,16 @@
                 <blockquote class="text-charcoal-600 text-sm leading-relaxed flex-1 mb-6">"{{ $t->content }}"</blockquote>
 
                 <div class="flex items-center gap-3">
-                    @if($t->avatar)
-                    <img src="{{ $t->avatar }}" alt="{{ $t->name }}" class="w-10 h-10 rounded-full object-cover" loading="lazy">
-                    @else
-                    <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0">
-                        <span class="text-brand-700 font-bold text-sm">{{ substr($t->name, 0, 1) }}</span>
+                    <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
                     </div>
-                    @endif
                     <div>
-                        <div class="text-sm font-bold text-charcoal-900">{{ $t->name }}</div>
-                        <div class="text-xs text-charcoal-500">{{ $t->role }}{{ $t->company ? ' · ' . $t->company : '' }}</div>
+                        <div class="text-sm font-bold text-charcoal-900">{{ $t->role }}</div>
+                        @if($t->company)
+                        <div class="text-xs text-charcoal-500">{{ $t->company }}</div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -621,12 +740,16 @@
                 </div>
                 <blockquote class="text-charcoal-600 text-sm leading-relaxed flex-1 mb-6">"{{ $t['content'] }}"</blockquote>
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center flex-shrink-0">
-                        <span class="text-brand-700 font-bold text-sm">{{ substr($t['name'], 0, 1) }}</span>
+                    <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
                     </div>
                     <div>
-                        <div class="text-sm font-bold text-charcoal-900">{{ $t['name'] }}</div>
-                        <div class="text-xs text-charcoal-500">{{ $t['role'] }}</div>
+                        <div class="text-sm font-bold text-charcoal-900">{{ $t['role'] }}</div>
+                        @if(isset($t['company']))
+                        <div class="text-xs text-charcoal-500">{{ $t['company'] }}</div>
+                        @endif
                     </div>
                 </div>
             </div>

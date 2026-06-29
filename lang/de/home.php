@@ -6,7 +6,7 @@ return [
         'headline_1'  => 'KI-Systeme für',
         'headline_2'  => 'Wachstum, Führung',
         'headline_3'  => '& modernes Leben',
-        'subheadline' => 'Wir helfen Gründern und Unternehmen, Wachstum durch KI-Beratung, massgeschneiderte KI-Systeme und intelligente Betriebssysteme für die Praxis zu erschliessen.',
+        'subheadline' => 'Wir bieten strategische KI-Beratung, massgeschneiderte agentenbasierte Systeme und operative Beratung, um Gründern und Unternehmen zu einem nachhaltigen KI-Vorsprung zu verhelfen.',
         'cta_primary' => 'Beratung anfragen',
         'cta_secondary' => 'Produkte entdecken',
         'trust_label' => 'Vertraut von ambitionierten Gründern, modernen Unternehmen & zukunftsorientierten Teams',

@@ -6,6 +6,9 @@
 @section('og_description', $service['description'])
 @section('og_image_alt', $service['title'] . ' — FairIT Solutions AI Service')
 
+@php
+    $jsonStr = fn($s) => json_encode((string) $s, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+@endphp
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
 {
@@ -14,13 +17,14 @@
         {
             "@type": "Service",
             "@id": "{{ url()->current() }}#service",
-            "name": "{{ $service['title'] }}",
-            "description": "{{ $service['description'] }}",
+            "name": {!! $jsonStr($service['title']) !!},
+            "description": {!! $jsonStr($service['description']) !!},
             "url": "{{ url()->current() }}",
             "provider": {
                 "@type": "Organization",
                 "@id": "https://fairitsolutions.ch/#organization",
                 "name": "FairIT Solutions",
+                "legalName": "TRNM Digital Consulting LLP",
                 "url": "https://fairitsolutions.ch"
             },
             "areaServed": "Worldwide",
@@ -29,20 +33,20 @@
                 "@type": "Offer",
                 "url": "{{ route('consultation') }}",
                 "availability": "https://schema.org/InStock",
-                "priceCurrency": "CHF",
+                "priceCurrency": "USD",
                 "priceSpecification": {
                     "@type": "PriceSpecification",
-                    "priceCurrency": "CHF",
+                    "priceCurrency": "USD",
                     "price": "0",
-                    "description": "Free initial consultation; engagement pricing on request"
+                    "description": "Free initial consultation; engagement pricing quoted in USD, EUR, CHF, GBP, or INR on request"
                 }
             },
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "{{ $service['title'] }} — Deliverables",
+                "name": {!! $jsonStr($service['title'] . ' — Deliverables') !!},
                 "itemListElement": [
                     @foreach($service['deliverables'] as $i => $deliverable)
-                    { "@type": "Offer", "position": {{ $i + 1 }}, "itemOffered": { "@type": "Service", "name": "{{ addslashes($deliverable) }}" } }{{ !$loop->last ? ',' : '' }}
+                    { "@type": "Offer", "position": {{ $i + 1 }}, "itemOffered": { "@type": "Service", "name": {!! $jsonStr($deliverable) !!} } }{{ !$loop->last ? ',' : '' }}
                     @endforeach
                 ]
             }
@@ -50,8 +54,8 @@
         {
             "@type": "HowTo",
             "@id": "{{ url()->current() }}#process",
-            "name": "How {{ $service['title'] }} works at FairIT Solutions",
-            "description": "{{ $service['description'] }}",
+            "name": {!! $jsonStr('How ' . $service['title'] . ' works at FairIT Solutions') !!},
+            "description": {!! $jsonStr($service['description']) !!},
             "totalTime": "P30D",
             "supply": [],
             "tool": [],
@@ -60,8 +64,8 @@
                 {
                     "@type": "HowToStep",
                     "position": {{ $i + 1 }},
-                    "name": "{{ addslashes($step['title']) }}",
-                    "text": "{{ addslashes($step['desc']) }}",
+                    "name": {!! $jsonStr($step['title']) !!},
+                    "text": {!! $jsonStr($step['desc']) !!},
                     "url": "{{ url()->current() }}#step-{{ $i + 1 }}"
                 }{{ !$loop->last ? ',' : '' }}
                 @endforeach
@@ -73,10 +77,10 @@
                 @foreach($service['faqs'] as $faq)
                 {
                     "@type": "Question",
-                    "name": "{{ addslashes($faq['q']) }}",
+                    "name": {!! $jsonStr($faq['q']) !!},
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "{{ addslashes($faq['a']) }}"
+                        "text": {!! $jsonStr($faq['a']) !!}
                     }
                 }{{ !$loop->last ? ',' : '' }}
                 @endforeach
@@ -87,7 +91,7 @@
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
                 { "@type": "ListItem", "position": 2, "name": "Services", "item": "{{ route('services.index') }}" },
-                { "@type": "ListItem", "position": 3, "name": "{{ $service['title'] }}", "item": "{{ url()->current() }}" }
+                { "@type": "ListItem", "position": 3, "name": {!! $jsonStr($service['title']) !!}, "item": "{{ url()->current() }}" }
             ]
         }
     ]
@@ -207,6 +211,19 @@
             </div>
             @endforeach
         </div>
+    </div>
+</section>
+
+{{-- Proof — soft pointer to delivery portfolio --}}
+<section class="bg-white py-12 border-t border-charcoal-100">
+    <div class="container-tight text-center" data-animate>
+        <p class="text-charcoal-600 text-sm">
+            Backed by <strong class="text-charcoal-950">60+ projects across 16 industries</strong> — see how this expertise has shipped in the wild.
+        </p>
+        <a href="{{ route('case-studies.index') }}" class="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold text-sm mt-3 transition-colors">
+            Browse case studies
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
     </div>
 </section>
 

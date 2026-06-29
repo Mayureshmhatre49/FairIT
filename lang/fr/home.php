@@ -6,7 +6,7 @@ return [
         'headline_1'  => 'Systèmes IA pour',
         'headline_2'  => 'la croissance, le leadership',
         'headline_3'  => '& la vie moderne',
-        'subheadline' => 'Nous aidons les fondateurs et les entreprises à débloquer la croissance grâce à des conseils en IA, des systèmes IA personnalisés et des systèmes d\'exploitation intelligents construits pour le monde réel.',
+        'subheadline' => 'Nous fournissons des conseils stratégiques en IA, des systèmes agentiels personnalisés et des conseils opérationnels pour aider les fondateurs et les entreprises à développer un avantage concurrentiel grâce à l\'IA.',
         'cta_primary' => 'Demander une consultation',
         'cta_secondary' => 'Explorer les produits',
         'trust_label' => 'Faisant confiance aux fondateurs ambitieux, aux entreprises modernes & aux équipes tournées vers l\'avenir',

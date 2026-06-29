@@ -112,6 +112,37 @@
     </div>
 </section>
 
+{{-- Delivery proof strip --}}
+<section class="bg-white pb-20" aria-label="Delivery proof">
+    <div class="container-wide">
+        <div class="bg-charcoal-50 rounded-2xl border border-charcoal-100 p-8 lg:p-10" data-animate>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-2">
+                    <span class="section-label">Real delivery experience</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mt-3 leading-tight">Every service is anchored in real engineering work.</h2>
+                    <p class="text-charcoal-600 mt-4 leading-relaxed">From healthcare EMRs at hospital scale to FinTech marketplaces, eGovernance survey platforms, and global advertising data engines — our consulting and AI Operating System work is built on top of two decades of enterprise software delivery.</p>
+                </div>
+                <div class="text-center lg:text-right">
+                    <div class="grid grid-cols-2 gap-4 lg:gap-3 mb-6">
+                        <div>
+                            <div class="text-3xl lg:text-4xl font-black text-charcoal-950 leading-none">60+</div>
+                            <div class="text-[11px] uppercase tracking-widest text-charcoal-500 font-semibold mt-2">Projects</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl lg:text-4xl font-black text-charcoal-950 leading-none">16</div>
+                            <div class="text-[11px] uppercase tracking-widest text-charcoal-500 font-semibold mt-2">Industries</div>
+                        </div>
+                    </div>
+                    <a href="{{ route('case-studies.index') }}" class="btn-primary inline-flex">
+                        Browse case studies
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {{-- CTA --}}
 <section class="section-padding-sm bg-charcoal-950">
     <div class="container-tight text-center" data-animate>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact FairIT Solutions — Get in Touch')
-@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Headquartered in Switzerland, serving clients globally.')
+@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Headquartered in Pune, India, with offices in Switzerland, Germany, and Alibag.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -18,6 +18,50 @@
             "mainEntity": { "@id": "https://fairitsolutions.ch/#organization" }
         },
         {
+            "@type": "Organization",
+            "@id": "https://fairitsolutions.ch/#organization",
+            "name": "FairIT Solutions",
+            "legalName": "TRNM Digital Consulting LLP",
+            "alternateName": "TRNM Digital Consulting LLP",
+            "url": "https://fairitsolutions.ch",
+            "sameAs": [
+                "https://www.linkedin.com/company/fair-it-solutions/",
+                "https://www.facebook.com/FairITSolutions/"
+            ],
+            "address": [
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "B 706, Teerth Technospace, Mumbai Bangalore Highway, Baner",
+                    "postalCode": "411045",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Glärnischstrasse 7",
+                    "postalCode": "9524",
+                    "addressLocality": "Zuzwil",
+                    "addressCountry": "CH"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Steinstrasse 25",
+                    "postalCode": "20095",
+                    "addressLocality": "Hamburg",
+                    "addressCountry": "DE"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "House No. 518, At Post Dhokawade (Bhag), Taluka Alibag",
+                    "postalCode": "402201",
+                    "addressLocality": "Raigad",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                }
+            ]
+        },
+        {
             "@type": "Person",
             "@id": "https://fairitsolutions.ch/about#nishant",
             "name": "Nishant Mhatre",
@@ -26,7 +70,7 @@
             "jobTitle": "Co-Founder & CEO",
             "description": "Bridges real estate, technology, and AI to build future-ready ecosystems. 20+ years across telecom, digital transformation, and real-estate entrepreneurship in the USA, UK, Europe, Australia, New Zealand, and India.",
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "email": "nishant@fairitsolutions.ch",
+            "email": "Nishant@fairitsolutions.in",
             "sameAs": ["https://www.linkedin.com/in/nishantmhatre/"],
             "knowsAbout": ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"]
         },
@@ -40,9 +84,22 @@
             "description": "Entrepreneur with deep experience in organisational management, brand leadership, and luxury businesses. Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG).",
             "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of St. Gallen (HSG)", "url": "https://www.unisg.ch" },
             "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "email": "hello@fairitsolutions.ch",
+            "email": "Annemarie@fairitsolutions.ch",
             "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
             "knowsAbout": ["Organisational Management", "Brand Leadership", "Luxury Business", "Hospitality", "Residential Design"]
+        },
+        {
+            "@type": "Person",
+            "@id": "https://fairitsolutions.ch/about#sanjay",
+            "name": "Sanjay Joshi",
+            "givenName": "Sanjay",
+            "familyName": "Joshi",
+            "jobTitle": "Co-Founder",
+            "description": "Entrepreneur, management consultant, corporate trainer and teacher with two decades of experience translating complex technology into clear business outcomes.",
+            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
+            "email": "Sanjay@fairitsolutions.in",
+            "sameAs": ["https://www.linkedin.com/in/joshisanjay/"],
+            "knowsAbout": ["Information Technology", "Management Consulting", "Corporate Training", "Systems Analysis", "Solution Architecture", "Social Media Marketing"]
         },
         {
             "@type": "BreadcrumbList",
@@ -72,6 +129,110 @@
     </div>
 </section>
 
+{{-- Our Offices --}}
+<section class="bg-white pt-16 md:pt-20 pb-4">
+    <div class="container-wide">
+        <div class="text-center mb-10" data-animate>
+            <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">Our Offices</span>
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-charcoal-950 mt-3 leading-tight">Where to Find Us</h2>
+            <p class="text-charcoal-600 text-base md:text-lg mt-4 max-w-2xl mx-auto">Headquartered in Pune, India, with offices in Switzerland, Germany, and a registered office in Alibag.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            {{-- Pune HQ --}}
+            <div data-animate class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 flex flex-col">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl leading-none" aria-hidden="true">🇮🇳</span>
+                    <div class="flex-1">
+                        <div class="font-bold text-charcoal-950 text-sm">India — Pune</div>
+                        <div class="text-[11px] uppercase tracking-widest text-brand-600 font-semibold">Headquarters</div>
+                    </div>
+                </div>
+                <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
+                    FairIT Solutions<br>
+                    B 706, Teerth Technospace<br>
+                    Mumbai Bangalore Highway<br>
+                    Baner, Pune 411045
+                </address>
+                <a href="https://www.google.com/maps/search/?api=1&query=Teerth+Technospace%2C+Baner%2C+Pune+411045" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-600 hover:text-brand-700 mt-4 inline-flex items-center gap-1">
+                    View on Maps
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+
+            {{-- Switzerland --}}
+            <div data-animate data-animate-delay="100" class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 flex flex-col">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl leading-none" aria-hidden="true">🇨🇭</span>
+                    <div class="flex-1">
+                        <div class="font-bold text-charcoal-950 text-sm">Switzerland</div>
+                        <div class="text-[11px] uppercase tracking-widest text-charcoal-400 font-semibold">Zuzwil Office</div>
+                    </div>
+                </div>
+                <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
+                    FairIT Solutions<br>
+                    Glärnischstrasse 7<br>
+                    9524 Zuzwil<br>
+                    Switzerland
+                </address>
+                <a href="https://www.google.com/maps/search/?api=1&query=Gl%C3%A4rnischstrasse+7%2C+9524+Zuzwil%2C+Switzerland" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-600 hover:text-brand-700 mt-4 inline-flex items-center gap-1">
+                    View on Maps
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+
+            {{-- Germany --}}
+            <div data-animate data-animate-delay="200" class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 flex flex-col">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl leading-none" aria-hidden="true">🇩🇪</span>
+                    <div class="flex-1">
+                        <div class="font-bold text-charcoal-950 text-sm">Germany</div>
+                        <div class="text-[11px] uppercase tracking-widest text-charcoal-400 font-semibold">Hamburg Office</div>
+                    </div>
+                </div>
+                <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
+                    FairIT Solutions<br>
+                    Steinstrasse 25<br>
+                    20095 Hamburg<br>
+                    Germany
+                </address>
+                <a href="https://www.google.com/maps/search/?api=1&query=Steinstrasse+25%2C+20095+Hamburg%2C+Germany" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-600 hover:text-brand-700 mt-4 inline-flex items-center gap-1">
+                    View on Maps
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+
+            {{-- Alibag --}}
+            <div data-animate data-animate-delay="300" class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 flex flex-col">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="text-2xl leading-none" aria-hidden="true">🇮🇳</span>
+                    <div class="flex-1">
+                        <div class="font-bold text-charcoal-950 text-sm">India — Alibag</div>
+                        <div class="text-[11px] uppercase tracking-widest text-charcoal-400 font-semibold">Registered Office</div>
+                    </div>
+                </div>
+                <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
+                    FairIT Solutions<br>
+                    House No. 518, At Post Dhokawade (Bhag)<br>
+                    Taluka Alibag, District Raigad<br>
+                    Maharashtra 402201
+                </address>
+                <a href="https://www.google.com/maps/search/?api=1&query=Dhokawade%2C+Alibag%2C+Raigad%2C+Maharashtra+402201" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-600 hover:text-brand-700 mt-4 inline-flex items-center gap-1">
+                    View on Maps
+                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+
+        </div>
+
+        {{-- Legal entity disclosure --}}
+        <p class="text-xs text-charcoal-500 text-center mt-8" data-animate>
+            <strong class="text-charcoal-700">FairIT Solutions</strong> is a brand of <strong class="text-charcoal-700">TRNM Digital Consulting LLP</strong>, a Limited Liability Partnership incorporated in India.
+        </p>
+    </div>
+</section>
+
 <section class="section-padding bg-white">
     <div class="container-wide">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -84,12 +245,16 @@
                     <div class="space-y-6">
                         {{-- Nishant --}}
                         <div class="flex items-center gap-4">
+                            @if(file_exists(public_path('images/founders/nishant.jpg')))
+                            <img src="{{ asset('images/founders/nishant.jpg') }}" alt="Nishant Mhatre" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy">
+                            @else
                             <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-brand-600 text-white shadow-glow-sm">NM</div>
+                            @endif
                             <div class="flex-1">
                                 <p class="font-bold text-charcoal-950 text-base">Nishant Mhatre</p>
                                 <p class="text-xs text-charcoal-500 mb-2">{{ __('contact.founders.nishant.role') }}</p>
                                 <div class="space-y-1">
-                                    <a href="mailto:nishant@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">nishant@fairitsolutions.ch</a>
+                                    <a href="mailto:Nishant@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Nishant@fairitsolutions.in</a>
                                     <a href="https://www.linkedin.com/in/nishantmhatre/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
                                 </div>
                             </div>
@@ -99,13 +264,36 @@
 
                         {{-- Annemarie --}}
                         <div class="flex items-center gap-4">
+                            @if(file_exists(public_path('images/founders/annemarie.jpg')))
+                            <img src="{{ asset('images/founders/annemarie.jpg') }}" alt="Annemarie M. Sickeler" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy">
+                            @else
                             <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-amber-600 text-white shadow-glow-sm">AMS</div>
+                            @endif
                             <div class="flex-1">
                                 <p class="font-bold text-charcoal-950 text-base">Annemarie M. Sickeler</p>
                                 <p class="text-xs text-charcoal-500 mb-2">{{ __('contact.founders.annemarie.role') }}</p>
                                 <div class="space-y-1">
-                                    <a href="mailto:hello@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">hello@fairitsolutions.ch</a>
+                                    <a href="mailto:Annemarie@fairitsolutions.ch" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Annemarie@fairitsolutions.ch</a>
                                     <a href="https://www.linkedin.com/in/annemariesickeler/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-px bg-charcoal-100"></div>
+
+                        {{-- Sanjay --}}
+                        <div class="flex items-center gap-4">
+                            @if(file_exists(public_path('images/founders/sanjay.jpg')))
+                            <img src="{{ asset('images/founders/sanjay.jpg') }}" alt="Sanjay Joshi" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy">
+                            @else
+                            <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-emerald-600 text-white shadow-glow-sm">SJ</div>
+                            @endif
+                            <div class="flex-1">
+                                <p class="font-bold text-charcoal-950 text-base">Sanjay Joshi</p>
+                                <p class="text-xs text-charcoal-500 mb-2">Co-Founder</p>
+                                <div class="space-y-1">
+                                    <a href="mailto:Sanjay@fairitsolutions.in" class="text-xs font-medium text-brand-600 hover:text-brand-700 block transition-colors">Sanjay@fairitsolutions.in</a>
+                                    <a href="https://www.linkedin.com/in/joshisanjay/" target="_blank" rel="noopener" class="text-xs font-medium text-charcoal-400 hover:text-brand-600 block transition-colors">LinkedIn</a>
                                 </div>
                             </div>
                         </div>
@@ -239,6 +427,8 @@
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                             {{ __('contact.form.submit') }}
                         </button>
+
+                        @include('partials.trust-badges')
 
                         <p class="text-xs text-charcoal-400 text-center">{{ __('contact.form.footer_note') }}</p>
                     </form>

@@ -70,30 +70,34 @@ class DatabaseSeeder extends Seeder
         }
 
         // Sample testimonials
+        try {
+            Testimonial::truncate();
+        } catch (\Exception $e) {}
+
         $testimonials = [
             [
-                'name'      => 'Rajiv Sharma',
-                'role'      => 'CEO',
-                'company'   => 'TechScale Ventures',
-                'content'   => 'FairIT transformed how we operate. Our AI copilot handles 80% of internal queries — saving us 20+ hours per week. The ROI in month one paid for the entire engagement.',
+                'name'      => 'Dr. Sarah Jenkins',
+                'role'      => 'Chief Medical Officer',
+                'company'   => 'Callidus Health LLC',
+                'content'     => 'CareLink transformed patient coordination for our care teams. Unifying EMR alerts and secure chat reduced response latency on critical signals while removing compliance-risky tools from our clinical workflows.',
                 'rating'    => 5,
                 'is_active' => true,
                 'order'     => 1,
             ],
             [
-                'name'      => 'Priya Mehta',
-                'role'      => 'Operations Director',
-                'company'   => 'Horizon Hospitality Group',
-                'content'   => 'The voice AI they built for our booking line is incredible. Guests often do not realise they are talking to an AI. Bookings are up 34% and our team handles zero inbound calls.',
+                'name'      => 'Thomas Wright',
+                'role'      => 'Head of Data Science',
+                'company'   => 'CoreBrand Data Science LLC',
+                'content'     => 'The custom SPSS visualization product turned complex statistical models into clear, decision-ready dashboards. Brand decisions that previously cycled for weeks now close in days.',
                 'rating'    => 5,
                 'is_active' => true,
                 'order'     => 2,
             ],
             [
-                'name'      => 'Marcus Klein',
-                'role'      => 'Founder',
-                'company'   => 'NextGen Properties',
-                'content'   => 'The Founder Growth Advisory programme completely changed how I make decisions. I now have a system, not just a vision. Worth every franc.',
+                'name'      => 'Rajesh Kumar',
+                'role'      => 'Director of Urban Planning',
+                'company'   => 'Madhya Pradesh Urban Ministry',
+                'content'     => 'Moving Burhanpur and Khandwa from paper surveys to a single door-to-door GIS source of truth transformed our civic planning. It enabled property targeting that was previously impossible at scale.',
                 'rating'    => 5,
                 'is_active' => true,
                 'order'     => 3,
@@ -101,7 +105,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($testimonials as $testimonial) {
-            Testimonial::firstOrCreate(['name' => $testimonial['name']], $testimonial);
+            Testimonial::create($testimonial);
         }
     }
 }

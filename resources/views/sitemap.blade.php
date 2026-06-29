@@ -6,49 +6,46 @@
 @php
     $locales = ['en', 'de', 'fr', 'es', 'ar'];
 
-    $staticPages = [
-        ['/',                                          now()->toAtomString(),  'weekly',  '1.0'],
-        ['/services',                                  now()->format('Y-m-d'), 'monthly', '0.9'],
-        ['/services/ai-transformation-advisory',       now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/services/custom-ai-copilot',                now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/services/voice-ai-automation',              now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/services/managed-ai-retainers',             now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/services/founder-growth-advisory',          now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/products',                                  now()->format('Y-m-d'), 'monthly', '0.9'],
-        ['/products/sarathios',                        now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/products/hsios',                            now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/products/handlelife',                       now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/industries',                                now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/startups',                       now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/smes',                           now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/real-estate',                    now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/hospitality',                    now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/interior-design',                now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/healthcare',                     now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/education',                      now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/industries/professional-services',          now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/about',                                     now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/insights',                                  now()->toAtomString(),  'weekly',  '0.8'],
-        ['/contact',                                   now()->format('Y-m-d'), 'monthly', '0.7'],
-        ['/consultation',                              now()->format('Y-m-d'), 'monthly', '0.8'],
-        ['/privacy',                                   now()->format('Y-m-d'), 'yearly',  '0.2'],
-        ['/terms',                                     now()->format('Y-m-d'), 'yearly',  '0.2'],
-        ['/cookies',                                   now()->format('Y-m-d'), 'yearly',  '0.2'],
+    // List of static routes in format: [routeName, changeFreq, priority]
+    $staticRoutes = [
+        ['home',                             'weekly',  '1.0'],
+        ['services.index',                   'monthly', '0.9'],
+        ['services.advisory',                'monthly', '0.8'],
+        ['services.copilot',                 'monthly', '0.8'],
+        ['services.voiceai',                 'monthly', '0.8'],
+        ['services.retainers',               'monthly', '0.8'],
+        ['services.founder',                 'monthly', '0.8'],
+        ['products.index',                   'monthly', '0.9'],
+        ['products.sarathios',               'monthly', '0.8'],
+        ['products.hsios',                   'monthly', '0.8'],
+        ['products.handlelife',              'monthly', '0.8'],
+        ['industries.index',                 'monthly', '0.7'],
+        ['about',                            'monthly', '0.7'],
+        ['case-studies.index',               'weekly',  '0.8'],
+        ['blog.index',                       'weekly',  '0.8'],
+        ['contact',                          'monthly', '0.7'],
+        ['consultation',                     'monthly', '0.8'],
+        ['privacy',                          'yearly',  '0.2'],
+        ['terms',                            'yearly',  '0.2'],
+        ['cookies',                          'yearly',  '0.2'],
     ];
 @endphp
 
     {{-- Static pages with hreflang xhtml alternates for every locale --}}
-    @foreach($staticPages as [$path, $lastmod, $freq, $priority])
+    @foreach($staticRoutes as [$route, $freq, $priority])
+    @php
+        $baseUrl = route($route);
+    @endphp
     <url>
-        <loc>{{ url($path) }}</loc>
-        <lastmod>{{ $lastmod }}</lastmod>
+        <loc>{{ $baseUrl }}</loc>
+        <lastmod>{{ now()->format('Y-m-d') }}</lastmod>
         <changefreq>{{ $freq }}</changefreq>
         <priority>{{ $priority }}</priority>
         @foreach($locales as $locale)
-        <xhtml:link rel="alternate" hreflang="{{ $locale }}" href="{{ url($path) }}"/>
+        <xhtml:link rel="alternate" hreflang="{{ $locale }}" href="{{ $baseUrl . ($locale !== 'en' ? '?lang=' . $locale : '') }}"/>
         @endforeach
-        <xhtml:link rel="alternate" hreflang="x-default" href="{{ url($path) }}"/>
-        @if($path === '/')
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $baseUrl }}"/>
+        @if($route === 'home')
         <image:image>
             <image:loc>{{ asset('images/og-image.png') }}</image:loc>
             <image:title>FairIT Solutions — AI Operating Systems</image:title>
@@ -58,17 +55,37 @@
     </url>
     @endforeach
 
+    {{-- Dynamic industries list with multilingual alternates --}}
+    @foreach($industries ?? [] as $slug)
+    @php
+        $baseUrl = route('industries.show', $slug);
+    @endphp
+    <url>
+        <loc>{{ $baseUrl }}</loc>
+        <lastmod>{{ now()->format('Y-m-d') }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        @foreach($locales as $locale)
+        <xhtml:link rel="alternate" hreflang="{{ $locale }}" href="{{ $baseUrl . ($locale !== 'en' ? '?lang=' . $locale : '') }}"/>
+        @endforeach
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $baseUrl }}"/>
+    </url>
+    @endforeach
+
     {{-- Blog posts with image entries + multilingual hreflang --}}
     @foreach($posts as $post)
+    @php
+        $baseUrl = route('blog.show', $post->slug);
+    @endphp
     <url>
-        <loc>{{ route('blog.show', $post->slug) }}</loc>
+        <loc>{{ $baseUrl }}</loc>
         <lastmod>{{ $post->updated_at->toAtomString() }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
         @foreach($locales as $locale)
-        <xhtml:link rel="alternate" hreflang="{{ $locale }}" href="{{ route('blog.show', $post->slug) }}"/>
+        <xhtml:link rel="alternate" hreflang="{{ $locale }}" href="{{ $baseUrl . ($locale !== 'en' ? '?lang=' . $locale : '') }}"/>
         @endforeach
-        <xhtml:link rel="alternate" hreflang="x-default" href="{{ route('blog.show', $post->slug) }}"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $baseUrl }}"/>
         @if($post->featured_image)
         <image:image>
             <image:loc>{{ \Illuminate\Support\Str::startsWith($post->featured_image, 'http') ? $post->featured_image : asset($post->featured_image) }}</image:loc>
@@ -76,6 +93,23 @@
             @if($post->excerpt)<image:caption>{{ htmlspecialchars(\Illuminate\Support\Str::limit($post->excerpt, 160), ENT_XML1) }}</image:caption>@endif
         </image:image>
         @endif
+    </url>
+    @endforeach
+
+    {{-- Case studies with multilingual hreflang --}}
+    @foreach($caseStudies ?? [] as $study)
+    @php
+        $baseUrl = route('case-studies.show', $study->slug);
+    @endphp
+    <url>
+        <loc>{{ $baseUrl }}</loc>
+        <lastmod>{{ $study->updated_at->toAtomString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        @foreach($locales as $locale)
+        <xhtml:link rel="alternate" hreflang="{{ $locale }}" href="{{ $baseUrl . ($locale !== 'en' ? '?lang=' . $locale : '') }}"/>
+        @endforeach
+        <xhtml:link rel="alternate" hreflang="x-default" href="{{ $baseUrl }}"/>
     </url>
     @endforeach
 

@@ -195,6 +195,54 @@
 </section>
 @endif
 
+{{-- Selected work in this industry — only renders for verticals with real delivery experience --}}
+@if(isset($relatedCaseStudies) && $relatedCaseStudies->count() > 0)
+<section class="section-padding bg-white" aria-label="Selected case studies">
+    <div class="container-wide">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-animate>
+            <div>
+                <span class="section-label">Selected work in {{ $industry['title'] }}</span>
+                <h2 class="section-title mt-3">Delivered, not theorised.</h2>
+                <p class="section-subtitle mt-4 max-w-2xl">A selection of the {{ $industry['title'] }} systems we have built — the engineering foundation on which today's AI capabilities sit.</p>
+            </div>
+            <a href="{{ route('case-studies.index', ['domain' => $relatedCaseStudies->first()->domain]) }}" class="hidden md:inline-flex items-center gap-1 text-brand-600 font-semibold text-sm hover:gap-2 transition-all flex-shrink-0">
+                View all {{ $industry['title'] }} case studies
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($relatedCaseStudies as $study)
+            <a href="{{ route('case-studies.show', $study->slug) }}" data-animate data-animate-delay="{{ ($loop->index % 3) * 100 }}" class="group bg-white rounded-2xl overflow-hidden border border-charcoal-100 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300 flex flex-col">
+                <div class="aspect-video bg-gradient-to-br from-brand-900 to-charcoal-950 flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 hero-grid opacity-20"></div>
+                    <div class="relative text-center px-6">
+                        <span class="badge bg-white/10 text-brand-200 border-brand-400/30 backdrop-blur-sm mb-3">{{ $study->domain }}</span>
+                        <div class="text-white font-bold text-base leading-tight line-clamp-2">{{ $study->project_name }}</div>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="text-xs uppercase tracking-widest text-charcoal-400 font-semibold mb-2">{{ $study->display_client_name }}</div>
+                    <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">{{ $study->summary }}</p>
+                    <span class="text-brand-600 font-semibold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+                        Read case study
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </a>
+            @endforeach
+        </div>
+
+        <div class="md:hidden mt-8 text-center" data-animate>
+            <a href="{{ route('case-studies.index', ['domain' => $relatedCaseStudies->first()->domain]) }}" class="btn-secondary inline-flex">
+                View all {{ $industry['title'] }} case studies
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+@endif
+
 {{-- CTA --}}
 <section class="section-padding-sm bg-charcoal-950">
     <div class="container-tight text-center" data-animate>

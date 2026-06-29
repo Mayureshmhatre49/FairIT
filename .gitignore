@@ -20,3 +20,8 @@ yarn-error.log
 auth.json
 .DS_Store
 database/database.sqlite
+
+# Case study source data — contains client revenue figures
+# not meant for public display. The seeder is the canonical source.
+/Boston Byte Project Details.xlsx
+/FairITSolutions Website.zip

@@ -6,7 +6,7 @@ return [
         'headline_1'  => 'Sistemas de IA para',
         'headline_2'  => 'Crecimiento, Liderazgo',
         'headline_3'  => 'y Vida Moderna',
-        'subheadline' => 'Ayudamos a fundadores y empresas a desbloquear el crecimiento a través de asesoramiento en IA, sistemas de IA personalizados y sistemas operativos inteligentes construidos para el mundo real.',
+        'subheadline' => 'Ofrecemos consultoría estratégica de IA, sistemas de agentes personalizados y asesoramiento operativo para ayudar a fundadores y empresas a construir una ventaja competitiva con IA.',
         'cta_primary' => 'Solicitar Consulta',
         'cta_secondary' => 'Explorar Productos',
         'trust_label' => 'Con la confianza de fundadores ambiciosos, empresas modernas y equipos preparados para el futuro',

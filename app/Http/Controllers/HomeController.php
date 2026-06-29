@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Testimonial;
+use App\Models\CaseStudy;
 use App\Models\Post;
+use App\Models\Testimonial;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -28,6 +29,16 @@ class HomeController extends Controller
             $latestPosts = collect();
         }
 
-        return view('home', compact('testimonials', 'latestPosts'));
+        try {
+            $featuredCaseStudies = CaseStudy::published()
+                ->featured()
+                ->orderBy('order')
+                ->take(6)
+                ->get();
+        } catch (\Exception $e) {
+            $featuredCaseStudies = collect();
+        }
+
+        return view('home', compact('testimonials', 'latestPosts', 'featuredCaseStudies'));
     }
 }
