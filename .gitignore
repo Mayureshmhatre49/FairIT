@@ -25,3 +25,6 @@ database/database.sqlite
 # not meant for public display. The seeder is the canonical source.
 /Boston Byte Project Details.xlsx
 /FairITSolutions Website.zip
+
+# Microsoft Office lock files (created when a doc is open)
+~$*
