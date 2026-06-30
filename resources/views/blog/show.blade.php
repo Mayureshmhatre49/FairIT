@@ -112,6 +112,10 @@
             <article class="lg:col-span-2">
                 @if($post->featured_image)
                 <img src="{{ asset($post->featured_image) }}" alt="{{ $post->title }}" class="w-full rounded-2xl mb-10 aspect-video object-cover" loading="lazy">
+                @else
+                <div class="w-full rounded-2xl mb-10 aspect-video overflow-hidden">
+                    {!! $post->thumbnail_svg !!}
+                </div>
                 @endif
                 <div class="prose-fairit">
                     {!! $post->content !!}
@@ -134,11 +138,11 @@
                     <div class="space-y-4">
                         @foreach($related as $rp)
                         <a href="{{ route('blog.show', $rp->slug) }}" class="group flex gap-4 hover:bg-charcoal-50 p-3 rounded-xl transition-colors">
-                            <div class="w-16 h-16 rounded-lg bg-charcoal-100 overflow-hidden flex-shrink-0">
+                            <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                                 @if($rp->featured_image)
                                 <img src="{{ asset($rp->featured_image) }}" alt="{{ $rp->title }}" class="w-full h-full object-cover">
                                 @else
-                                <div class="w-full h-full bg-brand-900/50"></div>
+                                {!! $rp->thumbnail_svg !!}
                                 @endif
                             </div>
                             <div class="flex-1">
