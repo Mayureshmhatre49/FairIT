@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Testimonial;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
 
 class TestimonialController extends Controller
 {
@@ -53,14 +53,14 @@ class TestimonialController extends Controller
     private function validateTestimonial(Request $request): array
     {
         return $request->validate([
-            'name'        => ['required', 'string', 'max:100'],
-            'role'        => ['required', 'string', 'max:150'],
-            'company'     => ['nullable', 'string', 'max:150'],
-            'avatar'      => ['nullable', 'url', 'max:500'],
-            'content'     => ['required', 'string', 'max:1000'],
-            'rating'      => ['required', 'integer', 'min:1', 'max:5'],
-            'is_active'   => ['boolean'],
-            'order'       => ['nullable', 'integer'],
+            'name' => ['required', 'string', 'max:100'],
+            'role' => ['required', 'string', 'max:150'],
+            'company' => ['nullable', 'string', 'max:150'],
+            'avatar' => ['nullable', 'url', 'max:500'],
+            'content' => ['required', 'string', 'max:1000'],
+            'rating' => ['required', 'integer', 'min:1', 'max:5'],
+            'is_active' => ['boolean'],
+            'order' => ['nullable', 'integer'],
         ]);
     }
 }

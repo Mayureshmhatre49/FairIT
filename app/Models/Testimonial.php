@@ -21,8 +21,8 @@ class Testimonial extends Model
     ];
 
     protected $casts = [
-        'rating'    => 'integer',
+        'rating' => 'integer',
         'is_active' => 'boolean',
-        'order'     => 'integer',
+        'order' => 'integer',
     ];
 }

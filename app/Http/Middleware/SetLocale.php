@@ -16,10 +16,11 @@ class SetLocale
             $locale = session('locale', config('app.locale'));
         }
 
-        if (!in_array($locale, ['en', 'de', 'fr'])) {
+        if (! in_array($locale, ['en', 'de', 'fr'])) {
             $locale = 'en';
         }
         app()->setLocale($locale);
+
         return $next($request);
     }
 }

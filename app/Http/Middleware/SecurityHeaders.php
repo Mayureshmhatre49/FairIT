@@ -20,7 +20,7 @@ class SecurityHeaders
 
         $response = $next($request);
 
-        $isProduction = config('app.env') === 'production' && !config('app.debug');
+        $isProduction = config('app.env') === 'production' && ! config('app.debug');
 
         // ── Fetch / framing / sniffing ────────────────────────────────────────
         $response->headers->set('X-Content-Type-Options', 'nosniff');
@@ -39,11 +39,11 @@ class SecurityHeaders
         // ── Feature policy ────────────────────────────────────────────────────
         $response->headers->set(
             'Permissions-Policy',
-            'accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), ' .
-            'cross-origin-isolated=(), display-capture=(), document-domain=(), ' .
-            'encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), ' .
-            'fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), ' .
-            'microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), ' .
+            'accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), '.
+            'cross-origin-isolated=(), display-capture=(), document-domain=(), '.
+            'encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), '.
+            'fullscreen=(self), geolocation=(), gyroscope=(), keyboard-map=(), magnetometer=(), '.
+            'microphone=(), midi=(), navigation-override=(), payment=(), picture-in-picture=(), '.
             'publickey-credentials-get=(), screen-wake-lock=(), sync-xhr=(), usb=(), web-share=(), xr-spatial-tracking=()'
         );
 
@@ -63,7 +63,7 @@ class SecurityHeaders
     {
         // Vite dev server origins (only in local dev)
         $viteOrigins = '';
-        if (!$isProduction) {
+        if (! $isProduction) {
             $viteOrigins = ' http://localhost:5173 http://127.0.0.1:5173 http://localhost:5174 http://127.0.0.1:5174 ws://localhost:5173 ws://127.0.0.1:5173';
         }
 

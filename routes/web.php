@@ -1,21 +1,21 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\IndustriesController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CaseStudiesController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ConsultationController;
-use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TestimonialController;
-use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CaseStudiesController;
+use App\Http\Controllers\ConsultationController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IndustriesController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 // Language switcher
@@ -23,6 +23,7 @@ Route::get('/lang/{locale}', function (string $locale) {
     if (in_array($locale, ['en', 'de', 'fr'])) {
         session(['locale' => $locale]);
     }
+
     return redirect()->back()->withInput();
 })->name('lang.switch');
 
@@ -56,6 +57,26 @@ Route::get('/insights/{slug}', [BlogController::class, 'show'])->name('blog.show
 
 // Case Studies
 Route::get('/case-studies', [CaseStudiesController::class, 'index'])->name('case-studies.index');
+Route::redirect('/case-studies/velir', '/case-studies/sitecore-qa-confidential', 301);
+Route::redirect('/case-studies/corebrand-data-science-product', '/case-studies/spss-analytics-visualisation-product', 301);
+Route::redirect('/case-studies/cipla-calendar', '/case-studies/field-force-engagement-calendar', 301);
+Route::redirect('/case-studies/cipla-ar', '/case-studies/medical-device-ar-storytelling', 301);
+Route::redirect('/case-studies/cipla-smart-inhaler', '/case-studies/connected-smart-inhaler-app', 301);
+Route::redirect('/case-studies/roomstays', '/case-studies/b2c-hotel-discovery-platform', 301);
+Route::redirect('/case-studies/exide', '/case-studies/iot-theft-prevention-tracking', 301);
+Route::redirect('/case-studies/vehicletrx', '/case-studies/auto-body-shop-tracking-platform', 301);
+Route::redirect('/case-studies/panajoy', '/case-studies/manufacturing-erp-packing-controls', 301);
+Route::redirect('/case-studies/cityhopz', '/case-studies/real-time-bar-hopping-app', 301);
+Route::redirect('/case-studies/hawkvue', '/case-studies/critical-plant-monitoring-forensic-video', 301);
+Route::redirect('/case-studies/mobijot', '/case-studies/frictionless-mobile-capture-app', 301);
+Route::redirect('/case-studies/worldcourts', '/case-studies/global-supreme-court-verdict-search', 301);
+Route::redirect('/case-studies/arthaenterprises', '/case-studies/agritech-ecosystem-logistics', 301);
+Route::redirect('/case-studies/mapro-ecommerce', '/case-studies/fmcg-dtc-ecommerce', 301);
+Route::redirect('/case-studies/piaggio', '/case-studies/corporate-cms-website', 301);
+Route::redirect('/case-studies/vocalbee', '/case-studies/visual-content-analytics-platform', 301);
+Route::redirect('/case-studies/zeal', '/case-studies/agritech-ecosystem-diagnostics', 301);
+Route::redirect('/case-studies/cipla-gamingportal', '/case-studies/gamified-sales-learning-portal', 301);
+Route::redirect('/case-studies/the-lift', '/case-studies/production-erp-film-content', 301);
 Route::get('/case-studies/{slug}', [CaseStudiesController::class, 'show'])->name('case-studies.show');
 
 // Contact
@@ -79,11 +100,11 @@ Route::view('/terms-of-service', 'legal.terms')->name('terms');
 Route::view('/cookie-policy', 'legal.cookies')->name('cookies');
 
 // SEO discovery endpoints
-Route::get('/sitemap.xml',        [SitemapController::class, 'index'])->name('sitemap');
-Route::get('/sitemap-index.xml',  [SitemapController::class, 'sitemapIndex'])->name('sitemap.index');
-Route::get('/sitemap-news.xml',   [SitemapController::class, 'news'])->name('sitemap.news');
-Route::get('/feed.xml',           [SitemapController::class, 'feed'])->name('feed');
-Route::get('/rss',                [SitemapController::class, 'feed']);
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/sitemap-index.xml', [SitemapController::class, 'sitemapIndex'])->name('sitemap.index');
+Route::get('/sitemap-news.xml', [SitemapController::class, 'news'])->name('sitemap.news');
+Route::get('/feed.xml', [SitemapController::class, 'feed'])->name('feed');
+Route::get('/rss', [SitemapController::class, 'feed']);
 
 // ============================================================
 // Admin routes — hidden prefix

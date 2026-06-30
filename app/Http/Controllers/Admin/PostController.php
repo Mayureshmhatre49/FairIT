@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
 {
@@ -62,14 +62,14 @@ class PostController extends Controller
     private function validatePost(Request $request, ?int $excludeId = null): array
     {
         return $request->validate([
-            'title'        => ['required', 'string', 'max:255'],
-            'excerpt'      => ['required', 'string', 'max:500'],
-            'content'      => ['required', 'string'],
-            'category'     => ['required', 'string', 'max:100'],
-            'tags'         => ['nullable', 'string', 'max:500'],
+            'title' => ['required', 'string', 'max:255'],
+            'excerpt' => ['required', 'string', 'max:500'],
+            'content' => ['required', 'string'],
+            'category' => ['required', 'string', 'max:100'],
+            'tags' => ['nullable', 'string', 'max:500'],
             'featured_image' => ['nullable', 'url', 'max:500'],
-            'seo_title'    => ['nullable', 'string', 'max:70'],
-            'seo_desc'     => ['nullable', 'string', 'max:160'],
+            'seo_title' => ['nullable', 'string', 'max:70'],
+            'seo_desc' => ['nullable', 'string', 'max:160'],
             'is_published' => ['boolean'],
             'published_at' => ['nullable', 'date'],
         ]);

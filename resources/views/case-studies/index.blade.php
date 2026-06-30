@@ -38,7 +38,7 @@
         <div data-animate>
             <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">Our Work</span>
             <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-4 leading-tight">Case Studies</h1>
-            <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">A selection of {{ $totalCount }} projects delivered across {{ $domains->count() }} industries — from healthcare and FinTech to hospitality, retail, education, and eGovernance.</p>
+            <p class="text-charcoal-300 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">A selection of {{ $totalCount }} projects delivered across 16 industries — from healthcare and FinTech to hospitality, retail, education, and eGovernance.</p>
         </div>
     </div>
 </section>
@@ -112,7 +112,7 @@
         <h2 class="text-3xl md:text-4xl font-bold text-charcoal-950 leading-tight">Have a project in mind?</h2>
         <p class="text-charcoal-600 text-lg mt-4 max-w-xl mx-auto">Book a 30-minute consultation and we will walk through how a similar engagement could look for your business.</p>
         <a href="{{ route('consultation') }}" class="btn-primary mt-8 inline-flex">
-            Book a Consultation
+            {{ __('ui.nav.book_consultation') }}
             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </a>
     </div>

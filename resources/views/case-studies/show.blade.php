@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', ($study->seo_title ?: $study->project_name . ' — ' . $study->domain . ' Case Study') . ' | FairIT Solutions')
+@section('title', ($study->seo_title ?: $study->project_name . ' — ' . $study->domain . ' Case Study') . ' — FairIT Solutions')
 @section('description', $study->seo_desc ?: \Illuminate\Support\Str::limit($study->summary, 155))
 @section('og_type', 'article')
 @section('og_title', $study->seo_title ?: $study->project_name . ' — Case Study')

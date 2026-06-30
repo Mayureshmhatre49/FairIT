@@ -31,11 +31,13 @@
     <link rel="alternate" hreflang="en" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
     <link rel="alternate" hreflang="de" href="{{ request()->fullUrlWithQuery(['lang' => 'de']) }}">
     <link rel="alternate" hreflang="fr" href="{{ request()->fullUrlWithQuery(['lang' => 'fr']) }}">
+    <link rel="alternate" hreflang="es" href="{{ request()->fullUrlWithQuery(['lang' => 'es']) }}">
+    <link rel="alternate" hreflang="ar" href="{{ request()->fullUrlWithQuery(['lang' => 'ar']) }}">
     <link rel="alternate" hreflang="x-default" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
 
     {{-- Open Graph --}}
     @php
-        $ogLocaleMap = ['en' => 'en_GB', 'de' => 'de_DE', 'fr' => 'fr_FR'];
+        $ogLocaleMap = ['en' => 'en_GB', 'de' => 'de_DE', 'fr' => 'fr_FR', 'es' => 'es_ES', 'ar' => 'ar_AR'];
         $currentLocale = app()->getLocale();
         $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_GB';
     @endphp
@@ -238,7 +240,7 @@
                     </div>
 
                     <a href="{{ route('industries.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('industries*') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.industries') }}</a>
-                    <a href="{{ route('case-studies.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('case-studies*') ? 'nav-link-active bg-charcoal-50' : '' }}">Case Studies</a>
+                    <a href="{{ route('case-studies.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('case-studies*') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.case_studies') }}</a>
                     <a href="{{ route('about') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('about') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.about') }}</a>
                     <a href="{{ route('blog.index') }}" class="nav-link px-3 py-2 rounded-lg hover:bg-charcoal-50 {{ request()->routeIs('blog*') ? 'nav-link-active bg-charcoal-50' : '' }}">{{ __('ui.nav.insights') }}</a>
                 </div>
@@ -307,7 +309,7 @@
 
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">{{ __('ui.nav.company') }}</div>
                     <a href="{{ route('industries.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.industries') }}</a>
-                    <a href="{{ route('case-studies.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">Case Studies</a>
+                    <a href="{{ route('case-studies.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.case_studies') }}</a>
                     <a href="{{ route('about') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.about') }}</a>
                     <a href="{{ route('blog.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.insights') }}</a>
                     <a href="{{ route('contact') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.contact') }}</a>
@@ -409,7 +411,7 @@
                     <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-widest mt-8">{{ __('ui.footer.company') }}</h4>
                     <ul class="space-y-2.5">
                         <li><a href="{{ route('about') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.about') }}</a></li>
-                        <li><a href="{{ route('case-studies.index') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="{{ route('case-studies.index') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.case_studies') }}</a></li>
                         <li><a href="{{ route('blog.index') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.insights') }}</a></li>
                         <li><a href="{{ route('contact') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.contact') }}</a></li>
                         <li><a href="{{ route('consultation') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.book_consultation') }}</a></li>
@@ -444,7 +446,7 @@
                     <p class="text-sm text-charcoal-500">
                         &copy; {{ date('Y') }} TRNM Digital Consulting LLP, operating as <span class="text-charcoal-300 font-semibold">FairIT Solutions</span>. {{ __('ui.footer.copyright') }}
                     </p>
-                    <p class="text-xs text-charcoal-600 mt-1">Headquartered in Pune, India. Offices in Switzerland and Germany.</p>
+                    <p class="text-xs text-charcoal-600 mt-1">{{ __('ui.footer.location') }}</p>
                 </div>
                 <div class="flex items-center gap-4.5">
                     <a href="https://www.linkedin.com/company/fair-it-solutions/" target="_blank" rel="noopener" class="text-charcoal-400 hover:text-white transition-colors" aria-label="LinkedIn">

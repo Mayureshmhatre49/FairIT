@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Book AI Consultation — FairIT Solutions')
+@section('title', 'Request a Free AI Consultation — FairIT Solutions')
 @section('description', 'Book a free AI strategy consultation with FairIT Solutions. Discuss your AI goals, challenges, and get expert guidance. Response within 24 hours.')
 
 @section('schema')
@@ -12,8 +12,8 @@
             "@type": "WebPage",
             "@id": "{{ route('consultation') }}#webpage",
             "url": "{{ route('consultation') }}",
-            "name": "Book AI Consultation — FairIT Solutions",
-            "description": "Book a free AI strategy consultation with FairIT Solutions.",
+            "name": "Request a Free AI Consultation — FairIT Solutions",
+            "description": "Book a complimentary 45-minute AI strategy consultation with FairIT Solutions.",
             "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
         },
         {

@@ -15,12 +15,12 @@ class ServicesController extends Controller
     {
         return view('services.advisory', [
             'service' => [
-                'title'       => __('services.advisory.title'),
-                'tagline'     => __('services.advisory.tagline'),
+                'title' => __('services.advisory.title'),
+                'tagline' => __('services.advisory.tagline'),
                 'description' => __('services.advisory.description'),
-                'icon'        => 'brain',
-                'color'       => 'blue',
-                'benefits'    => [
+                'icon' => 'brain',
+                'color' => 'blue',
+                'benefits' => [
                     __('services.advisory.benefit_1'),
                     __('services.advisory.benefit_2'),
                     __('services.advisory.benefit_3'),
@@ -41,7 +41,7 @@ class ServicesController extends Controller
                     ['step' => '04', 'title' => __('services.advisory.process_4_title'), 'desc' => __('services.advisory.process_4_desc')],
                     ['step' => '05', 'title' => __('services.advisory.process_5_title'), 'desc' => __('services.advisory.process_5_desc')],
                 ],
-                'cta_text'  => __('services.advisory.cta'),
+                'cta_text' => __('services.advisory.cta'),
                 'cta_route' => 'consultation',
                 'faqs' => [
                     ['q' => __('services.advisory.faq_1_q'), 'a' => __('services.advisory.faq_1_a')],
@@ -60,12 +60,12 @@ class ServicesController extends Controller
     {
         return view('services.copilot', [
             'service' => [
-                'title'       => __('services.copilot.title'),
-                'tagline'     => __('services.copilot.tagline'),
+                'title' => __('services.copilot.title'),
+                'tagline' => __('services.copilot.tagline'),
                 'description' => __('services.copilot.description'),
-                'icon'        => 'cpu',
-                'color'       => 'indigo',
-                'benefits'    => [
+                'icon' => 'cpu',
+                'color' => 'indigo',
+                'benefits' => [
                     __('services.copilot.benefit_1'),
                     __('services.copilot.benefit_2'),
                     __('services.copilot.benefit_3'),
@@ -86,7 +86,7 @@ class ServicesController extends Controller
                     ['step' => '04', 'title' => __('services.copilot.process_4_title'), 'desc' => __('services.copilot.process_4_desc')],
                     ['step' => '05', 'title' => __('services.copilot.process_5_title'), 'desc' => __('services.copilot.process_5_desc')],
                 ],
-                'cta_text'  => __('services.copilot.cta'),
+                'cta_text' => __('services.copilot.cta'),
                 'cta_route' => 'consultation',
                 'faqs' => [
                     ['q' => __('services.copilot.faq_1_q'), 'a' => __('services.copilot.faq_1_a')],
@@ -105,12 +105,12 @@ class ServicesController extends Controller
     {
         return view('services.voiceai', [
             'service' => [
-                'title'       => __('services.voiceai.title'),
-                'tagline'     => __('services.voiceai.tagline'),
+                'title' => __('services.voiceai.title'),
+                'tagline' => __('services.voiceai.tagline'),
                 'description' => __('services.voiceai.description'),
-                'icon'        => 'microphone',
-                'color'       => 'violet',
-                'benefits'    => [
+                'icon' => 'microphone',
+                'color' => 'violet',
+                'benefits' => [
                     __('services.voiceai.benefit_1'),
                     __('services.voiceai.benefit_2'),
                     __('services.voiceai.benefit_3'),
@@ -131,7 +131,7 @@ class ServicesController extends Controller
                     ['step' => '04', 'title' => __('services.voiceai.process_4_title'), 'desc' => __('services.voiceai.process_4_desc')],
                     ['step' => '05', 'title' => __('services.voiceai.process_5_title'), 'desc' => __('services.voiceai.process_5_desc')],
                 ],
-                'cta_text'  => __('services.voiceai.cta'),
+                'cta_text' => __('services.voiceai.cta'),
                 'cta_route' => 'consultation',
                 'faqs' => [
                     ['q' => __('services.voiceai.faq_1_q'), 'a' => __('services.voiceai.faq_1_a')],
@@ -150,12 +150,12 @@ class ServicesController extends Controller
     {
         return view('services.retainers', [
             'service' => [
-                'title'       => __('services.retainers.title'),
-                'tagline'     => __('services.retainers.tagline'),
+                'title' => __('services.retainers.title'),
+                'tagline' => __('services.retainers.tagline'),
                 'description' => __('services.retainers.description'),
-                'icon'        => 'shield-check',
-                'color'       => 'emerald',
-                'benefits'    => [
+                'icon' => 'shield-check',
+                'color' => 'emerald',
+                'benefits' => [
                     __('services.retainers.benefit_1'),
                     __('services.retainers.benefit_2'),
                     __('services.retainers.benefit_3'),
@@ -176,7 +176,7 @@ class ServicesController extends Controller
                     ['step' => '04', 'title' => __('services.retainers.process_4_title'), 'desc' => __('services.retainers.process_4_desc')],
                     ['step' => '05', 'title' => __('services.retainers.process_5_title'), 'desc' => __('services.retainers.process_5_desc')],
                 ],
-                'cta_text'  => __('services.retainers.cta'),
+                'cta_text' => __('services.retainers.cta'),
                 'cta_route' => 'consultation',
                 'faqs' => [
                     ['q' => __('services.retainers.faq_1_q'), 'a' => __('services.retainers.faq_1_a')],
@@ -195,12 +195,12 @@ class ServicesController extends Controller
     {
         return view('services.founder', [
             'service' => [
-                'title'       => __('services.founder.title'),
-                'tagline'     => __('services.founder.tagline'),
+                'title' => __('services.founder.title'),
+                'tagline' => __('services.founder.tagline'),
                 'description' => __('services.founder.description'),
-                'icon'        => 'rocket',
-                'color'       => 'orange',
-                'benefits'    => [
+                'icon' => 'rocket',
+                'color' => 'orange',
+                'benefits' => [
                     __('services.founder.benefit_1'),
                     __('services.founder.benefit_2'),
                     __('services.founder.benefit_3'),
@@ -221,7 +221,7 @@ class ServicesController extends Controller
                     ['step' => '04', 'title' => __('services.founder.process_4_title'), 'desc' => __('services.founder.process_4_desc')],
                     ['step' => '05', 'title' => __('services.founder.process_5_title'), 'desc' => __('services.founder.process_5_desc')],
                 ],
-                'cta_text'  => __('services.founder.cta'),
+                'cta_text' => __('services.founder.cta'),
                 'cta_route' => 'consultation',
                 'faqs' => [
                     ['q' => __('services.founder.faq_1_q'), 'a' => __('services.founder.faq_1_a')],

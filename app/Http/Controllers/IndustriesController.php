@@ -12,23 +12,23 @@ class IndustriesController extends Controller
      * genuine delivery experience are mapped — we don't fabricate matches.
      */
     private array $caseStudyDomainMap = [
-        'healthcare'  => 'Healthcare',
+        'healthcare' => 'Healthcare',
         'hospitality' => 'Hospitality',
-        'education'   => 'Education',
+        'education' => 'Education',
     ];
 
     private array $industries = [
 
         // ── STARTUPS ─────────────────────────────────────────────────────────
         'startups' => [
-            'title'                 => 'Startups',
-            'cta_noun'              => 'Startup',
-            'related_product'       => 'SarathiOS',
+            'title' => 'Startups',
+            'cta_noun' => 'Startup',
+            'related_product' => 'SarathiOS',
             'related_product_route' => 'products.sarathios',
-            'headline'              => 'Move Faster. Decide Better. Scale Smarter.',
-            'description'           => 'AI systems that give early-stage and growth-stage startups the operational leverage of a team 10x their size.',
-            'icon'                  => 'rocket',
-            'color'                 => 'blue',
+            'headline' => 'Move Faster. Decide Better. Scale Smarter.',
+            'description' => 'AI systems that give early-stage and growth-stage startups the operational leverage of a team 10x their size.',
+            'icon' => 'rocket',
+            'color' => 'blue',
 
             'intro' => 'Startups do not lose because their idea is wrong. They lose because they run out of time, attention, or capital before the idea has a chance to work. Every founder we work with has the same constraint: too many decisions, not enough operators, no margin to hire ahead of revenue. AI changes the maths. Used well, it does not replace your team — it gives a six-person company the operational throughput of a 30-person one, and lets the founder spend their time on the two or three decisions that actually matter this quarter.',
 
@@ -54,22 +54,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'Inbound lead response in 60 seconds',
-                    'scenario'    => 'A seed-stage SaaS startup was losing 40% of inbound demo requests because founder-led outreach took 18–36 hours.',
+                    'title' => 'Inbound lead response in 60 seconds',
+                    'scenario' => 'A seed-stage SaaS startup was losing 40% of inbound demo requests because founder-led outreach took 18–36 hours.',
                     'ai_solution' => 'An AI voice + email agent qualifies the lead, books a slot on the founder\'s calendar, and writes a context brief 60 seconds after form submission.',
-                    'outcome'     => 'Demo-to-call conversion went from 22% to 51%. Founder time on inbound dropped 85%.',
+                    'outcome' => 'Demo-to-call conversion went from 22% to 51%. Founder time on inbound dropped 85%.',
                 ],
                 [
-                    'title'       => 'Investor update automation',
-                    'scenario'    => 'A Series A founder was spending six hours a month writing investor updates, and another four pulling the metrics for them.',
+                    'title' => 'Investor update automation',
+                    'scenario' => 'A Series A founder was spending six hours a month writing investor updates, and another four pulling the metrics for them.',
                     'ai_solution' => 'A custom copilot pulls live numbers from Stripe, HubSpot, and the team\'s OKR doc, drafts the update in the founder\'s voice, and surfaces the three risks investors will ask about.',
-                    'outcome'     => 'Monthly update time fell from 10 hours to 35 minutes. Investor satisfaction scores went up.',
+                    'outcome' => 'Monthly update time fell from 10 hours to 35 minutes. Investor satisfaction scores went up.',
                 ],
                 [
-                    'title'       => 'Founder operating system',
-                    'scenario'    => 'A founder of a 12-person company felt every Monday like a fire drill because there was no canonical view of the week.',
+                    'title' => 'Founder operating system',
+                    'scenario' => 'A founder of a 12-person company felt every Monday like a fire drill because there was no canonical view of the week.',
                     'ai_solution' => 'SarathiOS — a personal AI operating system — became their morning command centre: priorities, blockers, team status, customer signals, all surfaced before 9am.',
-                    'outcome'     => 'Decision velocity doubled. The founder reclaimed 8 hours a week for product and customer work.',
+                    'outcome' => 'Decision velocity doubled. The founder reclaimed 8 hours a week for product and customer work.',
                 ],
             ],
 
@@ -78,14 +78,14 @@ class IndustriesController extends Controller
 
         // ── SMEs ─────────────────────────────────────────────────────────────
         'smes' => [
-            'title'                 => 'SMEs',
-            'cta_noun'              => 'SME',
-            'related_product'       => null,
+            'title' => 'SMEs',
+            'cta_noun' => 'SME',
+            'related_product' => null,
             'related_product_route' => null,
-            'headline'              => 'Enterprise AI. SME Budget.',
-            'description'           => 'Practical, affordable AI transformation for small and medium enterprises ready to compete on intelligence.',
-            'icon'                  => 'building',
-            'color'                 => 'indigo',
+            'headline' => 'Enterprise AI. SME Budget.',
+            'description' => 'Practical, affordable AI transformation for small and medium enterprises ready to compete on intelligence.',
+            'icon' => 'building',
+            'color' => 'indigo',
 
             'intro' => 'The single biggest competitive opportunity for small and medium enterprises in this decade is that AI now levels the playing field. The capabilities that were the exclusive preserve of Fortune 500 IT departments — voice agents, intelligent automation, real-time dashboards, custom copilots — can now be deployed by a 20-person company in a matter of weeks. The SMEs that move first build durable operating leverage that takes their larger, slower competitors years to replicate. The SMEs that wait, watch a generational gap open up.',
 
@@ -111,22 +111,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'Replacing five SaaS tools with one custom copilot',
-                    'scenario'    => 'A 35-person manufacturing SME was paying for five overlapping productivity tools and still doing data entry manually.',
+                    'title' => 'Replacing five SaaS tools with one custom copilot',
+                    'scenario' => 'A 35-person manufacturing SME was paying for five overlapping productivity tools and still doing data entry manually.',
                     'ai_solution' => 'A custom copilot, integrated with their ERP and CRM, handles invoice lookups, customer queries, and order status — replacing three of the five tools.',
-                    'outcome'     => 'CHF 22,000/year of SaaS spend eliminated; data entry hours dropped 60%.',
+                    'outcome' => 'CHF 22,000/year of SaaS spend eliminated; data entry hours dropped 60%.',
                 ],
                 [
-                    'title'       => 'Voice AI for inbound enquiries',
-                    'scenario'    => 'An SME in professional services missed roughly 30% of after-hours inbound calls — every missed call was a potential six-figure engagement.',
+                    'title' => 'Voice AI for inbound enquiries',
+                    'scenario' => 'An SME in professional services missed roughly 30% of after-hours inbound calls — every missed call was a potential six-figure engagement.',
                     'ai_solution' => 'A multilingual voice AI agent handles the entire after-hours inbound: qualifying, booking, and notifying the team with a context brief.',
-                    'outcome'     => 'Captured 4 new client engagements in the first quarter that would have otherwise been missed.',
+                    'outcome' => 'Captured 4 new client engagements in the first quarter that would have otherwise been missed.',
                 ],
                 [
-                    'title'       => 'Finance reporting automation',
-                    'scenario'    => 'The owner-operator of a 50-person services firm was spending Saturday mornings pulling monthly reports for the leadership team.',
+                    'title' => 'Finance reporting automation',
+                    'scenario' => 'The owner-operator of a 50-person services firm was spending Saturday mornings pulling monthly reports for the leadership team.',
                     'ai_solution' => 'A finance AI digests transactions from Bexio/Banana, flags anomalies, and produces the monthly leadership brief automatically every first Monday.',
-                    'outcome'     => 'Six hours a month returned to the owner; leadership now sees the same picture, same day, every month.',
+                    'outcome' => 'Six hours a month returned to the owner; leadership now sees the same picture, same day, every month.',
                 ],
             ],
 
@@ -135,14 +135,14 @@ class IndustriesController extends Controller
 
         // ── REAL ESTATE ──────────────────────────────────────────────────────
         'real-estate' => [
-            'title'                 => 'Real Estate',
-            'cta_noun'              => 'Real Estate',
-            'related_product'       => null,
+            'title' => 'Real Estate',
+            'cta_noun' => 'Real Estate',
+            'related_product' => null,
             'related_product_route' => null,
-            'headline'              => 'Close More. Manage Better. Grow Faster.',
-            'description'           => 'AI tools for property management, lead qualification, client communication, and market intelligence.',
-            'icon'                  => 'home',
-            'color'                 => 'emerald',
+            'headline' => 'Close More. Manage Better. Grow Faster.',
+            'description' => 'AI tools for property management, lead qualification, client communication, and market intelligence.',
+            'icon' => 'home',
+            'color' => 'emerald',
 
             'intro' => 'Real estate is a business of inventory, attention, and timing. Listings that surface in front of the right buyer in the first 48 hours sell at higher prices. Leads contacted in the first five minutes convert at 8x the rate of leads contacted after 30. Agents who follow up consistently across 8–12 touchpoints close deals that everyone else loses. None of these are problems of effort — they are problems of operational discipline that humans fail at predictably. AI does not get tired, distracted, or unmotivated. Deployed thoughtfully, it becomes the operational layer that turns a good agent into an unbeatable one.',
 
@@ -168,22 +168,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'NRI investor pipeline automation',
-                    'scenario'    => 'A boutique real estate firm in India was losing high-net-worth NRI enquiries because time-zone gaps delayed responses by 12–18 hours.',
+                    'title' => 'NRI investor pipeline automation',
+                    'scenario' => 'A boutique real estate firm in India was losing high-net-worth NRI enquiries because time-zone gaps delayed responses by 12–18 hours.',
                     'ai_solution' => 'A multilingual voice + WhatsApp agent qualifies investor enquiries 24/7, books site-visit slots with local time conversion, and sends a polished investment brief in under 90 seconds.',
-                    'outcome'     => 'NRI enquiry-to-site-visit conversion rose from 14% to 41%.',
+                    'outcome' => 'NRI enquiry-to-site-visit conversion rose from 14% to 41%.',
                 ],
                 [
-                    'title'       => 'Listing description and SEO at scale',
-                    'scenario'    => 'A 12-agent firm took 90 minutes per listing to write a description, generate matching social copy, and SEO-tag the page.',
+                    'title' => 'Listing description and SEO at scale',
+                    'scenario' => 'A 12-agent firm took 90 minutes per listing to write a description, generate matching social copy, and SEO-tag the page.',
                     'ai_solution' => 'An AI listing engine drafts polished descriptions in the firm\'s tone, generates Instagram and LinkedIn variants, and applies local SEO best practice automatically.',
-                    'outcome'     => 'Per-listing time dropped to under 12 minutes; organic listing traffic up 3x in 90 days.',
+                    'outcome' => 'Per-listing time dropped to under 12 minutes; organic listing traffic up 3x in 90 days.',
                 ],
                 [
-                    'title'       => 'Quarterly investor reporting',
-                    'scenario'    => 'A property management firm with 80 owner-clients spent the first two weeks of every quarter producing reports.',
+                    'title' => 'Quarterly investor reporting',
+                    'scenario' => 'A property management firm with 80 owner-clients spent the first two weeks of every quarter producing reports.',
                     'ai_solution' => 'An AI report generator pulls occupancy, rent collection, maintenance, and market data per property and produces the personalised quarterly brief automatically.',
-                    'outcome'     => 'Quarterly reporting time fell 80%; clients reported visibly better communication scores.',
+                    'outcome' => 'Quarterly reporting time fell 80%; clients reported visibly better communication scores.',
                 ],
             ],
 
@@ -192,14 +192,14 @@ class IndustriesController extends Controller
 
         // ── HOSPITALITY ──────────────────────────────────────────────────────
         'hospitality' => [
-            'title'                 => 'Hospitality',
-            'cta_noun'              => 'Hospitality',
-            'related_product'       => 'HSI OS',
+            'title' => 'Hospitality',
+            'cta_noun' => 'Hospitality',
+            'related_product' => 'HSI OS',
             'related_product_route' => 'products.hsios',
-            'headline'              => 'Deliver 5-Star Experiences at Scale.',
-            'description'           => 'AI-driven guest experiences, booking automation, and operational intelligence for hotels and restaurants.',
-            'icon'                  => 'star',
-            'color'                 => 'amber',
+            'headline' => 'Deliver 5-Star Experiences at Scale.',
+            'description' => 'AI-driven guest experiences, booking automation, and operational intelligence for hotels and restaurants.',
+            'icon' => 'star',
+            'color' => 'amber',
 
             'intro' => 'Hospitality is a business of warmth, repetition, and 11pm bookings. The repetition — confirmations, reminders, FAQ, scheduling — is exactly what AI does better than humans: no fatigue, no inconsistency, no missed calls at 2am when a leisure traveller finally has time to book. The warmth — the actual hospitality — is what humans do better than any machine will ever do. Hospitality businesses that win this decade are not the ones replacing their team with AI. They are the ones using AI to handle the operational layer so their team can spend every minute on the human one.',
 
@@ -225,22 +225,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'After-hours booking recovery',
-                    'scenario'    => 'A Swiss boutique hotel was losing roughly 28% of inbound enquiries that arrived between 19:00 and 09:00, because the reservation desk was unstaffed.',
+                    'title' => 'After-hours booking recovery',
+                    'scenario' => 'A Swiss boutique hotel was losing roughly 28% of inbound enquiries that arrived between 19:00 and 09:00, because the reservation desk was unstaffed.',
                     'ai_solution' => 'A multilingual AI voice agent (EN/DE/FR) handles the entire after-hours channel: availability, payment, confirmation email, and PMS update.',
-                    'outcome'     => 'After-hours bookings up 34% in 60 days; reservation team redeployed to guest-experience upsell during day hours.',
+                    'outcome' => 'After-hours bookings up 34% in 60 days; reservation team redeployed to guest-experience upsell during day hours.',
                 ],
                 [
-                    'title'       => 'Personalised pre-arrival emails',
-                    'scenario'    => 'A hospitality group sent the same mail-merge pre-arrival email to every guest, missing thousands of upsell moments per year.',
+                    'title' => 'Personalised pre-arrival emails',
+                    'scenario' => 'A hospitality group sent the same mail-merge pre-arrival email to every guest, missing thousands of upsell moments per year.',
                     'ai_solution' => 'An AI engine drafts a genuinely personalised pre-arrival email per booking, referencing past stays, the booking occasion, and locally relevant suggestions.',
-                    'outcome'     => 'Pre-arrival upsell revenue up 18%; NPS scores improved measurably.',
+                    'outcome' => 'Pre-arrival upsell revenue up 18%; NPS scores improved measurably.',
                 ],
                 [
-                    'title'       => 'AI-drafted review replies',
-                    'scenario'    => 'A property GM was the only person replying to reviews — typical lag was 6 days, and several negative reviews were going unaddressed.',
+                    'title' => 'AI-drafted review replies',
+                    'scenario' => 'A property GM was the only person replying to reviews — typical lag was 6 days, and several negative reviews were going unaddressed.',
                     'ai_solution' => 'An AI assistant drafts a polished, on-brand reply for every new review (positive and negative), flagging escalations and queuing replies for one-click approval.',
-                    'outcome'     => 'Review response time dropped from 6 days to under 4 hours; review-influenced bookings rose noticeably.',
+                    'outcome' => 'Review response time dropped from 6 days to under 4 hours; review-influenced bookings rose noticeably.',
                 ],
             ],
 
@@ -249,14 +249,14 @@ class IndustriesController extends Controller
 
         // ── INTERIOR DESIGN ──────────────────────────────────────────────────
         'interior-design' => [
-            'title'                 => 'Interior Design',
-            'cta_noun'              => 'Interior Design',
-            'related_product'       => 'HSI OS',
+            'title' => 'Interior Design',
+            'cta_noun' => 'Interior Design',
+            'related_product' => 'HSI OS',
             'related_product_route' => 'products.hsios',
-            'headline'              => 'Design Smarter. Execute Flawlessly.',
-            'description'           => 'The AI operating system for interior designers, renovation firms, and architecture studios.',
-            'icon'                  => 'paint-brush',
-            'color'                 => 'pink',
+            'headline' => 'Design Smarter. Execute Flawlessly.',
+            'description' => 'The AI operating system for interior designers, renovation firms, and architecture studios.',
+            'icon' => 'paint-brush',
+            'color' => 'pink',
 
             'intro' => 'Interior design is creative work surrounded by an operations problem. The design is the easy part. The hard part is co-ordinating 20+ vendors, keeping a client informed without being interrupted every 30 minutes, tracking three concurrent projects each at a different phase, and producing reliable budgets in a market where material prices move weekly. Most studios solve this with brute force — long hours, project managers, spreadsheets that nobody trusts. AI offers something better: an operating layer purpose-built for the way design projects actually run, which is messy, non-linear, and dependent on dozens of partial-information conversations a day.',
 
@@ -282,22 +282,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'Vendor coordination at scale',
-                    'scenario'    => 'A 12-person studio was managing 9 concurrent projects, each with 15–25 vendors. Project managers were burning out from coordination overhead.',
+                    'title' => 'Vendor coordination at scale',
+                    'scenario' => 'A 12-person studio was managing 9 concurrent projects, each with 15–25 vendors. Project managers were burning out from coordination overhead.',
                     'ai_solution' => 'HSI OS — purpose-built for interior firms — runs vendor specs, quote chasers, delivery tracking, and exception flagging on autopilot.',
-                    'outcome'     => 'Project manager coordination time dropped 50%. Two projects ahead of schedule for the first time in the studio\'s history.',
+                    'outcome' => 'Project manager coordination time dropped 50%. Two projects ahead of schedule for the first time in the studio\'s history.',
                 ],
                 [
-                    'title'       => 'AI-drafted client proposals',
-                    'scenario'    => 'The principal designer was the bottleneck for every new proposal — each one took two days of her time.',
+                    'title' => 'AI-drafted client proposals',
+                    'scenario' => 'The principal designer was the bottleneck for every new proposal — each one took two days of her time.',
                     'ai_solution' => 'A proposal AI takes the discovery brief and produces a first-pass narrative, scope outline, and rough estimate in under 30 minutes for the principal to refine.',
-                    'outcome'     => 'Proposal turnaround dropped from 5 days to 24 hours. Conversion to signed contract rose 22%.',
+                    'outcome' => 'Proposal turnaround dropped from 5 days to 24 hours. Conversion to signed contract rose 22%.',
                 ],
                 [
-                    'title'       => 'Client portal with proactive status',
-                    'scenario'    => 'Clients were chasing the studio weekly with the same questions: where are we, what is left, what is next.',
+                    'title' => 'Client portal with proactive status',
+                    'scenario' => 'Clients were chasing the studio weekly with the same questions: where are we, what is left, what is next.',
                     'ai_solution' => 'A client-facing portal answers these questions automatically with real-time data from the project tracker, freeing the team from the chase-loop.',
-                    'outcome'     => 'Client satisfaction up; "where are we?" emails down 80%; clear improvement in repeat business.',
+                    'outcome' => 'Client satisfaction up; "where are we?" emails down 80%; clear improvement in repeat business.',
                 ],
             ],
 
@@ -306,14 +306,14 @@ class IndustriesController extends Controller
 
         // ── HEALTHCARE ───────────────────────────────────────────────────────
         'healthcare' => [
-            'title'                 => 'Healthcare',
-            'cta_noun'              => 'Healthcare',
-            'related_product'       => null,
+            'title' => 'Healthcare',
+            'cta_noun' => 'Healthcare',
+            'related_product' => null,
             'related_product_route' => null,
-            'headline'              => 'Better Patient Outcomes. Less Admin.',
-            'description'           => 'GDPR, Swiss FADP, and India DPDP-aligned AI solutions for clinics, hospitals, and health-tech companies.',
-            'icon'                  => 'heart',
-            'color'                 => 'red',
+            'headline' => 'Better Patient Outcomes. Less Admin.',
+            'description' => 'GDPR, Swiss FADP, and India DPDP-aligned AI solutions for clinics, hospitals, and health-tech companies.',
+            'icon' => 'heart',
+            'color' => 'red',
 
             'intro' => 'In healthcare, every minute clinicians spend on administrative work is a minute not spent with patients. The numbers are well-documented: physicians spend roughly 50% of their working hours on documentation, scheduling, and paperwork. The opportunity for AI is not to make medical decisions — those remain firmly with clinicians — but to remove the operational burden around them, so the highest-cost, highest-skilled humans in the building spend their time on what only they can do.',
 
@@ -339,22 +339,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'Reducing documentation overhead',
-                    'scenario'    => 'A multi-specialty clinic\'s physicians averaged 90 minutes a day on after-hours documentation, contributing to attrition.',
+                    'title' => 'Reducing documentation overhead',
+                    'scenario' => 'A multi-specialty clinic\'s physicians averaged 90 minutes a day on after-hours documentation, contributing to attrition.',
                     'ai_solution' => 'An AI clinical documentation copilot drafts notes from the consultation, clinician edits and signs off — the clinician remains fully in control.',
-                    'outcome'     => 'After-hours documentation time fell 70%. Physician satisfaction scores rose; attrition dropped.',
+                    'outcome' => 'After-hours documentation time fell 70%. Physician satisfaction scores rose; attrition dropped.',
                 ],
                 [
-                    'title'       => 'No-show reduction with AI reminders',
-                    'scenario'    => 'A clinic had a 19% no-show rate, costing roughly CHF 380,000/year in unused capacity.',
+                    'title' => 'No-show reduction with AI reminders',
+                    'scenario' => 'A clinic had a 19% no-show rate, costing roughly CHF 380,000/year in unused capacity.',
                     'ai_solution' => 'An AI scheduler predicts high-risk no-shows, sends multilingual reminders with one-tap rescheduling, and fills cancellations from a waitlist automatically.',
-                    'outcome'     => 'No-show rate dropped to 9%; recovered capacity equivalent to one additional clinician.',
+                    'outcome' => 'No-show rate dropped to 9%; recovered capacity equivalent to one additional clinician.',
                 ],
                 [
-                    'title'       => 'Multilingual front-desk for diverse populations',
-                    'scenario'    => 'A hospital in an expatriate-heavy city was struggling to handle enquiries in English, German, French, Italian, and Arabic with a small front-desk team.',
+                    'title' => 'Multilingual front-desk for diverse populations',
+                    'scenario' => 'A hospital in an expatriate-heavy city was struggling to handle enquiries in English, German, French, Italian, and Arabic with a small front-desk team.',
                     'ai_solution' => 'A voice AI agent triages and answers all routine enquiries in the patient\'s preferred language; clinical queries are escalated with a translated summary.',
-                    'outcome'     => 'Routine query handling time down 60%. Patient satisfaction in non-German-speaking groups improved.',
+                    'outcome' => 'Routine query handling time down 60%. Patient satisfaction in non-German-speaking groups improved.',
                 ],
             ],
 
@@ -363,14 +363,14 @@ class IndustriesController extends Controller
 
         // ── EDUCATION ────────────────────────────────────────────────────────
         'education' => [
-            'title'                 => 'Education',
-            'cta_noun'              => 'Education',
-            'related_product'       => null,
+            'title' => 'Education',
+            'cta_noun' => 'Education',
+            'related_product' => null,
             'related_product_route' => null,
-            'headline'              => 'Personalised Learning. Scalable Impact.',
-            'description'           => 'AI tools for EdTech companies, schools, and professional training organisations.',
-            'icon'                  => 'academic-cap',
-            'color'                 => 'violet',
+            'headline' => 'Personalised Learning. Scalable Impact.',
+            'description' => 'AI tools for EdTech companies, schools, and professional training organisations.',
+            'icon' => 'academic-cap',
+            'color' => 'violet',
 
             'intro' => 'Education is where personalisation has the highest learning impact and the lowest historical feasibility. Every teacher knows their students learn differently. Every parent knows their child responds to one teaching style and not another. Until now, personalising at scale was not possible — there were not enough teachers, hours, or pedagogical tools to do it. AI does not replace teachers. It gives every teacher and every learner the equivalent of a personal teaching assistant: ready, patient, available at 11pm before the exam, and aligned to how that specific learner thinks.',
 
@@ -396,22 +396,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'AI tutoring aligned to curriculum',
-                    'scenario'    => 'An EdTech platform offered video lessons but had no support model for the inevitable "I do not understand this step" moments.',
+                    'title' => 'AI tutoring aligned to curriculum',
+                    'scenario' => 'An EdTech platform offered video lessons but had no support model for the inevitable "I do not understand this step" moments.',
                     'ai_solution' => 'A curriculum-aligned AI tutor answers conceptual questions in the platform\'s teaching style, never going off-syllabus.',
-                    'outcome'     => 'Lesson completion rate up 27%. Refund requests down 42%.',
+                    'outcome' => 'Lesson completion rate up 27%. Refund requests down 42%.',
                 ],
                 [
-                    'title'       => 'Admissions enquiry automation',
-                    'scenario'    => 'An international school received 200+ enquiries during admissions season and was losing prospective families to slower response times.',
+                    'title' => 'Admissions enquiry automation',
+                    'scenario' => 'An international school received 200+ enquiries during admissions season and was losing prospective families to slower response times.',
                     'ai_solution' => 'A multilingual admissions AI agent qualifies prospective families, answers fee and curriculum questions, and books interviews with the admissions team automatically.',
-                    'outcome'     => 'Enquiry-to-interview conversion up 38%. Admissions team capacity recovered for relationship-building, not data entry.',
+                    'outcome' => 'Enquiry-to-interview conversion up 38%. Admissions team capacity recovered for relationship-building, not data entry.',
                 ],
                 [
-                    'title'       => 'Teacher workflow assistant',
-                    'scenario'    => 'Secondary-school teachers were burning out from lesson planning, marking, and parent communication on top of teaching itself.',
+                    'title' => 'Teacher workflow assistant',
+                    'scenario' => 'Secondary-school teachers were burning out from lesson planning, marking, and parent communication on top of teaching itself.',
                     'ai_solution' => 'An AI workflow assistant drafts lesson plans, generates differentiated assessments, and produces parent communications in the teacher\'s voice.',
-                    'outcome'     => 'Teacher administrative time down 5–8 hours a week. Retention measurably improved.',
+                    'outcome' => 'Teacher administrative time down 5–8 hours a week. Retention measurably improved.',
                 ],
             ],
 
@@ -420,14 +420,14 @@ class IndustriesController extends Controller
 
         // ── PROFESSIONAL SERVICES ────────────────────────────────────────────
         'professional-services' => [
-            'title'                 => 'Professional Services',
-            'cta_noun'              => 'Professional Services',
-            'related_product'       => null,
+            'title' => 'Professional Services',
+            'cta_noun' => 'Professional Services',
+            'related_product' => null,
             'related_product_route' => null,
-            'headline'              => 'Deliver More Value. Bill Fewer Hours.',
-            'description'           => 'AI systems for law firms, accounting firms, consultancies, and agencies.',
-            'icon'                  => 'briefcase',
-            'color'                 => 'slate',
+            'headline' => 'Deliver More Value. Bill Fewer Hours.',
+            'description' => 'AI systems for law firms, accounting firms, consultancies, and agencies.',
+            'icon' => 'briefcase',
+            'color' => 'slate',
 
             'intro' => 'Professional services have a paradox at their core: clients pay for partner-level judgement, but the firm captures partner value only when partners spend their time on judgement work. In reality, 40–60% of partner time goes to research, document drafting, status updates, and proposal writing — work that depends on partner-level knowledge but does not require it in real time. AI changes the leverage equation. A partner with a well-built AI infrastructure operates with the throughput of two — and the firm captures the upside.',
 
@@ -453,22 +453,22 @@ class IndustriesController extends Controller
 
             'use_cases' => [
                 [
-                    'title'       => 'AI-assisted due diligence',
-                    'scenario'    => 'A boutique corporate firm regularly took 5 days of associate time to summarise a target company\'s contracts and risks for an M&A engagement.',
+                    'title' => 'AI-assisted due diligence',
+                    'scenario' => 'A boutique corporate firm regularly took 5 days of associate time to summarise a target company\'s contracts and risks for an M&A engagement.',
                     'ai_solution' => 'A document AI ingests the data room, produces clause-level summaries, flags non-standard terms, and prepares the first draft of the diligence memo.',
-                    'outcome'     => 'Diligence cycle dropped from 5 days to under 1. Partner review time on the memo became the bottleneck — exactly where partner attention should sit.',
+                    'outcome' => 'Diligence cycle dropped from 5 days to under 1. Partner review time on the memo became the bottleneck — exactly where partner attention should sit.',
                 ],
                 [
-                    'title'       => 'Proposal generation copilot',
-                    'scenario'    => 'A consulting firm partner was the bottleneck for every new business pitch, with each one taking 8 hours of her week.',
+                    'title' => 'Proposal generation copilot',
+                    'scenario' => 'A consulting firm partner was the bottleneck for every new business pitch, with each one taking 8 hours of her week.',
                     'ai_solution' => 'A proposal AI trained on past winning pitches drafts the structure, case studies, and pricing in the partner\'s voice for her to refine.',
-                    'outcome'     => 'Pitch turnaround 24 hours instead of 4 days. Win rate improved as the firm could pitch on more opportunities.',
+                    'outcome' => 'Pitch turnaround 24 hours instead of 4 days. Win rate improved as the firm could pitch on more opportunities.',
                 ],
                 [
-                    'title'       => 'Knowledge capture across partner rotations',
-                    'scenario'    => 'A law firm was losing decades of precedent knowledge every time a senior partner retired.',
+                    'title' => 'Knowledge capture across partner rotations',
+                    'scenario' => 'A law firm was losing decades of precedent knowledge every time a senior partner retired.',
                     'ai_solution' => 'A knowledge AI ingests historical engagements, partner notes, and decisions, making the firm\'s tacit expertise searchable and reusable.',
-                    'outcome'     => 'New-associate ramp time halved. Junior partners measurably more confident on complex matters earlier.',
+                    'outcome' => 'New-associate ramp time halved. Junior partners measurably more confident on complex matters earlier.',
                 ],
             ],
 

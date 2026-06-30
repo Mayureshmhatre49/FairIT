@@ -45,7 +45,7 @@ class IndexNowSubmit extends Command
             }
         }
 
-        $this->info('Submitting ' . count($urls) . ' URLs to IndexNow…');
+        $this->info('Submitting '.count($urls).' URLs to IndexNow…');
         $service->notify($urls);
         $this->info('Done. (In local/dev, this is a no-op — production only.)');
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'AI Products — SarathiOS, HSI OS, HandleLife OS | FairIT Solutions')
-@section('description', 'Explore our AI Operating Systems: SarathiOS for founders, HSI OS for interior design, and HandleLife OS for modern family life. Purpose-built AI products for real-world complexity.')
+@section('title', 'AI Operating Systems | FairIT Solutions')
+@section('description', 'Explore our custom AI Operating Systems: SarathiOS for founders, HSI OS for interior design, and HandleLife OS for modern family operations.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">

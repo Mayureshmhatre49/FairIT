@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lead;
 use App\Mail\LeadNotification;
-use Illuminate\Http\Request;
+use App\Models\Lead;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
@@ -19,17 +19,17 @@ class ConsultationController extends Controller
     public function submit(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'name'          => ['required', 'string', 'max:100'],
-            'email'         => ['required', 'email', 'max:150'],
-            'phone'         => ['nullable', 'string', 'max:30'],
-            'company'       => ['nullable', 'string', 'max:150'],
-            'company_size'  => ['nullable', 'string', 'max:50'],
-            'service'       => ['required', 'string', 'max:200'],
-            'budget'        => ['nullable', 'string', 'max:100'],
-            'timeline'      => ['nullable', 'string', 'max:100'],
-            'goals'         => ['required', 'string', 'min:20', 'max:3000'],
-            'how_heard'     => ['nullable', 'string', 'max:200'],
-            'honeypot'      => ['nullable', 'size:0'],
+            'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150'],
+            'phone' => ['nullable', 'string', 'max:30'],
+            'company' => ['nullable', 'string', 'max:150'],
+            'company_size' => ['nullable', 'string', 'max:50'],
+            'service' => ['required', 'string', 'max:200'],
+            'budget' => ['nullable', 'string', 'max:100'],
+            'timeline' => ['nullable', 'string', 'max:100'],
+            'goals' => ['required', 'string', 'min:20', 'max:3000'],
+            'how_heard' => ['nullable', 'string', 'max:200'],
+            'honeypot' => ['nullable', 'size:0'],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -37,27 +37,27 @@ class ConsultationController extends Controller
         }
 
         $lead = Lead::create([
-            'type'    => 'consultation',
-            'name'    => $validated['name'],
-            'email'   => $validated['email'],
-            'phone'   => $validated['phone'] ?? null,
+            'type' => 'consultation',
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'] ?? null,
             'company' => $validated['company'] ?? null,
-            'subject' => 'Consultation: ' . $validated['service'],
+            'subject' => 'Consultation: '.$validated['service'],
             'message' => implode("\n\n", [
-                'Service: ' . $validated['service'],
-                'Company Size: ' . ($validated['company_size'] ?? 'N/A'),
-                'Budget: ' . ($validated['budget'] ?? 'N/A'),
-                'Timeline: ' . ($validated['timeline'] ?? 'N/A'),
-                'Goals: ' . $validated['goals'],
-                'How heard: ' . ($validated['how_heard'] ?? 'N/A'),
+                'Service: '.$validated['service'],
+                'Company Size: '.($validated['company_size'] ?? 'N/A'),
+                'Budget: '.($validated['budget'] ?? 'N/A'),
+                'Timeline: '.($validated['timeline'] ?? 'N/A'),
+                'Goals: '.$validated['goals'],
+                'How heard: '.($validated['how_heard'] ?? 'N/A'),
             ]),
-            'source'  => 'consultation_form',
-            'status'  => 'new',
-            'meta'    => json_encode([
+            'source' => 'consultation_form',
+            'status' => 'new',
+            'meta' => json_encode([
                 'company_size' => $validated['company_size'] ?? null,
-                'budget'       => $validated['budget'] ?? null,
-                'timeline'     => $validated['timeline'] ?? null,
-                'how_heard'    => $validated['how_heard'] ?? null,
+                'budget' => $validated['budget'] ?? null,
+                'timeline' => $validated['timeline'] ?? null,
+                'how_heard' => $validated['how_heard'] ?? null,
             ]),
         ]);
 

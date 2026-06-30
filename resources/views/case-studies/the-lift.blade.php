@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Case Study: The Lift — Production ERP — FairIT Solutions')
+@section('title', 'Case Study: Production ERP for Film & Content — FairIT Solutions')
 @section('description', 'A purpose-built ERP for film, television, and commercial production — replacing spreadsheet-and-inbox sprawl with a single source of truth.')
 
 @section('content')
@@ -463,7 +463,7 @@
         <span class="dash-dot" style="background:#6E6D66;opacity:.5"></span>
         <span class="dash-label">Northlight Productions — Production ERP</span>
       </div>
-      <img src="{{ asset('images/case-studies/production-erp-dashboard.png') }}" alt="Indicative ERP dashboard" class="dash-img" loading="lazy">
+      <img src="{{ asset('images/case-studies/production-erp-dashboard.png') }}" alt="Indicative ERP dashboard" class="dash-img" loading="lazy" width="1120" height="630">
     </div>
     <p class="note">// Indicative dashboard — representative of the live production environment.</p>
   </div>

@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Log;
  */
 class IndexNowService
 {
-    private string $key      = '107984da736e498cfb85b3445a41bc9f';
-    private string $host     = 'fairitsolutions.ch';
+    private string $key = '107984da736e498cfb85b3445a41bc9f';
+
+    private string $host = 'fairitsolutions.ch';
+
     private string $endpoint = 'https://api.indexnow.org/IndexNow';
 
     public function notify(string|array $urls): void
@@ -34,10 +36,10 @@ class IndexNowService
 
         try {
             Http::timeout(5)->post($this->endpoint, [
-                'host'        => $this->host,
-                'key'         => $this->key,
+                'host' => $this->host,
+                'key' => $this->key,
                 'keyLocation' => "https://{$this->host}/{$this->key}.txt",
-                'urlList'     => $urls,
+                'urlList' => $urls,
             ]);
         } catch (\Throwable $e) {
             // IndexNow notification is best-effort; never break the user request

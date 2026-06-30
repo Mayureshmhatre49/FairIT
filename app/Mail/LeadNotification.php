@@ -13,17 +13,15 @@ class LeadNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public readonly Lead $lead)
-    {
-    }
+    public function __construct(public readonly Lead $lead) {}
 
     public function envelope(): Envelope
     {
         $subject = match ($this->lead->type) {
             'consultation' => "🔔 New Consultation Request: {$this->lead->name}",
-            'demo'         => "🔔 New Demo Request: {$this->lead->name}",
-            'audit'        => "🔔 New AI Audit Request: {$this->lead->name}",
-            default        => "🔔 New Contact: {$this->lead->name}",
+            'demo' => "🔔 New Demo Request: {$this->lead->name}",
+            'audit' => "🔔 New AI Audit Request: {$this->lead->name}",
+            default => "🔔 New Contact: {$this->lead->name}",
         };
 
         return new Envelope(subject: $subject);

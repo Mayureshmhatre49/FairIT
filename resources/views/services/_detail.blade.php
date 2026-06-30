@@ -231,7 +231,7 @@
 <section class="section-padding-sm bg-charcoal-950">
     <div class="container-tight text-center" data-animate>
         <h2 class="text-3xl font-bold text-white mb-4">{{ __('services.detail.ready') }}</h2>
-        <p class="text-charcoal-400 mb-8">{{ $service['description'] }}</p>
+        <p class="text-charcoal-400 mb-8 italic">{{ $service['tagline'] }}</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route($service['cta_route']) }}" class="btn-primary-lg">{{ $service['cta_text'] }}</a>
             <a href="{{ route('contact') }}" class="btn-outline-white">{{ __('services.detail.ask_question') }}</a>

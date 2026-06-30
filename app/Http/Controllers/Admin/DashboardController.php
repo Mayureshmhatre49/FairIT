@@ -13,12 +13,12 @@ class DashboardController extends Controller
     public function index(): View
     {
         $stats = [
-            'total_leads'         => Lead::count(),
-            'new_leads'           => Lead::where('status', 'new')->count(),
-            'consultations'       => Lead::where('type', 'consultation')->count(),
-            'total_posts'         => Post::count(),
-            'published_posts'     => Post::published()->count(),
-            'total_testimonials'  => Testimonial::count(),
+            'total_leads' => Lead::count(),
+            'new_leads' => Lead::where('status', 'new')->count(),
+            'consultations' => Lead::where('type', 'consultation')->count(),
+            'total_posts' => Post::count(),
+            'published_posts' => Post::published()->count(),
+            'total_testimonials' => Testimonial::count(),
         ];
 
         $recentLeads = Lead::orderByDesc('created_at')->take(10)->get();

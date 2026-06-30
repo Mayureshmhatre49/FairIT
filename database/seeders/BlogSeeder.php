@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class BlogSeeder extends Seeder
 {
@@ -13,8 +12,8 @@ class BlogSeeder extends Seeder
     {
         $admin = User::where('is_admin', true)->first()
             ?? User::create([
-                'name'     => 'FairIT Solutions',
-                'email'    => 'admin@fairitsolutions.ch',
+                'name' => 'FairIT Solutions',
+                'email' => 'admin@fairitsolutions.ch',
                 'password' => bcrypt('change-this-password-immediately'),
                 'is_admin' => true,
             ]);
@@ -23,15 +22,15 @@ class BlogSeeder extends Seeder
 
             // ── 1 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'AI Transformation for SMEs: The 2025 Playbook',
-                'slug'     => 'ai-transformation-smes-2025-playbook',
+                'title' => 'AI Transformation for SMEs: The 2026 Playbook',
+                'slug' => 'ai-transformation-smes-2026-playbook',
                 'category' => 'AI Strategy',
-                'tags'     => 'AI transformation, SME, AI strategy, business automation, AI consulting',
-                'seo_title'=> 'AI Transformation for SMEs: 2025 Playbook | FairIT Solutions',
-                'seo_desc' => 'A practical, no-fluff guide to AI transformation for small and medium businesses in 2025. Frameworks, tools, and ROI metrics that actually work.',
-                'excerpt'  => 'AI is no longer an enterprise luxury. In 2025, SMEs that build deliberate AI transformation strategies are outpacing larger rivals on speed, cost, and customer experience. Here is exactly how to do it.',
+                'tags' => 'AI transformation, SME, AI strategy, business automation, AI consulting',
+                'seo_title' => 'AI Transformation for SMEs: 2026 Playbook',
+                'seo_desc' => 'A practical, no-fluff guide to AI transformation for small and medium businesses in 2026. Frameworks, tools, and ROI metrics that actually work.',
+                'excerpt' => 'AI is no longer an enterprise luxury. In 2026, SMEs that build deliberate AI transformation strategies are outpacing larger rivals on speed, cost, and customer experience. Here is exactly how to do it.',
                 'published_at' => now()->subDays(3),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 Artificial intelligence has crossed a threshold. What once required a dedicated data science team, a seven-figure budget, and months of integration work can now be deployed by a 10-person company in a matter of weeks. For small and medium enterprises, this is the single biggest competitive shift since the internet.
 
 Yet most SME owners still treat AI as something they will "get to eventually." That hesitation is now costing them.
@@ -40,7 +39,7 @@ Yet most SME owners still treat AI as something they will "get to eventually." T
 
 Large enterprises move slowly. Procurement cycles, IT governance reviews, and legacy system dependencies mean a Fortune 500 company can take 18 months to roll out a tool that an SME can deploy in 30 days. The window to build an AI-first operational advantage is open now — and it will narrow as larger players catch up.
 
-The SMEs winning in 2025 are not the ones with the biggest budgets. They are the ones with the clearest AI strategy.
+The SMEs winning in 2026 are not the ones with the biggest budgets. They are the ones with the clearest AI strategy.
 
 **The Three-Phase AI Transformation Framework**
 
@@ -82,13 +81,13 @@ Underinvesting in data quality. AI is only as good as the data it learns from. C
 
 **What Real AI Transformation Looks Like**
 
-A professional services firm with 15 employees implemented a custom AI copilot in March 2025. Within 60 days, proposal generation time dropped from 4 hours to 40 minutes. Client onboarding questionnaires were auto-populated from previous interactions. The team recovered 22 hours per week — the equivalent of one full-time hire — without adding headcount.
+A professional services firm with 15 employees implemented a custom AI copilot in March 2026. Within 60 days, proposal generation time dropped from 4 hours to 40 minutes. Client onboarding questionnaires were auto-populated from previous interactions. The team recovered 22 hours per week — the equivalent of one full-time hire — without adding headcount.
 
 This is not an outlier. It is the new baseline for AI-ready SMEs.
 
 **Getting Started**
 
-The best AI transformation programs begin with a structured advisory engagement — not a technology selection exercise. Define your business outcomes first: what does success look like in 12 months? Then work backwards to the AI capabilities that enable those outcomes.
+The best AI transformation programmes begin with a structured advisory engagement — not a technology selection exercise. Define your business outcomes first: what does success look like in 12 months? Then work backwards to the AI capabilities that enable those outcomes.
 
 At FairIT Solutions, our AI Transformation Advisory does exactly this. We audit your operations, design your AI roadmap, and help you implement it with the speed of a startup and the rigour of a consulting firm.
 
@@ -98,15 +97,15 @@ CONTENT
 
             // ── 2 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'What Is a Custom AI Copilot — and Does Your Business Need One?',
-                'slug'     => 'what-is-custom-ai-copilot-business',
+                'title' => 'What Is a Custom AI Copilot — and Does Your Business Need One?',
+                'slug' => 'what-is-custom-ai-copilot-business',
                 'category' => 'AI Copilots',
-                'tags'     => 'AI copilot, custom AI, business AI, ChatGPT for business, enterprise AI assistant',
-                'seo_title'=> 'Custom AI Copilot for Business: What It Is & Why You Need One',
-                'seo_desc' => 'Learn what a custom AI copilot is, how it differs from ChatGPT, and whether your business should build one in 2025.',
-                'excerpt'  => 'Generic AI tools like ChatGPT are powerful — but they know nothing about your business. A custom AI copilot trained on your data, policies, and workflows is a fundamentally different proposition.',
+                'tags' => 'AI copilot, custom AI, business AI, ChatGPT for business, enterprise AI assistant',
+                'seo_title' => 'Custom AI Copilot for Business: What It Is & Why You Need One',
+                'seo_desc' => 'Learn what a custom AI copilot is, how it differs from ChatGPT, and whether your business should build one in 2026.',
+                'excerpt' => 'Generic AI tools like ChatGPT are powerful — but they know nothing about your business. A custom AI copilot trained on your data, policies, and workflows is a fundamentally different proposition.',
                 'published_at' => now()->subDays(10),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 Every week another business owner tells us: "We tried ChatGPT but it didn't really work for us." When we dig deeper, the reason is almost always the same. They used a general-purpose AI tool and expected it to understand their specific business. It cannot — and it never will.
 
 A custom AI copilot is different. It is an AI system built specifically around your company's knowledge, processes, terminology, and goals. The difference in output quality is not marginal — it is transformational.
@@ -167,15 +166,15 @@ CONTENT
 
             // ── 3 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'Voice AI for Business: Use Cases, ROI, and How to Get Started',
-                'slug'     => 'voice-ai-for-business-use-cases-roi',
+                'title' => 'Voice AI for Business: Use Cases, ROI, and How to Get Started',
+                'slug' => 'voice-ai-for-business-use-cases-roi',
                 'category' => 'Voice AI',
-                'tags'     => 'voice AI, AI voice agent, conversational AI, call automation, AI phone agent',
-                'seo_title'=> 'Voice AI for Business: Use Cases & ROI in 2025 | FairIT Solutions',
+                'tags' => 'voice AI, AI voice agent, conversational AI, call automation, AI phone agent',
+                'seo_title' => 'Voice AI for Business: Use Cases & ROI in 2026 | FairIT Solutions',
                 'seo_desc' => 'How AI voice agents are replacing call centres, automating bookings, and transforming customer experience — with real ROI data.',
-                'excerpt'  => 'AI voice agents can now handle inbound calls, qualify leads, take bookings, and follow up with customers — at human-level quality, around the clock, at a fraction of the cost of a call centre.',
+                'excerpt' => 'AI voice agents can now handle inbound calls, qualify leads, take bookings, and follow up with customers — at human-level quality, around the clock, at a fraction of the cost of a call centre.',
                 'published_at' => now()->subDays(18),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 The voice AI inflection point arrived quietly. Somewhere in 2024, AI voice agents crossed from "impressive demo" to "genuine business tool." By 2025, the gap between companies using voice AI and those still running traditional call operations has become commercially significant.
 
 This article is a practical guide to voice AI for businesses: what it can actually do today, where the real ROI lies, and how to approach your first deployment.
@@ -232,15 +231,15 @@ CONTENT
 
             // ── 4 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'The Founder AI Operating System: How Top Founders Use AI to Think Faster',
-                'slug'     => 'founder-ai-operating-system-think-faster',
+                'title' => 'The Founder AI Operating System: How Top Founders Use AI to Think Faster',
+                'slug' => 'founder-ai-operating-system-think-faster',
                 'category' => 'Founder Intelligence',
-                'tags'     => 'founder productivity, AI for founders, AI OS, startup AI, founder tools',
-                'seo_title'=> 'Founder AI Operating System: Think Faster, Decide Better | FairIT',
+                'tags' => 'founder productivity, AI for founders, AI OS, startup AI, founder tools',
+                'seo_title' => 'Founder AI Operating System: Think Faster, Decide Better | FairIT',
                 'seo_desc' => 'How the best founders in 2025 use personal AI operating systems to make faster decisions, scale their thinking, and protect their time.',
-                'excerpt'  => 'The best founders in 2025 are not working harder than their competitors. They have built personal AI operating systems that amplify their judgment, automate their operations, and protect their most valuable asset: attention.',
+                'excerpt' => 'The best founders in 2025 are not working harder than their competitors. They have built personal AI operating systems that amplify their judgment, automate their operations, and protect their most valuable asset: attention.',
                 'published_at' => now()->subDays(25),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 There is a specific founder who is quietly pulling ahead in every industry right now. They are not smarter than their competitors. They do not have more funding. They are not working more hours. They have built something different: a personal AI operating system.
 
 This is not a metaphor. It is a literal system — a set of AI tools, workflows, and automations that extend a founder's thinking capacity, compress their decision cycles, and eliminate the low-value work that eats the hours of their competitors.
@@ -297,15 +296,15 @@ CONTENT
 
             // ── 5 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'AI Consulting in Switzerland: What to Look for and What to Avoid',
-                'slug'     => 'ai-consulting-switzerland-what-to-look-for',
+                'title' => 'AI Consulting in Switzerland: What to Look for and What to Avoid',
+                'slug' => 'ai-consulting-switzerland-what-to-look-for',
                 'category' => 'AI Strategy',
-                'tags'     => 'AI consulting Switzerland, AI advisory, AI consultant, Switzerland AI, Zurich AI',
-                'seo_title'=> 'AI Consulting in Switzerland: How to Choose the Right Partner',
+                'tags' => 'AI consulting Switzerland, AI advisory, AI consultant, Switzerland AI, Zurich AI',
+                'seo_title' => 'AI Consulting in Switzerland: How to Choose the Right Partner',
                 'seo_desc' => 'Not all AI consultants deliver real results. Here is how to evaluate AI consulting firms in Switzerland — and the red flags that cost businesses money.',
-                'excerpt'  => 'Switzerland\'s AI consulting market is growing fast — and not all of it delivers real value. Here is how to evaluate an AI advisory firm, what to demand from an engagement, and the warning signs that a consultant is selling hype rather than results.',
+                'excerpt' => 'Switzerland\'s AI consulting market is growing fast — and not all of it delivers real value. Here is how to evaluate an AI advisory firm, what to demand from an engagement, and the warning signs that a consultant is selling hype rather than results.',
                 'published_at' => now()->subDays(35),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 The demand for AI expertise in Switzerland has never been higher. Every week, new consultancies, freelancers, and "AI transformation agencies" appear in the market, each promising to help businesses unlock the power of artificial intelligence.
 
 Some of them are excellent. Many are not.
@@ -314,7 +313,7 @@ This article is a practical guide for Swiss business owners and executives evalu
 
 **The Swiss AI Consulting Landscape in 2025**
 
-Switzerland sits at an interesting intersection: a highly educated technical workforce, a regulatory environment that takes data protection seriously (nFADS, GDPR alignment), a business culture that demands measurable outcomes, and a market that has historically been slower to adopt new technology than the UK or US.
+Switzerland sits at an interesting intersection: a highly educated technical workforce, a regulatory environment that takes data protection seriously (nFADP — the Federal Act on Data Protection — and GDPR alignment), a business culture that demands measurable outcomes, and a market that has historically been slower to adopt new technology than the UK or US.
 
 This last point matters. Many Swiss businesses are earlier in their AI journey than their international counterparts, which means the right AI partner needs both the technical capability to build sophisticated AI systems and the commercial pragmatism to recommend the simple solution when that is what the situation actually requires.
 
@@ -372,15 +371,15 @@ CONTENT
 
             // ── 6 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'How to Build an AI-Powered Sales Pipeline in 30 Days',
-                'slug'     => 'ai-powered-sales-pipeline-30-days',
+                'title' => 'How to Build an AI-Powered Sales Pipeline in 30 Days',
+                'slug' => 'ai-powered-sales-pipeline-30-days',
                 'category' => 'Business Automation',
-                'tags'     => 'AI sales, sales automation, AI CRM, lead qualification, AI pipeline',
-                'seo_title'=> 'AI-Powered Sales Pipeline: Build It in 30 Days | FairIT Solutions',
+                'tags' => 'AI sales, sales automation, AI CRM, lead qualification, AI pipeline',
+                'seo_title' => 'AI-Powered Sales Pipeline: Build It in 30 Days | FairIT Solutions',
                 'seo_desc' => 'A step-by-step guide to building an AI-powered sales pipeline that qualifies leads automatically, personalises outreach, and closes more deals.',
-                'excerpt'  => 'Most sales pipelines are broken by human inconsistency: leads not followed up, qualification criteria ignored, personalisation abandoned under pressure. AI fixes all of this — and you can have a working system in 30 days.',
+                'excerpt' => 'Most sales pipelines are broken by human inconsistency: leads not followed up, qualification criteria ignored, personalisation abandoned under pressure. AI fixes all of this — and you can have a working system in 30 days.',
                 'published_at' => now()->subDays(45),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 A sales pipeline is only as good as the discipline of the people working it. And humans, under pressure, are not disciplined. Leads get forgotten. Follow-ups arrive three days late. Qualification criteria are applied inconsistently. Personalisation disappears when the pipeline is full.
 
 AI does not have these problems. An AI-powered sales pipeline runs with perfect consistency, responds in seconds, and gets better over time. Here is how to build one in 30 days.
@@ -439,15 +438,15 @@ CONTENT
 
             // ── 7 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'AI for the Hospitality Industry: From Booking to Guest Experience',
-                'slug'     => 'ai-hospitality-industry-booking-guest-experience',
+                'title' => 'AI for the Hospitality Industry: From Booking to Guest Experience',
+                'slug' => 'ai-hospitality-industry-booking-guest-experience',
                 'category' => 'Industry AI',
-                'tags'     => 'AI hospitality, hotel AI, restaurant AI, booking automation, guest experience AI',
-                'seo_title'=> 'AI for Hospitality: Booking Automation & Guest Experience in 2025',
+                'tags' => 'AI hospitality, hotel AI, restaurant AI, booking automation, guest experience AI',
+                'seo_title' => 'AI for Hospitality: Booking Automation & Guest Experience in 2025',
                 'seo_desc' => 'How hotels, restaurants, and hospitality businesses are using AI to automate bookings, personalise guest experience, and reduce operational costs.',
-                'excerpt'  => 'The hospitality industry runs on relationship and repetition — exactly the combination where AI delivers the most value. Here is how forward-thinking hotels, restaurants, and hospitality groups are deploying AI in 2025.',
+                'excerpt' => 'The hospitality industry runs on relationship and repetition — exactly the combination where AI delivers the most value. Here is how forward-thinking hotels, restaurants, and hospitality groups are deploying AI in 2025.',
                 'published_at' => now()->subDays(55),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 Hospitality is, at its core, a people business. But the operational infrastructure that enables great hospitality — bookings, scheduling, inventory, communications — is highly repetitive, data-intensive, and expensive to staff. This is exactly where AI creates the most value: automating the operational layer so your team can focus entirely on the human layer.
 
 In 2025, the hospitality businesses pulling ahead are the ones that have deployed AI strategically across their operations. Not replacing their people, but making their people significantly more effective.
@@ -500,15 +499,15 @@ CONTENT
 
             // ── 8 ─────────────────────────────────────────────────────────────────
             [
-                'title'    => 'Managed AI Retainers: Why Ongoing AI Support Beats One-Off Projects',
-                'slug'     => 'managed-ai-retainers-vs-one-off-projects',
+                'title' => 'Managed AI Retainers: Why Ongoing AI Support Beats One-Off Projects',
+                'slug' => 'managed-ai-retainers-vs-one-off-projects',
                 'category' => 'AI Strategy',
-                'tags'     => 'managed AI, AI retainer, AI support, ongoing AI, fractional AI team',
-                'seo_title'=> 'Managed AI Retainers vs One-Off Projects: What Is Better for Business?',
+                'tags' => 'managed AI, AI retainer, AI support, ongoing AI, fractional AI team',
+                'seo_title' => 'Managed AI Retainers vs One-Off Projects: What Is Better for Business?',
                 'seo_desc' => 'Why one-off AI projects underdeliver and how a managed AI retainer gives businesses the continuous support, optimisation, and strategic guidance they need.',
-                'excerpt'  => 'Most businesses approach AI like a construction project: hire someone to build it, pay them off, and hope it works. The businesses that extract the most value from AI treat it like a capability — one that requires ongoing investment, optimisation, and strategic direction.',
+                'excerpt' => 'Most businesses approach AI like a construction project: hire someone to build it, pay them off, and hope it works. The businesses that extract the most value from AI treat it like a capability — one that requires ongoing investment, optimisation, and strategic direction.',
                 'published_at' => now()->subDays(65),
-                'content'  => <<<'CONTENT'
+                'content' => <<<'CONTENT'
 There is a common pattern in AI consulting that nobody talks about openly. A business engages a consultant to build an AI system. The system gets delivered, the consultant moves on, and six months later the system is underperforming — or not being used at all. The business writes off the investment and concludes that "AI did not work for us."
 
 The problem was not the AI. The problem was treating a living capability as a one-time construction project.
@@ -570,9 +569,9 @@ CONTENT
             Post::updateOrCreate(
                 ['slug' => $data['slug']],
                 array_merge($data, [
-                    'author_id'    => $admin->id,
+                    'author_id' => $admin->id,
                     'is_published' => true,
-                    'views'        => rand(40, 280),
+                    'views' => rand(40, 280),
                 ])
             );
         }
@@ -580,14 +579,19 @@ CONTENT
 
     private function toHtml(string $text): string
     {
-        $lines  = explode("\n", trim($text));
-        $html   = '';
+        $lines = explode("\n", trim($text));
+        $html = '';
         $buffer = [];
+        $inList = false;
 
-        $flush = function () use (&$buffer, &$html) {
+        $flush = function () use (&$buffer, &$html, &$inList) {
+            if ($inList) {
+                $html .= "</ul>\n";
+                $inList = false;
+            }
             $para = implode(' ', array_filter(array_map('trim', $buffer)));
             if ($para !== '') {
-                $html .= '<p>' . $para . '</p>' . "\n";
+                $html .= '<p>'.$para.'</p>'."\n";
             }
             $buffer = [];
         };
@@ -597,10 +601,27 @@ CONTENT
 
             if (preg_match('/^\*\*(.+)\*\*$/', $line, $m)) {
                 $flush();
-                $html .= '<h3>' . htmlspecialchars($m[1]) . '</h3>' . "\n";
+                $html .= '<h2>'.htmlspecialchars($m[1]).'</h2>'."\n";
+            } elseif (preg_match('/^-\s+(.+)$/', $line, $m)) {
+                // Flush paragraph buffer if any, before list starts
+                if (! $inList) {
+                    $para = implode(' ', array_filter(array_map('trim', $buffer)));
+                    if ($para !== '') {
+                        $html .= '<p>'.$para.'</p>'."\n";
+                        $buffer = [];
+                    }
+                    $html .= "<ul>\n";
+                    $inList = true;
+                }
+                $liContent = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $m[1]);
+                $html .= '    <li>'.$liContent.'</li>'."\n";
             } elseif ($line === '') {
                 $flush();
             } else {
+                if ($inList) {
+                    $html .= "</ul>\n";
+                    $inList = false;
+                }
                 // inline **bold**
                 $line = preg_replace('/\*\*(.+?)\*\*/', '<strong>$1</strong>', $line);
                 $buffer[] = $line;

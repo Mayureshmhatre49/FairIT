@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\View\View;
 
 class BlogController extends Controller
 {
@@ -19,7 +20,7 @@ class BlogController extends Controller
 
             $categories = Post::published()->distinct()->pluck('category')->filter()->values();
         } catch (\Exception $e) {
-            $posts = new \Illuminate\Pagination\LengthAwarePaginator([], 0, 9);
+            $posts = new LengthAwarePaginator([], 0, 9);
             $categories = collect();
         }
 

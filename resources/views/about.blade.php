@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About FairIT Solutions — AI Consulting Anchored in Enterprise Delivery')
-@section('description', 'Two decades of enterprise software delivery across 16 industries — now powering strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises.')
+@section('title', 'About FairIT Solutions — Enterprise AI Consulting')
+@section('description', 'Two decades of enterprise software delivery across 16 industries, now powering strategic AI consulting and custom AI Operating Systems.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -80,7 +80,7 @@
                 <div class="max-w-3xl">
                     <span class="text-brand-400 font-semibold text-sm uppercase tracking-widest">Engineering pedigree</span>
                     <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white mt-3 leading-tight">Two decades of enterprise software delivery, now applied to the AI era.</h2>
-                    <p class="text-charcoal-300 text-base md:text-lg mt-6 leading-relaxed">Long before generative AI, our team was shipping the systems on which AI now sits — healthcare EMRs at hospital scale, multi-payer insurance verification platforms, peer-to-peer FinTech marketplaces, eGovernance survey platforms used by state governments, and global advertising data engines. The same engineering rigor now powers our AI consulting and custom AI Operating System work.</p>
+                    <p class="text-charcoal-300 text-base md:text-lg mt-6 leading-relaxed">Long before generative AI, our team was shipping the systems on which AI now sits — healthcare EMRs at hospital scale, multi-payer insurance verification platforms, peer-to-peer FinTech marketplaces, eGovernance survey platforms used by state governments, and global advertising data engines. The same engineering rigour now powers our AI consulting and custom AI Operating System work.</p>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 pt-10 border-t border-white/10">
                     <div>
@@ -92,8 +92,8 @@
                         <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Industries served</div>
                     </div>
                     <div>
-                        <div class="text-3xl lg:text-4xl font-black text-white">47</div>
-                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Named clients</div>
+                        <div class="text-3xl lg:text-4xl font-black text-white">40+</div>
+                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Enterprise clients</div>
                     </div>
                     <div>
                         <div class="text-3xl lg:text-4xl font-black text-white">20+</div>
@@ -168,18 +168,18 @@
                     </div>
                 </header>
 
-                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">I bridge real estate, technology, and AI to build future-ready ecosystems — leveraging 20+ years of international experience to create value for investors, businesses, and communities.</p>
+                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">Nishant bridges enterprise technology, real estate, and AI to build future-ready ecosystems — drawing on two decades of international experience across telecom, digital transformation, and entrepreneurship to create measurable value for investors, businesses, and communities.</p>
 
                 <div x-show="open" x-collapse class="text-charcoal-600 text-sm leading-relaxed space-y-3 mb-3">
-                    <p>After a decade of driving large-scale telecom and digital transformation programmes across the USA, UK, Europe, Australia, New Zealand, and India, I transitioned into real estate entrepreneurship, founding a premium villa brand that reimagines luxury living through design, sustainability, and hospitality partnerships.</p>
-                    <p class="font-medium text-charcoal-800">My entrepreneurial journey is fuelled by a passion for innovation and impact:</p>
+                    <p>After a decade of driving large-scale telecom and digital transformation programmes across the USA, UK, Europe, Australia, New Zealand, and India, Nishant transitioned into entrepreneurship — founding a premium villa brand that reimagines luxury living through design, sustainability, and hospitality partnerships.</p>
+                    <p class="font-medium text-charcoal-800">His entrepreneurial journey is driven by a conviction that technology and human ambition are most powerful when combined:</p>
                     <ul class="space-y-2 list-none pl-0">
                         <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Designing and developing investment-ready luxury villa communities powered by clean energy and managed for long-term returns.</span></li>
                         <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Advising businesses on AI-driven digital transformation, from intelligent customer engagement to scalable automation.</span></li>
-                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Mentoring early-stage startups, helping founders sharpen business models, craft investor pitches, and accelerate growth.</span></li>
+                        <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Mentoring early-stage founders, helping them sharpen business models, craft investor pitches, and accelerate growth.</span></li>
                     </ul>
-                    <p>I thrive at the intersection of vision and execution — taking bold ideas, shaping them into market-ready ventures, and building collaborative ecosystems that create lasting value.</p>
-                    <p>Today, my focus is on bridging real estate, technology, and AI to unlock new opportunities for investors, businesses, and communities. I believe the next decade belongs to entrepreneurs who can merge sustainability with intelligence — and I am committed to leading that change.</p>
+                    <p>Nishant operates at the intersection of vision and execution — shaping bold ideas into market-ready ventures and building collaborative ecosystems that create lasting value across industries and borders.</p>
+                    <p>Today his focus is on bridging enterprise technology, real estate, and AI to unlock new opportunities for ambitious founders, growth-stage businesses, and their communities.</p>
                 </div>
 
                 <button type="button" @click="open = !open" class="text-xs font-semibold text-brand-600 hover:text-brand-800 transition-colors inline-flex items-center gap-1 mb-5 self-start">
@@ -211,7 +211,7 @@
                     </div>
                 </header>
 
-                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">An entrepreneur with a strong background in organisational management, brand leadership, and luxury-focused businesses, shaped by international expatriate experience across diverse business cultures.</p>
+                <p class="text-charcoal-700 text-sm leading-relaxed mb-3">An entrepreneur with a strong background in organisational management, brand leadership, and luxury-focused businesses, with extensive international experience across diverse markets and cultures.</p>
 
                 <div x-show="open" x-collapse class="text-charcoal-600 text-sm leading-relaxed space-y-3 mb-3">
                     <p>Annemarie is a Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG). She has lived and worked internationally as an expatriate, gaining extensive exposure to diverse business cultures and global markets.</p>
@@ -253,7 +253,7 @@
                 <div x-show="open" x-collapse class="text-charcoal-600 text-sm leading-relaxed space-y-3 mb-3">
                     <p>Sanjay has been instrumental in providing technology and management consulting to numerous clients across India and overseas. He continuously studies emerging technologies and their applicability in today's world, and currently serves on the panel of four companies providing technology and management support.</p>
                     <p>He has an uncanny ability to translate the complex technical world into layman terms, helping people understand how technology can be implemented simply to make life easier. As a corporate trainer, he has worked with organisations in manufacturing, warehouse management, and B2B/B2C segments.</p>
-                    <p>Sanjay runs the <strong>Sunjay Joshi Training Academy</strong>, where courses are conducted on the impact of social media in marketing — equipping businesses to use social platforms as a tool to boost sales and build product awareness.</p>
+                    <p>Sanjay runs the <strong>Sanjay Joshi Training Academy</strong>, where courses are conducted on the impact of social media in marketing — equipping businesses to use social platforms as a tool to boost sales and build product awareness.</p>
                     <p class="font-medium text-charcoal-800">Current &amp; recent roles:</p>
                     <ul class="space-y-2 list-none pl-0">
                         <li class="flex gap-2"><span class="text-brand-500 mt-1">▸</span><span>Chief Technology Officer — Ellora Systems (2021–present)</span></li>

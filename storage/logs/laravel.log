@@ -4245,3 +4245,17 @@ How heard: N/A</div>
 #23 /Users/nishantmhatre/FairITSolutionsnew/FairIT/artisan(15): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #24 {main}
 "} 
+[2026-06-30 12:06:08] production.ERROR: syntax error, unexpected token "<<", expecting "]" {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"<<\", expecting \"]\" at /Users/nishantmhatre/FairITSolutionsnew/FairIT/config/mail.php:9)
+[stacktrace]
+#0 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(97): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->{closure:Illuminate\\Foundation\\Bootstrap\\LoadConfiguration::loadConfigurationFile():97}()
+#1 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(78): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFile(Object(Illuminate\\Config\\Repository), 'mail', '/Users/nishantm...', Array)
+#2 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php(39): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->loadConfigurationFiles(Object(Illuminate\\Foundation\\Application), Object(Illuminate\\Config\\Repository))
+#3 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(342): Illuminate\\Foundation\\Bootstrap\\LoadConfiguration->bootstrap(Object(Illuminate\\Foundation\\Application))
+#4 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(187): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#5 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(171): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#6 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(145): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#7 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1220): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#8 /Users/nishantmhatre/FairITSolutionsnew/FairIT/public/index.php(20): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#9 /Users/nishantmhatre/FairITSolutionsnew/FairIT/vendor/laravel/framework/src/Illuminate/Foundation/resources/server.php(23): require_once('/Users/nishantm...')
+#10 {main}
+"} 

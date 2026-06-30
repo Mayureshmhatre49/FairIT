@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Contact FairIT Solutions — Get in Touch')
-@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Headquartered in Pune, India, with offices in Switzerland, Germany, and Alibag.')
+@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Headquartered in Pune, India, with offices in Switzerland and Germany.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -22,7 +22,7 @@
             "@id": "https://fairitsolutions.ch/#organization",
             "name": "FairIT Solutions",
             "legalName": "TRNM Digital Consulting LLP",
-            "alternateName": "TRNM Digital Consulting LLP",
+            "alternateName": "FairIT Solutions",
             "url": "https://fairitsolutions.ch",
             "sameAs": [
                 "https://www.linkedin.com/company/fair-it-solutions/",
@@ -246,7 +246,7 @@
                         {{-- Nishant --}}
                         <div class="flex items-center gap-4">
                             @if(file_exists(public_path('images/founders/nishant.jpg')))
-                            <img src="{{ asset('images/founders/nishant.jpg') }}" alt="Nishant Mhatre" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy">
+                            <img src="{{ asset('images/founders/nishant.jpg') }}" alt="Nishant Mhatre" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy" width="56" height="56">
                             @else
                             <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-brand-600 text-white shadow-glow-sm">NM</div>
                             @endif
@@ -265,7 +265,7 @@
                         {{-- Annemarie --}}
                         <div class="flex items-center gap-4">
                             @if(file_exists(public_path('images/founders/annemarie.jpg')))
-                            <img src="{{ asset('images/founders/annemarie.jpg') }}" alt="Annemarie M. Sickeler" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy">
+                            <img src="{{ asset('images/founders/annemarie.jpg') }}" alt="Annemarie M. Sickeler" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy" width="56" height="56">
                             @else
                             <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-amber-600 text-white shadow-glow-sm">AMS</div>
                             @endif
@@ -284,7 +284,7 @@
                         {{-- Sanjay --}}
                         <div class="flex items-center gap-4">
                             @if(file_exists(public_path('images/founders/sanjay.jpg')))
-                            <img src="{{ asset('images/founders/sanjay.jpg') }}" alt="Sanjay Joshi" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy">
+                            <img src="{{ asset('images/founders/sanjay.jpg') }}" alt="Sanjay Joshi" class="w-14 h-14 rounded-xl object-cover flex-shrink-0 shadow-sm" loading="lazy" width="56" height="56">
                             @else
                             <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-lg font-bold bg-emerald-600 text-white shadow-glow-sm">SJ</div>
                             @endif

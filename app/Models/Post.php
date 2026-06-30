@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use App\Services\IndexNowService;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 
 class Post extends Model
 {
@@ -45,7 +45,7 @@ class Post extends Model
     protected $casts = [
         'is_published' => 'boolean',
         'published_at' => 'datetime',
-        'views'        => 'integer',
+        'views' => 'integer',
     ];
 
     public function scopePublished(Builder $query): Builder

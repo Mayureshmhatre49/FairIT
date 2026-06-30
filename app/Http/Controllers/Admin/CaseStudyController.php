@@ -17,7 +17,7 @@ class CaseStudyController extends Controller
             ->when($request->domain, fn ($q, $d) => $q->where('domain', $d))
             ->when($request->search, fn ($q, $s) => $q->where(function ($qq) use ($s) {
                 $qq->where('project_name', 'like', "%{$s}%")
-                   ->orWhere('client_name', 'like', "%{$s}%");
+                    ->orWhere('client_name', 'like', "%{$s}%");
             }))
             ->orderByDesc('is_featured')
             ->orderBy('order')
@@ -73,21 +73,21 @@ class CaseStudyController extends Controller
     private function validateStudy(Request $request): array
     {
         $validated = $request->validate([
-            'client_name'   => ['nullable', 'string', 'max:255'],
-            'project_name'  => ['required', 'string', 'max:255'],
-            'domain'        => ['required', 'string', 'max:100'],
-            'summary'       => ['required', 'string'],
-            'challenge'     => ['nullable', 'string'],
-            'approach'      => ['nullable', 'string'],
-            'outcome'       => ['nullable', 'string'],
+            'client_name' => ['nullable', 'string', 'max:255'],
+            'project_name' => ['required', 'string', 'max:255'],
+            'domain' => ['required', 'string', 'max:100'],
+            'summary' => ['required', 'string'],
+            'challenge' => ['nullable', 'string'],
+            'approach' => ['nullable', 'string'],
+            'outcome' => ['nullable', 'string'],
             'tech_keywords' => ['nullable', 'string', 'max:500'],
-            'revenue_usd'   => ['nullable', 'integer', 'min:0'],
-            'is_ongoing'    => ['nullable', 'boolean'],
-            'is_featured'   => ['nullable', 'boolean'],
-            'is_published'  => ['nullable', 'boolean'],
-            'order'         => ['nullable', 'integer', 'min:0'],
-            'seo_title'     => ['nullable', 'string', 'max:70'],
-            'seo_desc'      => ['nullable', 'string', 'max:160'],
+            'revenue_usd' => ['nullable', 'integer', 'min:0'],
+            'is_ongoing' => ['nullable', 'boolean'],
+            'is_featured' => ['nullable', 'boolean'],
+            'is_published' => ['nullable', 'boolean'],
+            'order' => ['nullable', 'integer', 'min:0'],
+            'seo_title' => ['nullable', 'string', 'max:70'],
+            'seo_desc' => ['nullable', 'string', 'max:160'],
         ]);
 
         foreach (['is_ongoing', 'is_featured', 'is_published'] as $flag) {

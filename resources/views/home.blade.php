@@ -15,7 +15,7 @@
             "@id": "https://fairitsolutions.ch/#organization",
             "name": "FairIT Solutions",
             "legalName": "TRNM Digital Consulting LLP",
-            "alternateName": "TRNM Digital Consulting LLP",
+            "alternateName": "FairIT Solutions",
             "url": "https://fairitsolutions.ch",
             "sameAs": [
                 "https://www.linkedin.com/company/fair-it-solutions/",
@@ -102,9 +102,6 @@
                 "Business Automation",
                 "AI Operating Systems",
                 "Founder Strategy"
-            ],
-            "sameAs": [
-                "https://linkedin.com/company/fairitsolutions"
             ]
         },
         {
@@ -127,7 +124,7 @@
                 {
                     "@type": "ReserveAction",
                     "target": { "@type": "EntryPoint", "urlTemplate": "https://fairitsolutions.ch/consultation" },
-                    "result": { "@type": "Reservation", "name": "Free 30-minute AI strategy consultation" }
+                    "result": { "@type": "Reservation", "name": "Free 45-minute AI strategy consultation" }
                 }
             ]
         },
@@ -228,6 +225,17 @@
             "email": "Annemarie@fairitsolutions.ch"
         },
         {
+            "@type": "Person",
+            "@id": "https://fairitsolutions.ch/about#sanjay",
+            "name": "Sanjay Joshi",
+            "jobTitle": "Co-Founder & CTO",
+            "description": "Entrepreneur and management consultant with two decades of technology advisory experience across IT, manufacturing, agriculture, and B2B sectors in India and internationally.",
+            "knowsAbout": ["Technology Consulting", "Management Consulting", "Business Process Mapping", "ERP", "SAP", "Corporate Training", "Artificial Intelligence"],
+            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
+            "sameAs": ["https://www.linkedin.com/in/joshisanjay/"],
+            "email": "Sanjay@fairitsolutions.in"
+        },
+        {
             "@type": "ProfessionalService",
             "@id": "https://fairitsolutions.ch/#business",
             "name": "FairIT Solutions",
@@ -292,7 +300,7 @@
     <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-brand-600/10 rounded-full blur-3xl animate-float"></div>
     <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
 
-    <div class="relative container-wide pt-24 pb-20 text-center">
+    <div class="relative container-wide pt-24 pb-36 text-center">
 
         {{-- Top Badge --}}
         <div data-animate class="flex justify-center mb-8">
@@ -353,16 +361,16 @@
     </div>
 
     {{-- Scroll indicator --}}
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-charcoal-500">
-        <span class="text-xs font-medium tracking-widest uppercase">{{ __('home.hero.scroll') }}</span>
-        <div class="w-px h-12 bg-gradient-to-b from-charcoal-500 to-transparent"></div>
-    </div>
+    <a href="#three-pillars" class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-charcoal-500 hover:text-brand-400 transition-colors group cursor-pointer" aria-label="Scroll to next section">
+        <span class="text-xs font-medium tracking-widest uppercase group-hover:translate-y-1 transition-transform duration-300">{{ __('home.hero.scroll') }}</span>
+        <div class="w-px h-12 bg-gradient-to-b from-charcoal-500 to-transparent group-hover:h-16 transition-all duration-300"></div>
+    </a>
 </section>
 
 {{-- ============================================================
      THREE PILLARS
 ============================================================ --}}
-<section class="section-padding bg-white" aria-label="Core value pillars">
+<section id="three-pillars" class="section-padding bg-white" aria-label="Core value pillars">
     <div class="container-wide">
         <div class="text-center mb-16" data-animate>
             <span class="section-label">{{ __('home.pillars.label') }}</span>

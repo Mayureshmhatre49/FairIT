@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Lead;
 use App\Mail\LeadNotification;
-use Illuminate\Http\Request;
+use App\Models\Lead;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
@@ -20,13 +20,13 @@ class ContactController extends Controller
     public function submit(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'name'    => ['required', 'string', 'max:100'],
-            'email'   => ['required', 'email', 'max:150'],
+            'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150'],
             'company' => ['nullable', 'string', 'max:150'],
-            'phone'   => ['nullable', 'string', 'max:30'],
+            'phone' => ['nullable', 'string', 'max:30'],
             'subject' => ['required', 'string', 'max:200'],
             'message' => ['required', 'string', 'min:20', 'max:3000'],
-            'honeypot'=> ['nullable', 'size:0'],
+            'honeypot' => ['nullable', 'size:0'],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -34,15 +34,15 @@ class ContactController extends Controller
         }
 
         $lead = Lead::create([
-            'type'    => 'contact',
-            'name'    => $validated['name'],
-            'email'   => $validated['email'],
+            'type' => 'contact',
+            'name' => $validated['name'],
+            'email' => $validated['email'],
             'company' => $validated['company'] ?? null,
-            'phone'   => $validated['phone'] ?? null,
+            'phone' => $validated['phone'] ?? null,
             'subject' => $validated['subject'],
             'message' => $validated['message'],
-            'source'  => 'contact_form',
-            'status'  => 'new',
+            'source' => 'contact_form',
+            'status' => 'new',
         ]);
 
         $this->sendNotification($lead);
@@ -53,11 +53,11 @@ class ContactController extends Controller
     public function demo(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'name'    => ['required', 'string', 'max:100'],
-            'email'   => ['required', 'email', 'max:150'],
+            'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150'],
             'company' => ['nullable', 'string', 'max:150'],
             'product' => ['required', 'string', 'max:100'],
-            'honeypot'=> ['nullable', 'size:0'],
+            'honeypot' => ['nullable', 'size:0'],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -65,14 +65,14 @@ class ContactController extends Controller
         }
 
         $lead = Lead::create([
-            'type'    => 'demo',
-            'name'    => $validated['name'],
-            'email'   => $validated['email'],
+            'type' => 'demo',
+            'name' => $validated['name'],
+            'email' => $validated['email'],
             'company' => $validated['company'] ?? null,
-            'subject' => 'Demo Request: ' . $validated['product'],
-            'message' => 'Demo requested for: ' . $validated['product'],
-            'source'  => 'demo_form',
-            'status'  => 'new',
+            'subject' => 'Demo Request: '.$validated['product'],
+            'message' => 'Demo requested for: '.$validated['product'],
+            'source' => 'demo_form',
+            'status' => 'new',
         ]);
 
         $this->sendNotification($lead);
@@ -83,11 +83,11 @@ class ContactController extends Controller
     public function waitlist(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'name'    => ['required', 'string', 'max:100'],
-            'email'   => ['required', 'email', 'max:150'],
-            'stage'   => ['nullable', 'string', 'max:100'],
+            'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150'],
+            'stage' => ['nullable', 'string', 'max:100'],
             'product' => ['required', 'string', 'max:100'],
-            'honeypot'=> ['nullable', 'size:0'],
+            'honeypot' => ['nullable', 'size:0'],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -95,28 +95,28 @@ class ContactController extends Controller
         }
 
         $lead = Lead::create([
-            'type'    => 'waitlist',
-            'name'    => $validated['name'],
-            'email'   => $validated['email'],
-            'subject' => 'Waitlist: ' . $validated['product'],
-            'message' => 'Company stage: ' . ($validated['stage'] ?? 'Not provided'),
-            'source'  => strtolower(str_replace(' ', '_', $validated['product'])) . '_waitlist',
-            'status'  => 'new',
+            'type' => 'waitlist',
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'subject' => 'Waitlist: '.$validated['product'],
+            'message' => 'Company stage: '.($validated['stage'] ?? 'Not provided'),
+            'source' => strtolower(str_replace(' ', '_', $validated['product'])).'_waitlist',
+            'status' => 'new',
         ]);
 
         $this->sendNotification($lead);
 
-        return back()->with('success', 'You are on the ' . $validated['product'] . ' waitlist. We will email you the moment access opens.');
+        return back()->with('success', 'You are on the '.$validated['product'].' waitlist. We will email you the moment access opens.');
     }
 
     public function audit(Request $request): JsonResponse
     {
         $validated = $request->validate([
-            'name'    => ['required', 'string', 'max:100'],
-            'email'   => ['required', 'email', 'max:150'],
+            'name' => ['required', 'string', 'max:100'],
+            'email' => ['required', 'email', 'max:150'],
             'company' => ['nullable', 'string', 'max:150'],
-            'size'    => ['nullable', 'string', 'max:50'],
-            'honeypot'=> ['nullable', 'size:0'],
+            'size' => ['nullable', 'string', 'max:50'],
+            'honeypot' => ['nullable', 'size:0'],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -124,14 +124,14 @@ class ContactController extends Controller
         }
 
         $lead = Lead::create([
-            'type'    => 'audit',
-            'name'    => $validated['name'],
-            'email'   => $validated['email'],
+            'type' => 'audit',
+            'name' => $validated['name'],
+            'email' => $validated['email'],
             'company' => $validated['company'] ?? null,
             'subject' => 'AI Audit Request',
-            'message' => 'Company size: ' . ($validated['size'] ?? 'Not provided'),
-            'source'  => 'audit_form',
-            'status'  => 'new',
+            'message' => 'Company size: '.($validated['size'] ?? 'Not provided'),
+            'source' => 'audit_form',
+            'status' => 'new',
         ]);
 
         $this->sendNotification($lead);

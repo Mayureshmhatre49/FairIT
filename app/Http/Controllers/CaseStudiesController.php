@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CaseStudy;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\View\View;
 
 class CaseStudiesController extends Controller
@@ -15,8 +16,8 @@ class CaseStudiesController extends Controller
                 ->when($request->domain, fn ($q, $d) => $q->where('domain', $d))
                 ->when($request->search, fn ($q, $s) => $q->where(function ($qq) use ($s) {
                     $qq->where('project_name', 'like', "%{$s}%")
-                       ->orWhere('client_name', 'like', "%{$s}%")
-                       ->orWhere('summary', 'like', "%{$s}%");
+                        ->orWhere('client_name', 'like', "%{$s}%")
+                        ->orWhere('summary', 'like', "%{$s}%");
                 }))
                 ->orderByDesc('is_featured')
                 ->orderBy('order')
@@ -33,7 +34,7 @@ class CaseStudiesController extends Controller
 
             $totalCount = CaseStudy::published()->count();
         } catch (\Exception $e) {
-            $studies = new \Illuminate\Pagination\LengthAwarePaginator([], 0, 12);
+            $studies = new LengthAwarePaginator([], 0, 12);
             $domains = collect();
             $totalCount = 0;
         }
@@ -56,7 +57,7 @@ class CaseStudiesController extends Controller
             abort(404);
         }
 
-        if ($slug === 'the-lift') {
+        if ($slug === 'production-erp-film-content') {
             return view('case-studies.the-lift', compact('study', 'related'));
         }
 

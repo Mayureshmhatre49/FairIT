@@ -19,7 +19,7 @@ class SitemapController extends Controller
             ->orderBy('order')
             ->get(['slug', 'project_name', 'summary', 'updated_at']);
 
-        $industriesController = new \App\Http\Controllers\IndustriesController();
+        $industriesController = new IndustriesController;
         $industries = array_keys($industriesController->getIndustries());
 
         $content = view('sitemap', compact('posts', 'caseStudies', 'industries'))->render();

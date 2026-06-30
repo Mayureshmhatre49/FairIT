@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'AI Services — FairIT Solutions | AI Advisory, Copilots, Voice AI & More')
-@section('description', 'Premium AI services: transformation advisory, custom copilots, voice AI automation, managed retainers, and founder growth advisory. Results-driven, globally delivered.')
+@section('title', 'Enterprise AI Services — FairIT Solutions')
+@section('description', 'Premium AI services: strategic AI advisory, custom copilots, voice automation, and managed retainers. Globally delivered, results-driven.')
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
