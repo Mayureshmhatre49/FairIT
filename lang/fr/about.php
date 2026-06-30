@@ -2,17 +2,17 @@
 
 return [
     'hero' => [
-        'label'    => 'À propos de nous',
-        'title'    => 'Nous construisons une IA<br>qui fonctionne vraiment',
+        'label' => 'À propos de nous',
+        'title' => 'Nous construisons une IA<br>qui fonctionne vraiment',
         'subtitle' => 'FairIT Solutions développe des systèmes IA qui résolvent la complexité du monde réel. Nous combinons la compréhension des affaires, l\'excellence technique et la réflexion produit pour créer une IA qui produit des résultats mesurables.',
     ],
     'mission' => [
-        'label'  => 'Notre mission',
-        'title'  => 'Démocratiser l\'IA pour les fondateurs, les maisons & la vie',
+        'label' => 'Notre mission',
+        'title' => 'Démocratiser l\'IA pour les fondateurs, les maisons & la vie',
         'body_1' => 'Les systèmes IA les plus puissants du monde appartiennent à une poignée d\'entreprises valant des billions. Nous pensons que cela devrait changer.',
         'body_2' => 'FairIT Solutions a été fondée sur une conviction simple : que l\'intelligence des entreprises les mieux gérées au monde devrait être accessible à chaque fondateur ambitieux, à chaque entreprise sérieuse et à chaque famille moderne — quelle que soit leur taille, leur budget ou leur sophistication technique.',
         'body_3' => 'Nous construisons des systèmes d\'exploitation IA qui donnent à nos clients l\'effet de levier, la clarté et la vélocité d\'exécution dont ils ont besoin pour concurrencer au plus haut niveau. Pas seulement des outils IA. De vrais systèmes qui changent leur façon d\'opérer chaque jour.',
-        'stats'  => [
+        'stats' => [
             ['num' => '3', 'label' => 'Systèmes d\'exploitation IA en développement'],
             ['num' => '5', 'label' => 'Lignes de services IA premium'],
             ['num' => '8', 'label' => 'Secteurs servis'],
@@ -40,9 +40,9 @@ return [
         ],
     ],
     'cta' => [
-        'title'         => 'Prêt à travailler ensemble ?',
-        'subtitle'      => 'Commençons par une conversation sur votre plus grande opportunité IA.',
-        'cta_primary'   => 'Demander une consultation',
+        'title' => 'Prêt à travailler ensemble ?',
+        'subtitle' => 'Commençons par une conversation sur votre plus grande opportunité IA.',
+        'cta_primary' => 'Demander une consultation',
         'cta_secondary' => 'Nous contacter',
     ],
 ];

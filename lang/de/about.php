@@ -2,17 +2,17 @@
 
 return [
     'hero' => [
-        'label'    => 'Über uns',
-        'title'    => 'Wir bauen KI, die<br>wirklich funktioniert',
+        'label' => 'Über uns',
+        'title' => 'Wir bauen KI, die<br>wirklich funktioniert',
         'subtitle' => 'FairIT Solutions entwickelt KI-Systeme, die reale Komplexität lösen. Wir verbinden Geschäftsverständnis, Ingenieursexzellenz und Produktdenken, um KI zu schaffen, die messbare Ergebnisse liefert.',
     ],
     'mission' => [
-        'label'  => 'Unsere Mission',
-        'title'  => 'KI demokratisieren für Gründer, Zuhause & Leben',
+        'label' => 'Unsere Mission',
+        'title' => 'KI demokratisieren für Gründer, Zuhause & Leben',
         'body_1' => 'Die leistungsfähigsten KI-Systeme der Welt gehören einer Handvoll Billionen-Dollar-Unternehmen. Wir glauben, dass sich das ändern sollte.',
         'body_2' => 'FairIT Solutions wurde auf einer einfachen Überzeugung gegründet: dass die Intelligenz der bestgeführten Unternehmen der Welt für jeden ambitionierten Gründer, jedes ernsthafte Unternehmen und jede moderne Familie zugänglich sein sollte — unabhängig von Grösse, Budget oder technischem Sachverstand.',
         'body_3' => 'Wir bauen KI-Betriebssysteme, die unseren Kunden den Hebel, die Klarheit und die Ausführungsgeschwindigkeit geben, die sie brauchen, um auf höchstem Niveau zu konkurrieren. Nicht nur KI-Werkzeuge. Echte Systeme, die ihre tägliche Betriebsweise verändern.',
-        'stats'  => [
+        'stats' => [
             ['num' => '3', 'label' => 'KI-Betriebssysteme in Entwicklung'],
             ['num' => '5', 'label' => 'Premium-KI-Leistungslinien'],
             ['num' => '8', 'label' => 'Bediente Branchen'],
@@ -40,9 +40,9 @@ return [
         ],
     ],
     'cta' => [
-        'title'         => 'Bereit, zusammenzuarbeiten?',
-        'subtitle'      => 'Beginnen wir mit einem Gespräch über Ihre grösste KI-Möglichkeit.',
-        'cta_primary'   => 'Beratung anfragen',
+        'title' => 'Bereit, zusammenzuarbeiten?',
+        'subtitle' => 'Beginnen wir mit einem Gespräch über Ihre grösste KI-Möglichkeit.',
+        'cta_primary' => 'Beratung anfragen',
         'cta_secondary' => 'Kontakt aufnehmen',
     ],
 ];

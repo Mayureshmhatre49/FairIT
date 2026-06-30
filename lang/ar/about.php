@@ -2,17 +2,17 @@
 
 return [
     'hero' => [
-        'label'    => 'About Us',
-        'title'    => 'We Build AI That<br>Actually Works',
+        'label' => 'About Us',
+        'title' => 'We Build AI That<br>Actually Works',
         'subtitle' => 'FairIT Solutions builds AI systems that solve real-world complexity. We combine business understanding, engineering excellence, and product thinking to create AI that delivers measurable outcomes.',
     ],
     'mission' => [
-        'label'  => 'Our Mission',
-        'title'  => 'Democratising AI for Founders, Homes & Life',
+        'label' => 'Our Mission',
+        'title' => 'Democratising AI for Founders, Homes & Life',
         'body_1' => 'The most powerful AI systems in the world belong to a handful of trillion-dollar companies. We believe that should change.',
         'body_2' => 'FairIT Solutions was founded on a simple belief: that the intelligence of the best-run companies in the world should be accessible to every ambitious founder, every serious business, and every modern family — regardless of size, budget, or technical sophistication.',
         'body_3' => 'We build AI operating systems that give our clients the leverage, clarity, and execution velocity they need to compete at the highest level. Not just AI tools. Real systems that change how they operate every day.',
-        'stats'  => [
+        'stats' => [
             ['num' => '3', 'label' => 'أنظمة تشغيل ذكاء اصطناعي قيد التطوير'],
             ['num' => '5', 'label' => 'خطوط خدمات ذكاء اصطناعي متميزة'],
             ['num' => '8', 'label' => 'قطاعات نخدمها'],
@@ -40,9 +40,9 @@ return [
         ],
     ],
     'cta' => [
-        'title'         => 'Ready to Work Together?',
-        'subtitle'      => 'Let\'s start with a conversation about your biggest AI opportunity.',
-        'cta_primary'   => 'Request a Consultation',
+        'title' => 'Ready to Work Together?',
+        'subtitle' => 'Let\'s start with a conversation about your biggest AI opportunity.',
+        'cta_primary' => 'Request a Consultation',
         'cta_secondary' => 'Contact Us',
     ],
 ];

@@ -2,17 +2,17 @@
 
 return [
     'hero' => [
-        'label'    => 'About Us',
-        'title'    => 'We Build AI That<br>Actually Works',
+        'label' => 'About Us',
+        'title' => 'We Build AI That<br>Actually Works',
         'subtitle' => 'FairIT Solutions builds AI systems that solve real-world complexity. We combine business understanding, engineering excellence, and product thinking to create AI that delivers measurable outcomes.',
     ],
     'mission' => [
-        'label'  => 'Our Mission',
-        'title'  => 'Bringing enterprise-grade AI to founders and growth-focused enterprises.',
+        'label' => 'Our Mission',
+        'title' => 'Bringing enterprise-grade AI to founders and growth-focused enterprises.',
         'body_1' => 'The most powerful AI systems in the world belong to a handful of trillion-dollar companies. We believe that intelligence should be accessible to every ambitious founder and every serious business, regardless of size, budget, or technical sophistication.',
         'body_2' => 'FairIT Solutions delivers strategic AI consulting and custom AI Operating Systems anchored in two decades of enterprise software experience — healthcare EMRs, FinTech marketplaces, eGovernance platforms, and global data engines that real organisations depend on every day.',
         'body_3' => 'We build AI systems that give clients the leverage, clarity, and execution velocity they need to compete at the highest level. Not AI experiments. Production systems that change how they operate.',
-        'stats'  => [
+        'stats' => [
             ['num' => '3',  'label' => 'AI Operating Systems in development'],
             ['num' => '5',  'label' => 'Premium AI service lines'],
             ['num' => '16', 'label' => 'Industries served'],
@@ -40,9 +40,9 @@ return [
         ],
     ],
     'cta' => [
-        'title'         => 'Ready to Work Together?',
-        'subtitle'      => 'Let\'s start with a conversation about your biggest AI opportunity.',
-        'cta_primary'   => 'Request a Consultation',
+        'title' => 'Ready to Work Together?',
+        'subtitle' => 'Let\'s start with a conversation about your biggest AI opportunity.',
+        'cta_primary' => 'Request a Consultation',
         'cta_secondary' => 'Contact Us',
     ],
 ];
