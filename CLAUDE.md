@@ -24,6 +24,12 @@ This is the most important thing to get right when editing copy, legal pages, or
 
 All four addresses are visibly listed on `/contact`, with the first line being "FairIT Solutions" for consistency. The `.ch` domain is intentionally preserved despite the Indian HQ — it's a brand positioning choice, not a legal claim. Don't "fix" it.
 
+### Domains in production
+
+- **Live production site**: `https://fairitsolutions.in` (Indian TLD, served by the same Laravel app)
+- **Brand canonical domain**: `https://fairitsolutions.ch` (used in JSON-LD `@id` URIs, social handles, email signatures)
+- Both resolve to the same content. Schema.org `@id` URIs use `.ch` deliberately as opaque identifiers — they are not fetch URLs and don't need to match the live host. Don't sweep-replace `.ch` → `.in`.
+
 ### Founders (in display order)
 
 | Founder | Role | Email | LinkedIn |
@@ -95,7 +101,63 @@ The user explicitly asked to "tone down anything tough to implement." Apply thes
 
 ---
 
+## Production deployment
+
+**Read this before pushing any change to CSS/JS, DB schema, or seeded data.** The deploy pattern is unusual.
+
+### Vite build artifacts are committed to git
+
+`public/build/` is **NOT** in `.gitignore`. Prod doesn't run `npm run build` — it just `git pull`s the pre-built bundle. This means:
+
+- Every time you touch `resources/css/*` or `resources/js/*`, you **must** run `npm run build` locally before commit. Otherwise the source CSS/JS change reaches prod but the compiled bundle doesn't, and the change silently never takes effect.
+- The bundle filename is hashed (e.g. `app-CFcNnJcQ.css`). Blade's `@vite(...)` directive reads `public/build/manifest.json` to resolve the current hash. New build → new hash → new filename → cache busts automatically. But you have to actually rebuild.
+- **Symptom of forgetting**: a CSS change works locally (`npm run dev` HMR) but is invisible on prod. The browser is fetching the old hashed bundle from the last commit's `public/build/`.
+- **Quick check**: `curl -s https://fairitsolutions.in/about | grep -oE 'app-[A-Za-z0-9]+\.css'` should match the filename in your local `public/build/assets/`.
+
+### Prod runbook after `git pull origin main`
+
+```bash
+# Only if composer.lock / package.json changed:
+composer install --no-dev --optimize-autoloader
+
+# Only if there are new migrations:
+php artisan migrate --force
+
+# Only if there's new seed data (e.g. CaseStudySeeder additions):
+php artisan db:seed --class=CaseStudySeeder --force
+
+# Always — clears compiled Blade templates so markup changes take effect:
+php artisan view:clear
+
+# Optional perf rebuild:
+php artisan config:cache && php artisan route:cache
+```
+
+The `--force` flags are required because Laravel refuses `migrate`/`db:seed` in `APP_ENV=production` without explicit confirmation.
+
+### Things that almost-always trip people up
+
+- **Tailwind class purging.** If you use a class string that doesn't already appear anywhere in source (e.g. `text-charcoal-750`), Tailwind won't include it in the bundle. After adding a brand-new class, always check the rebuild output — if the file size didn't change at all, it's likely your class wasn't picked up. Run `npm run build` again with the class string actually in a source file.
+- **DB is not in git.** `database/database.sqlite` is gitignored. New rows added by you locally don't reach prod — only the seeder code does. To get new seed data live, run the seeder on prod after pulling.
+- **CDN / browser cache.** If you use Cloudflare or similar, purge the cache for `/build/assets/*` after a CSS/JS deploy. Browsers cache hashed bundles forever, but the hash changes on rebuild, so end users get the new file as soon as the HTML changes — unless an aggressive CDN is in front. Hard refresh (⌘⇧R) on your own browser is the quickest sanity check.
+
+---
+
 ## Design system (durable bits)
+
+### Tailwind `charcoal-*` palette is custom, NOT standard Tailwind
+
+This is the easiest gotcha to fall into and the hardest to spot until your text is invisible. `tailwind.config.js` defines a **Bootstrap-style gray scale** under the `charcoal-*` namespace, not the standard Tailwind slate values. The shades are much lighter than the same numbers in stock Tailwind.
+
+| Class | This project | Stock Tailwind | Practical use |
+|---|---|---|---|
+| charcoal-400 | `#ced4da` | `#94a3b8` | **Disappears on white.** Only use against dark backgrounds. |
+| charcoal-500 | `#adb5bd` | `#64748b` | Still light. Borderline on white. |
+| charcoal-600 | `#6c757d` | `#475569` | **Lowest readable gray on white.** Matches `.nav-link`. Use for body text on light. |
+| charcoal-700 | `#495057` | `#334155` | Use for emphasised text on light. |
+| charcoal-950 | `#0d0f12` | `#020617` | Dark surfaces, hero backgrounds. |
+
+**Rule of thumb when adding text on white**: start at `text-charcoal-600`. If you write `text-charcoal-400` or `text-charcoal-500` against a white-ish background, expect a "text is invisible" bug report. Same goes for SVG `fill` values in lockup files — `#475569` (charcoal-700 stock) and below for light backgrounds.
 
 ### Brand identity
 
@@ -145,11 +207,25 @@ Every claim ties to a real statement in the privacy policy or service FAQs. Tran
 
 ## Case studies
 
-- **61 case studies** seeded from `database/seeders/CaseStudySeeder.php`. The source was `Boston Byte Project Details.xlsx`. Idempotent via `updateOrCreate(['slug' => ...])`.
+- **61 case studies** seeded from `database/seeders/CaseStudySeeder.php`. The source was `Boston Byte Project Details.xlsx` (gitignored — see "Sensitive files" below). Idempotent via `updateOrCreate(['slug' => ...])`.
 - **Revenue (`revenue_usd`) is stored internally but never displayed publicly** — decision was deliberate. Admin form shows it, public pages do not. Don't add it to the public Blade.
 - Schema: `client_name`, `project_name`, `slug`, `domain`, `summary`, `challenge`, `approach`, `outcome`, `tech_keywords`, `revenue_usd`, `is_ongoing`, `is_featured`, `is_published`, `order`, `seo_title`, `seo_desc`.
 - Anonymous-client rows render as **"Confidential Client"** via `CaseStudy::getDisplayClientNameAttribute()`. Two original rows (ePoll, Velir) have `client_name = null` on purpose.
+- Index card thumbnails use a `$study->thumbnail_svg` accessor on the model — an inline SVG generated per-study (rendered raw via `{!! !!}`). If you add a new card layout, this accessor is the visual element.
 - Detail-page Blade renders four H2 sections: **Project Overview**, **The Challenge**, **Our Approach**, **The Outcome**. Plus a sticky-right sidebar with industry / client / status / tech chips.
+
+### Per-slug custom view override
+
+`CaseStudiesController::show` has a fallback pattern for case studies that need bespoke layouts:
+
+```php
+if ($slug === 'production-erp-film-content') {
+    return view('case-studies.the-lift', compact('study', 'related'));
+}
+return view('case-studies.show', compact('study', 'related'));
+```
+
+If a particular case study needs a richer treatment than the standard four-section template, create a dedicated Blade at `resources/views/case-studies/{custom-name}.blade.php` and add the slug check before the default `return view(...)`. Don't generalise the pattern (e.g. don't make it data-driven via a `custom_view` column) until there are several — for now, hardcoded slug branches are the cleaner choice.
 
 ### JSON-LD escaping in service detail pages
 
@@ -174,6 +250,17 @@ These were flagged during the visual audit and intentionally not actioned automa
 
 ---
 
+## Sensitive files (gitignored — never commit)
+
+These are explicitly excluded in `.gitignore`. The exclusion is intentional and load-bearing.
+
+- `Boston Byte Project Details.xlsx` — source spreadsheet for the case studies. Contains **client revenue figures** which we deliberately do NOT display publicly (see Case studies section). Putting this in git history would expose those numbers permanently, even if the file were later deleted. The seeder is the canonical source. If you need to regenerate the seeder from a fresh xlsx, ask the user for the file out-of-band — don't add it back.
+- `FairITSolutions Website.zip` — historical website archive. Same exclusion rationale.
+- `database/database.sqlite` — already gitignored by the Laravel default. Stays out so prod/local DBs don't trample each other.
+- `.env`, `.env.backup` — credentials. Already gitignored.
+
+---
+
 ## What NOT to do
 
 - **Don't edit `de/fr/es/ar` lang files** without explicit instruction — they're stale and a careless update would worsen the inconsistency rather than fix it.
@@ -182,3 +269,6 @@ These were flagged during the visual audit and intentionally not actioned automa
 - **Don't change the `.ch` domain** to `.in` or similar to "fix" the entity/domain mismatch. The brand uses `.ch` deliberately.
 - **Don't run interactive git commands** (`-i` flag) — the shell tool can't drive them.
 - **Don't bypass auth or `--no-verify` hooks** unless explicitly asked.
+- **Don't push CSS/JS source changes without `npm run build`.** See "Production deployment" — the compiled bundle is committed to git, the source alone doesn't reach prod.
+- **Don't reach for `text-charcoal-400` or `text-charcoal-500` for body text on white surfaces.** See "Tailwind charcoal palette" — these are nearly invisible in this project's custom scale. Start at `text-charcoal-600`.
+- **Don't commit `Boston Byte Project Details.xlsx`** even if it shows up untracked in `git status`. It has client revenue we don't display publicly. See "Sensitive files".
