@@ -17,6 +17,29 @@ class CaseStudySeeder extends Seeder
     private array $retiredSlugs = [
         'the-lift',
         'wello',
+    
+        'carelink',
+        'careteam',
+        'epoll',
+        'rapport',
+        'idrive',
+        'smart-clinic',
+        'walk-test',
+        'skillbyte',
+        'tenet',
+        'sod',
+        'cartopper',
+        'mohan-jadhav',
+        'stock-27',
+        'lifeline',
+        'jazzmycar-com',
+        'aksa',
+        'digisignals',
+        'dynamic-erp',
+        'evyapaar-app-factory',
+        'igs',
+        'ilovetall',
+        'vgreet',
     ];
 
     public function run(): void
@@ -201,39 +224,39 @@ class CaseStudySeeder extends Seeder
 
             // ── 9 ─────────────────────────────────────────────────────────────────
             [
-                'slug' => 'carelink',
+                'slug' => 'provider-patient-communication-platform',
                 'client_name' => 'US Healthcare Provider',
-                'project_name' => 'CareLink — Provider-Patient Communication',
+                'project_name' => 'Provider-Patient Communication Platform',
                 'domain' => 'Healthcare',
                 'order' => 9,
                 'revenue_usd' => 170000,
                 'is_ongoing' => true,
                 'is_featured' => true,
-                'summary' => 'CareLink is a provider-patient communication platform engineered for healthcare organisations, unifying EMR-connected patient walls, two-way SMS, secure live chat, and configurable mission-critical alerting across clinical teams.',
+                'summary' => 'The platform is a provider-patient communication platform engineered for healthcare organisations, unifying EMR-connected patient walls, two-way SMS, secure live chat, and configurable mission-critical alerting across clinical teams.',
                 'challenge' => 'Healthcare providers were juggling phone calls, paper notes, disjointed EMRs, and consumer messaging tools — none of which were safe, auditable, or built for the structure of a multidisciplinary care team. Communication gaps were silently driving worse outcomes and creating real compliance risk.',
-                'approach' => 'CareLink unifies an EMR-aware patient wall with two-way SMS, secure live chat, and configurable contact forms. Workflows are mapped to the actual structure of care teams, with mission-critical alerting routed by role and urgency. The structured patient-communication data layer we built is exactly the foundation that intelligent triage and AI assistive tools now plug into.',
-                'outcome' => 'Providers using CareLink centralised patient communication, cut response latency on critical signals, and removed a long list of compliance-risky consumer tools from clinical workflows.',
+                'approach' => 'The platform unifies an EMR-aware patient wall with two-way SMS, secure live chat, and configurable contact forms. Workflows are mapped to the actual structure of care teams, with mission-critical alerting routed by role and urgency. The structured patient-communication data layer we built is exactly the foundation that intelligent triage and AI assistive tools now plug into.',
+                'outcome' => 'Providers using the platform centralised patient communication, cut response latency on critical signals, and removed a long list of compliance-risky consumer tools from clinical workflows.',
                 'tech_keywords' => 'Provider-Patient Communication, EMR Integration, Two-way SMS, Secure Chat, HIPAA, Mission-critical Alerting',
-                'seo_title' => 'CareLink — Provider-Patient Communication Platform',
+                'seo_title' => 'The platform — Provider-Patient Communication Platform',
                 'seo_desc' => 'An EMR-integrated provider-patient communication platform with two-way SMS, secure chat, and mission-critical alerting for clinical teams.',
             ],
 
             // ── 10 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'careteam',
+                'slug' => 'hospital-team-collaboration-platform',
                 'client_name' => 'US Healthcare Provider',
-                'project_name' => 'CareTeam — Hospital Team Collaboration',
+                'project_name' => 'Hospital Team Collaboration Platform',
                 'domain' => 'Healthcare',
                 'order' => 10,
                 'revenue_usd' => 120000,
                 'is_ongoing' => true,
                 'is_featured' => false,
-                'summary' => 'CareTeam extends hospital management with structured intra-team communication, EMR-connected patient walls, HIPAA-compliant file sharing, and integrated VoIP calling across the clinical directory.',
+                'summary' => 'The platform extends hospital management with structured intra-team communication, EMR-connected patient walls, HIPAA-compliant file sharing, and integrated VoIP calling across the clinical directory.',
                 'challenge' => 'Hospital teams coordinate across specialists, residents, nurses, and administrative staff — yet most communication still happens on disconnected channels, with PHI moving through tools that were never built for healthcare. Hospital management systems rarely solved the day-to-day collaboration layer where care actually happens.',
-                'approach' => 'We built CareTeam as a coordination layer on top of existing hospital management systems. It unifies EMR-aware patient walls, HIPAA-compliant file sharing through Box, and integrated VoIP calling so any team member can call any other directly from the directory. Roles, escalations, and patient context follow the conversation.',
+                'approach' => 'We built the platform as a coordination layer on top of existing hospital management systems. It unifies EMR-aware patient walls, HIPAA-compliant file sharing through Box, and integrated VoIP calling so any team member can call any other directly from the directory. Roles, escalations, and patient context follow the conversation.',
                 'outcome' => 'Care teams replaced fragmented, compliance-risky tooling with a single, healthcare-grade collaboration layer — and gained structured visibility into communication patterns that previously vanished into phone calls.',
                 'tech_keywords' => 'Care Team Collaboration, EMR Integration, HIPAA File Sharing, VoIP, Healthcare Communication',
-                'seo_title' => 'CareTeam — Healthcare Team Communication Platform',
+                'seo_title' => 'The platform — Healthcare Team Communication Platform',
                 'seo_desc' => 'An EMR-integrated care team platform with HIPAA-compliant file sharing and VoIP calling, purpose-built for multidisciplinary hospital teams.',
             ],
 
@@ -334,9 +357,9 @@ class CaseStudySeeder extends Seeder
 
             // ── 16 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'epoll',
+                'slug' => 'offline-first-field-survey-platform',
                 'client_name' => null,
-                'project_name' => 'ePoll — Offline-first Field Survey Platform',
+                'project_name' => 'Offline-first Field Survey Platform',
                 'domain' => 'Healthcare',
                 'order' => 16,
                 'revenue_usd' => 65000,
@@ -344,7 +367,7 @@ class CaseStudySeeder extends Seeder
                 'is_featured' => false,
                 'summary' => 'An offline-first survey platform for field-based customer research at events, exhibitions, and rural deployments — collecting responses without connectivity and synchronising cleanly with the central server once reconnected.',
                 'challenge' => 'Customer-research teams running surveys at events, exhibitions, and in rural areas could not rely on internet connectivity. Most survey tools failed silently when offline, losing valuable field data and frustrating respondents at exactly the moment the team needed the data most.',
-                'approach' => 'We engineered ePoll as an offline-first survey tool, with full functionality on-device and conflict-aware synchronisation with the central server once reconnected. The platform handles complex surveys, multi-modal responses, and large-volume capture during peak event traffic. Cleanly captured, structured survey data is exactly the substrate that AI-driven research analytics now build on.',
+                'approach' => 'We engineered the platform as an offline-first survey tool, with full functionality on-device and conflict-aware synchronisation with the central server once reconnected. The platform handles complex surveys, multi-modal responses, and large-volume capture during peak event traffic. Cleanly captured, structured survey data is exactly the substrate that AI-driven research analytics now build on.',
                 'outcome' => 'Research teams ran reliable field surveys in connectivity-poor environments without data loss, and consolidated thousands of responses into a single, analysable dataset across events.',
                 'tech_keywords' => 'Offline-first, Survey Platform, Field Research, Mobile Data Capture, Healthcare Research',
                 'seo_title' => 'Offline-first Survey Platform for Field Research',
@@ -353,17 +376,17 @@ class CaseStudySeeder extends Seeder
 
             // ── 17 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'rapport',
+                'slug' => 'gamified-sales-acceleration-platform',
                 'client_name' => 'Life-Sciences Technology Client',
-                'project_name' => 'Rapport — Gamified Sales Acceleration',
+                'project_name' => 'Gamified Sales Acceleration Platform',
                 'domain' => 'Healthcare',
                 'order' => 17,
                 'revenue_usd' => 93000,
                 'is_ongoing' => true,
                 'is_featured' => false,
-                'summary' => 'Rapport is a gamified sales acceleration platform combining game mechanics, social engagement, and data analytics to drive performance and recognition across pharma and life-sciences sales teams.',
+                'summary' => 'The platform is a gamified sales acceleration platform combining game mechanics, social engagement, and data analytics to drive performance and recognition across pharma and life-sciences sales teams.',
                 'challenge' => 'Field sales teams in pharma respond strongly to recognition, peer dynamics, and clear feedback loops — yet most sales-enablement tools focus narrowly on content delivery and reporting, missing the human motivation layer entirely.',
-                'approach' => 'We built Rapport as a gamification platform with structured mechanics, social leaderboards, and a data-analytics layer that translates field activity into points, rewards, and recognition. Managers configure incentive rules; reps see live progress against personalised challenges. The behavioural and performance data that flows through Rapport is the kind of signal AI-driven sales-coaching systems now learn from.',
+                'approach' => 'We built the platform as a gamification platform with structured mechanics, social leaderboards, and a data-analytics layer that translates field activity into points, rewards, and recognition. Managers configure incentive rules; reps see live progress against personalised challenges. The behavioural and performance data that flows through The platform is the kind of signal AI-driven sales-coaching systems now learn from.',
                 'outcome' => 'Adopting teams reported stronger field engagement, sharper week-over-week activity, and an incentive layer that was finally easy to operate at scale.',
                 'tech_keywords' => 'Sales Gamification, Performance Analytics, Incentive Engine, Pharma Sales',
                 'seo_title' => 'Sales Gamification & Acceleration Platform for Pharma',
@@ -391,28 +414,28 @@ class CaseStudySeeder extends Seeder
 
             // ── 19 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'idrive',
+                'slug' => 'pharma-market-intelligence-platform',
                 'client_name' => 'Global Pharmaceutical Company',
-                'project_name' => 'iDrive — Pharma Market Intelligence',
+                'project_name' => 'Pharma Market Intelligence Platform',
                 'domain' => 'Healthcare',
                 'order' => 19,
                 'revenue_usd' => 95000,
                 'is_ongoing' => false,
                 'is_featured' => false,
-                'summary' => 'iDrive is a centralised pharma prescription tracker capturing monthly own-brand and competitor prescriptions across the country, with drill-down market share analysis from pan-India to neighbourhood level in real time.',
+                'summary' => 'The platform is a centralised pharma prescription tracker capturing monthly own-brand and competitor prescriptions across the country, with drill-down market share analysis from pan-India to neighbourhood level in real time.',
                 'challenge' => "Global Pharmaceutical Company's field force was capturing prescription data through fragmented reporting tools, and competitive market share signals were arriving weeks late. Decision makers had no real-time, geographic view of how products were performing against competitors at the regional and local level.",
-                'approach' => 'We built iDrive as a centralised prescription tracker. Medical Representatives capture monthly own-brand and competitor prescription counts; the platform aggregates upward through a configurable hierarchy from pan-India down to localities. Reports cut by doctor segment, region, and market share are generated in real time. The structured, longitudinal prescribing dataset is precisely the kind of input AI-driven market access analytics now build on.',
+                'approach' => 'We built the platform as a centralised prescription tracker. Medical Representatives capture monthly own-brand and competitor prescription counts; the platform aggregates upward through a configurable hierarchy from pan-India down to localities. Reports cut by doctor segment, region, and market share are generated in real time. The structured, longitudinal prescribing dataset is precisely the kind of input AI-driven market access analytics now build on.',
                 'outcome' => 'Global Pharmaceutical Company leadership gained a real-time, multi-level view of prescribing patterns and competitive penetration, replacing weeks-late reporting with on-demand market intelligence.',
                 'tech_keywords' => 'Pharma Analytics, Prescription Tracking, Market Share Analysis, Field Force Reporting',
-                'seo_title' => 'Centralised Prescription Tracker for Pharma — iDrive',
+                'seo_title' => 'Centralised Prescription Tracker for Pharma — the platform',
                 'seo_desc' => 'A real-time prescription and market-share analytics platform for pharma field forces, with pan-country to neighbourhood-level drill-down.',
             ],
 
             // ── 20 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'smart-clinic',
+                'slug' => 'in-clinic-patient-education-platform',
                 'client_name' => 'Life-Sciences Technology Client',
-                'project_name' => 'Smart Clinic — Patient Education Platform',
+                'project_name' => 'In-clinic Patient Education Platform',
                 'domain' => 'Healthcare',
                 'order' => 20,
                 'revenue_usd' => 103000,
@@ -420,10 +443,10 @@ class CaseStudySeeder extends Seeder
                 'is_featured' => false,
                 'summary' => 'An in-clinic patient education platform delivering condition-specific supplementary content to patients during pre- and post-consultation moments, deepening understanding and improving care continuity.',
                 'challenge' => 'Patient consultations are short, and clinically important context is often delivered too fast for patients to absorb. Clinics needed a structured way to give patients trustworthy supplementary education at the right moment — without depending on the clinician to deliver it manually each time.',
-                'approach' => "We built Smart Clinic as an in-clinic patient education platform — pre-check-up and post-check-up content tailored to the patient's condition and consultation context. Clinics deploy the platform on tablets or kiosks, and clinicians can prescribe specific content as part of the care plan. The structured patient-education delivery layer is the kind of substrate today's AI-driven patient communication systems extend.",
+                'approach' => "We built the platform as an in-clinic patient education platform — pre-check-up and post-check-up content tailored to the patient's condition and consultation context. Clinics deploy the platform on tablets or kiosks, and clinicians can prescribe specific content as part of the care plan. The structured patient-education delivery layer is the kind of substrate today's AI-driven patient communication systems extend.",
                 'outcome' => 'Clinics reported improved patient understanding, more focused consultations, and a measurable lift in adherence to clinician guidance.',
                 'tech_keywords' => 'Patient Education, In-clinic Engagement, Healthcare Content, Care Plans',
-                'seo_title' => 'In-clinic Patient Education Platform — Smart Clinic',
+                'seo_title' => 'In-clinic Patient Education Platform — the platform',
                 'seo_desc' => 'A pre- and post-consultation patient education platform delivering condition-specific content inside the clinic to deepen understanding and adherence.',
             ],
 
@@ -448,9 +471,9 @@ class CaseStudySeeder extends Seeder
 
             // ── 22 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'walk-test',
+                'slug' => 'iot-clinical-mobility-assessment',
                 'client_name' => 'Life-Sciences Technology Client',
-                'project_name' => 'Walk Test — IoT Clinical Mobility Assessment',
+                'project_name' => 'IoT Clinical Mobility Assessment',
                 'domain' => 'Healthcare',
                 'order' => 22,
                 'revenue_usd' => 40000,
@@ -461,7 +484,7 @@ class CaseStudySeeder extends Seeder
                 'approach' => "We engineered an IoT-based walk-test platform. The patient wears a transmitter; receivers placed in the room triangulate position in real time, capturing both distance and path geometry. Clinicians get accurate step counts, distance, and pace — regardless of the room's shape. The structured longitudinal mobility data is precisely the kind of signal AI-driven respiratory analytics consume.",
                 'outcome' => 'Clinicians gained a reliable, repeatable mobility assessment in clinical environments where the standard test was previously impossible. Patient progress on COPD therapies became measurable across visits.',
                 'tech_keywords' => 'IoT, Triangulation, Clinical Measurement, COPD, Respiratory Care, Mobility Assessment',
-                'seo_title' => 'IoT-based Clinical Walk Test for COPD Patients',
+                'seo_title' => 'IoT-based Clinical the platform for COPD Patients',
                 'seo_desc' => 'A triangulation-based IoT platform measuring walking distance and path for COPD patients in irregular hospital spaces.',
             ],
 
@@ -562,7 +585,7 @@ class CaseStudySeeder extends Seeder
 
             // ── 28 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'skillbyte',
+                'slug' => 'recruitment-ats-with-resume-parser',
                 'client_name' => 'Recruitment Services Firm',
                 'project_name' => 'Recruitment ATS with Resume Parser',
                 'domain' => 'Human Resources',
@@ -619,20 +642,20 @@ class CaseStudySeeder extends Seeder
 
             // ── 31 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'tenet',
+                'slug' => 'enterprise-cms-dam-platform',
                 'client_name' => 'Enterprise Software Client',
-                'project_name' => 'Tenet — Enterprise CMS & DAM',
+                'project_name' => 'Enterprise CMS & DAM Platform',
                 'domain' => 'Information Technology',
                 'order' => 31,
                 'revenue_usd' => 156000,
                 'is_ongoing' => true,
                 'is_featured' => true,
-                'summary' => 'Tenet is a multi-tenant CMS and Digital Asset Management platform powering 14–15 enterprise customer implementations including several global enterprises, with end-to-end technology stewardship by our team.',
+                'summary' => 'The platform is a multi-tenant CMS and Digital Asset Management platform powering 14–15 enterprise customer implementations including several global enterprises, with end-to-end technology stewardship by our team.',
                 'challenge' => "Enterprise Software Client's enterprise clients needed reliable, brand-controlled content and digital asset management across many large implementations. Maintaining quality, consistency, and reliable delivery across that many enterprise tenants required a deep technology partner, not a vendor.",
-                'approach' => "We delivered Tenet as a flexible CMS and DAM platform, and operate as Enterprise Software Client's extended technology team — running 14–15 enterprise implementations including several global enterprises. Our scope covers platform engineering, customer deployments, and ongoing stewardship. The structured content and asset taxonomy is the kind of substrate today's AI-driven content and asset intelligence layers extend.",
+                'approach' => "We delivered the platform as a flexible CMS and DAM platform, and operate as Enterprise Software Client's extended technology team — running 14–15 enterprise implementations including several global enterprises. Our scope covers platform engineering, customer deployments, and ongoing stewardship. The structured content and asset taxonomy is the kind of substrate today's AI-driven content and asset intelligence layers extend.",
                 'outcome' => "Enterprise Software Client's enterprise clients receive consistent, high-quality content and asset infrastructure across diverse implementations, with a single accountable technology partner running the stack end-to-end.",
                 'tech_keywords' => 'CMS, Digital Asset Management, Enterprise Platform, Managed Services',
-                'seo_title' => 'Enterprise CMS & DAM Platform — Tenet',
+                'seo_title' => 'Enterprise CMS & DAM Platform — the platform',
                 'seo_desc' => 'A multi-tenant CMS and Digital Asset Management platform powering 14–15 enterprise customer implementations including several global enterprises.',
             ],
 
@@ -676,9 +699,9 @@ class CaseStudySeeder extends Seeder
 
             // ── 34 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'sod',
+                'slug' => 'pharma-sample-distribution-platform',
                 'client_name' => 'Pharma Logistics Client',
-                'project_name' => 'SOD — Pharma Sample Distribution Platform',
+                'project_name' => 'Pharma Sample Distribution Platform',
                 'domain' => 'Logistics',
                 'order' => 34,
                 'revenue_usd' => 60000,
@@ -686,7 +709,7 @@ class CaseStudySeeder extends Seeder
                 'is_featured' => false,
                 'summary' => 'Pharma Logistics Client is a structured drug-sample distribution platform connecting Medical Representatives, managers, warehouses, and doctors — covering planning, ordering, fulfilment, and status visibility across the chain.',
                 'challenge' => 'Drug-sample distribution in pharma is a tangled chain: representatives plan monthly outreach, doctors request samples, managers approve, warehouses fulfil, and reps deliver — all on paper, calls, and spreadsheets. The result was lost samples, missed doctors, and zero visibility on status.',
-                'approach' => "We built SOD as an end-to-end sample distribution platform. Representatives plan monthly distribution and place orders on doctors' behalf during visits; managers approve and forward to the warehouse; doctors track status and reorder directly through the app. Admins manage company, drug, doctor, MR, and territory mappings centrally. The structured supply-and-engagement data layer is precisely the substrate today's AI-driven pharma operations products extend.",
+                'approach' => "We built the platform as an end-to-end sample distribution platform. Representatives plan monthly distribution and place orders on doctors' behalf during visits; managers approve and forward to the warehouse; doctors track status and reorder directly through the app. Admins manage company, drug, doctor, MR, and territory mappings centrally. The structured supply-and-engagement data layer is precisely the substrate today's AI-driven pharma operations products extend.",
                 'outcome' => 'Pharma teams gained end-to-end visibility on sample movement and doctor engagement, with a structured platform replacing manual reconciliation and improving sample-to-conversion outcomes.',
                 'tech_keywords' => 'Pharma Logistics, Sample Distribution, Field Force, Workflow Automation',
                 'seo_title' => 'Drug Sample Distribution Platform for Pharma',
@@ -733,18 +756,18 @@ class CaseStudySeeder extends Seeder
 
             // ── 37 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'cartopper',
+                'slug' => 'geo-fenced-dooh-on-ride-share-vehicles',
                 'client_name' => 'Advertising Technology Client',
-                'project_name' => 'CarTopper — Geo-fenced DOOH on Ride-share Vehicles',
+                'project_name' => 'Geo-fenced DOOH on Ride-share Vehicles',
                 'domain' => 'Media',
                 'order' => 37,
                 'revenue_usd' => 50000,
                 'is_ongoing' => false,
                 'is_featured' => false,
-                'summary' => 'CarTopper is a real-time digital out-of-home advertising platform displaying geo-fenced content on top of ride-share vehicles, with a custom geo-fence identifier engine and over-the-air updates.',
+                'summary' => 'The platform is a real-time digital out-of-home advertising platform displaying geo-fenced content on top of ride-share vehicles, with a custom geo-fence identifier engine and over-the-air updates.',
                 'challenge' => 'Advertising Technology Client wanted to turn ride-share vehicles into a real-time digital out-of-home medium — but generic geofencing was not precise enough to control which ads played in which neighbourhood, and remote management at fleet scale was a technical problem on its own.',
-                'approach' => "We engineered CarTopper as an end-to-end platform: vehicle-mounted display hardware paired with a custom geo-fence Identifier Engine that pinpoints the precise polygon a vehicle is in. The platform serves ads tuned to time, demographic, and audience attributes, manages the entire vehicle fleet remotely, and pushes over-the-air software updates so devices are never out of date. The advertising revenue is shared across stakeholders, keeping driver engagement high. The geofencing decision layer is precisely the kind of structured spatial intelligence today's AI-driven OOH platforms extend.",
-                'outcome' => 'CarTopper turned a fleet of ride-share vehicles into a controllable, geo-targeted DOOH network with remote management, predictable monetisation, and structured advertiser controls.',
+                'approach' => "We engineered the platform as an end-to-end platform: vehicle-mounted display hardware paired with a custom geo-fence Identifier Engine that pinpoints the precise polygon a vehicle is in. The platform serves ads tuned to time, demographic, and audience attributes, manages the entire vehicle fleet remotely, and pushes over-the-air software updates so devices are never out of date. The advertising revenue is shared across stakeholders, keeping driver engagement high. The geofencing decision layer is precisely the kind of structured spatial intelligence today's AI-driven OOH platforms extend.",
+                'outcome' => 'The platform turned a fleet of ride-share vehicles into a controllable, geo-targeted DOOH network with remote management, predictable monetisation, and structured advertiser controls.',
                 'tech_keywords' => 'Digital OOH, Geo-fencing, IoT Devices, Over-the-air Updates, Ride-share Media',
                 'seo_title' => 'Geo-fenced DOOH Advertising on Ride-share Vehicles',
                 'seo_desc' => 'A real-time digital OOH platform displaying geo-fenced ads on ride-share vehicles with a custom geo-fence engine and over-the-air updates.',
@@ -790,7 +813,7 @@ class CaseStudySeeder extends Seeder
 
             // ── 40 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'mohan-jadhav',
+                'slug' => 'photography-ecommerce-portal',
                 'client_name' => 'Professional Photographer',
                 'project_name' => 'Photography eCommerce Portal',
                 'domain' => 'Media',
@@ -809,7 +832,7 @@ class CaseStudySeeder extends Seeder
 
             // ── 41 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'stock-27',
+                'slug' => 'creative-stock-marketplace',
                 'client_name' => 'Creative Media Marketplace Client',
                 'project_name' => 'Creative Stock Marketplace',
                 'domain' => 'Media',
@@ -847,7 +870,7 @@ class CaseStudySeeder extends Seeder
 
             // ── 43 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'lifeline',
+                'slug' => 'comprehensive-hrms-platform',
                 'client_name' => 'Enterprise Software Client',
                 'project_name' => 'Comprehensive HRMS — Recruitment to Performance',
                 'domain' => 'Productivity',
@@ -904,9 +927,9 @@ class CaseStudySeeder extends Seeder
 
             // ── 46 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'jazzmycar-com',
+                'slug' => 'vehicle-accessories-ecommerce',
                 'client_name' => 'Automotive Retail Client',
-                'project_name' => 'jazzmycar.com — Vehicle Accessories Storefront',
+                'project_name' => 'Vehicle Accessories eCommerce Storefront',
                 'domain' => 'Retail',
                 'order' => 46,
                 'revenue_usd' => 6000,
@@ -914,29 +937,29 @@ class CaseStudySeeder extends Seeder
                 'is_featured' => false,
                 'summary' => 'An eCommerce portal for vehicle accessories with full catalogue, cart, checkout, and fulfilment — built to give Automotive Retail Client a direct-to-consumer retail channel.',
                 'challenge' => 'Automotive Retail Client wanted a direct-to-consumer storefront for vehicle accessories, separate from its workshop-tracking work, with a clean buying experience that did not feel like a generic template.',
-                'approach' => 'We built jazzmycar.com as a tailored eCommerce portal — structured catalogue, cart, checkout, and fulfilment — designed for the vehicle accessories category and tuned to the brand.',
+                'approach' => 'We built the platform as a tailored eCommerce portal — structured catalogue, cart, checkout, and fulfilment — designed for the vehicle accessories category and tuned to the brand.',
                 'outcome' => 'Automotive Retail Client launched a working D2C retail channel with a brand-aligned buying experience.',
                 'tech_keywords' => 'eCommerce, Automotive Accessories, D2C Retail',
-                'seo_title' => 'eCommerce Portal for Vehicle Accessories — jazzmycar',
+                'seo_title' => 'eCommerce Portal for Vehicle Accessories — the platform',
                 'seo_desc' => 'A direct-to-consumer eCommerce portal for vehicle accessories with structured catalogue, cart, and fulfilment.',
             ],
 
             // ── 47 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'aksa',
+                'slug' => 'custom-android-os-field-tablet',
                 'client_name' => 'Enterprise Software Client',
-                'project_name' => 'AKSA — Custom Android OS & Field Tablet',
+                'project_name' => 'Custom Android OS & Field Tablet',
                 'domain' => 'Retail',
                 'order' => 47,
                 'revenue_usd' => 70000,
                 'is_ongoing' => false,
                 'is_featured' => false,
-                'summary' => 'AKSA is a customised Android operating system shipped on tablets for a herbal-foods networking company, with a multi-app team experience covering upline/downline visibility, VoIP communication, and recorded feedback workflows.',
+                'summary' => 'The platform is a customised Android operating system shipped on tablets for a herbal-foods networking company, with a multi-app team experience covering upline/downline visibility, VoIP communication, and recorded feedback workflows.',
                 'challenge' => 'A networking company in the herbal foods category wanted to standardise the field experience for thousands of associates — but generic Android tablets and consumer apps were the wrong delivery surface. They needed a curated, branded device experience that did exactly what their team needed, and nothing else.',
-                'approach' => 'We delivered AKSA as a customised Android OS deployed on tablets, with multiple bespoke apps — upline/downline visibility, VoIP calling and messaging across the team, and structured video-feedback capture and categorisation. The hardware/software bundle gave associates a single, trusted device experience from day one.',
+                'approach' => 'We delivered the platform as a customised Android OS deployed on tablets, with multiple bespoke apps — upline/downline visibility, VoIP calling and messaging across the team, and structured video-feedback capture and categorisation. The hardware/software bundle gave associates a single, trusted device experience from day one.',
                 'outcome' => 'The company shipped a branded device experience that simplified field operations, drove higher tool adoption than consumer alternatives, and gave HQ structured visibility across the network.',
                 'tech_keywords' => 'Custom Android OS, Field Devices, VoIP, Direct Selling, Hardware-Software Bundle',
-                'seo_title' => 'Custom Android OS & Field Tablet — AKSA',
+                'seo_title' => 'Custom Android OS & Field Tablet — the platform',
                 'seo_desc' => 'A customised Android OS on field tablets for a herbal-foods networking company with upline/downline, VoIP, and feedback capture.',
             ],
 
@@ -961,9 +984,9 @@ class CaseStudySeeder extends Seeder
 
             // ── 49 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'digisignals',
+                'slug' => 'global-advertising-feed-engine',
                 'client_name' => 'Global Advertising-Technology Client',
-                'project_name' => 'DigiSignals — Global Advertising Feed Engine',
+                'project_name' => 'Global Advertising Feed Engine',
                 'domain' => 'Retail',
                 'order' => 49,
                 'revenue_usd' => 360000,
@@ -980,9 +1003,9 @@ class CaseStudySeeder extends Seeder
 
             // ── 50 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'dynamic-erp',
+                'slug' => 'it-infrastructure-sales-platform',
                 'client_name' => 'IT Infrastructure Client',
-                'project_name' => 'Dynamic ERP — IT Infrastructure Sales Platform',
+                'project_name' => 'IT Infrastructure Sales Platform',
                 'domain' => 'Retail',
                 'order' => 50,
                 'revenue_usd' => 76000,
@@ -990,37 +1013,37 @@ class CaseStudySeeder extends Seeder
                 'is_featured' => false,
                 'summary' => 'An ERP for an IT infrastructure sales and services business, consolidating customer information into a single CRM-style repository and handling the full order-management lifecycle from generation to fulfilment.',
                 'challenge' => "IT Infrastructure Client' IT infrastructure business was running customer data across spreadsheets and disconnected tools, with order management bottlenecked by manual handoffs between sales, procurement, and delivery.",
-                'approach' => "We built Dynamic ERP as a unified system — a single customer repository that doubled as a CRM, plus a full order-management module covering generation, approvals, procurement, and fulfilment. Reporting cut across customer history, order velocity, and pipeline health. The structured customer and order data is precisely the substrate today's AI-driven sales-operations products extend.",
+                'approach' => "We built the platform as a unified system — a single customer repository that doubled as a CRM, plus a full order-management module covering generation, approvals, procurement, and fulfilment. Reporting cut across customer history, order velocity, and pipeline health. The structured customer and order data is precisely the substrate today's AI-driven sales-operations products extend.",
                 'outcome' => 'IT Infrastructure Client retired spreadsheet-driven workflows, gained a single customer view across teams, and accelerated order-to-fulfilment cycles with measurable visibility.',
                 'tech_keywords' => 'ERP, CRM, Order Management, IT Infrastructure, Sales Operations',
-                'seo_title' => 'ERP & CRM for IT Infrastructure Sales — Dynamic ERP',
+                'seo_title' => 'ERP & CRM for IT Infrastructure Sales — the platform',
                 'seo_desc' => 'A unified ERP and CRM for an IT infrastructure business — single customer repository and full order management from generation to fulfilment.',
             ],
 
             // ── 51 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'evyapaar-app-factory',
+                'slug' => 'no-code-app-generator-platform',
                 'client_name' => 'Retail Technology Client',
-                'project_name' => 'eVyapaar / App Factory — No-code App Generator',
+                'project_name' => 'No-code App Generator Platform',
                 'domain' => 'Retail',
                 'order' => 51,
                 'revenue_usd' => 102000,
                 'is_ongoing' => false,
                 'is_featured' => true,
-                'summary' => "App Factory is a no-code app generation platform that produces fully branded Android and iOS storefront apps for small shop owners, with backend control over products, pricing, offers, and delivery — published under each business's own name on the app stores.",
+                'summary' => "The platform is a no-code app generation platform that produces fully branded Android and iOS storefront apps for small shop owners, with backend control over products, pricing, offers, and delivery — published under each business's own name on the app stores.",
                 'challenge' => 'Small shop owners cannot afford to commission a custom app — yet generic marketplace listings strip away brand identity and customer ownership. Retail Technology Client wanted to make a real, app-store-listed, brand-owned mobile presence accessible to any small business.',
-                'approach' => "We built App Factory as a no-code app-generation engine. Shop owners fill in their business information, and the platform produces fully branded Android and iOS apps in their own name, listed under their own identity on the app stores. A backend control panel handles products, pricing, offers, and delivery fees. The structured small-business commerce data is precisely the substrate today's AI-driven local commerce systems extend.",
+                'approach' => "We built the platform as a no-code app-generation engine. Shop owners fill in their business information, and the platform produces fully branded Android and iOS apps in their own name, listed under their own identity on the app stores. A backend control panel handles products, pricing, offers, and delivery fees. The structured small-business commerce data is precisely the substrate today's AI-driven local commerce systems extend.",
                 'outcome' => 'Small businesses gained their own native mobile apps without the cost of bespoke development, and Retail Technology Client built a scalable platform serving thousands of small-business storefronts.',
-                'tech_keywords' => 'App Factory, No-code Platform, Android, iOS, Small Business Commerce',
-                'seo_title' => 'No-code App Generator for Small Businesses — App Factory',
+                'tech_keywords' => 'The platform, No-code Platform, Android, iOS, Small Business Commerce',
+                'seo_title' => 'No-code App Generator for Small Businesses — the platform',
                 'seo_desc' => 'A no-code app-generation platform producing branded Android and iOS storefront apps for small businesses with full backend control.',
             ],
 
             // ── 52 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'igs',
+                'slug' => 'retail-pos-inventory-app',
                 'client_name' => 'Retail Store Client',
-                'project_name' => 'IGS — Retail POS & Inventory App',
+                'project_name' => 'Retail POS & Inventory App',
                 'domain' => 'Retail',
                 'order' => 52,
                 'revenue_usd' => 20000,
@@ -1031,13 +1054,13 @@ class CaseStudySeeder extends Seeder
                 'approach' => "We delivered a customised inventory and billing application supporting cash and credit sales, real-time stock decrement on every sale, and reports designed for the operator's daily review. Bills print directly onto the shop's pre-formatted stationery without manual reformatting.",
                 'outcome' => 'The store replaced manual ledgers with a single, real-time view of stock and sales, with faster billing and printable reports for daily reconciliation.',
                 'tech_keywords' => 'Retail POS, Inventory Management, Billing, Small Business',
-                'seo_title' => 'Custom POS & Inventory App for General Stores — IGS',
+                'seo_title' => 'Custom POS & Inventory App for General Stores — the platform',
                 'seo_desc' => 'A customised inventory and billing app supporting cash and credit sales, real-time stock decrement, and printable reports for retail stores.',
             ],
 
             // ── 53 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'ilovetall',
+                'slug' => 'niche-fashion-ecommerce-store',
                 'client_name' => 'Fashion eCommerce Brand (Europe)',
                 'project_name' => 'Niche Fashion eCommerce Store',
                 'domain' => 'Retail',
@@ -1170,17 +1193,17 @@ class CaseStudySeeder extends Seeder
 
             // ── 60 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'vgreet',
+                'slug' => 'personalised-video-for-hcp-engagement',
                 'client_name' => 'Life-Sciences Technology Client',
-                'project_name' => 'vGreet — Personalised Video for HCP Engagement',
+                'project_name' => 'Personalised Video for HCP Engagement',
                 'domain' => 'Sales Enablement',
                 'order' => 60,
                 'revenue_usd' => 3500,
                 'is_ongoing' => false,
                 'is_featured' => false,
-                'summary' => 'vGreet is an image personalisation platform that generates individualised videos for doctors and medical professionals, enabling structured, name-aware engagement at scale.',
+                'summary' => 'The platform is an image personalisation platform that generates individualised videos for doctors and medical professionals, enabling structured, name-aware engagement at scale.',
                 'challenge' => 'Pharma engagement with doctors and medical professionals tends to be templated — generic emails, mass mailers, identical assets. Life-Sciences Technology Client wanted a way to deliver structured personalisation at scale, so each HCP received a video that genuinely felt addressed to them.',
-                'approach' => "We built vGreet as an image personalisation engine that generates individualised videos for HCPs at scale. Names, contexts, and brand elements are composited per-recipient, turning a campaign of one video into thousands of personalised ones. The structured personalisation pipeline is precisely the substrate today's AI-driven creative-personalisation platforms extend.",
+                'approach' => "We built the platform as an image personalisation engine that generates individualised videos for HCPs at scale. Names, contexts, and brand elements are composited per-recipient, turning a campaign of one video into thousands of personalised ones. The structured personalisation pipeline is precisely the substrate today's AI-driven creative-personalisation platforms extend.",
                 'outcome' => 'Life-Sciences Technology Client delivered structured personalisation to HCP-facing campaigns, with measurable engagement lift over generic mass assets.',
                 'tech_keywords' => 'Personalisation, Video Generation, HCP Engagement, Pharma Marketing',
                 'seo_title' => 'Personalised Video Generation for HCP Engagement',
