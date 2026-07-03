@@ -31,6 +31,7 @@
     27 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     28 => 'Termwind\\Laravel\\TermwindServiceProvider',
     29 => 'Spatie\\Sitemap\\SitemapServiceProvider',
+    30 => 'Spatie\\Translatable\\TranslatableServiceProvider',
   ),
   'eager' => 
   array (
@@ -48,6 +49,7 @@
     11 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     12 => 'Termwind\\Laravel\\TermwindServiceProvider',
     13 => 'Spatie\\Sitemap\\SitemapServiceProvider',
+    14 => 'Spatie\\Translatable\\TranslatableServiceProvider',
   ),
   'deferred' => 
   array (

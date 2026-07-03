@@ -1,37 +1,31 @@
 @extends('layouts.app')
 
-@section('title', 'HSI OS — Interior Design AI Operating System | FairIT Solutions')
-@section('description', 'HSI OS is the AI operating system for interior design, renovation, and home execution. Project management AI, vendor coordination, budget intelligence for homeowners and interior firms.')
+@section('title', __('seo.products.hsios_title'))
+@section('description', __('seo.products.hsios_description'))
 
 @section('schema')
-<script type="application/ld+json" nonce="{{ csp_nonce() }}">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "SoftwareApplication",
-            "@id": "{{ route('products.hsios') }}#app",
-            "name": "HSI OS",
-            "url": "https://www.hsios.in",
-            "sameAs": ["https://www.hsios.in"],
-            "applicationCategory": "BusinessApplication",
-            "operatingSystem": "Web",
-            "description": "The AI operating system for interior design, renovation, and home execution. Project management AI, vendor coordination, budget intelligence.",
-            "offers": { "@type": "Offer", "url": "https://www.hsios.in", "availability": "https://schema.org/PreOrder" },
-            "creator": { "@id": "https://fairitsolutions.ch/#organization" },
-            "featureList": "Project timeline AI, Client portal, Vendor coordination, Budget intelligence, Progress tracking, Design brief AI"
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Products", "item": "{{ route('products.index') }}" },
-                { "@type": "ListItem", "position": 3, "name": "HSI OS", "item": "{{ route('products.hsios') }}" }
-            ]
-        }
-    ]
-}
-</script>
+@php
+    $schema = new \App\Services\SchemaBuilder();
+    $schema->add([
+        "@type" => "SoftwareApplication",
+        "@id" => route('products.hsios') . "#app",
+        "name" => "HSI OS",
+        "url" => "https://www.hsios.in",
+        "sameAs" => ["https://www.hsios.in"],
+        "applicationCategory" => "BusinessApplication",
+        "operatingSystem" => "Web",
+        "description" => "The AI operating system for interior design, renovation, and home execution. Project management AI, vendor coordination, budget intelligence.",
+        "offers" => [ "@type" => "Offer", "url" => "https://www.hsios.in", "availability" => "https://schema.org/PreOrder" ],
+        "creator" => [ "@id" => "https://fairitsolutions.ch/#organization" ],
+        "featureList" => "Project timeline AI, Client portal, Vendor coordination, Budget intelligence, Progress tracking, Design brief AI"
+    ]);
+    $schema->addBreadcrumbs([
+        "Home" => url('/'),
+        "Products" => route('products.index'),
+        "HSI OS" => route('products.hsios')
+    ]);
+@endphp
+{!! $schema->render() !!}
 @endsection
 
 @section('content')

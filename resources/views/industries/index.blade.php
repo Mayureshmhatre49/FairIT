@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Industries We Serve — AI Solutions for Every Sector | FairIT Solutions')
-@section('description', 'AI transformation solutions for startups, SMEs, real estate, hospitality, interior design, healthcare, education, and professional services.')
+@section('title', __('seo.industries.index_title'))
+@section('description', __('seo.industries.index_description'))
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">

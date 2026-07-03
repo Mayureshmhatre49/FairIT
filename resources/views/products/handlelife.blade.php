@@ -1,37 +1,31 @@
 @extends('layouts.app')
 
-@section('title', 'HandleLife OS — AI Operating System for Modern Families | FairIT Solutions')
-@section('description', 'HandleLife OS is the AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated for busy families.')
+@section('title', __('seo.products.handlelife_title'))
+@section('description', __('seo.products.handlelife_description'))
 
 @section('schema')
-<script type="application/ld+json" nonce="{{ csp_nonce() }}">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "SoftwareApplication",
-            "@id": "{{ route('products.handlelife') }}#app",
-            "name": "HandleLife OS",
-            "url": "https://www.handlelifeos.com",
-            "sameAs": ["https://www.handlelifeos.com"],
-            "applicationCategory": "LifestyleApplication",
-            "operatingSystem": "Web",
-            "description": "The AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated.",
-            "offers": { "@type": "Offer", "url": "https://www.handlelifeos.com", "availability": "https://schema.org/PreOrder" },
-            "creator": { "@id": "https://fairitsolutions.ch/#organization" },
-            "featureList": "Family command centre, Health & wellness AI, Finance intelligence, School & schedule AI, NRI services, Emergency response"
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Products", "item": "{{ route('products.index') }}" },
-                { "@type": "ListItem", "position": 3, "name": "HandleLife OS", "item": "{{ route('products.handlelife') }}" }
-            ]
-        }
-    ]
-}
-</script>
+@php
+    $schema = new \App\Services\SchemaBuilder();
+    $schema->add([
+        "@type" => "SoftwareApplication",
+        "@id" => route('products.handlelife') . "#app",
+        "name" => "HandleLife OS",
+        "url" => "https://www.handlelifeos.com",
+        "sameAs" => ["https://www.handlelifeos.com"],
+        "applicationCategory" => "LifestyleApplication",
+        "operatingSystem" => "Web",
+        "description" => "The AI operating system for modern family life. Health, finances, school, NRI services, and emergency management — intelligently orchestrated.",
+        "offers" => [ "@type" => "Offer", "url" => "https://www.handlelifeos.com", "availability" => "https://schema.org/PreOrder" ],
+        "creator" => [ "@id" => "https://fairitsolutions.ch/#organization" ],
+        "featureList" => "Family command centre, Health & wellness AI, Finance intelligence, School & schedule AI, NRI services, Emergency response"
+    ]);
+    $schema->addBreadcrumbs([
+        "Home" => url('/'),
+        "Products" => route('products.index'),
+        "HandleLife OS" => route('products.handlelife')
+    ]);
+@endphp
+{!! $schema->render() !!}
 @endsection
 
 @section('content')

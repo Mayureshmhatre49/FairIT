@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', ($study->seo_title ?: $study->project_name . ' — ' . $study->domain . ' Case Study') . ' — FairIT Solutions')
+@section('title', ($study->seo_title ?: $study->project_name . ' — ' . $study->domain . __('case_studies.show.meta.title_suffix')) . ' — FairIT Solutions')
 @section('description', $study->seo_desc ?: \Illuminate\Support\Str::limit($study->summary, 155))
 @section('og_type', 'article')
-@section('og_title', $study->seo_title ?: $study->project_name . ' — Case Study')
+@section('og_title', $study->seo_title ?: $study->project_name . __('case_studies.show.meta.title_suffix'))
 @section('og_description', $study->seo_desc ?: \Illuminate\Support\Str::limit($study->summary, 155))
 
 @section('schema')
@@ -46,9 +46,9 @@
     <div class="relative container-tight">
         <nav class="text-sm mb-6" aria-label="Breadcrumb" data-animate>
             <ol class="flex items-center gap-2 text-charcoal-400">
-                <li><a href="{{ url('/') }}" class="hover:text-white transition-colors">Home</a></li>
+                <li><a href="{{ url('/') }}" class="hover:text-white transition-colors">{{ __('case_studies.show.breadcrumb.home') }}</a></li>
                 <li><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
-                <li><a href="{{ route('case-studies.index') }}" class="hover:text-white transition-colors">Case Studies</a></li>
+                <li><a href="{{ route('case-studies.index') }}" class="hover:text-white transition-colors">{{ __('case_studies.show.breadcrumb.case_studies') }}</a></li>
                 <li><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></li>
                 <li class="text-white truncate max-w-xs">{{ $study->project_name }}</li>
             </ol>
@@ -58,10 +58,10 @@
             <div class="flex flex-wrap items-center gap-2 mb-4">
                 <a href="{{ route('case-studies.index', ['domain' => $study->domain]) }}" class="badge badge-blue">{{ $study->domain }}</a>
                 @if($study->is_featured)
-                <span class="badge bg-amber-500/10 text-amber-300 border-amber-400/30">Featured</span>
+                <span class="badge bg-amber-500/10 text-amber-300 border-amber-400/30">{{ __('case_studies.show.badges.featured') }}</span>
                 @endif
                 @if($study->is_ongoing)
-                <span class="badge bg-emerald-500/10 text-emerald-300 border-emerald-400/30">Ongoing</span>
+                <span class="badge bg-emerald-500/10 text-emerald-300 border-emerald-400/30">{{ __('case_studies.show.badges.ongoing') }}</span>
                 @endif
             </div>
             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">{{ $study->project_name }}</h1>
@@ -75,57 +75,57 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
             <article class="lg:col-span-2 space-y-10">
                 <div data-animate>
-                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">Project Overview</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">{{ __('case_studies.show.sections.overview') }}</h2>
                     <p class="text-charcoal-700 text-lg leading-relaxed whitespace-pre-line">{{ $study->summary }}</p>
                 </div>
 
                 @if($study->challenge)
                 <div data-animate>
-                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">The Challenge</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">{{ __('case_studies.show.sections.challenge') }}</h2>
                     <p class="text-charcoal-700 text-base md:text-lg leading-relaxed whitespace-pre-line">{{ $study->challenge }}</p>
                 </div>
                 @endif
 
                 @if($study->approach)
                 <div data-animate>
-                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">Our Approach</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">{{ __('case_studies.show.sections.approach') }}</h2>
                     <p class="text-charcoal-700 text-base md:text-lg leading-relaxed whitespace-pre-line">{{ $study->approach }}</p>
                 </div>
                 @endif
 
                 @if($study->outcome)
                 <div data-animate>
-                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">The Outcome</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">{{ __('case_studies.show.sections.outcome') }}</h2>
                     <p class="text-charcoal-700 text-base md:text-lg leading-relaxed whitespace-pre-line">{{ $study->outcome }}</p>
                 </div>
                 @endif
 
                 <div class="flex flex-wrap gap-3 pt-2" data-animate>
                     <a href="{{ route('consultation') }}" class="btn-primary">
-                        Discuss a similar project
+                        {{ __('case_studies.show.cta.discuss') }}
                         <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="{{ route('case-studies.index') }}" class="btn-secondary">← Back to all case studies</a>
+                    <a href="{{ route('case-studies.index') }}" class="btn-secondary">{{ __('case_studies.show.cta.back') }}</a>
                 </div>
             </article>
 
             <aside class="lg:col-span-1 space-y-4" data-animate>
                 <div class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 space-y-5 sticky top-24">
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">Industry</div>
+                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.industry') }}</div>
                         <a href="{{ route('case-studies.index', ['domain' => $study->domain]) }}" class="text-charcoal-950 font-semibold hover:text-brand-700 transition-colors">{{ $study->domain }}</a>
                     </div>
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">Client</div>
+                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.client') }}</div>
                         <div class="text-charcoal-950 font-semibold">{{ $study->display_client_name }}</div>
                     </div>
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">Status</div>
-                        <div class="text-charcoal-950 font-semibold">{{ $study->is_ongoing ? 'Ongoing engagement' : 'Delivered' }}</div>
+                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.status') }}</div>
+                        <div class="text-charcoal-950 font-semibold">{{ $study->is_ongoing ? __('case_studies.show.status.ongoing') : __('case_studies.show.status.delivered') }}</div>
                     </div>
                     @if(count($study->tech_keywords_array) > 0)
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-2">Technologies & Capabilities</div>
+                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-2">{{ __('case_studies.show.sidebar.tech') }}</div>
                         <div class="flex flex-wrap gap-1.5">
                             @foreach($study->tech_keywords_array as $tk)
                             <span class="badge bg-white text-charcoal-700 border-charcoal-200 text-[11px]">{{ $tk }}</span>
@@ -144,11 +144,11 @@
     <div class="container-wide">
         <div class="flex items-end justify-between mb-8" data-animate>
             <div>
-                <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">More in {{ $study->domain }}</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mt-2">Related Case Studies</h2>
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-widest">{{ __('case_studies.show.related.label', ['domain' => $study->domain]) }}</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-charcoal-950 mt-2">{{ __('case_studies.show.related.title') }}</h2>
             </div>
             <a href="{{ route('case-studies.index', ['domain' => $study->domain]) }}" class="hidden md:inline-flex items-center gap-1 text-brand-600 font-semibold text-sm hover:gap-2 transition-all">
-                View all
+                {{ __('case_studies.show.related.view_all') }}
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
         </div>

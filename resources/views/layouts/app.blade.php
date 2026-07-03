@@ -6,64 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{-- SEO Meta --}}
-    <title>@yield('title', 'FairIT Solutions — AI Consulting & Custom AI Operating Systems')</title>
-    <meta name="description" content="@yield('description', 'Strategic AI consulting and custom AI Operating Systems for founders and growth-focused enterprises. Anchored in two decades of enterprise software delivery across 16 industries.')">
-    <meta name="keywords" content="@yield('keywords', 'AI consulting, AI transformation, AI copilots, voice AI, founder AI, AI operating systems, Switzerland AI company')">
-    <meta name="author" content="FairIT Solutions">
-    <meta name="robots" content="@yield('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1')">
+    {{-- SEO Meta & Open Graph --}}
     @php
-        $canonicalParams = [];
-        if (request()->has('page')) {
-            $canonicalParams['page'] = request()->query('page');
-        }
-        if (app()->getLocale() !== 'en') {
-            $canonicalParams['lang'] = app()->getLocale();
-        }
-        $canonicalUrl = count($canonicalParams) > 0 
-            ? url()->current() . '?' . http_build_query($canonicalParams)
-            : url()->current();
+        $seo = new \App\Services\SeoManager();
+        $title = trim(View::yieldContent('title'));
+        if ($title) $seo->setTitle($title);
+        
+        $desc = trim(View::yieldContent('description'));
+        if ($desc) $seo->setDescription($desc);
+        
+        $keywords = trim(View::yieldContent('keywords'));
+        if ($keywords) $seo->setKeywords($keywords);
+        
+        $robots = trim(View::yieldContent('robots'));
+        if ($robots) $seo->setRobots($robots);
+        
+        $ogType = trim(View::yieldContent('og_type'));
+        if ($ogType) $seo->setOgType($ogType);
+        
+        $ogImage = trim(View::yieldContent('og_image'));
+        $ogImageAlt = trim(View::yieldContent('og_image_alt'));
+        if ($ogImage) $seo->setOgImage($ogImage, $ogImageAlt);
     @endphp
-    <link rel="canonical" href="@yield('canonical', $canonicalUrl)">
-    <meta name="theme-color" content="#1e293b">
-
-    {{-- Hreflang — multilingual signals --}}
-    <link rel="alternate" hreflang="en" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
-    <link rel="alternate" hreflang="de" href="{{ request()->fullUrlWithQuery(['lang' => 'de']) }}">
-    <link rel="alternate" hreflang="fr" href="{{ request()->fullUrlWithQuery(['lang' => 'fr']) }}">
-    <link rel="alternate" hreflang="es" href="{{ request()->fullUrlWithQuery(['lang' => 'es']) }}">
-    <link rel="alternate" hreflang="ar" href="{{ request()->fullUrlWithQuery(['lang' => 'ar']) }}">
-    <link rel="alternate" hreflang="x-default" href="{{ request()->fullUrlWithQuery(['lang' => null]) }}">
-
-    {{-- Open Graph --}}
-    @php
-        $ogLocaleMap = ['en' => 'en_GB', 'de' => 'de_DE', 'fr' => 'fr_FR', 'es' => 'es_ES', 'ar' => 'ar_AR'];
-        $currentLocale = app()->getLocale();
-        $ogLocale = $ogLocaleMap[$currentLocale] ?? 'en_GB';
-    @endphp
-    <meta property="og:type" content="@yield('og_type', 'website')">
-    <meta property="og:url" content="@yield('og_url', url()->current())">
-    <meta property="og:title" content="@yield('og_title', 'FairIT Solutions — AI Operating Systems')">
-    <meta property="og:description" content="@yield('og_description', 'We help founders, enterprises, and modern families unlock growth through AI advisory, custom AI systems, and intelligent operating systems.')">
-    <meta property="og:image" content="@yield('og_image', asset('images/og-image.png'))">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="@yield('og_image_alt', 'FairIT Solutions — AI Operating Systems')">
-    <meta property="og:site_name" content="FairIT Solutions">
-    <meta property="og:locale" content="{{ $ogLocale }}">
-    @foreach($ogLocaleMap as $code => $locale)
-        @if($code !== $currentLocale)
-    <meta property="og:locale:alternate" content="{{ $locale }}">
-        @endif
-    @endforeach
-
-    {{-- Twitter Card --}}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@fairitsolutions">
-    <meta name="twitter:creator" content="@fairitsolutions">
-    <meta name="twitter:title" content="@yield('og_title', 'FairIT Solutions — AI Operating Systems')">
-    <meta name="twitter:description" content="@yield('og_description', 'We help founders and enterprises unlock growth through AI.')">
-    <meta name="twitter:image" content="@yield('og_image', asset('images/og-image.png'))">
+    {!! $seo->render() !!}
 
     {{-- Favicon --}}
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
@@ -112,14 +77,14 @@
         "@id": "{{ url('/') }}#sitenav",
         "name": "Primary site navigation",
         "itemListElement": [
-            { "@type": "SiteNavigationElement", "position": 1, "name": "Services",    "url": "{{ route('services.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 2, "name": "Products",    "url": "{{ route('products.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 3, "name": "Industries",  "url": "{{ route('industries.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 4, "name": "Case Studies","url": "{{ route('case-studies.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 5, "name": "About",       "url": "{{ route('about') }}" },
-            { "@type": "SiteNavigationElement", "position": 6, "name": "Insights",    "url": "{{ route('blog.index') }}" },
-            { "@type": "SiteNavigationElement", "position": 7, "name": "Contact",     "url": "{{ route('contact') }}" },
-            { "@type": "SiteNavigationElement", "position": 8, "name": "Consultation","url": "{{ route('consultation') }}" }
+            { "@type": "SiteNavigationElement", "position": 1, "name": "{{ __('ui.nav.services') }}",    "url": "{{ route('services.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 2, "name": "{{ __('ui.nav.products') }}",    "url": "{{ route('products.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 3, "name": "{{ __('ui.nav.industries') }}",  "url": "{{ route('industries.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 4, "name": "{{ __('ui.nav.case_studies') }}","url": "{{ route('case-studies.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 5, "name": "{{ __('ui.nav.about') }}",       "url": "{{ route('about') }}" },
+            { "@type": "SiteNavigationElement", "position": 6, "name": "{{ __('ui.nav.insights') }}",    "url": "{{ route('blog.index') }}" },
+            { "@type": "SiteNavigationElement", "position": 7, "name": "{{ __('ui.nav.contact') }}",     "url": "{{ route('contact') }}" },
+            { "@type": "SiteNavigationElement", "position": 8, "name": "{{ __('ui.nav.book_consultation') }}","url": "{{ route('consultation') }}" }
         ]
     }
     </script>

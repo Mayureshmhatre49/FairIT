@@ -41,27 +41,27 @@
 
     /* ---- Buttons ---- */
     .btn-primary {
-        @apply inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-glow text-sm;
+        @apply inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-sm hover:shadow-glow text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
     }
 
     .btn-primary-lg {
-        @apply inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-sm hover:shadow-glow text-base;
+        @apply inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 shadow-sm hover:shadow-glow text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
     }
 
     .btn-secondary {
-        @apply inline-flex items-center gap-2 bg-white hover:bg-charcoal-50 text-charcoal-800 font-semibold px-6 py-3 rounded-xl transition-all duration-200 border border-charcoal-200 hover:border-charcoal-300 text-sm;
+        @apply inline-flex items-center gap-2 bg-white hover:bg-charcoal-50 text-charcoal-800 font-semibold px-6 py-3 rounded-xl transition-all duration-200 border border-charcoal-200 hover:border-charcoal-300 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
     }
 
     .btn-secondary-lg {
-        @apply inline-flex items-center gap-2 bg-white hover:bg-charcoal-50 text-charcoal-800 font-semibold px-8 py-4 rounded-xl transition-all duration-200 border border-charcoal-200 hover:border-charcoal-300 text-base;
+        @apply inline-flex items-center gap-2 bg-white hover:bg-charcoal-50 text-charcoal-800 font-semibold px-8 py-4 rounded-xl transition-all duration-200 border border-charcoal-200 hover:border-charcoal-300 text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
     }
 
     .btn-ghost {
-        @apply inline-flex items-center gap-2 text-charcoal-700 hover:text-charcoal-950 font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm;
+        @apply inline-flex items-center gap-2 text-charcoal-700 hover:text-charcoal-950 font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
     }
 
     .btn-outline-white {
-        @apply inline-flex items-center gap-2 border border-white/30 hover:border-white/60 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 backdrop-blur-sm text-sm hover:bg-white/10;
+        @apply inline-flex items-center gap-2 bg-transparent hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 border border-white/30 hover:border-white text-base focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal-950;
     }
 
     /* ---- Cards ---- */

@@ -1,117 +1,57 @@
 @extends('layouts.app')
 
-@section('title', 'Contact FairIT Solutions — Get in Touch')
-@section('description', 'Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours. Headquartered in Pune, India, with offices in Switzerland and Germany.')
+@section('title', __('seo.contact.title'))
+@section('description', __('seo.contact.description'))
 
-@section('schema')
-<script type="application/ld+json" nonce="{{ csp_nonce() }}">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "ContactPage",
-            "@id": "{{ route('contact') }}#webpage",
-            "url": "{{ route('contact') }}",
-            "name": "Contact FairIT Solutions",
-            "description": "Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours.",
-            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
-            "mainEntity": { "@id": "https://fairitsolutions.ch/#organization" }
-        },
-        {
-            "@type": "Organization",
-            "@id": "https://fairitsolutions.ch/#organization",
-            "name": "FairIT Solutions",
-            "legalName": "TRNM Digital Consulting LLP",
-            "alternateName": "FairIT Solutions",
-            "url": "https://fairitsolutions.ch",
-            "sameAs": [
-                "https://www.linkedin.com/company/fair-it-solutions/",
-                "https://www.facebook.com/FairITSolutions/"
-            ],
-            "address": [
-                {
-                    "@type": "PostalAddress",
-                    "streetAddress": "B 706, Teerth Technospace, Mumbai Bangalore Highway, Baner",
-                    "postalCode": "411045",
-                    "addressLocality": "Pune",
-                    "addressRegion": "Maharashtra",
-                    "addressCountry": "IN"
-                },
-                {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Glärnischstrasse 7",
-                    "postalCode": "9524",
-                    "addressLocality": "Zuzwil",
-                    "addressCountry": "CH"
-                },
-                {
-                    "@type": "PostalAddress",
-                    "streetAddress": "Steinstrasse 25",
-                    "postalCode": "20095",
-                    "addressLocality": "Hamburg",
-                    "addressCountry": "DE"
-                },
-                {
-                    "@type": "PostalAddress",
-                    "streetAddress": "House No. 518, At Post Dhokawade (Bhag), Taluka Alibag",
-                    "postalCode": "402201",
-                    "addressLocality": "Raigad",
-                    "addressRegion": "Maharashtra",
-                    "addressCountry": "IN"
-                }
-            ]
-        },
-        {
-            "@type": "Person",
-            "@id": "https://fairitsolutions.ch/about#nishant",
-            "name": "Nishant Mhatre",
-            "givenName": "Nishant",
-            "familyName": "Mhatre",
-            "jobTitle": "Co-Founder & CEO",
-            "description": "Bridges real estate, technology, and AI to build future-ready ecosystems. 20+ years across telecom, digital transformation, and real-estate entrepreneurship in the USA, UK, Europe, Australia, New Zealand, and India.",
-            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "email": "Nishant@fairitsolutions.in",
-            "sameAs": ["https://www.linkedin.com/in/nishantmhatre/"],
-            "knowsAbout": ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"]
-        },
-        {
-            "@type": "Person",
-            "@id": "https://fairitsolutions.ch/about#annemarie",
-            "name": "Annemarie M. Sickeler",
-            "givenName": "Annemarie",
-            "familyName": "Sickeler",
-            "jobTitle": "Co-Founder",
-            "description": "Entrepreneur with deep experience in organisational management, brand leadership, and luxury businesses. Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG).",
-            "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of St. Gallen (HSG)", "url": "https://www.unisg.ch" },
-            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "email": "Annemarie@fairitsolutions.ch",
-            "sameAs": ["https://www.linkedin.com/in/annemariesickeler/"],
-            "knowsAbout": ["Organisational Management", "Brand Leadership", "Luxury Business", "Hospitality", "Residential Design"]
-        },
-        {
-            "@type": "Person",
-            "@id": "https://fairitsolutions.ch/about#sanjay",
-            "name": "Sanjay Joshi",
-            "givenName": "Sanjay",
-            "familyName": "Joshi",
-            "jobTitle": "Co-Founder & CTO",
-            "description": "Entrepreneur, management consultant, corporate trainer and teacher with two decades of experience translating complex technology into clear business outcomes.",
-            "worksFor": { "@id": "https://fairitsolutions.ch/#organization" },
-            "email": "Sanjay@fairitsolutions.in",
-            "sameAs": ["https://www.linkedin.com/in/joshisanjay/"],
-            "knowsAbout": ["Information Technology", "Management Consulting", "Corporate Training", "Systems Analysis", "Solution Architecture", "Social Media Marketing"]
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Contact", "item": "{{ route('contact') }}" }
-            ]
-        }
-    ]
-}
-</script>
-@endsection
+@php
+    $schema = new \App\Services\SchemaBuilder();
+    $schema->addWebPage("ContactPage", "Contact FairIT Solutions", "Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours.", route('contact'));
+    
+    $schema->addOrganization();
+
+    $schema->addPerson([
+        "@id" => "https://fairitsolutions.ch/about#nishant",
+        "name" => "Nishant Mhatre",
+        "givenName" => "Nishant",
+        "familyName" => "Mhatre",
+        "jobTitle" => "Co-Founder & CEO",
+        "description" => "Bridges real estate, technology, and AI to build future-ready ecosystems. 20+ years across telecom, digital transformation, and real-estate entrepreneurship in the USA, UK, Europe, Australia, New Zealand, and India.",
+        "email" => "Nishant@fairitsolutions.in",
+        "sameAs" => ["https://www.linkedin.com/in/nishantmhatre/"],
+        "knowsAbout" => ["Artificial Intelligence", "Digital Transformation", "Real Estate", "Telecom", "AI Strategy", "Voice AI", "Startup Advisory"]
+    ]);
+
+    $schema->addPerson([
+        "@id" => "https://fairitsolutions.ch/about#annemarie",
+        "name" => "Annemarie M. Sickeler",
+        "givenName" => "Annemarie",
+        "familyName" => "Sickeler",
+        "jobTitle" => "Co-Founder",
+        "description" => "Entrepreneur with deep experience in organisational management, brand leadership, and luxury businesses. Partner at Hestia Villas and an alumna of the University of St. Gallen (HSG).",
+        "alumniOf" => [ "@type" => "CollegeOrUniversity", "name" => "University of St. Gallen (HSG)", "url" => "https://www.unisg.ch" ],
+        "email" => "Annemarie@fairitsolutions.ch",
+        "sameAs" => ["https://www.linkedin.com/in/annemariesickeler/"],
+        "knowsAbout" => ["Organisational Management", "Brand Leadership", "Luxury Business", "Hospitality", "Residential Design"]
+    ]);
+
+    $schema->addPerson([
+        "@id" => "https://fairitsolutions.ch/about#sanjay",
+        "name" => "Sanjay Joshi",
+        "givenName" => "Sanjay",
+        "familyName" => "Joshi",
+        "jobTitle" => "Co-Founder & CTO",
+        "description" => "Entrepreneur, management consultant, corporate trainer and teacher with two decades of experience translating complex technology into clear business outcomes.",
+        "email" => "Sanjay@fairitsolutions.in",
+        "sameAs" => ["https://www.linkedin.com/in/joshisanjay/"],
+        "knowsAbout" => ["Information Technology", "Management Consulting", "Corporate Training", "Systems Analysis", "Solution Architecture", "Social Media Marketing"]
+    ]);
+
+    $schema->addBreadcrumbs([
+        "Home" => url('/'),
+        "Contact" => route('contact')
+    ]);
+@endphp
+{!! $schema->render() !!}
 
 @section('content')
 

@@ -1,32 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'About FairIT Solutions — Enterprise AI Consulting')
-@section('description', 'Two decades of enterprise software delivery across 16 industries, now powering strategic AI consulting and custom AI Operating Systems.')
+@section('title', __('seo.about.title'))
+@section('description', __('seo.about.description'))
 
-@section('schema')
-<script type="application/ld+json" nonce="{{ csp_nonce() }}">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "AboutPage",
-            "@id": "{{ route('about') }}#webpage",
-            "url": "{{ route('about') }}",
-            "name": "About FairIT Solutions",
-            "description": "FairIT Solutions builds AI systems that solve real-world complexity.",
-            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
-            "about": { "@id": "https://fairitsolutions.ch/#organization" },
-            "breadcrumb": {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                    { "@type": "ListItem", "position": 2, "name": "About", "item": "{{ route('about') }}" }
-                ]
-            }
-        }
-    ]
-}
-</script>
+@php
+    $schema = new \App\Services\SchemaBuilder();
+    $schema->addWebPage("AboutPage", "About FairIT Solutions", "FairIT Solutions builds AI systems that solve real-world complexity.", route('about'));
+    $schema->addBreadcrumbs([
+        "Home" => url('/'),
+        "About" => route('about')
+    ]);
+@endphp
+{!! $schema->render() !!}
 @endsection
 
 @section('content')

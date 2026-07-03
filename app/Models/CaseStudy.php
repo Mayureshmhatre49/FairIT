@@ -5,10 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class CaseStudy extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
+
+    public $translatable = [
+        'project_name',
+        'summary',
+        'challenge',
+        'approach',
+        'outcome',
+        'seo_title',
+        'seo_desc'
+    ];
 
     protected $fillable = [
         'client_name',

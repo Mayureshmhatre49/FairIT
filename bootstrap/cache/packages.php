@@ -48,4 +48,11 @@
       0 => 'Spatie\\Sitemap\\SitemapServiceProvider',
     ),
   ),
+  'spatie/laravel-translatable' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\Translatable\\TranslatableServiceProvider',
+    ),
+  ),
 );

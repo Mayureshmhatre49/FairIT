@@ -1,41 +1,21 @@
 @extends('layouts.app')
 
-@section('title', 'AI Operating Systems | FairIT Solutions')
-@section('description', 'Explore our custom AI Operating Systems: SarathiOS for founders, HSI OS for interior design, and HandleLife OS for modern family operations.')
+@section('title', __('seo.products.index_title'))
+@section('description', __('seo.products.index_description'))
 
-@section('schema')
-<script type="application/ld+json" nonce="{{ csp_nonce() }}">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "CollectionPage",
-            "@id": "{{ route('products.index') }}#webpage",
-            "url": "{{ route('products.index') }}",
-            "name": "AI Products — FairIT Solutions",
-            "description": "Three purpose-built AI Operating Systems: SarathiOS, HSI OS, and HandleLife OS.",
-            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
-        },
-        {
-            "@type": "ItemList",
-            "name": "AI Operating Systems by FairIT Solutions",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "SarathiOS — Founder AI Operating System", "url": "{{ route('products.sarathios') }}" },
-                { "@type": "ListItem", "position": 2, "name": "HSI OS — Interior Design AI Operating System", "url": "{{ route('products.hsios') }}" },
-                { "@type": "ListItem", "position": 3, "name": "HandleLife OS — Family AI Operating System", "url": "{{ route('products.handlelife') }}" }
-            ]
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Products", "item": "{{ route('products.index') }}" }
-            ]
-        }
-    ]
-}
-</script>
-@endsection
+@php
+    $schema = new \App\Services\SchemaBuilder();
+    $schema->addItemList("AI Operating Systems by FairIT Solutions", [
+        "SarathiOS — Founder AI Operating System" => route('products.sarathios'),
+        "HSI OS — Interior Design AI Operating System" => route('products.hsios'),
+        "HandleLife OS — Family AI Operating System" => route('products.handlelife')
+    ]);
+    $schema->addBreadcrumbs([
+        "Home" => url('/'),
+        "Products" => route('products.index')
+    ]);
+@endphp
+{!! $schema->render() !!}
 
 @section('content')
 

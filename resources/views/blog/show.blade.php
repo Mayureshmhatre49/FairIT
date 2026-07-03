@@ -65,8 +65,8 @@
         {
             "@type": "BreadcrumbList",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Insights", "item": "{{ route('blog.index') }}" },
+                { "@type": "ListItem", "position": 1, "name": "{{ __('blog.schema.home') }}", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "{{ __('blog.schema.insights') }}", "item": "{{ route('blog.index') }}" },
                 { "@type": "ListItem", "position": 3, "name": "{{ addslashes($post->title) }}", "item": "{{ url()->current() }}" }
             ]
         }
@@ -83,7 +83,7 @@
         <div data-animate>
             <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-2 text-charcoal-400 hover:text-white text-sm mb-8 transition-colors">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-                All Insights
+                {{ __('blog.all_insights') }}
             </a>
             @if($post->category)
             <span class="badge badge-blue mb-4">{{ $post->category }}</span>
@@ -134,13 +134,13 @@
                 {{-- Related Posts --}}
                 @if($related->count() > 0)
                 <div data-animate data-animate-delay="200">
-                    <h3 class="font-bold text-charcoal-950 mb-4">Related Insights</h3>
+                    <h3 class="font-bold text-charcoal-950 mb-4">{{ __('blog.related') }}</h3>
                     <div class="space-y-4">
                         @foreach($related as $rp)
                         <a href="{{ route('blog.show', $rp->slug) }}" class="group flex gap-4 hover:bg-charcoal-50 p-3 rounded-xl transition-colors">
                             <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
                                 @if($rp->featured_image)
-                                <img src="{{ asset($rp->featured_image) }}" alt="{{ $rp->title }}" class="w-full h-full object-cover">
+                                <img src="{{ asset($rp->featured_image) }}" alt="{{ $rp->title }}" class="w-full h-full object-cover" loading="lazy">
                                 @else
                                 {!! $rp->thumbnail_svg !!}
                                 @endif

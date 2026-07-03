@@ -7,96 +7,28 @@
 @section('og_image_alt', $service['title'] . ' — FairIT Solutions AI Service')
 
 @php
-    $jsonStr = fn($s) => json_encode((string) $s, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-@endphp
-@section('schema')
-<script type="application/ld+json" nonce="{{ csp_nonce() }}">
-{
-    "@context": "https://schema.org",
-    "@graph": [
-        {
-            "@type": "Service",
-            "@id": "{{ url()->current() }}#service",
-            "name": {!! $jsonStr($service['title']) !!},
-            "description": {!! $jsonStr($service['description']) !!},
-            "url": "{{ url()->current() }}",
-            "provider": {
-                "@type": "Organization",
-                "@id": "https://fairitsolutions.ch/#organization",
-                "name": "FairIT Solutions",
-                "legalName": "TRNM Digital Consulting LLP",
-                "url": "https://fairitsolutions.ch"
-            },
-            "areaServed": "Worldwide",
-            "serviceType": "AI Consulting",
-            "offers": {
-                "@type": "Offer",
-                "url": "{{ route('consultation') }}",
-                "availability": "https://schema.org/InStock",
-                "priceCurrency": "USD",
-                "priceSpecification": {
-                    "@type": "PriceSpecification",
-                    "priceCurrency": "USD",
-                    "price": "0",
-                    "description": "Free initial consultation; engagement pricing quoted in USD, EUR, CHF, GBP, or INR on request"
-                }
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": {!! $jsonStr($service['title'] . ' — Deliverables') !!},
-                "itemListElement": [
-                    @foreach($service['deliverables'] as $i => $deliverable)
-                    { "@type": "Offer", "position": {{ $i + 1 }}, "itemOffered": { "@type": "Service", "name": {!! $jsonStr($deliverable) !!} } }{{ !$loop->last ? ',' : '' }}
-                    @endforeach
-                ]
-            }
-        },
-        {
-            "@type": "HowTo",
-            "@id": "{{ url()->current() }}#process",
-            "name": {!! $jsonStr('How ' . $service['title'] . ' works at FairIT Solutions') !!},
-            "description": {!! $jsonStr($service['description']) !!},
-            "totalTime": "P30D",
-            "supply": [],
-            "tool": [],
-            "step": [
-                @foreach($service['process'] as $i => $step)
-                {
-                    "@type": "HowToStep",
-                    "position": {{ $i + 1 }},
-                    "name": {!! $jsonStr($step['title']) !!},
-                    "text": {!! $jsonStr($step['desc']) !!},
-                    "url": "{{ url()->current() }}#step-{{ $i + 1 }}"
-                }{{ !$loop->last ? ',' : '' }}
-                @endforeach
-            ]
-        },
-        {
-            "@type": "FAQPage",
-            "mainEntity": [
-                @foreach($service['faqs'] as $faq)
-                {
-                    "@type": "Question",
-                    "name": {!! $jsonStr($faq['q']) !!},
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": {!! $jsonStr($faq['a']) !!}
-                    }
-                }{{ !$loop->last ? ',' : '' }}
-                @endforeach
-            ]
-        },
-        {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Services", "item": "{{ route('services.index') }}" },
-                { "@type": "ListItem", "position": 3, "name": {!! $jsonStr($service['title']) !!}, "item": "{{ url()->current() }}" }
-            ]
+    $schema = new \App\Services\SchemaBuilder();
+    $schema->addService($service['title'], $service['description'], url()->current());
+    
+    if (!empty($service['process'])) {
+        $schema->addHowTo('How ' . $service['title'] . ' works', $service['description'], $service['process']);
+    }
+    
+    if (!empty($service['faqs'])) {
+        $faqs = [];
+        foreach($service['faqs'] as $faq) {
+            $faqs[$faq['q']] = $faq['a'];
         }
-    ]
-}
-</script>
+        $schema->addFAQ($faqs);
+    }
+
+    $schema->addBreadcrumbs([
+        "Home" => url('/'),
+        "Services" => route('services.index'),
+        $service['title'] => url()->current()
+    ]);
+@endphp
+{!! $schema->render() !!}
 @endsection
 
 @section('content')

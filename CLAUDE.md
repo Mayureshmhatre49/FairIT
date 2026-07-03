@@ -70,7 +70,7 @@ The user explicitly asked to "tone down anything tough to implement." Apply thes
 ### Locale state
 
 - **English (`lang/en/`)** is the source of truth and reflects all recent positioning.
-- **de / fr / es / ar** carry **stale Swiss-centric copy from before the HQ/legal restructure**. Do not edit them without an explicit ask — and when asked, treat it as a deliberate translation pass, not casual machine translation. Hero, services, contact, and privacy/terms strings all need re-translating.
+- **de / fr / es / ar** have been partially machine-translated (Case Studies, Insights, and SEO metadata have been translated to these languages via Google Translate). However, some older static marketing copy may still carry **stale Swiss-centric copy from before the HQ/legal restructure**. Treat any further updates as a deliberate translation pass.
 
 ---
 
@@ -209,7 +209,7 @@ Every claim ties to a real statement in the privacy policy or service FAQs. Tran
 
 - **61 case studies** seeded from `database/seeders/CaseStudySeeder.php`. The source was `Boston Byte Project Details.xlsx` (gitignored — see "Sensitive files" below). Idempotent via `updateOrCreate(['slug' => ...])`.
 - **Revenue (`revenue_usd`) is stored internally but never displayed publicly** — decision was deliberate. Admin form shows it, public pages do not. Don't add it to the public Blade.
-- Schema: `client_name`, `project_name`, `slug`, `domain`, `summary`, `challenge`, `approach`, `outcome`, `tech_keywords`, `revenue_usd`, `is_ongoing`, `is_featured`, `is_published`, `order`, `seo_title`, `seo_desc`.
+- Schema: `client_name`, `project_name`, `slug`, `domain`, `summary`, `challenge`, `approach`, `outcome`, `tech_keywords`, `revenue_usd`, `is_ongoing`, `is_featured`, `is_published`, `order`, `seo_title`, `seo_desc`. **Note:** `CaseStudy` and `Post` models use `Spatie\Translatable\HasTranslations`. Most user-facing string/text columns (like title, summary, challenge, content, etc.) are now stored as JSON blobs containing translations for en, de, fr, es, ar.
 - Anonymous-client rows render as **"Confidential Client"** via `CaseStudy::getDisplayClientNameAttribute()`. Two original rows (ePoll, Velir) have `client_name = null` on purpose.
 - Index card thumbnails use a `$study->thumbnail_svg` accessor on the model — an inline SVG generated per-study (rendered raw via `{!! !!}`). If you add a new card layout, this accessor is the visual element.
 - Detail-page Blade renders four H2 sections: **Project Overview**, **The Challenge**, **Our Approach**, **The Outcome**. Plus a sticky-right sidebar with industry / client / status / tech chips.
@@ -263,7 +263,7 @@ These are explicitly excluded in `.gitignore`. The exclusion is intentional and 
 
 ## What NOT to do
 
-- **Don't edit `de/fr/es/ar` lang files** without explicit instruction — they're stale and a careless update would worsen the inconsistency rather than fix it.
+- **Don't blindly machine-translate old `de/fr/es/ar` lang files** without checking for stale Swiss-centric copy first. While we recently translated dynamic content and SEO tags, some static marketing strings need a manual review pass.
 - **Don't add the admin path to `robots.txt`** — see Admin section.
 - **Don't claim 24/7 follow-the-sun delivery, US fundraising help, SAP integration, French workshops, or APAC offices.** These are the exact toned-down claims worth preserving as guardrails.
 - **Don't change the `.ch` domain** to `.in` or similar to "fix" the entity/domain mismatch. The brand uses `.ch` deliberately.

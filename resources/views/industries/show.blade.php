@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'AI for ' . $industry['title'] . ' — FairIT Solutions')
+@section('title', __('seo.industries.show_title', ['industry' => $industry['title']]))
 @section('description', $industry['description'])
 
 @section('schema')

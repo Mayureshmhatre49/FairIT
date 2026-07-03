@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Insights — AI Strategy, Automation & Growth | FairIT Solutions')
-@section('description', 'Expert insights on AI transformation, voice AI, founder productivity, AI operating systems, and business automation from the FairIT Solutions team.')
+@section('title', __('seo.blog.index_title'))
+@section('description', __('seo.blog.index_description'))
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
@@ -12,8 +12,8 @@
             "@type": "CollectionPage",
             "@id": "{{ route('blog.index') }}#webpage",
             "url": "{{ route('blog.index') }}",
-            "name": "AI Insights — FairIT Solutions",
-            "description": "Expert insights on AI transformation, voice AI, founder productivity, and business automation.",
+            "name": "{{ __('blog.schema.name') }}",
+            "description": "{{ __('blog.schema.description') }}",
             "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
             "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
             "mainEntity": { "@id": "{{ route('blog.index') }}#blog" }
@@ -21,8 +21,8 @@
         {
             "@type": "Blog",
             "@id": "{{ route('blog.index') }}#blog",
-            "name": "FairIT Solutions Insights",
-            "description": "Expert insights on AI transformation, voice AI, founder productivity, AI copilots, and business automation.",
+            "name": "{{ __('blog.schema.blog_name') }}",
+            "description": "{{ __('blog.schema.blog_description') }}",
             "url": "{{ route('blog.index') }}",
             "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
             "inLanguage": "{{ app()->getLocale() }}",
@@ -43,8 +43,8 @@
         {
             "@type": "BreadcrumbList",
             "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
-                { "@type": "ListItem", "position": 2, "name": "Insights", "item": "{{ route('blog.index') }}" }
+                { "@type": "ListItem", "position": 1, "name": "{{ __('blog.schema.home') }}", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "{{ __('blog.schema.insights') }}", "item": "{{ route('blog.index') }}" }
             ]
         }
     ]

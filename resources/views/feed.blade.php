@@ -4,11 +4,11 @@
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
-    <title>FairIT Solutions — AI Insights</title>
+    <title>{{ __('blog.schema.blog_name') }}</title>
     <link>{{ url('/insights') }}</link>
     <atom:link href="{{ url('/feed.xml') }}" rel="self" type="application/rss+xml" />
-    <description>Expert insights on AI transformation, voice AI, founder productivity, AI copilots and business automation from the FairIT Solutions team.</description>
-    <language>en</language>
+    <description>{{ __('blog.schema.blog_description') }}</description>
+    <language>{{ app()->getLocale() }}</language>
     <copyright>Copyright {{ date('Y') }} FairIT Solutions</copyright>
     <lastBuildDate>{{ now()->toRssString() }}</lastBuildDate>
     <ttl>1440</ttl>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Request a Free AI Consultation — FairIT Solutions')
-@section('description', 'Book a free AI strategy consultation with FairIT Solutions. Discuss your AI goals, challenges, and get expert guidance. Response within 24 hours.')
+@section('title', __('seo.consultation.title'))
+@section('description', __('seo.consultation.description'))
 
 @section('schema')
 <script type="application/ld+json" nonce="{{ csp_nonce() }}">
