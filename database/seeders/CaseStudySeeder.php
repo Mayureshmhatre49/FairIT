@@ -16,6 +16,7 @@ class CaseStudySeeder extends Seeder
      */
     private array $retiredSlugs = [
         'the-lift',
+        'wello',
     ];
 
     public function run(): void
@@ -466,21 +467,21 @@ class CaseStudySeeder extends Seeder
 
             // ── 23 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'wello',
+                'slug' => 'national-telemedicine-platform',
                 'client_name' => 'Telemedicine Provider (Canada)',
-                'project_name' => 'Wello — National Telemedicine Platform',
+                'project_name' => 'National Telemedicine Platform',
                 'domain' => 'Healthcare',
                 'order' => 23,
                 'revenue_usd' => 2200000,
                 'is_ongoing' => false,
                 'is_featured' => true,
-                'summary' => 'Wello transformed a conventional clinic into a Canada-wide telemedicine platform supporting phone, video, and chat consultations at peak loads of 125,000 concurrent users —.',
-                'challenge' => 'Telemedicine Provider (Canada) set out to extend a conventional clinic into a national telemedicine service across all of Canada. The platform needed to handle multi-modal consultation channels, scheduling, clinical records, and peak demand spikes far above traditional clinic loads — all under healthcare-grade reliability and patient privacy requirements.',
-                'approach' => "We engineered Wello as a multi-channel telemedicine platform: a patient portal for appointment scheduling, phone, video, and chat consultation modes, integrated clinical records, and an architecture engineered to sustain a peak load of 125,000 concurrent users across Canada. Reliability, security, and clinician workflow were treated as first-class requirements. The structured clinical and engagement data layer is precisely the substrate today's AI-driven virtual care systems extend.",
-                'outcome' => "Wello became one of Canada's most-used telemedicine platforms at peak, and was — validating the platform's clinical, technical, and commercial design.",
+                'summary' => 'A conventional clinic extended into a Canada-wide telemedicine platform supporting phone, video, and chat consultations at peak loads of 125,000 concurrent users.',
+                'challenge' => 'The client set out to extend a conventional clinic into a national telemedicine service across all of Canada. The platform needed to handle multi-modal consultation channels, scheduling, clinical records, and peak demand spikes far above traditional clinic loads — all under healthcare-grade reliability and patient privacy requirements.',
+                'approach' => "We engineered a multi-channel telemedicine platform: a patient portal for appointment scheduling, phone, video, and chat consultation modes, integrated clinical records, and an architecture engineered to sustain a peak load of 125,000 concurrent users across Canada. Reliability, security, and clinician workflow were treated as first-class requirements. The structured clinical and engagement data layer is precisely the substrate today's AI-driven virtual care systems extend.",
+                'outcome' => "The platform became one of Canada's most-used telemedicine services at peak, validating its clinical, technical, and commercial design.",
                 'tech_keywords' => 'Telemedicine, Virtual Care, Multi-channel Consultation, High-scale Healthcare Platform, Canada',
-                'seo_title' => 'National Telemedicine Platform — National Telemedicine Platform',
-                'seo_desc' => 'A multi-channel telemedicine platform (phone, video, chat) serving Canada at peak loads of 125K concurrent users —.',
+                'seo_title' => 'National Telemedicine Platform — Healthcare Case Study',
+                'seo_desc' => 'A multi-channel telemedicine platform (phone, video, chat) serving Canada at peak loads of 125K concurrent users.',
             ],
 
             // ── 24 ────────────────────────────────────────────────────────────────
