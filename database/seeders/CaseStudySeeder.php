@@ -7,8 +7,24 @@ use Illuminate\Database\Seeder;
 
 class CaseStudySeeder extends Seeder
 {
+    /**
+     * Slugs from earlier versions of this seeder that have since been
+     * renamed. `updateOrCreate` matches by slug — when we renamed a slug
+     * (e.g. 'the-lift' -> 'production-erp-film-content'), the old row was
+     * orphaned on any environment already seeded, creating a duplicate.
+     * These are removed defensively at the start of each seed run.
+     */
+    private array $retiredSlugs = [
+        'the-lift',
+    ];
+
     public function run(): void
     {
+        // Drop any orphaned rows from renamed slugs before upserting.
+        if (! empty($this->retiredSlugs)) {
+            CaseStudy::whereIn('slug', $this->retiredSlugs)->delete();
+        }
+
         foreach ($this->studies() as $data) {
             $slug = $data['slug'];
             unset($data['slug']);
