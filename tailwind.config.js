@@ -5,6 +5,10 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.js',
+        // Model files can embed Tailwind class strings inside generated
+        // SVG (e.g. Post::thumbnail_svg, CaseStudy::thumbnail_svg).
+        // Scanning app/**/*.php ensures those classes get compiled.
+        './app/**/*.php',
     ],
     theme: {
         extend: {
