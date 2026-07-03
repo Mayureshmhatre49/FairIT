@@ -6,10 +6,27 @@ use App\Services\IndexNowService;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
+
+    /**
+     * Columns whose value is a JSON blob of translations keyed by locale.
+     * Reads (via $post->title etc.) return the current-locale value, with
+     * automatic fallback per config/translatable.php.
+     *
+     * Category, tags, and slug intentionally stay single-value — they act
+     * as identifiers, not user-facing prose.
+     */
+    public array $translatable = [
+        'title',
+        'excerpt',
+        'content',
+        'seo_title',
+        'seo_desc',
+    ];
 
     protected static function booted(): void
     {
