@@ -227,9 +227,13 @@ return view('case-studies.show', compact('study', 'related'));
 
 If a particular case study needs a richer treatment than the standard four-section template, create a dedicated Blade at `resources/views/case-studies/{custom-name}.blade.php` and add the slug check before the default `return view(...)`. Don't generalise the pattern (e.g. don't make it data-driven via a `custom_view` column) until there are several — for now, hardcoded slug branches are the cleaner choice.
 
-### JSON-LD escaping in service detail pages
+### Enterprise SEO Architecture
 
-`resources/views/services/_detail.blade.php` uses a `$jsonStr` helper (defined in the file) that calls `json_encode(..., JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)` and outputs via raw Blade `{!! !!}`. **Do not revert to `{{ addslashes(...) }}`** — that pattern double-encodes apostrophes (`\&#039;`) and produces invalid JSON-LD inside `<script>` blocks. The Retainers page silently shipped invalid schema for weeks before this was fixed.
+- **Structured Data (JSON-LD)**: NEVER hardcode `<script type="application/ld+json">` in Blade templates (except for the global `SiteNavigationElement` in `app.blade.php`). Always use `App\Services\SchemaBuilder`. This ensures correct escaping (`JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES`) and enforces strict EEAT structures (like automatic `Organization` injection on contact pages).
+- **Meta Tags & Hreflang**: Managed by `App\Services\SeoManager` which is instantiated in `app.blade.php`. It automatically generates symmetric `hreflang` cross-links (en, de, fr, es, ar) and the `x-default` tag based on Laravel's current locale.
+- **Internal Linking**: `App\Services\LinkBuilder` can be used to inject highly contextual anchor links into unstructured translated text.
+- **Accessibility**: When adding buttons, always ensure they have `focus-visible:ring-2 focus-visible:ring-brand-500` applied in `app.css` to maintain WCAG 2.1 AA keyboard compliance.
+- **Images**: Ensure all below-the-fold images have `loading="lazy"`.
 
 ---
 
