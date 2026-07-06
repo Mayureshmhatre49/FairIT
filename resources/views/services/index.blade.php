@@ -3,6 +3,7 @@
 @section('title', __('seo.services.index_title'))
 @section('description', __('seo.services.index_description'))
 
+@section('schema')
 @php
     $schema = new \App\Services\SchemaBuilder();
     $schema->addItemList("AI Services by FairIT Solutions", [
@@ -18,6 +19,7 @@
     ]);
 @endphp
 {!! $schema->render() !!}
+@endsection
 
 @section('content')
 

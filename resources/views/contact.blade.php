@@ -3,6 +3,7 @@
 @section('title', __('seo.contact.title'))
 @section('description', __('seo.contact.description'))
 
+@section('schema')
 @php
     $schema = new \App\Services\SchemaBuilder();
     $schema->addWebPage("ContactPage", "Contact FairIT Solutions", "Contact FairIT Solutions to discuss your AI needs. We respond within 24 hours.", route('contact'));
@@ -52,6 +53,7 @@
     ]);
 @endphp
 {!! $schema->render() !!}
+@endsection
 
 @section('content')
 

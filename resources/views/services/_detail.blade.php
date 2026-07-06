@@ -6,6 +6,7 @@
 @section('og_description', $service['description'])
 @section('og_image_alt', $service['title'] . ' — FairIT Solutions AI Service')
 
+@section('schema')
 @php
     $schema = new \App\Services\SchemaBuilder();
     $schema->addService($service['title'], $service['description'], url()->current());

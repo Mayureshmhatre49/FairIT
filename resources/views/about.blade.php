@@ -3,6 +3,7 @@
 @section('title', __('seo.about.title'))
 @section('description', __('seo.about.description'))
 
+@section('schema')
 @php
     $schema = new \App\Services\SchemaBuilder();
     $schema->addWebPage("AboutPage", "About FairIT Solutions", "FairIT Solutions builds AI systems that solve real-world complexity.", route('about'));
