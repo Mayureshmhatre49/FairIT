@@ -9,7 +9,7 @@
             <h1 class="text-4xl font-bold text-charcoal-950 mt-3">Cookie Policy</h1>
             <p class="text-charcoal-500 mt-2 text-sm">Last updated: {{ date('d F Y') }}</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose prose-gray max-w-none" data-animate data-animate-delay="100">
+        <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose-fairit" data-animate data-animate-delay="100">
             <h2>1. What Are Cookies?</h2>
             <p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your experience.</p>
 

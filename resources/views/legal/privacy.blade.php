@@ -9,7 +9,7 @@
             <h1 class="text-4xl font-bold text-charcoal-950 mt-3">Privacy Policy</h1>
             <p class="text-charcoal-500 mt-2 text-sm">Last updated: {{ date('d F Y') }}</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose prose-gray max-w-none" data-animate data-animate-delay="100">
+        <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose-fairit" data-animate data-animate-delay="100">
 
             <h2>1. Introduction</h2>
             <p><strong>FairIT Solutions</strong> is a brand operated by <strong>TRNM Digital Consulting LLP</strong> ("we", "us", "our"). This Privacy Policy explains how we collect, use, store, and protect information about you when you use our website at <strong>fairitsolutions.ch</strong>, our consultation services, and any communications you have with us.</p>

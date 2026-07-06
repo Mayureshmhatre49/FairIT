@@ -9,7 +9,7 @@
             <h1 class="text-4xl font-bold text-charcoal-950 mt-3">Terms of Service</h1>
             <p class="text-charcoal-500 mt-2 text-sm">Last updated: {{ date('d F Y') }}</p>
         </div>
-        <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose prose-gray max-w-none" data-animate data-animate-delay="100">
+        <div class="bg-white rounded-2xl p-8 lg:p-12 border border-charcoal-100 prose-fairit" data-animate data-animate-delay="100">
             <h2>1. Acceptance of Terms</h2>
             <p><strong>FairIT Solutions</strong> is a brand operated by <strong>TRNM Digital Consulting LLP</strong>, a Limited Liability Partnership incorporated in India. By accessing or using the FairIT Solutions website (fairitsolutions.ch) and our services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our website or services.</p>
 
