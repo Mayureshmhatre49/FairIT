@@ -105,8 +105,9 @@ return [
         'title' => 'Industries We Transform',
         'subtitle' => 'AI solutions tailored to the unique challenges and opportunities of every sector.',
         'items' => [
-            'Startups', 'SMEs', 'Real Estate', 'Hospitality',
-            'Interior Design', 'Healthcare', 'Education', 'Professional Services',
+            'Startups', 'SMEs', 'Manufacturing', 'Real Estate',
+            'Hospitality', 'Interior Design', 'Healthcare', 'Education',
+            'Professional Services',
         ],
     ],
     'testimonials' => [

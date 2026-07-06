@@ -15,6 +15,7 @@ class IndustriesController extends Controller
         'healthcare' => 'Healthcare',
         'hospitality' => 'Hospitality',
         'education' => 'Education',
+        'manufacturing' => 'Manufacturing',
     ];
 
     private array $industries = [
@@ -131,6 +132,63 @@ class IndustriesController extends Controller
             ],
 
             'compliance' => 'All SME engagements are scoped to the relevant data-protection regime: Swiss FADP and EU GDPR for European SMEs, India DPDP Act for Indian SMEs. Data residency options are available, including EU-only and Switzerland-only hosting.',
+        ],
+
+        // ── MANUFACTURING ────────────────────────────────────────────────────
+        'manufacturing' => [
+            'title' => 'Manufacturing',
+            'cta_noun' => 'Manufacturing',
+            'related_product' => null,
+            'related_product_route' => null,
+            'headline' => 'Less Downtime. Faster Quotes. Fewer Defects.',
+            'description' => 'AI systems for industrial manufacturers — from engineered process equipment and heavy engineering to discrete production — covering predictive maintenance, quality inspection, RFQ automation, and workforce knowledge capture.',
+            'icon' => 'cog',
+            'color' => 'orange',
+
+            'intro' => 'Manufacturing runs on three margins: uptime, quality, and cycle time. A shift lost to an unplanned stoppage is revenue that will never return. A defective batch caught by the customer instead of the line costs ten times what it would have cost to catch in-house. An RFQ that takes two weeks to price is an RFQ your competitor already answered. AI does not replace the engineers, planners, and supervisors who run the plant — it gives each of them the equivalent of a shift-long assistant who never gets tired, never misses a data point, and remembers every job the plant has ever run. The result is not "smart factory" theatre. It is measurable improvements in OEE, first-pass yield, quote turnaround, and the retention of senior tribal knowledge that too often walks out the door with retirement.',
+
+            'pain_points' => [
+                'Unplanned downtime on critical equipment — every stoppage measured in tens of thousands per hour, and root cause discovered only after the fact',
+                'Quality inspection depends on tired human eyes on high-throughput lines — defects escape until the customer finds them',
+                'Engineered-product RFQs and quotes take 5–15 days because pricing sits in three engineers\' heads and a legacy spreadsheet',
+                'ERP, MES, CAD, CRM, and shop-floor data live in five systems that do not talk to each other — no single picture of the job',
+                'Senior engineers and shop supervisors retiring with decades of tacit knowledge that was never written down',
+                'Global project delivery (installation, commissioning, warranty) coordinated over email and phone — no real-time visibility for customers or management',
+            ],
+
+            'solutions' => [
+                'Predictive maintenance from vibration, temperature, and PLC/SCADA telemetry — failure warnings hours or days before breakdown',
+                'Computer-vision quality inspection integrated into the line (defect detection, dimensional QC, surface finish grading)',
+                'AI RFQ / quote copilots that draft engineered pricing from customer specs, historic jobs, and material cost feeds',
+                'Production planning and demand forecasting AI — schedules that adapt to changeovers, material availability, and unplanned events',
+                'Knowledge-capture AI that ingests engineering drawings, job files, and senior-engineer notes into a searchable, question-answerable plant memory',
+                'Voice AI for shop-floor supervisors (multilingual): raise NCRs, log downtime causes, request maintenance without leaving the line',
+                'Vendor and supplier risk monitoring (delivery track record, financial signals, single-source dependency alerts)',
+                'Customer-facing project portals: real-time production, QA, dispatch, and installation status for large engineered orders',
+            ],
+
+            'use_cases' => [
+                [
+                    'title' => 'Predictive maintenance on a critical extruder',
+                    'scenario' => 'A specialty polymer processor was averaging 14 hours a month of unplanned downtime on its main extruder line, at an internal cost of ~€28,000 per lost hour of throughput.',
+                    'ai_solution' => 'An AI layer on top of existing vibration and thermal sensors learned the equipment\'s failure signatures over eight weeks, then began issuing 12–72 hour early warnings tied to specific components.',
+                    'outcome' => 'Unplanned downtime dropped 62% in the first quarter; maintenance shifted from reactive to planned; the extruder\'s OEE moved from 71% to 84%.',
+                ],
+                [
+                    'title' => 'Engineered-product quote automation',
+                    'scenario' => 'A process-equipment manufacturer\'s RFQ turnaround averaged 9 working days because pricing required a senior engineer to model materials, linings, and machining time from scratch each time.',
+                    'ai_solution' => 'An AI quote copilot ingests the customer spec, retrieves the three closest historical jobs, drafts a first-pass BOM, and produces a pricing draft with a confidence score for the engineer to review — not replace.',
+                    'outcome' => 'Median RFQ turnaround fell from 9 days to 36 hours. The senior engineer\'s time on routine quotes dropped 70%, freeing them for the complex, high-margin enquiries where their judgement actually moves the deal.',
+                ],
+                [
+                    'title' => 'Retiring senior engineer, knowledge preserved',
+                    'scenario' => 'A 40-year-old B2B industrial manufacturer was facing the retirement of two senior application engineers within 18 months. Their knowledge of client-specific anti-corrosion and lining selections was almost entirely undocumented.',
+                    'ai_solution' => 'A structured knowledge-capture programme paired short weekly interview sessions with an AI that ingested drawings, historical project files, and inspection reports — producing a searchable, question-answerable plant memory available to every engineer.',
+                    'outcome' => 'When the first engineer retired, quote-review handoff to the mid-level team took days, not months. Post-retirement, the AI answers roughly 60% of the questions that would previously have gone to him — the remaining 40% is exactly the judgement work that should sit with a human.',
+                ],
+            ],
+
+            'compliance' => 'Manufacturing engagements are scoped to the relevant data-protection regime (EU GDPR, Swiss FADP, India DPDP Act) with additional controls for operational-technology environments: air-gapped or on-premise inference where the plant network demands it, no training of external models on customer drawings or specifications, and integration with existing safety and quality frameworks (ISO 9001, ISO 14001, IATF 16949, ATEX where applicable). Data residency in Switzerland, EU, or India is available.',
         ],
 
         // ── REAL ESTATE ──────────────────────────────────────────────────────

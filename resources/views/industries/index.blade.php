@@ -13,7 +13,7 @@
             "@id": "{{ route('industries.index') }}#webpage",
             "url": "{{ route('industries.index') }}",
             "name": "Industries We Serve — FairIT Solutions",
-            "description": "AI transformation solutions for startups, SMEs, real estate, hospitality, interior design, healthcare, education, and professional services.",
+            "description": "AI transformation solutions for startups, SMEs, manufacturing, real estate, hospitality, interior design, healthcare, education, and professional services.",
             "isPartOf": { "@id": "https://fairitsolutions.ch/#website" }
         },
         {
