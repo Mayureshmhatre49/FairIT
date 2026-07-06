@@ -111,9 +111,15 @@
 
                 {{-- Logo --}}
                 <a href="{{ route('home') }}" class="flex items-center gap-2.5 group" aria-label="FairIT Solutions Home">
-                    <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <rect width="32" height="32" rx="8" fill="#2563eb"/>
-                        <path d="M9 7H21L23 9V10H12V14H19V17H12V25H9Z" fill="#FFFFFF"/>
+                    <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <g fill="none" stroke-linecap="round" stroke-width="2.6">
+                            <ellipse cx="46" cy="52" rx="37" ry="34" stroke="#111827" transform="rotate(-40 46 52)"/>
+                            <ellipse cx="53" cy="49" rx="36" ry="35" stroke="#111827" transform="rotate(-8 53 49)"/>
+                            <ellipse cx="51" cy="53" rx="35" ry="36" stroke="#111827" transform="rotate(28 51 53)"/>
+                            <ellipse cx="49" cy="47" rx="38" ry="33" stroke="#111827" transform="rotate(52 49 47)"/>
+                            <ellipse cx="54" cy="48" rx="38" ry="33" stroke="#7CA0C0" transform="rotate(-22 54 48)"/>
+                            <ellipse cx="47" cy="53" rx="35" ry="35" stroke="#7CA0C0" transform="rotate(14 47 53)"/>
+                        </g>
                     </svg>
                     <div>
                         <span class="font-bold text-charcoal-950 text-base leading-tight block group-hover:text-brand-600 transition-colors">FairIT Solutions</span>
@@ -330,9 +336,15 @@
                 {{-- Brand Column --}}
                 <div class="sm:col-span-2 lg:col-span-2">
                     <a href="{{ route('home') }}" class="flex items-center gap-2.5 mb-6">
-                        <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <rect width="32" height="32" rx="8" fill="#2563eb"/>
-                            <path d="M9 7H21L23 9V10H12V14H19V17H12V25H9Z" fill="#FFFFFF"/>
+                        <svg class="w-8 h-8 flex-shrink-0" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <g fill="none" stroke-linecap="round" stroke-width="2.6">
+                                <ellipse cx="46" cy="52" rx="37" ry="34" stroke="#FFFFFF" transform="rotate(-40 46 52)"/>
+                                <ellipse cx="53" cy="49" rx="36" ry="35" stroke="#FFFFFF" transform="rotate(-8 53 49)"/>
+                                <ellipse cx="51" cy="53" rx="35" ry="36" stroke="#FFFFFF" transform="rotate(28 51 53)"/>
+                                <ellipse cx="49" cy="47" rx="38" ry="33" stroke="#FFFFFF" transform="rotate(52 49 47)"/>
+                                <ellipse cx="54" cy="48" rx="38" ry="33" stroke="#9BC0DC" transform="rotate(-22 54 48)"/>
+                                <ellipse cx="47" cy="53" rx="35" ry="35" stroke="#9BC0DC" transform="rotate(14 47 53)"/>
+                            </g>
                         </svg>
                         <div>
                             <span class="font-bold text-white text-base block">FairIT Solutions</span>

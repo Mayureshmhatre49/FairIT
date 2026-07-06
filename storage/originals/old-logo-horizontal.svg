@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-label="FairIT Solutions — AI Operating Systems">
+  <title>FairIT Solutions — AI Operating Systems</title>
+
+  <!-- Mark -->
+  <g transform="translate(8, 16)">
+    <rect width="32" height="32" rx="8" fill="#2563eb"/>
+    <path d="M9 7H21L23 9V10H12V14H19V17H12V25H9Z" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Wordmark + subtitle -->
+  <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', sans-serif" fill="#0F172A">
+    <text x="52" y="36" font-size="22" font-weight="800" letter-spacing="-0.5">FairIT Solutions</text>
+    <text x="53" y="52" font-size="9" font-weight="700" letter-spacing="3" fill="#475569">AI OPERATING SYSTEMS</text>
+  </g>
+</svg>
