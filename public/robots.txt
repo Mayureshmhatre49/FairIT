@@ -1,5 +1,5 @@
 # FairIT Solutions — robots.txt
-# https://fairitsolutions.ch
+# Live host: https://fairitsolutions.in (brand-canonical: fairitsolutions.ch)
 
 User-agent: *
 Allow: /
@@ -43,7 +43,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Discovery
-Sitemap: https://fairitsolutions.ch/sitemap-index.xml
-Sitemap: https://fairitsolutions.ch/sitemap.xml
-Sitemap: https://fairitsolutions.ch/sitemap-news.xml
+# Discovery — same-host references so Googlebot finds them at the property it's crawling
+Sitemap: https://fairitsolutions.in/sitemap-index.xml
+Sitemap: https://fairitsolutions.in/sitemap.xml
+Sitemap: https://fairitsolutions.in/sitemap-news.xml
