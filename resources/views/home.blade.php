@@ -128,7 +128,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-charcoal-950 mb-3">{{ $pillar['title'] }}</h3>
-                <p class="text-charcoal-500 text-sm leading-relaxed mb-6 flex-1">{{ $pillar['desc'] }}</p>
+                <p class="text-charcoal-600 text-sm leading-relaxed mb-6 flex-1">{{ $pillar['desc'] }}</p>
                 <ul class="space-y-2 mb-8">
                     @foreach($pillar['features'] as $feature)
                     <li class="flex items-center gap-2 text-sm text-charcoal-600">
@@ -187,7 +187,7 @@
                     <span class="text-4xl font-black text-charcoal-100 group-hover:text-brand-100 transition-colors">{{ $service['number'] }}</span>
                 </div>
                 <h3 class="text-lg font-bold text-charcoal-950 mb-3 group-hover:text-brand-700 transition-colors">{{ $serviceItems[$i]['title'] }}</h3>
-                <p class="text-charcoal-500 text-sm leading-relaxed flex-1 mb-6">{{ $serviceItems[$i]['desc'] }}</p>
+                <p class="text-charcoal-600 text-sm leading-relaxed flex-1 mb-6">{{ $serviceItems[$i]['desc'] }}</p>
                 <a href="{{ route($service['route']) }}" class="btn-ghost p-0 text-brand-600 hover:text-brand-800 font-semibold text-sm group/btn flex items-center gap-1.5">
                     {{ $serviceItems[$i]['cta'] }}
                     <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -293,7 +293,7 @@
                     {{ __('home.why.title_1') }}<br>
                     <span class="text-gradient">{{ __('home.why.title_2') }}</span>
                 </h2>
-                <p class="text-charcoal-500 text-lg mt-6 leading-relaxed">
+                <p class="text-charcoal-600 text-lg mt-6 leading-relaxed">
                     {{ __('home.why.body') }}
                 </p>
                 <div class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -324,7 +324,7 @@
                     </div>
                     <div>
                         <h3 class="font-bold text-charcoal-950 mb-1">{{ $point['title'] }}</h3>
-                        <p class="text-charcoal-500 text-sm leading-relaxed">{{ $point['desc'] }}</p>
+                        <p class="text-charcoal-600 text-sm leading-relaxed">{{ $point['desc'] }}</p>
                     </div>
                 </div>
                 @endforeach
@@ -357,17 +357,19 @@
                 ['slug' => 'education',            'icon' => 'M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222',                                                                              'delay' => '350'],
                 ['slug' => 'professional-services','icon' => 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',                                                                                                                                                                                                'delay' => '400'],
             ];
+            // Positional lookup: if a locale's list lags behind EN, fall back to the EN name rather than erroring
             $industryNames = __('home.industries.items');
+            $industryNamesEn = trans('home.industries.items', [], 'en');
             @endphp
 
             @foreach($industries as $i => $industry)
             <a href="{{ route('industries.show', $industry['slug']) }}" data-animate data-animate-delay="{{ $industry['delay'] }}" class="group bg-white rounded-2xl p-6 border border-charcoal-100 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300 text-center flex flex-col items-center">
                 <div class="w-12 h-12 rounded-xl bg-charcoal-50 flex items-center justify-center mb-4 group-hover:bg-brand-50 transition-colors">
-                    <svg class="w-6 h-6 text-charcoal-500 group-hover:text-brand-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                    <svg class="w-6 h-6 text-charcoal-500 group-hover:text-brand-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                         <path stroke-linecap="round" stroke-linejoin="round" d="{{ $industry['icon'] }}"/>
                     </svg>
                 </div>
-                <span class="text-sm font-semibold text-charcoal-800 group-hover:text-brand-700 transition-colors">{{ $industryNames[$i] }}</span>
+                <span class="text-sm font-semibold text-charcoal-800 group-hover:text-brand-700 transition-colors">{{ $industryNames[$i] ?? $industryNamesEn[$i] ?? '' }}</span>
                 <svg class="w-3.5 h-3.5 text-charcoal-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all mt-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
             </a>
             @endforeach
@@ -404,7 +406,7 @@
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col">
-                    <div class="text-xs uppercase tracking-widest text-charcoal-400 font-semibold mb-2">{{ $study->display_client_name }}</div>
+                    <div class="text-xs uppercase tracking-widest text-charcoal-500 font-semibold mb-2">{{ $study->display_client_name }}</div>
                     <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">{{ $study->summary }}</p>
                     <span class="text-brand-600 font-semibold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
                         Read case study
@@ -459,7 +461,7 @@
                     <div>
                         <div class="text-sm font-bold text-charcoal-900">{{ $t->role }}</div>
                         @if($t->company)
-                        <div class="text-xs text-charcoal-500">{{ $t->company }}</div>
+                        <div class="text-xs text-charcoal-600">{{ $t->company }}</div>
                         @endif
                     </div>
                 </div>
@@ -484,7 +486,7 @@
                     <div>
                         <div class="text-sm font-bold text-charcoal-900">{{ $t['role'] }}</div>
                         @if(isset($t['company']))
-                        <div class="text-xs text-charcoal-500">{{ $t['company'] }}</div>
+                        <div class="text-xs text-charcoal-600">{{ $t['company'] }}</div>
                         @endif
                     </div>
                 </div>
@@ -521,7 +523,7 @@
                 </div>
                 @else
                 <div class="aspect-video bg-gradient-to-br from-brand-900 to-charcoal-950 flex items-center justify-center">
-                    <svg class="w-12 h-12 text-brand-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    <svg class="w-12 h-12 text-brand-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                 </div>
                 @endif
                 <div class="p-6 flex-1 flex flex-col">
@@ -529,8 +531,8 @@
                     <span class="badge badge-blue mb-3">{{ $post->category }}</span>
                     @endif
                     <h3 class="font-bold text-charcoal-950 group-hover:text-brand-700 transition-colors mb-2 line-clamp-2">{{ $post->title }}</h3>
-                    <p class="text-charcoal-500 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">{{ $post->excerpt }}</p>
-                    <div class="flex items-center justify-between text-xs text-charcoal-400">
+                    <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">{{ $post->excerpt }}</p>
+                    <div class="flex items-center justify-between text-xs text-charcoal-500">
                         <span>{{ $post->published_at->format('d M Y') }}</span>
                         <span>{{ $post->read_time }}</span>
                     </div>

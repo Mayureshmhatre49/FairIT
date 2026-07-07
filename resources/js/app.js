@@ -61,12 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Smooth anchor scrolling
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
-            const target = document.querySelector(anchor.getAttribute('href'));
+            const href = anchor.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
             }
         });
     });
@@ -162,6 +165,7 @@ window.showToast = function (message, type = 'success') {
 
     const toast = document.createElement('div');
     toast.className = `fixed bottom-6 right-6 z-50 ${colours[type]} px-6 py-4 rounded-xl shadow-premium text-sm font-medium max-w-sm`;
+    toast.setAttribute('role', type === 'error' ? 'alert' : 'status');
     toast.textContent = message;
     document.body.appendChild(toast);
 

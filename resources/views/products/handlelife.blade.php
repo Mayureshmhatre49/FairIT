@@ -123,12 +123,14 @@
             <form action="{{ route('waitlist.submit') }}" method="POST" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 space-y-4">
                 @csrf
                 <input type="hidden" name="product" value="HandleLife OS">
-                <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+                <x-honeypot />
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <input name="name" type="text" required maxlength="100" placeholder="Your name" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('name') }}">
-                    <input name="email" type="email" required maxlength="150" placeholder="Email" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('email') }}">
+                    <input name="name" type="text" required maxlength="100" aria-label="Your name" placeholder="Your name" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('name') }}">
+                    <input name="email" type="email" required maxlength="150" aria-label="Email" placeholder="Email" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('email') }}">
                 </div>
-                <input name="stage" type="text" maxlength="100" placeholder="Household type (e.g. NRI family, Multi-home, Single-home)" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('stage') }}">
+                <input name="stage" type="text" maxlength="100" aria-label="Household type" placeholder="Household type (e.g. NRI family, Multi-home, Single-home)" class="form-input bg-white/5 border-white/10 text-white placeholder-charcoal-400" value="{{ old('stage') }}">
+                <x-turnstile theme="dark" />
+                @error('cf-turnstile-response')<p class="form-error">{{ $message }}</p>@enderror
                 <button type="submit" class="btn-primary-lg w-full justify-center">
                     Get Early Access
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>

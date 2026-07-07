@@ -68,10 +68,10 @@
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col">
-                    <div class="text-xs uppercase tracking-widest text-charcoal-400 font-semibold mb-1.5">{{ $study->display_client_name }}</div>
+                    <div class="text-xs uppercase tracking-widest text-charcoal-500 font-semibold mb-1.5">{{ $study->display_client_name }}</div>
                     <h3 class="font-bold text-charcoal-950 group-hover:text-brand-700 transition-colors mb-3 line-clamp-2 text-base md:text-lg leading-snug">{{ $study->project_name }}</h3>
                     <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-4 mb-4">{{ $study->summary }}</p>
-                    <div class="flex items-center justify-between text-xs text-charcoal-400 mt-auto pt-2 border-t border-charcoal-50">
+                    <div class="flex items-center justify-between text-xs text-charcoal-500 mt-auto pt-2 border-t border-charcoal-50">
                         @if($study->is_featured)
                         <span class="badge badge-blue">{{ __('case_studies.card.featured') }}</span>
                         @else
@@ -94,7 +94,7 @@
         @else
         <div class="text-center py-20" data-animate>
             <div class="w-16 h-16 rounded-2xl bg-charcoal-100 flex items-center justify-center mx-auto mb-6">
-                <svg class="w-8 h-8 text-charcoal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <svg class="w-8 h-8 text-charcoal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
                 </svg>
             </div>

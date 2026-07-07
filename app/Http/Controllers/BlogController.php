@@ -14,7 +14,9 @@ class BlogController extends Controller
         try {
             $posts = Post::published()
                 ->when($request->category, fn ($q, $cat) => $q->where('category', $cat))
-                ->when($request->search, fn ($q, $s) => $q->where('title', 'like', "%{$s}%")->orWhere('excerpt', 'like', "%{$s}%"))
+                ->when($request->search, fn ($q, $s) => $q->where(function ($qq) use ($s) {
+                    $qq->where('title', 'like', "%{$s}%")->orWhere('excerpt', 'like', "%{$s}%");
+                }))
                 ->orderByDesc('published_at')
                 ->paginate(9);
 

@@ -137,7 +137,7 @@
                 <form action="{{ route('waitlist.submit') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product" value="SarathiOS">
-                    <input type="text" name="honeypot" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+                    <x-honeypot />
                     <div class="space-y-4">
                         <div>
                             <label for="wl-name" class="form-label">Your Name</label>
@@ -157,6 +157,8 @@
                                 <option value="Enterprise">Enterprise</option>
                             </select>
                         </div>
+                        <x-turnstile theme="dark" />
+                        @error('cf-turnstile-response')<p class="form-error">{{ $message }}</p>@enderror
                         <button type="submit" class="btn-primary w-full justify-center mt-2">
                             Request Early Access
                             <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>

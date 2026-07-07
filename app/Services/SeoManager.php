@@ -21,7 +21,7 @@ class SeoManager
         // Default values
         $this->title = __('seo.home.title');
         $this->description = __('seo.home.description');
-        $this->keywords = 'AI consulting, AI transformation, AI copilots, voice AI, founder AI, AI operating systems, Switzerland AI company';
+        $this->keywords = 'AI consulting, AI transformation, custom AI operating systems, AI copilots, voice AI, enterprise AI, AI consulting India, AI consulting Europe';
         $this->canonical = $this->buildCanonical();
         $this->ogUrl = url()->current();
         $this->ogTitle = $this->title;
@@ -39,6 +39,18 @@ class SeoManager
     public function setDescription(string $description): self
     {
         $this->description = $description;
+        $this->ogDescription = $description;
+        return $this;
+    }
+
+    public function setOgTitle(string $title): self
+    {
+        $this->ogTitle = $title;
+        return $this;
+    }
+
+    public function setOgDescription(string $description): self
+    {
         $this->ogDescription = $description;
         return $this;
     }

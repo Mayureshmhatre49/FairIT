@@ -32,7 +32,7 @@
             </ul>
 
             <h2>4. Third-Party Cookies</h2>
-            <p>Our website may include content or tools from third parties (e.g., Google Analytics, reCAPTCHA). These third parties may set their own cookies. We do not control these cookies.</p>
+            <p>Our website may include content or tools from third parties (e.g., Google Analytics for aggregated usage measurement, Cloudflare Turnstile for spam and bot protection on our contact forms). These third parties may set their own cookies. We do not control these cookies. Cloudflare Turnstile is designed to be privacy-preserving and does not require CAPTCHA challenges for most visitors.</p>
 
             <h2>5. Updates</h2>
             <p>This Cookie Policy may be updated periodically. Please revisit this page for the latest version.</p>

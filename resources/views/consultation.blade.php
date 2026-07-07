@@ -92,7 +92,7 @@
 
                     <form action="{{ route('consultation.submit') }}" method="POST" class="space-y-5">
                         @csrf
-                        <div class="hidden" aria-hidden="true"><input type="text" name="honeypot" tabindex="-1" autocomplete="off"></div>
+                        <x-honeypot />
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
@@ -172,6 +172,9 @@
                             <input type="text" id="how_heard" name="how_heard" value="{{ old('how_heard') }}" placeholder="{{ __('consultation.form.heard_placeholder') }}" class="form-input">
                         </div>
 
+                        <x-turnstile />
+                        @error('cf-turnstile-response')<p class="form-error">{{ $message }}</p>@enderror
+
                         <button type="submit" class="btn-primary w-full justify-center py-4 text-base">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                             {{ __('consultation.form.submit') }}
@@ -179,7 +182,7 @@
 
                         @include('partials.trust-badges')
 
-                        <p class="text-xs text-charcoal-400 text-center">{{ __('consultation.form.footer_note') }}</p>
+                        <p class="text-xs text-charcoal-500 text-center">{{ __('consultation.form.footer_note') }}</p>
                     </form>
                 </div>
             </div>

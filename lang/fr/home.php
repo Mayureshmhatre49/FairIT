@@ -105,7 +105,7 @@ return [
         'title' => 'Les industries que nous transformons',
         'subtitle' => 'Des solutions IA adaptées aux défis et opportunités uniques de chaque secteur.',
         'items' => [
-            'Startups', 'PME', 'Immobilier', 'Hôtellerie',
+            'Startups', 'PME', 'Industrie manufacturière', 'Immobilier', 'Hôtellerie',
             'Design d\'intérieur', 'Santé', 'Éducation', 'Services professionnels',
         ],
     ],

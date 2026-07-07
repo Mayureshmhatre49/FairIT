@@ -105,7 +105,7 @@ return [
         'title' => 'Industrias que transformamos',
         'subtitle' => 'Soluciones de IA adaptadas a los desafíos y oportunidades únicos de cada sector.',
         'items' => [
-            'Startups', 'PYMEs', 'Bienes Raíces', 'Hostelería',
+            'Startups', 'PYMEs', 'Manufactura', 'Bienes Raíces', 'Hostelería',
             'Diseño de Interiores', 'Cuidado de la salud', 'Educación', 'Servicios Profesionales',
         ],
     ],

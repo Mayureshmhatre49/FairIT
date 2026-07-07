@@ -109,7 +109,7 @@
                     <span class="text-2xl leading-none" aria-hidden="true">🇨🇭</span>
                     <div class="flex-1">
                         <div class="font-bold text-charcoal-950 text-sm">Switzerland</div>
-                        <div class="text-[11px] uppercase tracking-widest text-charcoal-400 font-semibold">Zuzwil Office</div>
+                        <div class="text-[11px] uppercase tracking-widest text-charcoal-500 font-semibold">Zuzwil Office</div>
                     </div>
                 </div>
                 <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
@@ -130,7 +130,7 @@
                     <span class="text-2xl leading-none" aria-hidden="true">🇩🇪</span>
                     <div class="flex-1">
                         <div class="font-bold text-charcoal-950 text-sm">Germany</div>
-                        <div class="text-[11px] uppercase tracking-widest text-charcoal-400 font-semibold">Hamburg Office</div>
+                        <div class="text-[11px] uppercase tracking-widest text-charcoal-500 font-semibold">Hamburg Office</div>
                     </div>
                 </div>
                 <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
@@ -151,7 +151,7 @@
                     <span class="text-2xl leading-none" aria-hidden="true">🇮🇳</span>
                     <div class="flex-1">
                         <div class="font-bold text-charcoal-950 text-sm">India — Alibag</div>
-                        <div class="text-[11px] uppercase tracking-widest text-charcoal-400 font-semibold">Registered Office</div>
+                        <div class="text-[11px] uppercase tracking-widest text-charcoal-500 font-semibold">Registered Office</div>
                     </div>
                 </div>
                 <address class="text-sm text-charcoal-700 leading-relaxed not-italic flex-1">
@@ -251,7 +251,7 @@
                                 <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs text-charcoal-400 font-medium">{{ __('contact.info.email_label') }}</div>
+                                <div class="text-xs text-charcoal-500 font-medium">{{ __('contact.info.email_label') }}</div>
                                 <div class="text-charcoal-800 font-medium">hello@fairitsolutions.ch</div>
                             </div>
                         </a>
@@ -260,7 +260,7 @@
                                 <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs text-charcoal-400 font-medium">Switzerland 🇨🇭</div>
+                                <div class="text-xs text-charcoal-500 font-medium">Switzerland 🇨🇭</div>
                                 <div class="text-charcoal-800 font-medium">+41 78 905 50 40</div>
                             </div>
                         </a>
@@ -269,7 +269,7 @@
                                 <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.554-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.595 5.391l-.999 3.648 3.893-1.738z"/></svg>
                             </div>
                             <div class="flex-1">
-                                <div class="text-xs text-charcoal-400 font-medium">India 🇮🇳 · WhatsApp</div>
+                                <div class="text-xs text-charcoal-500 font-medium">India 🇮🇳 · WhatsApp</div>
                                 <div class="text-charcoal-800 font-medium">+91 98811 49629</div>
                             </div>
                         </a>
@@ -278,7 +278,7 @@
                                 <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs text-charcoal-400 font-medium">{{ __('contact.info.location_label') }}</div>
+                                <div class="text-xs text-charcoal-500 font-medium">{{ __('contact.info.location_label') }}</div>
                                 <div class="text-charcoal-800 font-medium">{{ __('contact.info.location_value') }}</div>
                             </div>
                         </div>
@@ -287,7 +287,7 @@
                                 <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             </div>
                             <div>
-                                <div class="text-xs text-charcoal-400 font-medium">{{ __('contact.info.response_label') }}</div>
+                                <div class="text-xs text-charcoal-500 font-medium">{{ __('contact.info.response_label') }}</div>
                                 <div class="text-charcoal-800 font-medium">{{ __('contact.info.response_value') }}</div>
                             </div>
                         </div>
@@ -296,7 +296,7 @@
 
                 <div class="bg-charcoal-950 rounded-2xl p-6 text-white">
                     <h3 class="font-bold mb-3">{{ __('contact.info.book_title') }}</h3>
-                    <p class="text-charcoal-400 text-sm mb-5">{{ __('contact.info.book_subtitle') }}</p>
+                    <p class="text-charcoal-600 text-sm mb-5">{{ __('contact.info.book_subtitle') }}</p>
                     <a href="{{ route('consultation') }}" class="btn-primary w-full justify-center">{{ __('contact.info.book_cta') }}</a>
                 </div>
             </div>
@@ -319,10 +319,7 @@
                     <form action="{{ route('contact.submit') }}" method="POST" class="space-y-5">
                         @csrf
 
-                        {{-- Honeypot --}}
-                        <div class="hidden" aria-hidden="true">
-                            <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
-                        </div>
+                        <x-honeypot />
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div>
@@ -365,6 +362,9 @@
                             @error('message')<p class="form-error">{{ $message }}</p>@enderror
                         </div>
 
+                        <x-turnstile />
+                        @error('cf-turnstile-response')<p class="form-error">{{ $message }}</p>@enderror
+
                         <button type="submit" class="btn-primary w-full justify-center py-4 text-base">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
                             {{ __('contact.form.submit') }}
@@ -372,7 +372,7 @@
 
                         @include('partials.trust-badges')
 
-                        <p class="text-xs text-charcoal-400 text-center">{{ __('contact.form.footer_note') }}</p>
+                        <p class="text-xs text-charcoal-500 text-center">{{ __('contact.form.footer_note') }}</p>
                     </form>
                 </div>
             </div>

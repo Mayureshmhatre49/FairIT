@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- SEO Meta & Open Graph --}}
@@ -23,7 +22,13 @@
         
         $ogType = trim(View::yieldContent('og_type'));
         if ($ogType) $seo->setOgType($ogType);
-        
+
+        $ogTitle = trim(View::yieldContent('og_title'));
+        if ($ogTitle) $seo->setOgTitle($ogTitle);
+
+        $ogDescription = trim(View::yieldContent('og_description'));
+        if ($ogDescription) $seo->setOgDescription($ogDescription);
+
         $ogImage = trim(View::yieldContent('og_image'));
         $ogImageAlt = trim(View::yieldContent('og_image_alt'));
         if ($ogImage) $seo->setOgImage($ogImage, $ogImageAlt);
@@ -58,9 +63,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"></noscript>
 
-    {{-- Search engine verification --}}
-    <meta name="google-site-verification" content="@yield('google_site_verification', '')">
-    <meta name="msvalidate.01" content="@yield('bing_site_verification', '')">
+    {{-- Search engine verification (rendered only when a page provides a token) --}}
+    @hasSection('google_site_verification')<meta name="google-site-verification" content="@yield('google_site_verification')">@endif
+    @hasSection('bing_site_verification')<meta name="msvalidate.01" content="@yield('bing_site_verification')">@endif
 
     {{-- Pagination signals (Google deprecated rel=prev/next as a signal in 2019 but still honoured by some) --}}
     @hasSection('prev_page') <link rel="prev" href="@yield('prev_page')"> @endif
@@ -99,7 +104,7 @@
 
     {{-- Skip to content (Accessibility) --}}
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:px-4 focus:py-2 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:font-medium">
-        Skip to main content
+        {{ __('ui.skip_to_content') }}
     </a>
 
     {{-- ============================================================
@@ -232,13 +237,13 @@
                             </svg>
                         </button>
                         <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 top-full mt-2 w-36 bg-white rounded-xl shadow-premium border border-charcoal-100 py-1 z-50">
-                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
+                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇸🇦'] as $code => $flag)
                             <a href="{{ route('lang.switch', $code) }}"
                                class="flex items-center gap-2.5 px-3 py-2.5 text-sm transition-colors {{ app()->getLocale() === $code ? 'text-brand-600 font-semibold bg-brand-50' : 'text-charcoal-700 hover:bg-charcoal-50' }}">
                                 <span class="text-base leading-none">{{ $flag }}</span>
                                 <span>{{ __('ui.lang.'.$code) }}</span>
                                 @if(app()->getLocale() === $code)
-                                <svg class="w-3.5 h-3.5 ml-auto text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-3.5 h-3.5 ml-auto text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                                 @endif
                             </a>
                             @endforeach
@@ -263,32 +268,32 @@
             </div>
 
             {{-- Mobile Menu --}}
-            <div id="mobile-menu" role="menu" class="lg:hidden border-t border-charcoal-100 bg-white">
+            <div id="mobile-menu" class="lg:hidden border-t border-charcoal-100 bg-white">
                 <div class="py-4 space-y-1">
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest">{{ __('ui.nav.services') }}</div>
-                    <a href="{{ route('services.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.all_services') }}</a>
-                    <a href="{{ route('services.advisory') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.services.advisory.title') }}</a>
-                    <a href="{{ route('services.copilot') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.services.copilot.title') }}</a>
-                    <a href="{{ route('services.voiceai') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.services.voiceai.title') }}</a>
-                    <a href="{{ route('services.retainers') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.services.retainers.title') }}</a>
-                    <a href="{{ route('services.founder') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.services.founder.title') }}</a>
+                    <a href="{{ route('services.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.nav.all_services') }}</a>
+                    <a href="{{ route('services.advisory') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.advisory.title') }}</a>
+                    <a href="{{ route('services.copilot') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.copilot.title') }}</a>
+                    <a href="{{ route('services.voiceai') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.voiceai.title') }}</a>
+                    <a href="{{ route('services.retainers') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.retainers.title') }}</a>
+                    <a href="{{ route('services.founder') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.founder.title') }}</a>
 
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">{{ __('ui.nav.products') }}</div>
-                    <a href="{{ route('products.sarathios') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.products.sarathios.title') }} — {{ __('ui.products.sarathios.badge') }}</a>
-                    <a href="{{ route('products.hsios') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.products.hsios.title') }} — {{ __('ui.products.hsios.badge') }}</a>
-                    <a href="{{ route('products.handlelife') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.products.handlelife.title') }} — {{ __('ui.products.handlelife.badge') }}</a>
+                    <a href="{{ route('products.sarathios') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.products.sarathios.title') }} — {{ __('ui.products.sarathios.badge') }}</a>
+                    <a href="{{ route('products.hsios') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.products.hsios.title') }} — {{ __('ui.products.hsios.badge') }}</a>
+                    <a href="{{ route('products.handlelife') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.products.handlelife.title') }} — {{ __('ui.products.handlelife.badge') }}</a>
 
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">{{ __('ui.nav.company') }}</div>
-                    <a href="{{ route('industries.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.industries') }}</a>
-                    <a href="{{ route('case-studies.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.case_studies') }}</a>
-                    <a href="{{ route('about') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.about') }}</a>
-                    <a href="{{ route('blog.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.insights') }}</a>
-                    <a href="{{ route('contact') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors" role="menuitem">{{ __('ui.nav.contact') }}</a>
+                    <a href="{{ route('industries.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.nav.industries') }}</a>
+                    <a href="{{ route('case-studies.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.nav.case_studies') }}</a>
+                    <a href="{{ route('about') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.nav.about') }}</a>
+                    <a href="{{ route('blog.index') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.nav.insights') }}</a>
+                    <a href="{{ route('contact') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.nav.contact') }}</a>
 
                     {{-- Mobile Language Switcher --}}
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">Language</div>
-                    <div class="flex gap-2 px-2">
-                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
+                    <div class="flex flex-wrap gap-2 px-2">
+                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇸🇦'] as $code => $flag)
                         <a href="{{ route('lang.switch', $code) }}"
                            class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors {{ app()->getLocale() === $code ? 'bg-brand-600 text-white' : 'bg-charcoal-100 text-charcoal-700 hover:bg-charcoal-200' }}">
                             <span>{{ $flag }}</span>
@@ -309,7 +314,7 @@
     <main id="main-content">
         {{-- Flash Messages --}}
         @if(session('success'))
-        <div data-dismiss class="fixed top-20 right-4 z-50 bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-premium text-sm font-medium max-w-sm">
+        <div data-dismiss role="status" aria-live="polite" class="fixed top-20 right-4 z-50 bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-premium text-sm font-medium max-w-sm">
             <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                 {{ session('success') }}
@@ -318,7 +323,7 @@
         @endif
 
         @if(session('error'))
-        <div data-dismiss class="fixed top-20 right-4 z-50 bg-red-600 text-white px-6 py-4 rounded-xl shadow-premium text-sm font-medium max-w-sm">
+        <div data-dismiss role="alert" class="fixed top-20 right-4 z-50 bg-red-600 text-white px-6 py-4 rounded-xl shadow-premium text-sm font-medium max-w-sm">
             {{ session('error') }}
         </div>
         @endif

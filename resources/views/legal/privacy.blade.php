@@ -97,7 +97,7 @@
             </ul>
 
             <h2>12. Sub-processors and third-party services</h2>
-            <p>We use trusted sub-processors to operate our services. Categories include cloud hosting and infrastructure, transactional email, customer support tooling, privacy-respecting analytics, and payment processing. All sub-processors are bound by written data-processing agreements equivalent in protection to this policy. A current list is available on request.</p>
+            <p>We use trusted sub-processors to operate our services. Categories include cloud hosting and infrastructure, transactional email, customer support tooling, privacy-respecting analytics, form spam and bot protection (Cloudflare Turnstile), and payment processing. All sub-processors are bound by written data-processing agreements equivalent in protection to this policy. A current list is available on request.</p>
 
             <h2>13. Cookies and analytics</h2>
             <p>We use a minimal set of cookies and similar technologies. Non-essential cookies (analytics, marketing) require your consent. See our <a href="{{ route('cookies') }}">Cookie Policy</a> for details, including the specific analytics provider in use.</p>

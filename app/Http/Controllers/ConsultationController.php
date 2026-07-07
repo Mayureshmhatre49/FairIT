@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\LeadNotification;
 use App\Models\Lead;
+use App\Rules\Turnstile;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -30,6 +31,7 @@ class ConsultationController extends Controller
             'goals' => ['required', 'string', 'min:20', 'max:3000'],
             'how_heard' => ['nullable', 'string', 'max:200'],
             'honeypot' => ['nullable', 'size:0'],
+            'cf-turnstile-response' => ['nullable', new Turnstile],
         ]);
 
         if ($request->filled('honeypot')) {

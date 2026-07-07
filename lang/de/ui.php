@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'skip_to_content' => 'Zum Hauptinhalt springen',
     'nav' => [
         'case_studies' => 'Fallstudien',
         'services' => 'Leistungen',
@@ -41,7 +42,7 @@ return [
         'cookies' => 'Cookie-Richtlinie',
         'sitemap' => 'Sitemap',
         'copyright' => 'Alle Rechte vorbehalten.',
-        'built_in' => 'Mit Präzision in der Schweiz entwickelt',
+        'built_in' => 'Mit Präzision entwickelt in Indien & der Schweiz',
         'systems_ok' => 'Alle Systeme betriebsbereit',
         'book_consultation' => 'Beratung anfragen',
         'advisory' => 'KI-Transformationsberatung',

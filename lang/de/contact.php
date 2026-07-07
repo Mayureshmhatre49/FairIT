@@ -10,7 +10,7 @@ return [
         'title' => 'Kontaktinformationen',
         'email_label' => 'E-Mail',
         'location_label' => 'Standort',
-        'location_value' => 'Schweiz, Indien & weltweit',
+        'location_value' => 'Pune (Hauptsitz), Schweiz & Deutschland',
         'response_label' => 'Antwortzeit',
         'response_value' => 'Innerhalb von 24 Stunden',
         'book_title' => 'Direkt anfragen?',

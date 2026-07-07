@@ -137,7 +137,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ml-0 md:ml-14">
                     <div>
-                        <div class="text-xs font-semibold text-charcoal-400 uppercase tracking-widest mb-2">The Scenario</div>
+                        <div class="text-xs font-semibold text-charcoal-500 uppercase tracking-widest mb-2">The Scenario</div>
                         <p class="text-charcoal-700 text-sm leading-relaxed">{{ $case['scenario'] }}</p>
                     </div>
                     <div>
@@ -222,7 +222,7 @@
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col">
-                    <div class="text-xs uppercase tracking-widest text-charcoal-400 font-semibold mb-2">{{ $study->display_client_name }}</div>
+                    <div class="text-xs uppercase tracking-widest text-charcoal-500 font-semibold mb-2">{{ $study->display_client_name }}</div>
                     <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">{{ $study->summary }}</p>
                     <span class="text-brand-600 font-semibold text-xs inline-flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
                         Read case study

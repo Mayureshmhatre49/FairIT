@@ -85,7 +85,7 @@
                         @foreach($service['deliverables'] as $deliverable)
                         <div class="flex items-center gap-3 py-3 border-b border-charcoal-100 last:border-0">
                             <div class="w-6 h-6 rounded-full bg-brand-600 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
                             </div>
                             <span class="text-charcoal-800 font-medium text-sm">{{ $deliverable }}</span>
                         </div>
@@ -136,7 +136,7 @@
             <div data-animate data-animate-delay="{{ $i * 100 }}" class="border border-charcoal-100 rounded-2xl overflow-hidden hover:border-brand-200 transition-colors">
                 <button @click="open === {{ $i }} ? open = null : open = {{ $i }}" class="w-full flex items-center justify-between gap-4 p-6 text-left hover:bg-charcoal-50 transition-colors" :aria-expanded="open === {{ $i }}">
                     <span class="font-semibold text-charcoal-950">{{ $faq['q'] }}</span>
-                    <svg class="w-5 h-5 text-charcoal-400 flex-shrink-0 transition-transform" :class="{ 'rotate-180': open === {{ $i }} }" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                    <svg class="w-5 h-5 text-charcoal-500 flex-shrink-0 transition-transform" :class="{ 'rotate-180': open === {{ $i }} }" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div x-show="open === {{ $i }}" x-collapse class="px-6 pb-6">
                     <p class="text-charcoal-600 leading-relaxed">{{ $faq['a'] }}</p>

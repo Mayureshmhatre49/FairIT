@@ -90,6 +90,7 @@ export default {
                 'premium': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
             },
             spacing: {
+                '4.5': '1.125rem',
                 '18': '4.5rem',
                 '88': '22rem',
                 '128': '32rem',

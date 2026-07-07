@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'skip_to_content' => 'Saltar al contenido principal',
     'nav' => [
         'case_studies' => 'Casos de éxito',
         'services' => 'Servicios',
@@ -41,7 +42,7 @@ return [
         'cookies' => 'Política de Cookies',
         'sitemap' => 'Mapa del Sitio',
         'copyright' => 'Todos los derechos reservados.',
-        'built_in' => 'Construido con precisión en Suiza',
+        'built_in' => 'Construido con precisión en India y Suiza',
         'systems_ok' => 'Todos los sistemas operativos',
         'book_consultation' => 'Solicitar Consulta',
         'advisory' => 'Asesoría en Transformación IA',

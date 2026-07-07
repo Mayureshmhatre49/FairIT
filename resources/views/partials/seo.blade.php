@@ -37,12 +37,3 @@
 <meta name="twitter:description" content="{{ $ogDescription }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
 
-{{-- Geo tags — headquartered in Pune, India --}}
-<meta name="geo.region" content="IN-MH">
-<meta name="geo.placename" content="Pune, Maharashtra">
-<meta name="ICBM" content="18.5614, 73.7710">
-<meta name="geo.position" content="18.5614;73.7710">
-
-{{-- Search engine verification --}}
-<meta name="google-site-verification" content="@yield('google_site_verification', '')">
-<meta name="msvalidate.01" content="@yield('bing_site_verification', '')">

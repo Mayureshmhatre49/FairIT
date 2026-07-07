@@ -105,7 +105,7 @@ return [
         'title' => 'Branchen, die wir transformieren',
         'subtitle' => 'KI-Lösungen, massgeschneidert für die einzigartigen Herausforderungen und Chancen jedes Sektors.',
         'items' => [
-            'Startups', 'KMU', 'Immobilien', 'Gastgewerbe',
+            'Startups', 'KMU', 'Fertigung', 'Immobilien', 'Gastgewerbe',
             'Innenarchitektur', 'Gesundheitswesen', 'Bildung', 'Beratungsunternehmen',
         ],
     ],

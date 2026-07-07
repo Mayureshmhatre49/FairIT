@@ -112,20 +112,20 @@
             <aside class="lg:col-span-1 space-y-4" data-animate>
                 <div class="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-100 space-y-5 sticky top-24">
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.industry') }}</div>
+                        <div class="text-xs font-bold text-charcoal-500 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.industry') }}</div>
                         <a href="{{ route('case-studies.index', ['domain' => $study->domain]) }}" class="text-charcoal-950 font-semibold hover:text-brand-700 transition-colors">{{ $study->domain }}</a>
                     </div>
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.client') }}</div>
+                        <div class="text-xs font-bold text-charcoal-500 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.client') }}</div>
                         <div class="text-charcoal-950 font-semibold">{{ $study->display_client_name }}</div>
                     </div>
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.status') }}</div>
+                        <div class="text-xs font-bold text-charcoal-500 uppercase tracking-widest mb-1.5">{{ __('case_studies.show.sidebar.status') }}</div>
                         <div class="text-charcoal-950 font-semibold">{{ $study->is_ongoing ? __('case_studies.show.status.ongoing') : __('case_studies.show.status.delivered') }}</div>
                     </div>
                     @if(count($study->tech_keywords_array) > 0)
                     <div>
-                        <div class="text-xs font-bold text-charcoal-400 uppercase tracking-widest mb-2">{{ __('case_studies.show.sidebar.tech') }}</div>
+                        <div class="text-xs font-bold text-charcoal-500 uppercase tracking-widest mb-2">{{ __('case_studies.show.sidebar.tech') }}</div>
                         <div class="flex flex-wrap gap-1.5">
                             @foreach($study->tech_keywords_array as $tk)
                             <span class="badge bg-white text-charcoal-700 border-charcoal-200 text-[11px]">{{ $tk }}</span>
@@ -163,7 +163,7 @@
                     </div>
                 </div>
                 <div class="p-6 flex-1 flex flex-col">
-                    <div class="text-xs uppercase tracking-widest text-charcoal-400 font-semibold mb-1.5">{{ $rel->display_client_name }}</div>
+                    <div class="text-xs uppercase tracking-widest text-charcoal-500 font-semibold mb-1.5">{{ $rel->display_client_name }}</div>
                     <h3 class="font-bold text-charcoal-950 group-hover:text-brand-700 transition-colors mb-2 line-clamp-2 text-base leading-snug">{{ $rel->project_name }}</h3>
                     <p class="text-charcoal-600 text-sm leading-relaxed flex-1 line-clamp-3">{{ $rel->summary }}</p>
                 </div>

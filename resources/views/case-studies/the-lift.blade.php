@@ -2,6 +2,38 @@
 @section('title', 'Case Study: Production ERP for Film & Content — FairIT Solutions')
 @section('description', 'A purpose-built ERP for film, television, and commercial production — replacing spreadsheet-and-inbox sprawl with a single source of truth.')
 
+@section('schema')
+<script type="application/ld+json" nonce="{{ csp_nonce() }}">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "@id": "{{ url()->current() }}#article",
+            "headline": "{{ addslashes($study->project_name) }} — {{ addslashes($study->domain) }} Case Study",
+            "description": "{{ addslashes(\Illuminate\Support\Str::limit($study->summary, 200)) }}",
+            "url": "{{ url()->current() }}",
+            "datePublished": "{{ $study->created_at->toIso8601String() }}",
+            "dateModified": "{{ $study->updated_at->toIso8601String() }}",
+            "articleSection": "{{ $study->domain }}",
+            "author": { "@id": "https://fairitsolutions.ch/#organization" },
+            "publisher": { "@id": "https://fairitsolutions.ch/#organization" },
+            "isPartOf": { "@id": "https://fairitsolutions.ch/#website" },
+            "inLanguage": "{{ app()->getLocale() }}"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
+                { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "{{ route('case-studies.index') }}" },
+                { "@type": "ListItem", "position": 3, "name": "{{ addslashes($study->project_name) }}", "item": "{{ url()->current() }}" }
+            ]
+        }
+    ]
+}
+</script>
+@endsection
+
 @section('content')
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');

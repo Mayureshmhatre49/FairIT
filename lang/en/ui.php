@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'skip_to_content' => 'Skip to main content',
     'nav' => [
         'case_studies' => 'Case Studies',
         'services' => 'Services',
@@ -41,7 +42,7 @@ return [
         'cookies' => 'Cookie Policy',
         'sitemap' => 'Sitemap',
         'copyright' => 'All rights reserved.',
-        'built_in' => 'Built with precision in Switzerland',
+        'built_in' => 'Built with precision across India & Switzerland',
         'systems_ok' => 'All systems operational',
         'book_consultation' => 'Request a Consultation',
         'advisory' => 'AI Transformation Advisory',

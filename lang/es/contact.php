@@ -10,7 +10,7 @@ return [
         'title' => 'Contact Information',
         'email_label' => 'Email',
         'location_label' => 'Location',
-        'location_value' => 'Switzerland, India & Global',
+        'location_value' => 'Pune (sede central), Suiza y Alemania',
         'response_label' => 'Response Time',
         'response_value' => 'Within 24 hours',
         'book_title' => 'Prefer to book directly?',

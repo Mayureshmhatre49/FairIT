@@ -71,19 +71,19 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 pt-10 border-t border-white/10">
                     <div>
                         <div class="text-3xl lg:text-4xl font-black text-white">60+</div>
-                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Projects delivered</div>
+                        <div class="text-xs text-charcoal-500 mt-1.5 uppercase tracking-wider font-medium">Projects delivered</div>
                     </div>
                     <div>
                         <div class="text-3xl lg:text-4xl font-black text-white">16</div>
-                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Industries served</div>
+                        <div class="text-xs text-charcoal-500 mt-1.5 uppercase tracking-wider font-medium">Industries served</div>
                     </div>
                     <div>
                         <div class="text-3xl lg:text-4xl font-black text-white">40+</div>
-                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Enterprise clients</div>
+                        <div class="text-xs text-charcoal-500 mt-1.5 uppercase tracking-wider font-medium">Enterprise clients</div>
                     </div>
                     <div>
                         <div class="text-3xl lg:text-4xl font-black text-white">20+</div>
-                        <div class="text-xs text-charcoal-400 mt-1.5 uppercase tracking-wider font-medium">Years of founder experience</div>
+                        <div class="text-xs text-charcoal-500 mt-1.5 uppercase tracking-wider font-medium">Years of founder experience</div>
                     </div>
                 </div>
                 <div class="mt-8">

@@ -135,7 +135,7 @@ return [
             'No long-term contracts required',
             '24h response guaranteed',
             'Confidentiality assured',
-            'Based in Switzerland',
+            'Teams in India, Switzerland & Germany',
         ],
     ],
 ];

@@ -1,3 +1,1 @@
-import axios from 'axios';
-window.axios = axios;
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+// Axios was removed — all AJAX in this app uses fetch() (see submitForm in app.js).

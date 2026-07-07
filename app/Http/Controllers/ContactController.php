@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\LeadNotification;
 use App\Models\Lead;
+use App\Rules\Turnstile;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class ContactController extends Controller
             'subject' => ['required', 'string', 'max:200'],
             'message' => ['required', 'string', 'min:20', 'max:3000'],
             'honeypot' => ['nullable', 'size:0'],
+            'cf-turnstile-response' => ['nullable', new Turnstile],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -58,6 +60,7 @@ class ContactController extends Controller
             'company' => ['nullable', 'string', 'max:150'],
             'product' => ['required', 'string', 'max:100'],
             'honeypot' => ['nullable', 'size:0'],
+            'cf-turnstile-response' => ['nullable', new Turnstile],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -88,6 +91,7 @@ class ContactController extends Controller
             'stage' => ['nullable', 'string', 'max:100'],
             'product' => ['required', 'string', 'max:100'],
             'honeypot' => ['nullable', 'size:0'],
+            'cf-turnstile-response' => ['nullable', new Turnstile],
         ]);
 
         if ($request->filled('honeypot')) {
@@ -117,6 +121,7 @@ class ContactController extends Controller
             'company' => ['nullable', 'string', 'max:150'],
             'size' => ['nullable', 'string', 'max:50'],
             'honeypot' => ['nullable', 'size:0'],
+            'cf-turnstile-response' => ['nullable', new Turnstile],
         ]);
 
         if ($request->filled('honeypot')) {

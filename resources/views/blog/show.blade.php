@@ -147,7 +147,7 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-sm font-semibold text-charcoal-900 group-hover:text-brand-700 transition-colors line-clamp-2 mb-1">{{ $rp->title }}</h4>
-                                <span class="text-xs text-charcoal-400">{{ $rp->published_at->format('d M Y') }}</span>
+                                <span class="text-xs text-charcoal-500">{{ $rp->published_at->format('d M Y') }}</span>
                             </div>
                         </a>
                         @endforeach

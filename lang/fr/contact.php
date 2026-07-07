@@ -10,7 +10,7 @@ return [
         'title' => 'Informations de contact',
         'email_label' => 'Email',
         'location_label' => 'Localisation',
-        'location_value' => 'Suisse, Inde & monde entier',
+        'location_value' => 'Pune (siège), Suisse & Allemagne',
         'response_label' => 'Délai de réponse',
         'response_value' => 'Dans les 24 heures',
         'book_title' => 'Préférez réserver directement ?',

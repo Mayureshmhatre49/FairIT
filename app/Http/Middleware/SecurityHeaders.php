@@ -70,7 +70,7 @@ class SecurityHeaders
         // Alpine.js needs unsafe-eval (uses Function() internally); scripts come from Vite bundle
         $directives = [
             // Nonce replaces unsafe-inline — only nonce-bearing scripts execute
-            "script-src 'self' 'nonce-{$nonce}' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net{$viteOrigins}",
+            "script-src 'self' 'nonce-{$nonce}' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net https://challenges.cloudflare.com{$viteOrigins}",
 
             // Styles: unsafe-inline kept because Tailwind emits inline style attributes on elements
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net{$viteOrigins}",
@@ -78,8 +78,8 @@ class SecurityHeaders
             "default-src 'self'",
             "font-src 'self' https://fonts.gstatic.com",
             "img-src 'self' data: https:",
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com{$viteOrigins}",
-            "frame-src 'none'",
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://challenges.cloudflare.com{$viteOrigins}",
+            "frame-src https://challenges.cloudflare.com",
             "frame-ancestors 'none'",
             "object-src 'none'",
             "base-uri 'self'",
