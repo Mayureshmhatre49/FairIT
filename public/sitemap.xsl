@@ -132,7 +132,7 @@
                 <div class="stat-label">Images</div>
               </div>
               <div class="stat">
-                <div class="stat-num">5</div>
+                <div class="stat-num">3</div>
                 <div class="stat-label">Languages</div>
               </div>
             </div>
@@ -179,7 +179,7 @@
                         </td>
                         <td>
                           <div class="lang-chips">
-                            <xsl:for-each select="xhtml:link[@rel='alternate' and @hreflang!='x-default']">
+                            <xsl:for-each select="xhtml:link[@rel='alternate' and (@hreflang='en' or @hreflang='de' or @hreflang='fr')]">
                               <span class="lang-chip"><xsl:value-of select="@hreflang"/></span>
                             </xsl:for-each>
                           </div>
