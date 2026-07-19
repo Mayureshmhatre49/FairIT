@@ -10,8 +10,8 @@
         {
             "@type": "Article",
             "@id": "{{ url()->current() }}#article",
-            "headline": "{{ addslashes($study->project_name) }} — {{ addslashes($study->domain) }} Case Study",
-            "description": "{{ addslashes(\Illuminate\Support\Str::limit($study->summary, 200)) }}",
+            "headline": @json($study->project_name . ' — ' . $study->domain . ' Case Study'),
+            "description": @json(\Illuminate\Support\Str::limit($study->summary, 200)),
             "url": "{{ url()->current() }}",
             "datePublished": "{{ $study->created_at->toIso8601String() }}",
             "dateModified": "{{ $study->updated_at->toIso8601String() }}",
@@ -26,7 +26,7 @@
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ url('/') }}" },
                 { "@type": "ListItem", "position": 2, "name": "Case Studies", "item": "{{ route('case-studies.index') }}" },
-                { "@type": "ListItem", "position": 3, "name": "{{ addslashes($study->project_name) }}", "item": "{{ url()->current() }}" }
+                { "@type": "ListItem", "position": 3, "name": @json($study->project_name), "item": "{{ url()->current() }}" }
             ]
         }
     ]

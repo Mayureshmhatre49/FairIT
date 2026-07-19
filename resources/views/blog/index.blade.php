@@ -31,7 +31,7 @@
                 {
                     "@type": "BlogPosting",
                     "@id": "{{ route('blog.show', $post->slug) }}#article",
-                    "headline": "{{ addslashes($post->title) }}",
+                    "headline": @json($post->title),
                     "url": "{{ route('blog.show', $post->slug) }}",
                     "datePublished": "{{ $post->published_at->toIso8601String() }}",
                     @if($post->category)"articleSection": "{{ $post->category }}",@endif

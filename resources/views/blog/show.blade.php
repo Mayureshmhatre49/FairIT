@@ -15,8 +15,8 @@
         {
             "@type": "BlogPosting",
             "@id": "{{ url()->current() }}#article",
-            "headline": "{{ addslashes($post->title) }}",
-            "description": "{{ addslashes($post->excerpt) }}",
+            "headline": @json($post->title),
+            "description": @json($post->excerpt),
             "url": "{{ url()->current() }}",
             "datePublished": "{{ $post->published_at->toIso8601String() }}",
             "dateModified": "{{ $post->updated_at->toIso8601String() }}",
@@ -67,7 +67,7 @@
             "itemListElement": [
                 { "@type": "ListItem", "position": 1, "name": "{{ __('blog.schema.home') }}", "item": "{{ url('/') }}" },
                 { "@type": "ListItem", "position": 2, "name": "{{ __('blog.schema.insights') }}", "item": "{{ route('blog.index') }}" },
-                { "@type": "ListItem", "position": 3, "name": "{{ addslashes($post->title) }}", "item": "{{ url()->current() }}" }
+                { "@type": "ListItem", "position": 3, "name": @json($post->title), "item": "{{ url()->current() }}" }
             ]
         }
     ]

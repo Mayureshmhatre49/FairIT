@@ -12,7 +12,7 @@
             "@type": "Service",
             "@id": "{{ url()->current() }}#service",
             "name": "AI Solutions for {{ $industry['title'] }}",
-            "description": "{{ addslashes($industry['description']) }}",
+            "description": @json($industry['description']),
             "url": "{{ url()->current() }}",
             "provider": {
                 "@type": "Organization",
@@ -26,7 +26,7 @@
                 "name": "AI Capabilities for {{ $industry['title'] }}",
                 "itemListElement": [
                     @foreach($industry['solutions'] as $i => $solution)
-                    { "@type": "Offer", "position": {{ $i + 1 }}, "itemOffered": { "@type": "Service", "name": "{{ addslashes($solution) }}" } }{{ !$loop->last ? ',' : '' }}
+                    { "@type": "Offer", "position": {{ $i + 1 }}, "itemOffered": { "@type": "Service", "name": @json($solution) } }{{ !$loop->last ? ',' : '' }}
                     @endforeach
                 ]
             }
