@@ -237,7 +237,7 @@
                             </svg>
                         </button>
                         <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute right-0 top-full mt-2 w-36 bg-white rounded-xl shadow-premium border border-charcoal-100 py-1 z-50">
-                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇸🇦'] as $code => $flag)
+                            @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
                             <a href="{{ route('lang.switch', $code) }}"
                                class="flex items-center gap-2.5 px-3 py-2.5 text-sm transition-colors {{ app()->getLocale() === $code ? 'text-brand-600 font-semibold bg-brand-50' : 'text-charcoal-700 hover:bg-charcoal-50' }}">
                                 <span class="text-base leading-none">{{ $flag }}</span>
@@ -293,7 +293,7 @@
                     {{-- Mobile Language Switcher --}}
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">Language</div>
                     <div class="flex flex-wrap gap-2 px-2">
-                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷', 'es' => '🇪🇸', 'ar' => '🇸🇦'] as $code => $flag)
+                        @foreach(['en' => '🇬🇧', 'de' => '🇩🇪', 'fr' => '🇫🇷'] as $code => $flag)
                         <a href="{{ route('lang.switch', $code) }}"
                            class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors {{ app()->getLocale() === $code ? 'bg-brand-600 text-white' : 'bg-charcoal-100 text-charcoal-700 hover:bg-charcoal-200' }}">
                             <span>{{ $flag }}</span>
