@@ -71,6 +71,7 @@ The user explicitly asked to "tone down anything tough to implement." Apply thes
 
 - **English (`lang/en/`)** is the source of truth and reflects all recent positioning.
 - **de / fr / es / ar** have been partially machine-translated (Case Studies, Insights, and SEO metadata have been translated to these languages via Google Translate). However, some older static marketing copy may still carry **stale Swiss-centric copy from before the HQ/legal restructure**. Treat any further updates as a deliberate translation pass.
+- **Language switcher shows only en / de / fr.** `es` and `ar` are intentionally hidden from the nav dropdown at both breakpoints in `layouts/app.blade.php`. They still return 200 when requested directly via `?lang=es` / `?lang=ar` and still emit hreflang + sitemap alternates. If you re-enable a language, add its `flag => code` pair to **both** the desktop switcher loop (~line 240) and the mobile menu copy (~line 296); indentation differs between the two so a single `replace_all` won't catch both.
 
 ---
 
@@ -88,10 +89,13 @@ The user explicitly asked to "tone down anything tough to implement." Apply thes
 |---|---|
 | `/` | Home (charcoal-950 hero) |
 | `/services` + 5 detail pages | All sourced from `lang/en/services.php` via `ServicesController` |
+| `/industries` + `/industries/{slug}` | 9 industries in `IndustriesController::$industries` array (startups, smes, manufacturing, real-estate, hospitality, interior-design, healthcare, education, professional-services). Related case studies auto-populate on the show page via `$caseStudyDomainMap`. |
+| `/products` + 3 product pages | SarathiOS, HSI OS, HandleLife OS |
 | `/case-studies` + `/case-studies/{slug}` | DB-backed, see "Case studies" below |
 | `/insights` + `/insights/{slug}` | Blog posts (DB-backed) |
+| `/contact`, `/book-consultation` | See "Forms" section |
 | `/x-admin-secure-2024/login` | **Admin panel — see Admin section** |
-| `/feed.xml`, `/sitemap.xml`, `/sitemap-news.xml` | SEO discovery |
+| `/feed.xml`, `/sitemap.xml`, `/sitemap-index.xml`, `/sitemap-news.xml` | SEO discovery |
 
 ### Admin
 
@@ -161,17 +165,16 @@ This is the easiest gotcha to fall into and the hardest to spot until your text 
 
 ### Brand identity
 
-- **Primary colour**: `#2563eb` (Tailwind `brand-600`).
-- **Dark surface**: `charcoal-950` (`#0f172a`). Hero gradients, footer, OG image background.
-- **Logo mark**: stylised **"F"** in a rounded brand-blue square with a **chamfered top-right corner** on the top arm — subtle window/interface nod to "Operating Systems," not literal.
-- Asset files in `public/images/`: `favicon.svg`, `logo-mark.svg`, `logo-mark-mono.svg`, `logo-horizontal.svg`, `logo-horizontal-dark.svg`, `og-image.png`, `apple-touch-icon.png`. Old lightbulb favicon preserved at `storage/originals/favicon-old-lightbulb.svg`.
-- When inlining the mark in markup, use this exact SVG:
-  ```html
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect width="32" height="32" rx="8" fill="#2563eb"/>
-    <path d="M9 7H21L23 9V10H12V14H19V17H12V25H9Z" fill="#FFFFFF"/>
-  </svg>
-  ```
+- **Primary colour**: `#2563eb` (Tailwind `brand-600`). Used for buttons, links, hero accents, focus rings.
+- **Secondary logo tone**: steel-blue `#7CA0C0` on light surfaces / `#9BC0DC` on dark surfaces. Used only inside the logo mark — do NOT introduce it as a general UI accent.
+- **Dark surface**: `charcoal-950` (`#0d0f12`). Hero gradients, footer, OG image background.
+- **Logo mark**: six overlapping thin-stroke rings (4 near-black `#111827` + 2 steel-blue) forming a loose ring composition with a small "eye" of negative space near the centre. The current SVGs are a **geometric interpretation** built from a hand-drawn reference — swap in the designer's true vector when it lands at the same filenames and every touchpoint (nav, favicon, OG image, schema) picks it up automatically.
+- **Wordmark spelling — do not confuse these**:
+  - In **body copy, footer, schema, emails, meta descriptions, blog posts**: always **"FairIT Solutions"** (title case, no hyphen).
+  - In the **visual logo** and `og-image.png` only: **"FAIR-IT SOLUTIONS"** (all caps, hyphenated) as a stylistic choice. Same brand — different presentation.
+- Asset files in `public/images/`: `favicon.svg`, `logo-mark.svg`, `logo-mark-mono.svg`, `logo-horizontal.svg`, `logo-horizontal-dark.svg`, `og-image.png`, `apple-touch-icon.png`.
+- **Inline SVG mark lives in `layouts/app.blade.php`** at two locations (desktop nav ~ line 114, footer brand column ~ line 333). The nav copy uses `#111827` strokes for light bg; the footer copy uses `#FFFFFF` + `#9BC0DC` for dark bg. If you edit one, edit both.
+- **Backups of the pre-rebrand assets** live at `storage/originals/old-*` (see "Backup files").
 
 ### Navbar
 
@@ -191,6 +194,26 @@ This is the easiest gotcha to fall into and the hardest to spot until your text 
 ### Background graphics
 
 - `.hero-grid` and `.hero-gradient` defined in `resources/css/app.css`. Subtle, on-brand, used across multiple page heroes. Don't replace with raster textures.
+
+### Forms
+
+**Five public POST endpoints** all use the same anti-spam pattern:
+
+| Route | Controller | Blade |
+|---|---|---|
+| `POST /contact` | `ContactController@submit` | `contact.blade.php` |
+| `POST /book-consultation` | `ConsultationController@submit` | `consultation.blade.php` |
+| `POST /ai-audit` | `ContactController@audit` | `contact.blade.php` |
+| `POST /request-demo` | `ContactController@demo` | `products/{slug}.blade.php` |
+| `POST /join-waitlist` | `ContactController@waitlist` | `products/{slug}.blade.php` |
+
+**Anti-spam layers (defence in depth)**:
+
+1. **Honeypot** — `<x-honeypot />` (`resources/views/components/honeypot.blade.php`). Off-screen positioned via `position:absolute;left:-10000px` rather than `display:none` so bots that skip DOM-hidden fields still fill it in. Server rejects any submission where `honeypot` is non-empty by silently returning a fake success page (bots can't tell they were blocked).
+2. **Cloudflare Turnstile** — `<x-turnstile />` widget + `App\Rules\Turnstile` validation rule. Widget renders nothing when `TURNSTILE_SITE_KEY` is unset; rule fails open when `TURNSTILE_SECRET_KEY` is unset — so local dev without keys keeps working. Wired into every form's controller as `'cf-turnstile-response' => ['nullable', new Turnstile]`. Keys live in `.env` (`TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`) and are surfaced via `config/services.php` → `services.turnstile.site_key` / `.secret`.
+3. **CSP** allowlists `https://challenges.cloudflare.com` for `script-src`, `connect-src`, and `frame-src` in `app/Http/Middleware/SecurityHeaders.php` — required for the Turnstile iframe + siteverify calls.
+
+If you add a new form, use both components + add the Turnstile validation rule to the controller. Don't hand-roll a hidden `<input>` — the drift between five different hiding techniques is what let spam through before consolidation.
 
 ### Trust badges on forms
 
@@ -229,8 +252,13 @@ If a particular case study needs a richer treatment than the standard four-secti
 
 ### Enterprise SEO Architecture
 
-- **Structured Data (JSON-LD)**: NEVER hardcode `<script type="application/ld+json">` in Blade templates (except for the global `SiteNavigationElement` in `app.blade.php`). Always use `App\Services\SchemaBuilder`. This ensures correct escaping (`JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES`) and enforces strict EEAT structures (like automatic `Organization` injection on contact pages).
-- **Meta Tags & Hreflang**: Managed by `App\Services\SeoManager` which is instantiated in `app.blade.php`. It automatically generates symmetric `hreflang` cross-links (en, de, fr, es, ar) and the `x-default` tag based on Laravel's current locale.
+- **Structured Data (JSON-LD)**: prefer `App\Services\SchemaBuilder` for new pages — it applies correct escaping (`JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES`) and enforces EEAT structures. **Legacy templates that still hand-write `<script type="application/ld+json">` blocks** (`industries/show`, `blog/index`, `blog/show`, `case-studies/show`, `case-studies/the-lift`, plus the global `SiteNavigationElement` in `app.blade.php`) MUST use `@json($value)` for every string interpolation — **never `"{{ addslashes($value) }}"`**. Blade's `{{ }}` HTML-encodes apostrophes to `&#039;`, and the leading `\` from `addslashes()` produces `\&#039;` — not a valid JSON escape, so Google silently drops the entire block. This bug shipped once; don't reintroduce it.
+- **Meta Tags & Hreflang**: Managed by `App\Services\SeoManager` which is instantiated in `app.blade.php`. It automatically generates symmetric `hreflang` cross-links (en, de, fr, es, ar) and the `x-default` tag based on Laravel's current locale. Note the switcher hides es/ar (see "Locale state") but hreflang still emits all five — that's intentional.
+- **Sitemap architecture**: three URLs (`sitemap-index.xml`, `sitemap.xml`, `sitemap-news.xml`) served via `SitemapController`. Two things worth knowing before editing:
+  - **`<lastmod>` values must reflect real change**, not `now()`. Static routes derive lastmod from `max(filemtime(view, lang/en/*.php))` via `SitemapController::lastmodFor()`; DB rows use their `updated_at`. Emitting `now()` on every crawl demotes Google's trust in lastmod site-wide.
+  - **XML declaration workaround**: Blade files that emit XML (`sitemap*.blade.php`) start with `<?php echo '<' . '?xml version="1.0" encoding="UTF-8"?' . '>', "\n"; ?>` rather than a literal `<?xml…?>`. This dodges an IDE PHP-language-server false positive AND is safer if `short_open_tag=On` is ever enabled in PHP config. Preserve the pattern when editing.
+  - **Human-readable styling** comes from `public/sitemap.xsl` and `public/sitemap-index.xsl` referenced via `<?xml-stylesheet ?>` PIs at the top of each sitemap. Browsers render the styled HTML; crawlers ignore the PI and see the raw XML. If you add a new sitemap, wire it to one of the existing XSLs.
+- **robots.txt Sitemap: directives point at `https://fairitsolutions.in/...`** (the live host), not `.ch`. The `.ch` domain currently 404s beyond `/`; cross-domain sitemap references would fail Search Console. If `.ch` starts serving the app, both hosts should still reference sitemaps on their own host.
 - **Internal Linking**: `App\Services\LinkBuilder` can be used to inject highly contextual anchor links into unstructured translated text.
 - **Accessibility**: When adding buttons, always ensure they have `focus-visible:ring-2 focus-visible:ring-brand-500` applied in `app.css` to maintain WCAG 2.1 AA keyboard compliance.
 - **Images**: Ensure all below-the-fold images have `loading="lazy"`.
@@ -250,7 +278,8 @@ These were flagged during the visual audit and intentionally not actioned automa
 ## Backup files (don't accidentally delete)
 
 - `storage/originals/annemarie-original-408.jpg` — original low-res LinkedIn photo before enhancement
-- `storage/originals/favicon-old-lightbulb.svg` — pre-rebrand favicon (kept in case revert is needed)
+- `storage/originals/favicon-old-lightbulb.svg` — pre-rebrand favicon from the first rebrand
+- `storage/originals/old-*` — the F-in-blue-square brand assets (favicon, mark, mark-mono, horizontal, horizontal-dark, og-image, apple-touch-icon) preserved when the ring mark shipped. Instant rollback path: `cp storage/originals/old-favicon.svg public/images/favicon.svg` etc. Do NOT commit any *new* asset variants into this directory unless they're genuinely displaced brand history — it's not a general dumping ground.
 
 ---
 
@@ -276,3 +305,8 @@ These are explicitly excluded in `.gitignore`. The exclusion is intentional and 
 - **Don't push CSS/JS source changes without `npm run build`.** See "Production deployment" — the compiled bundle is committed to git, the source alone doesn't reach prod.
 - **Don't reach for `text-charcoal-400` or `text-charcoal-500` for body text on white surfaces.** See "Tailwind charcoal palette" — these are nearly invisible in this project's custom scale. Start at `text-charcoal-600`.
 - **Don't commit `Boston Byte Project Details.xlsx`** even if it shows up untracked in `git status`. It has client revenue we don't display publicly. See "Sensitive files".
+- **Don't use `"{{ addslashes($value) }}"` inside a JSON-LD block.** Blade HTML-encodes apostrophes → the leading `\` produces `\&#039;` → invalid JSON → Google drops the whole block. Use `@json($value)` (which includes its own surrounding quotes, so drop the `"..."`). See "Enterprise SEO Architecture".
+- **Don't sweep-swap `FairIT Solutions` → `FAIR-IT Solutions` in prose** to match the new logo wordmark. The logo uses stylised all-caps + hyphen; prose everywhere else stays `FairIT Solutions`. Same convention as IBM, YouTube, eBay — the logo is stylised, the readable form isn't.
+- **Don't hard-code the old F-in-blue-square SVG** (`<rect fill="#2563eb"/><path d="M9 7H21..."/>`) if you find it referenced in old docs, PRs, or stale comments. The mark is now six overlapping rings — see "Brand identity". Backups of the F-in-square live at `storage/originals/old-*` for rollback only.
+- **Don't rewrite `<?xml version="1.0"…?>` at the top of `sitemap*.blade.php`** as a literal line — use the `<?php echo '<' . '?xml…?' . '>' ?>` pattern documented in "Enterprise SEO Architecture". A literal `<?xml` triggers PHP-language-server false positives on every edit and breaks if `short_open_tag=On`.
+- **Don't ship a new public form without `<x-honeypot />` + `<x-turnstile />` + `new Turnstile` in the controller's validation rules.** See "Forms". Spam bots find endpoints within days.
