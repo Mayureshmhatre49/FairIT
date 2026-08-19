@@ -50,6 +50,6 @@ return [
     ],
     'services' => [
         'index_title' => 'Enterprise AI Services — FairIT Solutions',
-        'index_description' => 'Premium AI services: strategic AI advisory, custom copilots, voice automation, and managed retainers. Globally delivered, results-driven.',
+        'index_description' => 'Premium AI services: strategic AI advisory, custom copilots, voice automation, managed retainers, and AI assurance & quality engineering. Globally delivered, results-driven.',
     ],
 ];

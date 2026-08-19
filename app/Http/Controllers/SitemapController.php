@@ -103,6 +103,7 @@ class SitemapController extends Controller
             ['route' => 'services.voiceai',  'freq' => 'monthly', 'priority' => '0.8', 'files' => $servicesFiles],
             ['route' => 'services.retainers','freq' => 'monthly', 'priority' => '0.8', 'files' => $servicesFiles],
             ['route' => 'services.founder',  'freq' => 'monthly', 'priority' => '0.8', 'files' => $servicesFiles],
+            ['route' => 'services.assurance','freq' => 'monthly', 'priority' => '0.8', 'files' => $servicesFiles],
             ['route' => 'products.index',    'freq' => 'monthly', 'priority' => '0.9', 'files' => ["$views/products/index.blade.php", "$lang/products.php"]],
             ['route' => 'products.sarathios','freq' => 'monthly', 'priority' => '0.8', 'files' => ["$views/products/sarathios.blade.php", "$lang/products.php"]],
             ['route' => 'products.hsios',    'freq' => 'monthly', 'priority' => '0.8', 'files' => ["$views/products/hsios.blade.php", "$lang/products.php"]],

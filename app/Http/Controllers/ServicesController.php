@@ -133,6 +133,36 @@ class ServicesController extends Controller
                 ],
                 'cta_text' => __('services.voiceai.cta'),
                 'cta_route' => 'consultation',
+                'cases_label' => __('services.voiceai.cases_label'),
+                'cases_title' => __('services.voiceai.cases_title'),
+                'cases' => [
+                    [
+                        'title' => __('services.voiceai.case_1_title'),
+                        'tag' => __('services.voiceai.case_1_tag'),
+                        'hook' => __('services.voiceai.case_1_hook'),
+                        'body' => __('services.voiceai.case_1_body'),
+                        'chips' => [
+                            __('services.voiceai.case_1_chip_1'),
+                            __('services.voiceai.case_1_chip_2'),
+                            __('services.voiceai.case_1_chip_3'),
+                        ],
+                        'cta_label' => __('services.voiceai.case_1_cta'),
+                        'cta_route' => 'consultation',
+                    ],
+                    [
+                        'title' => __('services.voiceai.case_2_title'),
+                        'tag' => __('services.voiceai.case_2_tag'),
+                        'hook' => __('services.voiceai.case_2_hook'),
+                        'body' => __('services.voiceai.case_2_body'),
+                        'chips' => [
+                            __('services.voiceai.case_2_chip_1'),
+                            __('services.voiceai.case_2_chip_2'),
+                            __('services.voiceai.case_2_chip_3'),
+                        ],
+                        'cta_label' => __('services.voiceai.case_2_cta'),
+                        'cta_route' => 'consultation',
+                    ],
+                ],
                 'faqs' => [
                     ['q' => __('services.voiceai.faq_1_q'), 'a' => __('services.voiceai.faq_1_a')],
                     ['q' => __('services.voiceai.faq_2_q'), 'a' => __('services.voiceai.faq_2_a')],
@@ -231,6 +261,51 @@ class ServicesController extends Controller
                     ['q' => __('services.founder.faq_5_q'), 'a' => __('services.founder.faq_5_a')],
                     ['q' => __('services.founder.faq_6_q'), 'a' => __('services.founder.faq_6_a')],
                     ['q' => __('services.founder.faq_7_q'), 'a' => __('services.founder.faq_7_a')],
+                ],
+            ],
+        ]);
+    }
+
+    public function assurance(): View
+    {
+        return view('services.assurance', [
+            'service' => [
+                'title' => __('services.assurance.title'),
+                'tagline' => __('services.assurance.tagline'),
+                'description' => __('services.assurance.description'),
+                'icon' => 'shield-check',
+                'color' => 'blue',
+                'benefits' => [
+                    __('services.assurance.benefit_1'),
+                    __('services.assurance.benefit_2'),
+                    __('services.assurance.benefit_3'),
+                    __('services.assurance.benefit_4'),
+                    __('services.assurance.benefit_5'),
+                ],
+                'deliverables' => [
+                    __('services.assurance.deliverable_1'),
+                    __('services.assurance.deliverable_2'),
+                    __('services.assurance.deliverable_3'),
+                    __('services.assurance.deliverable_4'),
+                    __('services.assurance.deliverable_5'),
+                ],
+                'process' => [
+                    ['step' => '01', 'title' => __('services.assurance.process_1_title'), 'desc' => __('services.assurance.process_1_desc')],
+                    ['step' => '02', 'title' => __('services.assurance.process_2_title'), 'desc' => __('services.assurance.process_2_desc')],
+                    ['step' => '03', 'title' => __('services.assurance.process_3_title'), 'desc' => __('services.assurance.process_3_desc')],
+                    ['step' => '04', 'title' => __('services.assurance.process_4_title'), 'desc' => __('services.assurance.process_4_desc')],
+                    ['step' => '05', 'title' => __('services.assurance.process_5_title'), 'desc' => __('services.assurance.process_5_desc')],
+                ],
+                'cta_text' => __('services.assurance.cta'),
+                'cta_route' => 'consultation',
+                'faqs' => [
+                    ['q' => __('services.assurance.faq_1_q'), 'a' => __('services.assurance.faq_1_a')],
+                    ['q' => __('services.assurance.faq_2_q'), 'a' => __('services.assurance.faq_2_a')],
+                    ['q' => __('services.assurance.faq_3_q'), 'a' => __('services.assurance.faq_3_a')],
+                    ['q' => __('services.assurance.faq_4_q'), 'a' => __('services.assurance.faq_4_a')],
+                    ['q' => __('services.assurance.faq_5_q'), 'a' => __('services.assurance.faq_5_a')],
+                    ['q' => __('services.assurance.faq_6_q'), 'a' => __('services.assurance.faq_6_a')],
+                    ['q' => __('services.assurance.faq_7_q'), 'a' => __('services.assurance.faq_7_a')],
                 ],
             ],
         ]);

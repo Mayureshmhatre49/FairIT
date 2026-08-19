@@ -154,6 +154,7 @@
                                     ['route' => 'services.voiceai',  'key' => 'voiceai',  'icon' => 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z'],
                                     ['route' => 'services.retainers','key' => 'retainers','icon' => 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'],
                                     ['route' => 'services.founder',  'key' => 'founder',  'icon' => 'M13 10V3L4 14h7v7l9-11h-7z'],
+                                    ['route' => 'services.assurance','key' => 'assurance','icon' => 'M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z'],
                                 ];
                                 @endphp
                                 @foreach($services as $s)
@@ -277,6 +278,7 @@
                     <a href="{{ route('services.voiceai') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.voiceai.title') }}</a>
                     <a href="{{ route('services.retainers') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.retainers.title') }}</a>
                     <a href="{{ route('services.founder') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.founder.title') }}</a>
+                    <a href="{{ route('services.assurance') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.services.assurance.title') }}</a>
 
                     <div class="px-4 py-2 text-xs font-bold text-charcoal-400 uppercase tracking-widest mt-2">{{ __('ui.nav.products') }}</div>
                     <a href="{{ route('products.sarathios') }}" class="block px-4 py-2.5 text-sm font-medium text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 rounded-lg mx-2 transition-colors">{{ __('ui.products.sarathios.title') }} — {{ __('ui.products.sarathios.badge') }}</a>
@@ -377,6 +379,7 @@
                         <li><a href="{{ route('services.voiceai') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.voiceai') }}</a></li>
                         <li><a href="{{ route('services.retainers') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.retainers') }}</a></li>
                         <li><a href="{{ route('services.founder') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.founder') }}</a></li>
+                        <li><a href="{{ route('services.assurance') }}" class="text-sm text-charcoal-400 hover:text-white transition-colors">{{ __('ui.footer.assurance') }}</a></li>
                     </ul>
                 </div>
 

@@ -37,6 +37,7 @@ Route::get('/services/custom-ai-copilot-development', [ServicesController::class
 Route::get('/services/voice-ai-conversational-automation', [ServicesController::class, 'voiceai'])->name('services.voiceai');
 Route::get('/services/managed-ai-retainers', [ServicesController::class, 'retainers'])->name('services.retainers');
 Route::get('/services/founder-growth-advisory', [ServicesController::class, 'founder'])->name('services.founder');
+Route::get('/services/ai-assurance-quality-engineering', [ServicesController::class, 'assurance'])->name('services.assurance');
 
 // Products
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');

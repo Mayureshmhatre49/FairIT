@@ -21,6 +21,7 @@ return [
         'voiceai' => ['title' => 'Voice AI & Conversational Automation', 'desc' => 'Multilingual bots & voice agents'],
         'retainers' => ['title' => 'Managed AI Retainers',               'desc' => 'Your dedicated AI team'],
         'founder' => ['title' => 'Founder Growth Advisory',            'desc' => 'AI systems for leaders'],
+        'assurance' => ['title' => 'AI Assurance & Quality Engineering', 'desc' => 'Test, gate & monitor AI systems'],
     ],
     'products' => [
         'sarathios' => ['title' => 'SarathiOS',      'badge' => 'Founder OS',  'desc' => 'AI Operating System for startup founders & CEOs'],
@@ -50,6 +51,7 @@ return [
         'voiceai' => 'Voice AI & Automation',
         'retainers' => 'Managed AI Retainers',
         'founder' => 'Founder Growth Advisory',
+        'assurance' => 'AI Assurance & QA',
         'insights' => 'Insights',
     ],
     'cookie' => [

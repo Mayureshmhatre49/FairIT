@@ -123,6 +123,38 @@
     </div>
 </section>
 
+{{-- Case studies — only renders for services that define cases --}}
+@if(!empty($service['cases']))
+<section class="section-padding bg-white border-t border-charcoal-100">
+    <div class="container-wide">
+        <div class="text-center mb-14" data-animate>
+            <span class="section-label">{{ $service['cases_label'] ?? 'In Production' }}</span>
+            <h2 class="section-title mt-3">{{ $service['cases_title'] ?? 'Selected work' }}</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            @foreach($service['cases'] as $case)
+            <div data-animate data-animate-delay="{{ $loop->index * 100 }}" class="group flex flex-col h-full bg-white rounded-2xl border border-charcoal-100 hover:border-brand-200 hover:shadow-card-hover transition-all duration-300 p-6 lg:p-8">
+                <span class="inline-flex self-start items-center px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold uppercase tracking-wide">{{ $case['tag'] }}</span>
+                <h3 class="text-xl font-bold text-charcoal-950 mt-5 group-hover:text-brand-700 transition-colors">{{ $case['title'] }}</h3>
+                <p class="text-brand-600 text-sm font-medium mt-2">{{ $case['hook'] }}</p>
+                <p class="text-charcoal-600 leading-relaxed mt-4">{{ $case['body'] }}</p>
+                <div class="flex flex-wrap gap-2 mt-6">
+                    @foreach($case['chips'] as $chip)
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg bg-charcoal-50 border border-charcoal-100 text-charcoal-700 text-xs font-medium">{{ $chip }}</span>
+                    @endforeach
+                </div>
+                <a href="{{ route($case['cta_route']) }}" class="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold text-sm mt-auto pt-6 border-t border-charcoal-100 transition-colors">
+                    {{ $case['cta_label'] }}
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
 {{-- FAQ --}}
 <section class="section-padding bg-white">
     <div class="container-tight">
