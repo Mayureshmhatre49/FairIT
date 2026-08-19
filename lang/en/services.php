@@ -284,6 +284,7 @@ return [
         'title' => 'AI Assurance & Quality Engineering',
         'tagline' => 'We build AI systems — so we know exactly where they break',
         'desc_index' => 'We test the AI systems most QA firms can\'t: hallucination rates, agent trajectories, voice accuracy across Indian languages, jailbreak resistance, and audit-ready compliance evidence — measured, gated in CI, and monitored in production.',
+        'seo_desc' => 'Test, gate and monitor your AI systems: hallucination rates, agent trajectories, voice accuracy, jailbreak resistance and audit-ready EU AI Act, DPDP and ISO 42001 evidence.',
         'description' => 'Confidence to ship AI into production. We measure whether your copilots, RAG assistants, agents, and voice bots are accurate, safe, and compliant — then gate that quality in CI and monitor it live. Traditional QA firms lack the AI depth; pure AI consultancies lack the test discipline. We have both, because we build these systems ourselves.',
         'bullets' => [
             'AI quality audits & scored baselines',

@@ -273,6 +273,7 @@ class ServicesController extends Controller
                 'title' => __('services.assurance.title'),
                 'tagline' => __('services.assurance.tagline'),
                 'description' => __('services.assurance.description'),
+                'seo_description' => __('services.assurance.seo_desc'),
                 'icon' => 'shield-check',
                 'color' => 'blue',
                 'benefits' => [

@@ -8,29 +8,34 @@
     {{-- SEO Meta & Open Graph --}}
     @php
         $seo = new \App\Services\SeoManager();
-        $title = trim(View::yieldContent('title'));
+        // Blade's short-form @section('x', $value) HTML-escapes the value via e().
+        // partials/seo.blade.php escapes again through {{ }}, so raw section content
+        // must be decoded once here to avoid double-encoding (e.g. & -> &amp;amp;).
+        $seoYield = fn (string $section) => html_entity_decode(trim(View::yieldContent($section)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+        $title = $seoYield('title');
         if ($title) $seo->setTitle($title);
-        
-        $desc = trim(View::yieldContent('description'));
+
+        $desc = $seoYield('description');
         if ($desc) $seo->setDescription($desc);
-        
-        $keywords = trim(View::yieldContent('keywords'));
+
+        $keywords = $seoYield('keywords');
         if ($keywords) $seo->setKeywords($keywords);
-        
-        $robots = trim(View::yieldContent('robots'));
+
+        $robots = $seoYield('robots');
         if ($robots) $seo->setRobots($robots);
-        
-        $ogType = trim(View::yieldContent('og_type'));
+
+        $ogType = $seoYield('og_type');
         if ($ogType) $seo->setOgType($ogType);
 
-        $ogTitle = trim(View::yieldContent('og_title'));
+        $ogTitle = $seoYield('og_title');
         if ($ogTitle) $seo->setOgTitle($ogTitle);
 
-        $ogDescription = trim(View::yieldContent('og_description'));
+        $ogDescription = $seoYield('og_description');
         if ($ogDescription) $seo->setOgDescription($ogDescription);
 
-        $ogImage = trim(View::yieldContent('og_image'));
-        $ogImageAlt = trim(View::yieldContent('og_image_alt'));
+        $ogImage = $seoYield('og_image');
+        $ogImageAlt = $seoYield('og_image_alt');
         if ($ogImage) $seo->setOgImage($ogImage, $ogImageAlt);
     @endphp
     {!! $seo->render() !!}

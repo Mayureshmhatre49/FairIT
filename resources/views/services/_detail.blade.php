@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('title', $service['title'] . ' — FairIT Solutions')
-@section('description', $service['description'])
+@section('description', $service['seo_description'] ?? $service['description'])
 @section('og_title', $service['title'] . ' — FairIT Solutions')
-@section('og_description', $service['description'])
+@section('og_description', $service['seo_description'] ?? $service['description'])
 @section('og_image_alt', $service['title'] . ' — FairIT Solutions AI Service')
 
 @section('schema')

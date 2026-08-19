@@ -102,9 +102,9 @@ class SeoManager
         $links = [];
         foreach ($locales as $locale) {
             $query = $locale === 'en' ? ['lang' => null] : ['lang' => $locale];
-            $links[$locale] = request()->fullUrlWithQuery($query);
+            $links[$locale] = rtrim(request()->fullUrlWithQuery($query), '?');
         }
-        $links['x-default'] = request()->fullUrlWithQuery(['lang' => null]);
+        $links['x-default'] = rtrim(request()->fullUrlWithQuery(['lang' => null]), '?');
         return $links;
     }
 
