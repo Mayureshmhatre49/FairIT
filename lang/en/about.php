@@ -16,7 +16,7 @@ return [
             ['num' => '3',  'label' => 'AI Operating Systems in development'],
             ['num' => '5',  'label' => 'Premium AI service lines'],
             ['num' => '16', 'label' => 'Industries served'],
-            ['num' => '5',  'label' => 'Languages we operate in'],
+            ['num' => '5',  'label' => 'Languages we publish in'],
         ],
     ],
     'values' => [

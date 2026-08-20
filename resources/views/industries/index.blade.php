@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="flex-shrink-0 text-center lg:text-right">
-                    <div class="text-5xl lg:text-6xl font-black text-charcoal-950 leading-none">60+</div>
+                    <div class="text-5xl lg:text-6xl font-black text-charcoal-950 leading-none">{{ \App\Models\CaseStudy::deliveredFloor() }}</div>
                     <div class="text-xs uppercase tracking-widest text-charcoal-500 font-semibold mt-2">projects delivered</div>
                     <a href="{{ route('case-studies.index') }}" class="btn-primary mt-6 inline-flex">
                         View all case studies

@@ -76,6 +76,12 @@
     @hasSection('prev_page') <link rel="prev" href="@yield('prev_page')"> @endif
     @hasSection('next_page') <link rel="next" href="@yield('next_page')"> @endif
 
+    {{-- Progressive enhancement flag: entrance animations start hidden ONLY when
+         JS is available (see [data-animate] in app.css). Without JS the class is
+         never added, so all content renders visible instead of stuck at opacity:0.
+         Runs before the stylesheet is applied to avoid a flash of visible content. --}}
+    <script nonce="{{ csp_nonce() }}">document.documentElement.classList.add('js');</script>
+
     {{-- Vite Assets --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 

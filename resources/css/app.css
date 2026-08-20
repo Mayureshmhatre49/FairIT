@@ -215,13 +215,17 @@
 /* ============================================================
    SCROLL ANIMATIONS
 ============================================================ */
-[data-animate] {
+/* Entrance animations are gated behind the `.js` class (added in <head> before
+   this stylesheet applies). If JavaScript is unavailable, the IntersectionObserver
+   that adds `.animated` never runs — so without this guard every [data-animate]
+   element would stay invisible. No `.js` = no opacity:0 = content always visible. */
+.js [data-animate] {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.65s ease-out, transform 0.65s ease-out;
 }
 
-[data-animate].animated {
+.js [data-animate].animated {
     opacity: 1;
     transform: translateY(0);
 }
@@ -239,6 +243,9 @@
         scroll-behavior: auto;
     }
 
+    /* Match the `.js [data-animate]` specificity above so reduced-motion users
+       always see content immediately, independent of the observer. */
+    .js [data-animate],
     [data-animate] {
         opacity: 1;
         transform: none;

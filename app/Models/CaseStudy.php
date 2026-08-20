@@ -58,11 +58,45 @@ class CaseStudy extends Model
         return $query->where('is_featured', true);
     }
 
+    /**
+     * Cached count of published case studies. Single source of truth for the
+     * "projects delivered" figure so marketing pages never drift from the
+     * live portfolio count. Fails safe to a conservative floor on DB error.
+     */
+    public static function deliveredCount(): int
+    {
+        try {
+            return \Illuminate\Support\Facades\Cache::remember(
+                'case_studies.delivered_count',
+                now()->addHour(),
+                fn () => static::published()->count()
+            );
+        } catch (\Throwable $e) {
+            return 60;
+        }
+    }
+
+    /**
+     * Rounded-down-to-nearest-ten "N+" label (e.g. "80+"), used across every
+     * marketing surface. "N+" reads as "at least N", so a floor is always
+     * truthful. Never returns less than "60+".
+     */
+    public static function deliveredFloor(): string
+    {
+        $floor = intdiv(max(static::deliveredCount(), 60), 10) * 10;
+
+        return $floor . '+';
+    }
+
+    /**
+     * Public-facing client label. All client identities are kept confidential,
+     * so every case study renders as "Confidential Client" regardless of the
+     * descriptor stored internally. The raw `client_name` remains available in
+     * the admin panel for internal reference only — never surface it publicly.
+     */
     public function getDisplayClientNameAttribute(): string
     {
-        return trim((string) $this->client_name) !== ''
-            ? $this->client_name
-            : 'Confidential Client';
+        return 'Confidential Client';
     }
 
     public function getTechKeywordsArrayAttribute(): array

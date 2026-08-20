@@ -78,6 +78,9 @@ Route::redirect('/case-studies/vocalbee', '/case-studies/visual-content-analytic
 Route::redirect('/case-studies/zeal', '/case-studies/agritech-ecosystem-diagnostics', 301);
 Route::redirect('/case-studies/cipla-gamingportal', '/case-studies/gamified-sales-learning-portal', 301);
 Route::redirect('/case-studies/the-lift', '/case-studies/production-erp-film-content', 301);
+Route::redirect('/case-studies/household-survey-burhanpur-khandwa', '/case-studies/household-survey-two-districts', 301);
+Route::redirect('/case-studies/household-survey-bhopal', '/case-studies/household-survey-additional-districts', 301);
+Route::redirect('/case-studies/hotelsavings', '/case-studies/b2b-wholesale-rate-comparison', 301);
 Route::get('/case-studies/{slug}', [CaseStudiesController::class, 'show'])->name('case-studies.show');
 
 // Contact

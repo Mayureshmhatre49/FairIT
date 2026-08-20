@@ -183,7 +183,7 @@
 <section class="bg-white py-12 border-t border-charcoal-100">
     <div class="container-tight text-center" data-animate>
         <p class="text-charcoal-600 text-sm">
-            Backed by <strong class="text-charcoal-950">60+ projects across 16 industries</strong> — see how this expertise has shipped in the wild.
+            Backed by <strong class="text-charcoal-950">{{ \App\Models\CaseStudy::deliveredFloor() }} projects across 16 industries</strong> — see how this expertise has shipped in the wild.
         </p>
         <a href="{{ route('case-studies.index') }}" class="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold text-sm mt-3 transition-colors">
             Browse case studies

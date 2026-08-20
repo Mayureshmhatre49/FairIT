@@ -148,16 +148,16 @@ class CaseStudySeeder extends Seeder
 
             // ── 5 ─────────────────────────────────────────────────────────────────
             [
-                'slug' => 'household-survey-burhanpur-khandwa',
+                'slug' => 'household-survey-two-districts',
                 'client_name' => 'State Urban Governance Department',
-                'project_name' => 'Digital Household Survey — Burhanpur & Khandwa',
+                'project_name' => 'Digital Household Survey — Two Districts',
                 'domain' => 'eGovernance',
                 'order' => 5,
                 'revenue_usd' => 175000,
                 'is_ongoing' => false,
                 'is_featured' => true,
                 'summary' => 'A digital door-to-door household survey platform for two districts in the state, capturing approximately 300 data points per household and visualising demographic distribution on Arc GIS and Google Maps for civic planning and tax collection.',
-                'challenge' => 'The State Urban Governance Department needed accurate, location-tagged demographic data across two districts districts to inform property tax, water tax, and welfare planning. Paper-based surveys had historically suffered from inconsistent data, slow consolidation, weak geospatial accuracy, and almost no analytical lift after the fact.',
+                'challenge' => 'The urban governance department needed accurate, location-tagged demographic data across two districts to inform property tax, water tax, and welfare planning. Paper-based surveys had historically suffered from inconsistent data, slow consolidation, weak geospatial accuracy, and almost no analytical lift after the fact.',
                 'approach' => "We built a structured field-data capture application with offline-capable forms, GPS tagging, and a back-office mapping layer on Arc GIS and Google Maps. The platform digitised the entire pipeline — from a surveyor walking up to a household, to the official viewing the city's demographic distribution on a live map. The same structured data-capture discipline now feeds the AI-driven civic analytics systems being deployed today.",
                 'outcome' => 'Both districts moved from paper-based surveys to a single source of demographic truth, enabling property and water tax targeting that was previously impossible at scale and giving city officials a live, queryable view of their population.',
                 'tech_keywords' => 'Field Survey App, Arc GIS, Google Maps, GPS Geotagging, eGovernance, Offline Data Capture',
@@ -167,7 +167,7 @@ class CaseStudySeeder extends Seeder
 
             // ── 6 ─────────────────────────────────────────────────────────────────
             [
-                'slug' => 'household-survey-bhopal',
+                'slug' => 'household-survey-additional-districts',
                 'client_name' => 'State Urban Governance Department',
                 'project_name' => 'Digital Household Survey — Second District',
                 'domain' => 'eGovernance',
@@ -176,7 +176,7 @@ class CaseStudySeeder extends Seeder
                 'is_ongoing' => false,
                 'is_featured' => false,
                 'summary' => 'A district-level digital household survey deployment in a second district, the state, extending our field-survey platform with Arc GIS and Google Maps visualisation for civic planning.',
-                'challenge' => 'Following the success in Burhanpur and Khandwa, the State Urban Governance Department needed to extend the same level of demographic accuracy to additional districts — without re-engineering the platform per region or compromising on data quality during scale-out.',
+                'challenge' => 'Following the success in the first two districts, the urban governance department needed to extend the same level of demographic accuracy to additional districts — without re-engineering the platform per region or compromising on data quality during scale-out.',
                 'approach' => 'We scaled our digital household survey platform to a second district, replicating the offline-capable field forms, GPS tagging, and centralised Arc GIS and Google Maps visualisation. The deployment captured around 300 data points per household and surfaced demographic distribution at street, neighbourhood, and city levels for officials to plan against.',
                 'outcome' => 'The second district was brought onto the same single source of demographic truth, enabling targeted property and water tax planning and welfare-programme distribution at scale.',
                 'tech_keywords' => 'Field Survey App, Arc GIS, Google Maps, GPS Geotagging, eGovernance',
@@ -509,7 +509,7 @@ class CaseStudySeeder extends Seeder
 
             // ── 24 ────────────────────────────────────────────────────────────────
             [
-                'slug' => 'hotelsavings',
+                'slug' => 'b2b-wholesale-rate-comparison',
                 'client_name' => 'Hospitality Booking Client',
                 'project_name' => 'B2B Wholesale Rate Comparison',
                 'domain' => 'Hospitality',
@@ -517,12 +517,12 @@ class CaseStudySeeder extends Seeder
                 'revenue_usd' => 35000,
                 'is_ongoing' => false,
                 'is_featured' => false,
-                'summary' => 'Hotelsavings is a hospitality price-discovery platform that normalises and aggregates B2B contract rates and supplier APIs for wholesale travel bookings.',
+                'summary' => 'A hospitality price-discovery platform that normalises and aggregates B2B contract rates and supplier APIs for wholesale travel bookings.',
                 'challenge' => 'Travel agencies comparing bulk rates were faced with fragmented OTA supplier rate sheets and inconsistent API responses, making rapid quote generation difficult.',
                 'approach' => 'We engineered an API aggregation and rate comparison engine to normalise bulk pricing sheets into a structured feed. This structured rate comparison logic is precisely the database foundation that travel routing copilots use today.',
                 'outcome' => 'Agency operators were able to compare contracts and select the optimal booking price in seconds, driving higher conversion rates and margin accuracy.',
                 'tech_keywords' => 'Hospitality Aggregation, OTA API Integration, Price Discovery, Travel Search',
-                'seo_title' => 'Hotel Price Aggregation Platform — Hotelsavings',
+                'seo_title' => 'B2B Hotel Price Aggregation Platform — Hospitality',
                 'seo_desc' => 'A multi-OTA hotel price-discovery platform aggregating live inventory and pricing across providers to surface the lowest available rate.',
             ],
 

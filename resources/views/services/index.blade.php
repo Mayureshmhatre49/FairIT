@@ -106,7 +106,7 @@
                 <div class="text-center lg:text-right">
                     <div class="grid grid-cols-2 gap-4 lg:gap-3 mb-6">
                         <div>
-                            <div class="text-3xl lg:text-4xl font-black text-charcoal-950 leading-none">60+</div>
+                            <div class="text-3xl lg:text-4xl font-black text-charcoal-950 leading-none">{{ \App\Models\CaseStudy::deliveredFloor() }}</div>
                             <div class="text-[11px] uppercase tracking-widest text-charcoal-500 font-semibold mt-2">Projects</div>
                         </div>
                         <div>

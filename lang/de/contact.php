@@ -46,7 +46,7 @@ return [
     'founders' => [
         'title' => 'Lernen Sie die Gründer kennen',
         'nishant' => [
-            'role' => 'Gründer',
+            'role' => 'Mitgründer & CEO',
         ],
         'annemarie' => [
             'role' => 'Mitgründerin',

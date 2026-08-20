@@ -46,7 +46,7 @@ return [
     'founders' => [
         'title' => 'Meet the Founders',
         'nishant' => [
-            'role' => 'Founder',
+            'role' => 'Co-Founder & CEO',
         ],
         'annemarie' => [
             'role' => 'Co-Founder',

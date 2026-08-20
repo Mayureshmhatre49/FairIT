@@ -70,7 +70,7 @@
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-10 pt-10 border-t border-white/10">
                     <div>
-                        <div class="text-3xl lg:text-4xl font-black text-white">60+</div>
+                        <div class="text-3xl lg:text-4xl font-black text-white">{{ \App\Models\CaseStudy::deliveredFloor() }}</div>
                         <div class="text-xs text-charcoal-500 mt-1.5 uppercase tracking-wider font-medium">Projects delivered</div>
                     </div>
                     <div>

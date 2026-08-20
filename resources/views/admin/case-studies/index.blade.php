@@ -41,7 +41,8 @@
                         <div class="font-semibold text-charcoal-900 max-w-xs truncate">{{ $study->project_name }}</div>
                         <div class="text-xs text-charcoal-400">/case-studies/{{ $study->slug }}</div>
                     </td>
-                    <td class="px-4 py-4 text-charcoal-600 max-w-xs truncate">{{ $study->display_client_name }}</td>
+                    {{-- Internal reference only — the public site shows every client as "Confidential Client" (see CaseStudy::getDisplayClientNameAttribute) --}}
+                    <td class="px-4 py-4 text-charcoal-600 max-w-xs truncate">{{ $study->client_name ?: '—' }}</td>
                     <td class="px-4 py-4 text-charcoal-600">{{ $study->domain }}</td>
                     <td class="px-4 py-4 text-charcoal-600 text-right tabular-nums">
                         {{ $study->revenue_usd ? '$' . number_format($study->revenue_usd) : '—' }}

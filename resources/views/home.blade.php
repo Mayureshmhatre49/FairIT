@@ -78,9 +78,10 @@
 
         {{-- Stats --}}
         <div data-animate data-animate-delay="500" class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto">
-            @foreach(__('home.stats') as $stat)
+            @foreach(__('home.stats') as $i => $stat)
             <div class="text-center">
-                <div class="text-3xl lg:text-4xl font-bold text-white">{{ $stat['value'] }}</div>
+                {{-- First stat is "projects delivered" — kept in sync with the live portfolio count --}}
+                <div class="text-3xl lg:text-4xl font-bold text-white">{{ $i === 0 ? \App\Models\CaseStudy::deliveredFloor() : $stat['value'] }}</div>
                 <div class="text-xs text-charcoal-500 mt-1">{{ $stat['label'] }}</div>
             </div>
             @endforeach
@@ -386,7 +387,7 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12" data-animate>
             <div>
                 <span class="section-label">Selected Work</span>
-                <h2 class="section-title mt-3">60+ projects. 16 industries. One engineering bar.</h2>
+                <h2 class="section-title mt-3">{{ \App\Models\CaseStudy::deliveredFloor() }} projects. 16 industries. One engineering bar.</h2>
                 <p class="section-subtitle mt-4 max-w-2xl">From healthcare EMRs at hospital scale to FinTech marketplaces, eGovernance platforms, and global advertising data engines — the structured systems that today's AI workloads are built on top of.</p>
             </div>
             <a href="{{ route('case-studies.index') }}" class="hidden md:inline-flex items-center gap-1 text-brand-600 font-semibold text-sm hover:gap-2 transition-all flex-shrink-0">
