@@ -54,6 +54,7 @@ return [
             ['title' => 'Sprach-KI & Konversationsautomatisierung', 'desc' => 'KI-Sprachanrufer, mehrsprachige Bots, Buchungsbots, Support-Bots und WhatsApp-Automatisierung auf Enterprise-Niveau.',    'cta' => 'Anwendungsfälle ansehen'],
             ['title' => 'Verwaltete KI-Retainer',             'desc' => 'Monatliche KI-Optimierung, Bot-Management, Workflow-Verbesserung, Berichtsautomatisierung und Innovationsunterstützung.',           'cta' => 'Experten kontaktieren'],
             ['title' => 'Gründer-Wachstumsberatung',          'desc' => 'Hochrangige strategische KI-Systeme für Gründer, Unternehmer und Führungskräfte, die mehr aus ihrem Betrieb herausholen möchten.',   'cta' => 'Jetzt bewerben'],
+            ['title' => 'KI-Qualitätssicherung & Quality Engineering', 'desc' => 'KI-Systeme testen, in CI absichern und überwachen — Halluzinationsraten, Agenten-Trajektorien, Sprachgenauigkeit und auditfähige Compliance-Nachweise.', 'cta' => 'Qualitätssicherung entdecken'],
         ],
     ],
     'products' => [

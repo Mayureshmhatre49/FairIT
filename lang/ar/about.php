@@ -14,7 +14,7 @@ return [
         'body_3' => 'We build AI operating systems that give our clients the leverage, clarity, and execution velocity they need to compete at the highest level. Not just AI tools. Real systems that change how they operate every day.',
         'stats' => [
             ['num' => '3', 'label' => 'أنظمة تشغيل ذكاء اصطناعي قيد التطوير'],
-            ['num' => '5', 'label' => 'خطوط خدمات ذكاء اصطناعي متميزة'],
+            ['num' => '6', 'label' => 'خطوط خدمات ذكاء اصطناعي متميزة'],
             ['num' => '8', 'label' => 'قطاعات نخدمها'],
             ['num' => '5', 'label' => 'لغات ننشر بها'],
         ],

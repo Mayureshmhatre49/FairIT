@@ -54,6 +54,7 @@ return [
             ['title' => 'IA vocale & automatisation conversationnelle', 'desc' => 'Agents vocaux IA, bots multilingues, bots de réservation, bots de support et automatisation WhatsApp à l\'échelle enterprise.',    'cta' => 'Voir les cas d\'usage'],
             ['title' => 'Contrats IA gérés',                    'desc' => 'Optimisation IA mensuelle, gestion de bots, amélioration des flux de travail, automatisation des rapports et support à l\'innovation.',         'cta' => 'Parler à un expert'],
             ['title' => 'Conseil en croissance fondateur',       'desc' => 'Systèmes IA stratégiques de haut niveau pour les fondateurs, propriétaires d\'entreprises et dirigeants qui exigent plus de leurs opérations.', 'cta' => 'Postuler maintenant'],
+            ['title' => 'Assurance IA & ingénierie qualité', 'desc' => 'Tester, verrouiller et surveiller les systèmes IA — taux d\'hallucination, trajectoires d\'agents, précision vocale et preuves de conformité prêtes pour l\'audit.', 'cta' => 'Découvrir l\'assurance'],
         ],
     ],
     'products' => [

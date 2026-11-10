@@ -14,7 +14,7 @@ return [
         'body_3' => 'Nous construisons des systèmes d\'exploitation IA qui donnent à nos clients l\'effet de levier, la clarté et la vélocité d\'exécution dont ils ont besoin pour concurrencer au plus haut niveau. Pas seulement des outils IA. De vrais systèmes qui changent leur façon d\'opérer chaque jour.',
         'stats' => [
             ['num' => '3', 'label' => 'Systèmes d\'exploitation IA en développement'],
-            ['num' => '5', 'label' => 'Lignes de services IA premium'],
+            ['num' => '6', 'label' => 'Lignes de services IA premium'],
             ['num' => '8', 'label' => 'Secteurs servis'],
             ['num' => '5', 'label' => 'Langues de travail'],
         ],

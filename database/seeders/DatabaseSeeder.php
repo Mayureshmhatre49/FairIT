@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Dr. Sarah Jenkins',
                 'role' => 'Chief Medical Officer',
                 'company' => 'A US healthcare provider',
-                'content' => 'CareLink transformed patient coordination for our care teams. Unifying EMR alerts and secure chat reduced response latency on critical signals while removing compliance-risky tools from our clinical workflows.',
+                'content' => 'The clinician communication platform transformed patient coordination for our care teams. Unifying EMR alerts and secure chat reduced response latency on critical signals while removing compliance-risky tools from our clinical workflows.',
                 'rating' => 5,
                 'is_active' => true,
                 'order' => 1,

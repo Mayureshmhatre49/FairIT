@@ -134,7 +134,7 @@
         <div class="text-center mb-12" data-animate>
             <span class="section-label">Meet the founders</span>
             <h2 class="section-title mt-3">The humans behind the systems</h2>
-            <p class="section-subtitle mt-4 mx-auto">Two operators. One conviction: AI should serve humans, not the other way round.</p>
+            <p class="section-subtitle mt-4 mx-auto">Three operators. One conviction: AI should serve humans, not the other way round.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto" data-animate data-animate-delay="100">

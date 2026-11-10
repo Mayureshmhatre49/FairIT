@@ -14,7 +14,7 @@ return [
         'body_3' => 'We build AI operating systems that give our clients the leverage, clarity, and execution velocity they need to compete at the highest level. Not just AI tools. Real systems that change how they operate every day.',
         'stats' => [
             ['num' => '3', 'label' => 'Sistemas operativos de IA en desarrollo'],
-            ['num' => '5', 'label' => 'Líneas de servicio de IA premium'],
+            ['num' => '6', 'label' => 'Líneas de servicio de IA premium'],
             ['num' => '8', 'label' => 'Sectores atendidos'],
             ['num' => '5', 'label' => 'Idiomas de trabajo'],
         ],

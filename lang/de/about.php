@@ -14,7 +14,7 @@ return [
         'body_3' => 'Wir bauen KI-Betriebssysteme, die unseren Kunden den Hebel, die Klarheit und die Ausführungsgeschwindigkeit geben, die sie brauchen, um auf höchstem Niveau zu konkurrieren. Nicht nur KI-Werkzeuge. Echte Systeme, die ihre tägliche Betriebsweise verändern.',
         'stats' => [
             ['num' => '3', 'label' => 'KI-Betriebssysteme in Entwicklung'],
-            ['num' => '5', 'label' => 'Premium-KI-Leistungslinien'],
+            ['num' => '6', 'label' => 'Premium-KI-Leistungslinien'],
             ['num' => '8', 'label' => 'Bediente Branchen'],
             ['num' => '5', 'label' => 'Arbeitssprachen'],
         ],

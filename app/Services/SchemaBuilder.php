@@ -22,7 +22,7 @@ class SchemaBuilder
             "alternateName" => "FairIT Solutions",
             "url" => "https://fairitsolutions.ch",
             "sameAs" => [
-                "https://www.linkedin.com/company/fair-it-solutions/",
+                "https://www.linkedin.com/company/fairit-solutions-ai/",
                 "https://www.facebook.com/FairITSolutions/"
             ],
             "logo" => [

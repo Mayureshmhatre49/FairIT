@@ -54,6 +54,7 @@ return [
             ['title' => 'IA de Voz y Automatización',            'desc' => 'Llamadores de voz con IA, bots multilingües, bots de reservas, soporte y automatización de WhatsApp a escala empresarial.',              'cta' => 'Ver Casos de Uso'],
             ['title' => 'Retenedores de IA Gestionados',         'desc' => 'Optimización mensual de IA, gestión de bots, mejora del flujo de trabajo, automatización de informes y soporte a la innovación.',               'cta' => 'Hablar con un Experto'],
             ['title' => 'Asesoría de Crecimiento para Fundadores', 'desc' => 'Sistemas estratégicos de IA de alto nivel para fundadores, empresarios y líderes que exigen más de sus operaciones.',           'cta' => 'Aplicar Ahora'],
+            ['title' => 'Aseguramiento de IA e Ingeniería de Calidad', 'desc' => 'Pruebe, controle y monitoree sistemas de IA: tasas de alucinación, trayectorias de agentes, precisión de voz y evidencia de cumplimiento lista para auditoría.', 'cta' => 'Explorar Aseguramiento'],
         ],
     ],
     'products' => [

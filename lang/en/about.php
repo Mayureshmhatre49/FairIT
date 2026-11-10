@@ -14,7 +14,7 @@ return [
         'body_3' => 'We build AI systems that give clients the leverage, clarity, and execution velocity they need to compete at the highest level. Not AI experiments. Production systems that change how they operate.',
         'stats' => [
             ['num' => '3',  'label' => 'AI Operating Systems in development'],
-            ['num' => '5',  'label' => 'Premium AI service lines'],
+            ['num' => '6',  'label' => 'Premium AI service lines'],
             ['num' => '16', 'label' => 'Industries served'],
             ['num' => '5',  'label' => 'Languages we publish in'],
         ],

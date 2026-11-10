@@ -54,6 +54,7 @@ return [
             ['title' => 'Voice AI & Conversational Automation', 'desc' => 'AI voice callers, multilingual bots, booking bots, support bots and WhatsApp automation at enterprise scale.',              'cta' => 'See Use Cases'],
             ['title' => 'Managed AI Retainers',               'desc' => 'Monthly AI optimisation, bot management, workflow enhancement, reporting automation, and innovation support.',               'cta' => 'Talk to Expert'],
             ['title' => 'Founder Growth Advisory',            'desc' => 'High-level strategic AI systems for founders, business owners, and leaders who demand more from their operations.',           'cta' => 'Apply Now'],
+            ['title' => 'AI Assurance & Quality Engineering', 'desc' => 'Test, gate, and monitor AI systems — hallucination rates, agent trajectories, voice accuracy, and audit-ready compliance evidence.', 'cta' => 'Explore Assurance'],
         ],
     ],
     'products' => [
@@ -114,7 +115,7 @@ return [
         'label' => 'Social Proof',
         'title' => 'What Our Clients Say',
         'items' => [
-            ['name' => 'Dr. Sarah Jenkins',  'role' => 'Chief Medical Officer', 'company' => 'A US healthcare provider', 'content' => 'CareLink transformed patient coordination for our care teams. Unifying EMR alerts and secure chat reduced response latency on critical signals while removing compliance-risky tools from our clinical workflows.'],
+            ['name' => 'Dr. Sarah Jenkins',  'role' => 'Chief Medical Officer', 'company' => 'A US healthcare provider', 'content' => 'The clinician communication platform transformed patient coordination for our care teams. Unifying EMR alerts and secure chat reduced response latency on critical signals while removing compliance-risky tools from our clinical workflows.'],
             ['name' => 'Thomas Wright',      'role' => 'Head of Data Science', 'company' => 'A data-science consultancy', 'content' => 'The custom SPSS visualization product turned complex statistical models into clear, decision-ready dashboards. Brand decisions that previously cycled for weeks now close in days.'],
             ['name' => 'Rajesh Kumar',       'role' => 'Director of Urban Planning', 'company' => 'A state urban-planning department', 'content' => 'Moving two districts from paper surveys to a single door-to-door GIS source of truth transformed our civic planning. It enabled property targeting that was previously impossible at scale.'],
         ],
